@@ -1,0 +1,364 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		#controlsDiv {
+			height: 40px;
+			background-color: #222266"
+		}
+		#GLouter th {
+			background-color: #444488;
+			border-bottom: 1px solid #333377;
+		}
+		#GLouter {
+			border: 1px solid #444488;
+			height: 100%;
+		}
+		table tr:nth-child(even) {
+			background-color: #00bbFF;
+		}
+		/*
+		** The drop downs are arranged as a table with no borders
+		*/
+		table.ControlOuter th,
+		table.ControlOuter td {
+			padding: 5px;
+		}
+		tbody div {
+			overflow-y: auto;
+			scrollbar-gutter: stable;
+			height: 300px;
+		}
+		th.Board, td.Board {
+			width: 40px;
+			padding: 3px;
+		}
+		td.Board {
+			text-align: right;
+		}
+		th.Score, td.Score {
+			width: 40px;
+			padding: 3px;
+		}
+		th.Name, td.Name {
+			width: 200px;
+			padding: 3px;
+		}
+	</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip-utils/0.1.0/jszip-utils.min.js"></script>
+<script type="text/javascript">
+
+function TestShow(ptoz)
+{
+	SetupControls(ptoz);
+}
+
+function SetupControls(ptoz)
+{
+	//
+	//	Fish the arrays of the main objects out of the JSON PTOZ into globals
+	//
+	sections = ptoz.sections;
+	players = ptoz.players;
+	games = ptoz.games;
+
+	const controlsDiv = document.getElementById('controlsDiv');
+	controlsDiv.innerHTML = "<table class='ControlOuter'><tr><td id='sectionBox'><td id='roundsBox'></tr></table>";
+
+	SetupSections();
+}
+
+function SetupSections()
+{
+	const sectionsElement = document.getElementById('sectionBox');
+	let sectionBox = "<label>Section:</label><select id='sectionDD' onchange='onSectionChange()'>";
+	for (let i = 0; i < sections.length; i++) {
+		//
+		//	Skip any sections which have no paired rounds
+		//
+		if (sections[i].roundsPaired == 0)
+			continue;
+		const sectionValue = `<option value=${i}>${sections[i].title}`;
+		sectionBox += sectionValue;
+	}
+	sectionsElement.innerHTML = sectionBox;
+	//
+	//	Pick the first section in the list as the default and force
+	//	the section change to update the rounds box
+	//
+	document.getElementById("sectionDD").selectedIndex = 0;
+	onSectionChange();
+}
+
+function onSectionChange()
+{
+	let sectionDD = document.getElementById("sectionDD");
+	let sectionsValue = sectionDD.options[sectionDD.selectedIndex].value;
+	let section = sections[sectionsValue];
+	SetupRounds(section.roundsPaired);
+}
+
+function SetupRounds(sectionRounds)
+{
+	const roundsElement = document.getElementById('roundsBox');
+	let roundsBox = "<label>Round:</label><select id='roundsDD' onchange='onRoundsChange()'>";
+	for (let i = 1; i <= sectionRounds; i++) {
+		const roundsValue = `<option value=${i}>${i}`;
+		roundsBox += roundsValue;
+	}
+	console.log(roundsBox);
+	roundsElement.innerHTML = roundsBox;
+	//
+	//	Select the highest round paired
+	//
+	document.getElementById("roundsDD").selectedIndex = sectionRounds - 1;
+	onRoundsChange();
+}
+
+function onRoundsChange()
+{
+	//
+	//	These will be the round number (1,...,roundsPaired) and the section index in the
+	//	sections array.
+	//
+	let roundsDD	= document.getElementById("roundsDD");
+	let sectionDD	= document.getElementById("sectionDD");
+	let roundsValue = roundsDD.options[roundsDD.selectedIndex].value;
+	let sectionsValue = sectionDD.options[sectionDD.selectedIndex].value;
+
+	ShowPairings(sections[sectionsValue],roundsValue);
+}
+
+function PullGames(sectionID, round)
+//
+//	Pull the list of game numbers for a section and round
+//
+{
+	gamelist = [];
+	for (let i=0 ; i < players.length ; i++) {
+		player = players[i];
+		//
+		// skip if player is not in the section
+		//
+		if (player["tnmt"]["sectionID"] != sectionID)
+			continue;
+		//
+		//	This is a list of game numbers. -1 means no game for a round
+		//
+		playerGames = player["tnmt"]["games"];
+		//
+		// skip if player has no game for this round (either the round is out-of-range or the game number is -1)
+		//
+		if (round > playerGames.length)
+			continue;
+		if (playerGames[round-1] == -1 || playerGames[round-1] == null)
+			continue;
+		console.log(player["base"].name);
+		console.log(playerGames[round-1]);
+		gamelist.push(playerGames[round-1]);
+	}
+	console.log(gamelist);
+	return gamelist;
+}
+
+function GameBoard(game)
+//
+//	If there is only one player record (for a bye), make the board -1
+//
+{
+	if (game["p1"] == -1 || game["p2"] == -1)
+		return -1;
+	else
+		return game["board"];
+}
+
+function GameBoardShow(game)
+{
+	if (GameBoard(game) == -1)
+		return "";
+	else
+		return GameBoard(game);
+}
+
+function GameLeftPlayer(game)
+//
+//  Get the player number for the player who should be left/white column
+//	If the game is a bye, left column should be whichever record is live.
+//
+{
+	if (game["p2"] == -1)
+		return game["p1"];
+	if (game["p1"] == -1)
+		return game["p2"];
+
+	if (game["color1"] == +1)
+		return game["p1"];
+	else
+		return game["p2"];
+}
+
+function GameRightPlayer(game)
+//
+// Get the player number for the player who should be right/black column
+//
+{
+	if (game["p2"] == -1 || game["p1"] == -1)
+		return -1;
+
+	if (game["color1"] == +1)
+		return game["p2"];
+	else
+		return game["p1"];
+}
+
+function GameResultP1(result)
+//
+//	Get the string result for player 1
+//
+{
+	if (result == 0)
+		return "0.5";
+	else if (result == +1 || result == +3)
+		return "1.0";
+	else if (result == -1)
+		return "0.0";
+	else if (result == +2)
+		return "1.0F";
+	else if (result == -2 || result == -98)
+		return "0.0F";
+	else
+		return "   ";
+}
+
+function GameResultP2(result) {
+	if (result == 0)
+		return "0.5";
+	else if (result == -1)
+		return "1.0";
+	else if (result == +1)
+		return "0.0";
+	else if (result == -2)
+		return "1.0F";
+	else if (result == +2 || result == -98)
+		return "0.0F";
+	else
+		return "";
+}
+
+function GameLeftResult(game)
+{
+	result = game["result"];
+	if (game["color1"] == +1 || game["p2"] == -1)
+		return GameResultP1(result);
+	else
+		return GameResultP2(result);
+}
+
+function GameRightResult(game)
+{
+	if (GameRightPlayer(game) == -1)
+		return "   ";
+	result = game["result"];
+	if (game["color1"] == +1)
+		return GameResultP2(result);
+	else
+		return GameResultP1(result);
+}
+
+function PlayerFormat(pnumber)
+{
+	if (pnumber==-1)
+		return "Bye";
+	return players[pnumber]["base"]["name"];
+}
+
+function ShowPairings(section,rp)
+{
+//
+//	pull array[int] of game numbers and sort by board number, but bubble -1's (byes)
+//	to the end
+//
+	gamelist = PullGames(section["id"],rp);
+	gamelist.sort(function(a,b) {
+		let aBd = GameBoard(games[a]);
+		let bBd = GameBoard(games[b]);
+		if (aBd == -1 && bBd == -1)
+			return 0;
+		if (aBd == -1)
+			return +1;
+		if (bBd == -1)
+			return -1;
+		else
+			return aBd - bBd;
+	});
+	const listDiv = document.getElementById('listDiv');
+	//
+	//	The table of games consists of an outer table with the header and an
+	//	inner table with the game list, which is embedded in a scrolling div.
+	//
+	let pTable = '<table id="GLOuter"><thead><tr><th class="Board">Board<th class="Score">Scr<th class="Name">White<th class="Score">Scr<th class="Name">Black</tr></thead>';
+	pTable += '<tbody><tr><td colspan="5"><div id="GLScroll"><table id="GLInner">';
+	for (let j = 0 ; j < gamelist.length ; j++) {
+		//
+		//	The above will double up on games with two players, so only show the
+		//	first of the two.
+		//
+		console.log(gamelist[j]);
+		if (j > 0 && gamelist[j] == gamelist[j - 1])
+			continue;
+		boardRec    = gamelist[j];
+		game        = games[boardRec];
+		board       = GameBoardShow(game);
+		leftPlayer  = GameLeftPlayer(game);
+		rightPlayer = GameRightPlayer(game);
+		leftName    = PlayerFormat(leftPlayer);
+		leftResult  = GameLeftResult(game);
+		rightName   = PlayerFormat(rightPlayer);
+		rightResult = GameRightResult(game);
+		resultLine = `<tr><td class="Board">${board}<td class="Score">${leftResult}<td class="Name">${leftName}<td class="Score">${rightResult}<td class="Name">${rightName}</tr>`;
+		pTable += resultLine;
+	}
+	listDiv.innerHTML = pTable + "</table></div></td></tr></tbody></table>";
+}
+
+function loadZip(file) {
+	//
+	//	getBinaryContent takes (path,callback) where callback is function(err,data)
+	//
+	JSZipUtils.getBinaryContent(file,function(err,data) {
+		if (err) throw err;
+		JSZip.loadAsync(data)
+		.then(function(zip) {
+			//
+			//	async returns a Promise of the content on the asked type.
+			//	JSON isn't an option so we need to get a string and translate it
+			//	to a JSON object using JSON.parse.
+			//
+			zip.file("Json").async("string")
+			.then(function(jsonText) {		
+				ptoz = JSON.parse(jsonText);
+				TestShow(ptoz);
+			});
+		});
+	});
+}
+</script>
+</head>
+<body>
+	<div id="topDiv" style="height: 200px; background-color: #EBEBEB;overflow:auto">
+		<h1>Downriver Chess Club</h1>
+		<p></p>
+	</div>
+
+	<div id="controlsDiv">
+	</div>
+
+	<div id="listDiv" style="height: 400px;">
+	</div>
+
+	<script>
+	loadZip("mc20240708.ptoz"); // tournament goes here
+	</script>
+</body>
+</html>
