@@ -84,30 +84,47 @@ function SetupControls(ptoz)
 function SetupSections()
 {
 	const sectionsElement = document.getElementById('sectionBox');
-	let sectionBox = "<label>Section:</label><select id='sectionDD' onchange='onSectionChange()'>";
-	for (let i = 0; i < sections.length; i++) {
+	let sectionBox;
+	if (sections.length === 1) {
+		// special case the single-section (Open, typically) event
+		sectionBox = `<label>Section:</label> ${sections[0].title}>`;
+		onSectionChange();
+	} else {
+		sectionBox = "<label>Section:</label><select id='sectionDD' onchange='onSectionChange()'>";
+		for (let i = 0; i < sections.length; i++) {
+			//
+			//	Skip any sections which have no paired rounds
+			//
+			if (sections[i].roundsPaired == 0)
+				continue;
+			const sectionValue = `<option value=${i}>${sections[i].title}`;
+			sectionBox += sectionValue;
+		}
+		sectionsElement.innerHTML = sectionBox;
 		//
-		//	Skip any sections which have no paired rounds
+		//	Pick the first section in the list as the default and force
+		//	the section change to update the rounds box
 		//
-		if (sections[i].roundsPaired == 0)
-			continue;
-		const sectionValue = `<option value=${i}>${sections[i].title}`;
-		sectionBox += sectionValue;
+		document.getElementById("sectionDD").selectedIndex = sectionIndex;
+		onSectionChange();
 	}
-	sectionsElement.innerHTML = sectionBox;
-	//
-	//	Pick the first section in the list as the default and force
-	//	the section change to update the rounds box
-	//
-	document.getElementById("sectionDD").selectedIndex = 0;
-	onSectionChange();
+}
+
+function getSection() 
+{
+	if (sections.length === 1) {
+		return sections[0];
+	} else {
+		let sectionDD = document.getElementById("sectionDD");
+		let sectionsValue = sectionDD.options[sectionDD.selectedIndex].value;
+		let section = sections[sectionsValue];
+		return section;
+	}
 }
 
 function onSectionChange()
 {
-	let sectionDD = document.getElementById("sectionDD");
-	let sectionsValue = sectionDD.options[sectionDD.selectedIndex].value;
-	let section = sections[sectionsValue];
+	let section = getSection();
 	SetupRounds(section.roundsPaired);
 }
 
@@ -135,11 +152,10 @@ function onRoundsChange()
 	//	sections array.
 	//
 	let roundsDD	= document.getElementById("roundsDD");
-	let sectionDD	= document.getElementById("sectionDD");
 	let roundsValue = roundsDD.options[roundsDD.selectedIndex].value;
-	let sectionsValue = sectionDD.options[sectionDD.selectedIndex].value;
+	let section = getSection();
 
-	ShowPairings(sections[sectionsValue],roundsValue);
+	ShowPairings(section,roundsValue);
 }
 
 function PullGames(sectionID, round)
