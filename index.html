@@ -6,14 +6,6 @@
 			height: 40px;
 			background-color: #222266"
 		}
-		#GLouter th {
-			background-color: #444488;
-			border-bottom: 1px solid #333377;
-		}
-		#GLouter {
-			border: 1px solid #444488;
-			height: 100%;
-		}
 		#tName {
 			font-size: 1.5em; 
 			font-weight: bold;
@@ -323,11 +315,7 @@ function ShowPairings(section,rp)
 				<th class="Name">Black</th>
 			</tr>
 		</thead>
-		<tbody>
-			<tr>
-				<td colspan="5">
-					<div id="GLScroll">
-						<table id="GLInner">`;
+		<tbody>`;
 	for (let j = 0 ; j < gamelist.length ; j++) {
 		//
 		//	The above will double up on games with two players, so only show the
@@ -355,10 +343,6 @@ function ShowPairings(section,rp)
 		pTable += resultLine;
 	}
 	listDiv.innerHTML = `${pTable}
-							</table>
-						</div>
-					</td>
-				</tr>
 			</tbody>
 		</table>`;
 }
