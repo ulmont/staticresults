@@ -14,9 +14,12 @@
 			border: 1px solid #444488;
 			height: 100%;
 		}
-		p {
+		#tName {
+			font-size: 1.5em; 
 			margin: 0;
-			padding: 0;
+		}
+		#tDate {
+			margin: 0;
 		}
 		table tr:nth-child(even) {
 			background-color: #00bbFF;
@@ -359,7 +362,8 @@ function loadZip(file) {
 </head>
 <body>
 	<div id="topDiv" style="height: 20%; overflow:auto">
-		<h2><p id="tName" style="margin: 0"></p></h2><p id="tDate" style="margin: 0"></p>
+		<p id="tName"></p>
+		<p id="tDate"></p>
 	</div>
 
 	<div id="controlsDiv">
