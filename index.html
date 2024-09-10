@@ -354,7 +354,13 @@ function ShowPairings(section,rp)
 		</tr>`;
 		pTable += resultLine;
 	}
-	listDiv.innerHTML = pTable + "</table></div></td></tr></tbody></table>";
+	listDiv.innerHTML = `${pTable}
+							</table>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>`;
 }
 
 function loadZip(file) {
