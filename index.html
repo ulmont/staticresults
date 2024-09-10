@@ -88,7 +88,6 @@ function SetupSections()
 	if (sections.length === 1) {
 		// special case the single-section (Open, typically) event
 		sectionBox = `<label>Section: ${sections[0].title}</label>`;
-		onSectionChange();
 	} else {
 		sectionBox = "<label>Section:</label><select id='sectionDD' onchange='onSectionChange()'>";
 		for (let i = 0; i < sections.length; i++) {
@@ -100,14 +99,14 @@ function SetupSections()
 			const sectionValue = `<option value=${i}>${sections[i].title}`;
 			sectionBox += sectionValue;
 		}
-		sectionsElement.innerHTML = sectionBox;
 		//
 		//	Pick the first section in the list as the default and force
 		//	the section change to update the rounds box
 		//
 		document.getElementById("sectionDD").selectedIndex = sectionIndex;
-		onSectionChange();
 	}
+	sectionsElement.innerHTML = sectionBox;
+	onSectionChange();
 }
 
 function getSection() 
