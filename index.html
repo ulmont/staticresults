@@ -87,7 +87,7 @@ function SetupSections()
 	let sectionBox;
 	if (sections.length === 1) {
 		// special case the single-section (Open, typically) event
-		sectionBox = `<label>Section:</label> ${sections[0].title}>`;
+		sectionBox = `<label>Section: ${sections[0].title}</label>`;
 		onSectionChange();
 	} else {
 		sectionBox = "<label>Section:</label><select id='sectionDD' onchange='onSectionChange()'>";
