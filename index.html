@@ -52,6 +52,9 @@
 function TestShow(ptoz)
 {
 	SetupControls(ptoz);
+
+	// update the title
+	document.getElementById('tournamentNameP').innerText = ptoz.title
 }
 
 function SetupControls(ptoz)
@@ -348,7 +351,7 @@ function loadZip(file) {
 <body>
 	<div id="topDiv" style="height: 20%; background-color: #EBEBEB;overflow:auto">
 		<h1>Downriver Chess Club</h1>
-		<p>"Blame Campbell" Morning Call Tournament July-August 2024</p>
+		<p id="tournamentNameP">"Blame Campbell" Morning Call Tournament July-August 2024</p>
 	</div>
 
 	<div id="controlsDiv">
