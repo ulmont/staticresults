@@ -16,6 +16,7 @@
 		}
 		#tName {
 			font-size: 1.5em; 
+			font-weight: bold;
 			margin: 0;
 		}
 		#tDate {
@@ -312,8 +313,21 @@ function ShowPairings(section,rp)
 	//	The table of games consists of an outer table with the header and an
 	//	inner table with the game list, which is embedded in a scrolling div.
 	//
-	let pTable = '<table id="GLOuter"><thead><tr><th class="Board">Board<th class="Score">Scr<th class="Name">White<th class="Score">Scr<th class="Name">Black</tr></thead>';
-	pTable += '<tbody><tr><td colspan="5"><div id="GLScroll"><table id="GLInner">';
+	let pTable = `<table id="GLOuter">
+		<thead>
+			<tr>
+				<th class="Board">Board</th>
+				<th class="Score">Scr</th>
+				<th class="Name">White</th>
+				<th class="Score">Scr</th>
+				<th class="Name">Black</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td colspan="5">
+					<div id="GLScroll">
+						<table id="GLInner">`;
 	for (let j = 0 ; j < gamelist.length ; j++) {
 		//
 		//	The above will double up on games with two players, so only show the
@@ -331,7 +345,13 @@ function ShowPairings(section,rp)
 		leftResult  = GameLeftResult(game);
 		rightName   = PlayerFormat(rightPlayer);
 		rightResult = GameRightResult(game);
-		resultLine = `<tr><td class="Board">${board}<td class="Score">${leftResult}<td class="Name">${leftName}<td class="Score">${rightResult}<td class="Name">${rightName}</tr>`;
+		resultLine = `<tr>
+			<td class="Board">${board}</td>
+			<td class="Score">${leftResult}</td>
+			<td class="Name">${leftName}</td>
+			<td class="Score">${rightResult}</td>
+			<td class="Name">${rightName}</td>
+		</tr>`;
 		pTable += resultLine;
 	}
 	listDiv.innerHTML = pTable + "</table></div></td></tr></tbody></table>";
