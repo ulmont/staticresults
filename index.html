@@ -87,9 +87,9 @@ function SetupSections()
 	let sectionBox;
 	if (sections.length === 1) {
 		// special case the single-section (Open, typically) event
-		sectionBox = `<span vertical-align:bottom>Section: ${sections[0].title}</span>`;
+		sectionBox = `<span vertical-align:top>Section: ${sections[0].title}</span>`;
 	} else {
-		sectionBox = "<span vertical-align:bottom>Section:<select id='sectionDD' onchange='onSectionChange()'></span>";
+		sectionBox = "<span vertical-align:top>Section:<select id='sectionDD' onchange='onSectionChange()'></span>";
 		for (let i = 0; i < sections.length; i++) {
 			//
 			//	Skip any sections which have no paired rounds
@@ -130,7 +130,7 @@ function onSectionChange()
 function SetupRounds(sectionRounds)
 {
 	const roundsElement = document.getElementById('roundsBox');
-	let roundsBox = "<span vertical-align:bottom>Round:<select id='roundsDD' onchange='onRoundsChange()'></span>";
+	let roundsBox = "<span vertical-align:top>Round:<select id='roundsDD' onchange='onRoundsChange()'></span>";
 	for (let i = 1; i <= sectionRounds; i++) {
 		const roundsValue = `<option value=${i}>${i}`;
 		roundsBox += roundsValue;
