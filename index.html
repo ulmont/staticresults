@@ -130,7 +130,7 @@ function onSectionChange()
 function SetupRounds(sectionRounds)
 {
 	const roundsElement = document.getElementById('roundsBox');
-	let roundsBox = "Round:<select id='roundsDD' onchange='onRoundsChange()'>";
+	let roundsBox = "<span vertical-align:bottom>Round:<select id='roundsDD' onchange='onRoundsChange()'></span>";
 	for (let i = 1; i <= sectionRounds; i++) {
 		const roundsValue = `<option value=${i}>${i}`;
 		roundsBox += roundsValue;
