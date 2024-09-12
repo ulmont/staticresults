@@ -164,10 +164,10 @@ function onSectionChange()
 			SetupRounds(section.roundsPaired);
 			break;
 		case 'Wall Chart':
-			SetupWallChart()
+			SetupWallChart(section)
 			break;
 		case 'Standings':
-			SetupStandings();
+			SetupStandings(section);
 			break;
 		default:
 			SetupRounds(section.roundsPaired);
