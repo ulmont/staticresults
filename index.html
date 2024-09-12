@@ -242,19 +242,19 @@ function calcModifiedMedian(player) {
 	// ok, first calculate the final scores of opponents.
 	let opponentScores = [];
 	player.tnmt.games.forEach(gameNum => {
-		if (gameNum !== -1) {
-			const game = games[gameNum];
-			// figure out the opponent
-			let opponentNum;
-			if (game.p1 === player.tnmt.playerNo) {
-				opponentNum = game.p2;
-			} else {
-				opponentNum = game.p1;
-			}
+		const game = games[gameNum];
+		// figure out the opponent
+		let opponentNum;
+		if (game.p1 === player.tnmt.playerNo) {
+			opponentNum = game.p2;
+		} else {
+			opponentNum = game.p1;
+		}
+		if (opponentNum !== -1) {
 			const oppScore = calcMMAdjustedScore(players[opponentNum]);
 			opponentScores.push(oppScore);
 		} else {
-			opponentScores.push(0); // unplayed game, counts as opponent with a 0 score.  This is implicitly assuming that these guys are eligible to be dropped later
+			opponentScores.push(0); // unplayed game, counts as opponent with a 0 score.  
 		}
 	});
 	// sort scores low to high
