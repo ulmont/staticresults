@@ -224,44 +224,46 @@ function SetupWallChart(section)
 				<td class="Number">${player.tnmt.pairNo}</td>
 				<td class="Name">${player.base.name}<br />${player.base.rating}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${player.base.id}</td>`;
 		for (const [j, gameNum] of player.tnmt.games.entries()) { 
-			const game = games[gameNum];
-			let opponentNum, result, color;
-			console.log(JSON.stringify(game));
-			if (game.p1 === player.tnmt.playerNo) {
-				color = 'W';
-				opponentNum = GameRightPlayer(game);
-				result = GameLeftResult(game);
-			} else {
-				color = 'B'
-				opponentNum = GameLeftPlayer(game);
-				result = GameRightResult(game);
-			}
-			let opponent;
-			if (opponentNum !== -1) {
-				opponent = players[opponentNum];
-			} else {
-				opponent = 'Bye';
-				color = '';
-			}
-			switch (result) {
-				case '0.0': // deliberate fallthrough
-				case '0.0F': 
-					score += 0.0;
-					break;
-				case '0.5':
-					score += 0.5;
-					break;
-				case '1.0':
-				case '1.0F': // deliberate fallthrough
-					score += 1.0;
-					break;
-				default:
-					console.log('UNKNOWN RESULT: ' + result);
-					break;
-			}
+			if (gameNum !== -1) {
+				const game = games[gameNum];
+				let opponentNum, result, color;
+				console.log(JSON.stringify(game));
+				if (game.p1 === player.tnmt.playerNo) {
+					color = 'W';
+					opponentNum = GameRightPlayer(game);
+					result = GameLeftResult(game);
+				} else {
+					color = 'B'
+					opponentNum = GameLeftPlayer(game);
+					result = GameRightResult(game);
+				}
+				let opponent;
+				if (opponentNum !== -1) {
+					opponent = players[opponentNum];
+				} else {
+					opponent = 'Bye';
+					color = '';
+				}
+				switch (result) {
+					case '0.0': // deliberate fallthrough
+					case '0.0F': 
+						score += 0.0;
+						break;
+					case '0.5':
+						score += 0.5;
+						break;
+					case '1.0':
+					case '1.0F': // deliberate fallthrough
+						score += 1.0;
+						break;
+					default:
+						console.log('UNKNOWN RESULT: ' + result);
+						break;
+				}
 
-			pTable = `${pTable}
-					<td class="Board">${color} ${opponentNum}<br />${score}</td>`;
+				pTable = `${pTable}
+						<td class="Board">${color} ${opponentNum}<br />${score}</td>`;
+			}
 		}
 		pTable = `${pTable}
 			<td class="Score">${score}</td>
