@@ -221,7 +221,7 @@ function SetupWallChart(section)
 		let score = 0.0;
 		pTable = `${pTable}
 			<tr>
-				<td class="Number">${player.tnmt.pairNo}</td>
+				<td class="Number">${player.tnmt.pairno}</td>
 				<td class="Name">${player.base.name}<br />${player.base.rating}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${player.base.id}</td>`;
 		for (const [j, gameNum] of player.tnmt.games.entries()) { 
 			if (gameNum !== -1) {
@@ -236,13 +236,6 @@ function SetupWallChart(section)
 					color = 'B'
 					opponentNum = GameLeftPlayer(game);
 					result = GameRightResult(game);
-				}
-				let opponent;
-				if (opponentNum !== -1) {
-					opponent = players[opponentNum];
-				} else {
-					opponent = 'Bye';
-					color = '';
 				}
 				switch (result) {
 					case '0.0': // deliberate fallthrough
@@ -260,9 +253,15 @@ function SetupWallChart(section)
 						console.log('UNKNOWN RESULT: ' + result);
 						break;
 				}
-
-				pTable = `${pTable}
-						<td class="Board">${color} ${opponentNum}<br />${score}</td>`;
+				let opponent;
+				if (opponentNum !== -1) {
+					opponent = players[opponentNum];
+					pTable = `${pTable}
+						<td class="Board">${color}&nbsp;&nbsp${opponent.pairno}<br />${score}</td>`;
+				} else {
+					pTable = `${pTable}
+						<td class="Board">Bye}<br />${score}</td>`;
+				}
 			}
 		}
 		pTable = `${pTable}
