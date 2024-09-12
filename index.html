@@ -226,6 +226,8 @@ function sortPlayersByScoreTiebreaks(a, b)
 }
 
 function calcModifiedMedian(player) {
+	const section = getSection();
+	
 	/*34E1. Modified Median
 	The Median system, also known as the Harkness system for inventor Kenneth Harkness, evaluates the strength of a player’s opposition by summing the final scores of his or her opponents and then discarding the highest and lowest of these scores.
 
