@@ -86,9 +86,9 @@ function SetupCharts()
 	const chartsElement = document.getElementById('chartsBox');
 	let chartsBox;
 	chartsBox = `Charts:<select id='chartsDD' onchange='onChartsChange()'>
-		<option value="0">Pairings</option>
-		<option value="1">Wall Chart</option>
-		<option value="2">Standings</option>
+		<option value="Pairings">Pairings</option>
+		<option value="Wall Chart">Wall Chart</option>
+		<option value="Standings">Standings</option>
 	</select>`;
 
 	chartsElement.innerHTML = chartsBox;
@@ -126,8 +126,10 @@ function SetupSections()
 			if (sections[i].roundsPaired == 0)
 				continue;
 			const sectionValue = `<option value=${i}>${sections[i].title}</option>`;
-			sectionBox = `${sectionBox}${sectionValue}</select>`;
+			sectionBox = `${sectionBox}${sectionValue}`;
 		}
+		sectionBox = `${sectionBox}
+		</select>`;
 		//
 		//	Pick the first section in the list as the default and force
 		//	the section change to update the rounds box
