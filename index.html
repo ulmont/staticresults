@@ -226,6 +226,7 @@ function SetupWallChart(section)
 		for (const [j, gameNum] of player.tnmt.games.entries()) { 
 			const game = games[gameNum];
 			let opponentNum, result, color;
+			console.log(JSON.stringify(game));
 			if (game.p1 === player.tnmt.playerNo) {
 				color = 'W';
 				opponentNum = GameRightPlayer(game);
