@@ -33,7 +33,7 @@
 			width: auto;
 			padding: 3px;
 		}
-		th.Board {
+		th.Board, th.Number {
 			text-align: left;
 		}
 		td.Board {
@@ -76,9 +76,37 @@ function SetupControls(ptoz)
 	games = ptoz.games;
 
 	const controlsDiv = document.getElementById('controlsDiv');
-	controlsDiv.innerHTML = "<table class='ControlOuter'><tr><td id='sectionBox'></td><td id='roundsBox'></td></tr></table>";
+	controlsDiv.innerHTML = "<table class='ControlOuter'><tr><td id='chartsBox'></td><td id='sectionBox'></td><td id='roundsBox'></td></tr></table>";
 
+	SetupCharts();
+}
+
+function SetupCharts()
+{
+	const chartsElement = document.getElementById('chartsBox');
+	let chartsBox;
+	chartsBox = `Charts:<select id='chartsDD' onchange='onChartsChange()'>
+		<option value="0">Pairings</option>
+		<option value="1">Wall Chart</option>
+		<option value="2">Standings</option>
+	</select>`;
+
+	chartsElement.innerHTML = chartsBox;
+	document.getElementById("chartsDD").selectedIndex = 0;
+
+	onChartsChange();
+}
+
+function onChartsChange()
+{
+	// just always setup the Sections and let the Section switch figure out what to display after that
 	SetupSections();
+}
+
+function onSectionChange()
+{
+	let section = getSection();
+	SetupRounds(section.roundsPaired);
 }
 
 function SetupSections()
@@ -87,18 +115,18 @@ function SetupSections()
 	let sectionBox;
 	if (sections.length === 1) {
 		// special case the single-section (Open, typically) event
-		sectionBox = `<span vertical-align:top>Section: ${sections[0].title}</span>`;
+		sectionBox = `Section: ${sections[0].title}`;
 		sectionsElement.innerHTML = sectionBox;
 	} else {
-		sectionBox = "<span vertical-align:top>Section:<select id='sectionDD' onchange='onSectionChange()'></span>";
+		sectionBox = "Section:<select id='sectionDD' onchange='onSectionChange()'>";
 		for (let i = 0; i < sections.length; i++) {
 			//
 			//	Skip any sections which have no paired rounds
 			//
 			if (sections[i].roundsPaired == 0)
 				continue;
-			const sectionValue = `<option value=${i}>${sections[i].title}`;
-			sectionBox += sectionValue;
+			const sectionValue = `<option value=${i}>${sections[i].title}</option>`;
+			sectionBox = `${sectionBox}${sectionValue}</select>`;
 		}
 		//
 		//	Pick the first section in the list as the default and force
@@ -126,20 +154,138 @@ function getSection()
 function onSectionChange()
 {
 	let section = getSection();
-	SetupRounds(section.roundsPaired);
+
+	let chartsDD = document.getElementById("chartsDD");
+	let chartsValue = chartsDD.options[chartsDD.selectedIndex].value;
+	switch (chartsValue) {
+		case 'Pairings':
+			SetupRounds(section.roundsPaired);
+			break;
+		case 'Wall Chart':
+			SetupWallChart()
+			break;
+		case 'Standings':
+			SetupStandings();
+			break;
+		default:
+			SetupRounds(section.roundsPaired);
+			break;
+	}
+}
+
+function SetupWallChart(section) 
+{
+	// hide the standings table and hide the pairings table
+	document.getElementById('standingsDiv').style.display = 'none';
+	document.getElementById('pairingsDiv').style.display = 'none';
+	// and also hide the round box
+	document.getElementById('roundsBox').style.display = 'none'
+
+	// get the players for this section, sorted by the pairing numbers
+	const playersByPairno = players.filter((player) => player.tnmt.sectionID === section.id).sort((a, b) => {
+		if (a.tnmt.pairno < b.tnmt.pairno) {
+			return -1;
+		}
+		if (a.tnmt.pairno > b.tnmt.pairno) {
+			return 1;
+		}
+		return 0;
+	});
+
+	/*
+		Wall Chart		
+	# 	Name			Rds 1...n	Total
+		Rating / ID		win / loss
+	1	Campbell, Charles Adegboyega	W  19	B  10	W   8	B   2	B   3	4.5
+	2198      14497790	1	2	2.5	3.5	4.5
+	*/
+	const wallChartDiv = document.getElementById('wallChartDiv');
+	let pTable = `<table id="GLOuter">
+		<thead>
+			<tr>
+				<th class="Number">#</th>
+				<th class="Name">Name<br />Rating / ID</th>`;
+	for (let i = 0 ; i < section.roundsPaired ; i++) {
+		pTable = `${ptable}
+				<th class="Score">Rd ${i+1}</th>`;
+	}
+	pTable = `${ptable}
+			<th class="Score">Total</th>
+		</tr>
+	</thead>
+	<tbody>`;
+
+	for (const [i, player] of playersByPairno.entries()) {
+		let score = 0.0;
+		pTable = `${ptable}
+			<tr>
+				<td class="Number">${player.tnmt.pairNo}</td>
+				<td class="Name">${player.base.name}<br />${player.base.rating}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${player.base.id}</td>`;
+		for (const [j, game] of player.tnmt.games) { 
+			let opponentNum, result, color;
+			if (game.p1 === player.tnmt.playerNo) {
+				color = 'W';
+				opponentNum = GameRightPlayer(game);
+				result = GameLeftResult(game);
+			} else {
+				color = 'B'
+				opponentNum = GameLeftPlayer(game);
+				result = GameRightResult(game);
+			}
+			let opponent;
+			if (opponentNum !== -1) {
+				opponent = players[opponentNum];
+			} else {
+				opponent = 'Bye';
+				color = '';
+			}
+			switch (result) {
+				case '0.0': // deliberate fallthrough
+				case '0.0F': 
+					score += 0.0;
+					break;
+				case '0.5':
+					score += 0.5;
+					break;
+				case '1.0':
+				case '1.0F': // deliberate fallthrough
+					score += 1.0;
+					break;
+				default:
+					console.log('UNKNOWN RESULT: ' + result);
+					break;
+			}
+
+			pTable = `${ptable}
+					<td class="Board">${color} ${opponentNum}<br />${score}</td>`;
+		}
+		pTable = `${ptable}
+			<td class="Score">${score}</td>
+		</tr>`;
+	}
+	wallChartDiv.innerHTML = `${pTable}
+			</tbody>
+		</table>`;
+	wallChartDiv.style.display = 'block';
 }
 
 function SetupRounds(sectionRounds)
 {
+	// hide the wall chart table and hide the standings table
+	document.getElementById('wallChartDiv').style.display = 'none';
+	document.getElementById('standingsDiv').style.display = 'none';
+
+	// add the round box
 	const roundsElement = document.getElementById('roundsBox');
-	let roundsBox = "<span vertical-align:top>Round:<select id='roundsDD' onchange='onRoundsChange()'></span>";
+	let roundsBox = "Round:<select id='roundsDD' onchange='onRoundsChange()'>";
 	for (let i = 1; i <= sectionRounds; i++) {
 		const roundsValue = `<option value=${i}>${i}`;
 		roundsBox += roundsValue;
 	}
 	console.log(roundsBox);
 	roundsElement.innerHTML = roundsBox;
-	//
+	roundsElement.style.display = 'block'
+
 	//	Select the highest round paired
 	//
 	document.getElementById("roundsDD").selectedIndex = sectionRounds - 1;
@@ -321,7 +467,7 @@ function ShowPairings(section,rp)
 		else
 			return aBd - bBd;
 	});
-	const listDiv = document.getElementById('listDiv');
+	const pairingsDiv = document.getElementById('pairingsDiv');
 	//
 	//	The table of games consists of an outer table with the header and an
 	//	inner table with the game list, which is embedded in a scrolling div.
@@ -363,9 +509,10 @@ function ShowPairings(section,rp)
 		</tr>`;
 		pTable += resultLine;
 	}
-	listDiv.innerHTML = `${pTable}
+	pairingsDiv.innerHTML = `${pTable}
 			</tbody>
 		</table>`;
+	pairingsDiv.style.display = 'block';
 }
 
 function loadZip(file) {
@@ -400,7 +547,13 @@ function loadZip(file) {
 	<div id="controlsDiv">
 	</div>
 
-	<div id="listDiv" style="height: 60%;">
+	<div id="pairingsDiv" style="height: 60%; display:none">
+	</div>
+
+	<div id="standingsDiv" style="height: 60%; display:none">
+	</div>
+
+	<div id="wallChartDiv" style="height: 60%; display:none">
 	</div>
 
 	<script>
