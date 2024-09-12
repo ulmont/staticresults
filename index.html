@@ -230,11 +230,11 @@ function SetupWallChart(section)
 				console.log(JSON.stringify(game));
 				if (game.p1 === player.tnmt.playerNo) {
 					opponentNum = game.p2;
-					result = GameResultP1(game);
+					result = GameResultP1(game.result);
 					colorNum = game.color1;
 				} else {
 					opponentNum = game.p1;
-					result = GameResultP2(game);
+					result = GameResultP2(game.result);
 					colorNum = game.color2;
 				}
 				if (colorNum === 1) {
