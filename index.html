@@ -213,6 +213,7 @@ function sortPlayersByScoreTiebreaks(a, b)
 
 	const aMM = calcModifiedMedian(a);
 	const bMM = calcModifiedMedian(b);
+	console.log(aMM + ' for ' + a.base.name + ' vs ' + bMM + ' for ' + b.base.name);
 	if (aMM > bMM) {
 		return -1; // higher sorts first
 	}
