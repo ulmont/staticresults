@@ -195,11 +195,11 @@ function sortPlayersByPairNo(a, b)
 
 function sortPlayersByScoreTiebreaks(a, b)
 {
-	if (a.tnmt.score > b.tnmt.score) {
+	if (a.tnmt.pts > b.tnmt.pts) {
 		return -1; // higher score sorts first
 	}
 
-	if (a.tnmt.score < b.tnmt.score) {
+	if (a.tnmt.pts < b.tnmt.pts) {
 		return 1; // lower score sorts last
 	}
 
