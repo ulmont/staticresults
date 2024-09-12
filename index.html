@@ -262,7 +262,7 @@ function SetupWallChart(section)
 				if (opponentNum !== -1) {
 					opponent = players[opponentNum];
 					pTable = `${pTable}
-						<td class="Board">${color}&nbsp;&nbsp${opponent.pairno}<br />${score}</td>`;
+						<td class="Board">${color}&nbsp;&nbsp${opponent.tnmt.pairno}<br />${score}</td>`;
 				} else {
 					pTable = `${pTable}
 						<td class="Board">Bye}<br />${score}</td>`;
