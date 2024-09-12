@@ -239,7 +239,7 @@ function calcModifiedMedian(player) {
 
 	// ok, first calculate the final scores of opponents.
 	let opponentScores = [];
-	player.games.forEach(gameNum => {
+	player.tnmt.games.forEach(gameNum => {
 		if (gameNum !== -1) {
 			const game = games[gameNum];
 			// figure out the opponent
@@ -310,7 +310,7 @@ function calcMMAdjustedScore(player)
 {
 	// 	These scores are adjusted for unplayed games, which count a half point each, regardless of whether they were byes, forfeits, or simply rounds not played after an opponent withdrew.
 	let score = 0.0;
-	player.games.forEach(gameNum => {
+	player.tnmt.games.forEach(gameNum => {
 		if (gameNum !== -1) {
 			const game = games[gameNum];
 			if (game.p1 === player.tnmt.playerNo) {
