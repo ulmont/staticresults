@@ -208,10 +208,10 @@ function SetupWallChart(section)
 				<th class="Number">#</th>
 				<th class="Name">Name<br />Rating / ID</th>`;
 	for (let i = 0 ; i < section.roundsPaired ; i++) {
-		pTable = `${ptable}
+		pTable = `${pTable}
 				<th class="Score">Rd ${i+1}</th>`;
 	}
-	pTable = `${ptable}
+	pTable = `${pTable}
 			<th class="Score">Total</th>
 		</tr>
 	</thead>
@@ -219,7 +219,7 @@ function SetupWallChart(section)
 
 	for (const [i, player] of playersByPairno.entries()) {
 		let score = 0.0;
-		pTable = `${ptable}
+		pTable = `${pTable}
 			<tr>
 				<td class="Number">${player.tnmt.pairNo}</td>
 				<td class="Name">${player.base.name}<br />${player.base.rating}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${player.base.id}</td>`;
@@ -258,10 +258,10 @@ function SetupWallChart(section)
 					break;
 			}
 
-			pTable = `${ptable}
+			pTable = `${pTable}
 					<td class="Board">${color} ${opponentNum}<br />${score}</td>`;
 		}
-		pTable = `${ptable}
+		pTable = `${pTable}
 			<td class="Score">${score}</td>
 		</tr>`;
 	}
