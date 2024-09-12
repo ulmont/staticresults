@@ -173,7 +173,6 @@ function onSectionChange()
 			// get the players for this section, sorted by scores and then Rule 34E tiebreaks
 			const playersByScoreTiebreaks = sectionPlayers.sort(sortPlayersByScoreTiebreaks);
 			SetupWallChart(section, sortPlayersByScoreTiebreaks);
-			SetupWallChart(section);
 			break;
 		default:
 			SetupRounds(section.roundsPaired);
