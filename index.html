@@ -223,7 +223,7 @@ function SetupWallChart(section)
 			<tr>
 				<td class="Number">${player.tnmt.pairNo}</td>
 				<td class="Name">${player.base.name}<br />${player.base.rating}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${player.base.id}</td>`;
-		for (const [j, game] of player.tnmt.games) { 
+		for (const [j, game] of player.tnmt.games.entries()) { 
 			let opponentNum, result, color;
 			if (game.p1 === player.tnmt.playerNo) {
 				color = 'W';
