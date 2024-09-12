@@ -227,7 +227,7 @@ function sortPlayersByScoreTiebreaks(a, b)
 
 function calcModifiedMedian(player) {
 	const section = getSection();
-	
+
 	/*34E1. Modified Median
 	The Median system, also known as the Harkness system for inventor Kenneth Harkness, evaluates the strength of a player’s opposition by summing the final scores of his or her opponents and then discarding the highest and lowest of these scores.
 
@@ -263,7 +263,7 @@ function calcModifiedMedian(player) {
 	console.log('opponents scores pre-slice: ' + opponentScores);
 
 	const even = section.roundsPaired / 2.0; // (an even score is equal to exactly one half of the maximum possible score)
-	if (player.tmnt.pts === even) {
+	if (player.tnmt.pts === even) {
 		console.log(player.tnmt.pts + ' in ' + section.roundsPaired + 'is an even score');
 		// players who tie with even scores (an even score is equal to exactly one half of the maximum possible score), have the highest- and lowest-scoring opponents’ scores excluded.
 		// but don't bother after rounds 1-2 or if somehow we don't have 3 scores listed
