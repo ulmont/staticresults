@@ -226,16 +226,21 @@ function SetupWallChart(section)
 		for (const [j, gameNum] of player.tnmt.games.entries()) { 
 			if (gameNum !== -1) {
 				const game = games[gameNum];
-				let opponentNum, result, color;
+				let opponentNum, result, color, colorNum;
 				console.log(JSON.stringify(game));
 				if (game.p1 === player.tnmt.playerNo) {
-					color = 'W';
-					opponentNum = GameRightPlayer(game);
-					result = GameLeftResult(game);
+					opponentNum = game.p2;
+					result = GameResultP1(game);
+					colorNum = game.color1;
 				} else {
-					color = 'B'
-					opponentNum = GameLeftPlayer(game);
-					result = GameRightResult(game);
+					opponentNum = game.p1;
+					result = GameResultP2(game);
+					colorNum = game.color2;
+				}
+				if (colorNum === 1) {
+					color = 'W';
+				} else {
+					color = 'B';
 				}
 				switch (result) {
 					case '0.0': // deliberate fallthrough
