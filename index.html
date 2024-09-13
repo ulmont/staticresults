@@ -816,13 +816,13 @@ function loadSJSON(file) {
 	.catch((e) => console.error(e));
 }
 
-function loadPTOZ(file) {
+async function loadPTOZ(file) {
 	let ptoz;
-	
+
 	//
 	//	getBinaryContent takes (path,callback) where callback is function(err,data)
 	//
-	JSZipUtils.getBinaryContent(file,function(err,data) {
+	await JSZipUtils.getBinaryContent(file,function(err,data) {
 		if (err) throw err;
 		JSZip.loadAsync(data)
 		.then(function(zip) {
@@ -860,7 +860,7 @@ function loadPTOZ(file) {
 	</div>
 
 	<script>
-	const ptoz = loadPTOZ("tournament.ptoz"); // WinTD tournament goes here
+	const ptoz = await loadPTOZ("tournament.ptoz"); // WinTD tournament goes here
 	loadSJSON("tournament.sjson"); // SwissSys tournament goes here
 	TestShow(ptoz); // for now just show the WinTD tournament
 	</script>
