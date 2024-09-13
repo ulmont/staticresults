@@ -816,13 +816,14 @@ function loadSJSON(file) {
 	.catch((e) => console.error(e));
 }
 
-async function loadPTOZ(file) {
+function loadPTOZ(file) 
+{
 	let ptoz;
 
 	//
 	//	getBinaryContent takes (path,callback) where callback is function(err,data)
 	//
-	await JSZipUtils.getBinaryContent(file,function(err,data) {
+	JSZipUtils.getBinaryContent(file,function(err,data) {
 		if (err) throw err;
 		JSZip.loadAsync(data)
 		.then(function(zip) {
@@ -838,6 +839,10 @@ async function loadPTOZ(file) {
 			.catch((e) => console.error(e));
 		}).catch((e) => console.error(e));
 	});
+	
+	// busy wait here and see how it works out
+	while (ptoz === undefined) {
+	}
 
 	return ptoz;
 }
