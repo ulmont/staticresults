@@ -156,7 +156,6 @@ function getSection()
 function onSectionChange()
 {
 	const section = getSection();
-	const sectionPlayers = players.filter((player) => player.tnmt.sectionID === section.id);
 
 	let chartsDD = document.getElementById("chartsDD");
 	let chartsValue = chartsDD.options[chartsDD.selectedIndex].value;
@@ -165,14 +164,10 @@ function onSectionChange()
 			SetupRounds(section.roundsPaired);
 			break;
 		case 'Wall Chart':
-			// get the players for this section, sorted by the pairing numbers
-			const playersByPairno = sectionPlayers.sort(sortPlayersByPairNo);
-			SetupWallChart(section, playersByPairno);
+			SetupWallChart(section, sortPlayersByPairNo, getPlayerPairingNumber);
 			break;
 		case 'Standings':
-			// get the players for this section, sorted by scores and then Rule 34E tiebreaks
-			const playersByScoreTiebreaks = sectionPlayers.sort(sortPlayersByScoreTiebreaks);
-			SetupWallChart(section, playersByScoreTiebreaks);
+			SetupWallChart(section, sortPlayersByScoreTiebreaks, getPlayerIndex);
 			break;
 		default:
 			SetupRounds(section.roundsPaired);
@@ -359,8 +354,21 @@ function calcMMAdjustedScore(player)
 	return score;
 }
 
-function SetupWallChart(section, playersToShow) 
+function getPlayerPairingNumber(player, sectionPlayers) 
 {
+	return player.tnmt.pairno;
+}
+
+function getPlayerIndex(player, sectionPlayers)
+{
+	return (sectionPlayers.findIndex(sectionPlayers) + 1);
+}
+
+function SetupWallChart(section, sortAlgo, playerNumAlgo) 
+{
+	const sectionPlayers = players.filter((player) => player.tnmt.sectionID === section.id);
+	const playersToShow = sectionPlayers.sort(sortAlgo);
+
 	// hide the the pairings table
 	document.getElementById('pairingsDiv').style.display = 'none';
 	// and also hide the round box
@@ -393,7 +401,7 @@ function SetupWallChart(section, playersToShow)
 		let score = 0.0;
 		pTable = `${pTable}
 			<tr>
-				<td class="Number">${i + 1}</td>
+				<td class="Number">${playerNumAlgo(player, sectionPlayers)}</td>
 				<td class="Name">${player.base.name}<br />${player.base.rating}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${player.base.id}</td>`;
 		for (const [j, gameNum] of player.tnmt.games.entries()) { 
 			if (gameNum !== -1) {
@@ -434,7 +442,7 @@ function SetupWallChart(section, playersToShow)
 				if (opponentNum !== -1) {
 					opponent = players[opponentNum];
 					pTable = `${pTable}
-						<td class="Name">${color}&nbsp;&nbsp${opponent.tnmt.pairno}<br />${score}</td>`;
+						<td class="Name">${color}&nbsp;&nbsp${playerNumAlgo(opponent, sectionPlayers)}<br />${score}</td>`;
 				} else {
 					pTable = `${pTable}
 						<td class="Name">Bye<br />${score}</td>`;
