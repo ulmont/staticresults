@@ -408,7 +408,13 @@ function SetupWallChart(section, sortAlgo, playerNumAlgo)
 			<tr>
 				<td class="Number">${playerNumAlgo(player, sectionPlayers)}</td>
 				<td class="Name">${player.base.name}<br />${player.base.rating}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${player.base.id}</td>`;
-		for (const [j, gameNum] of player.tnmt.games.entries()) { 
+		for (let j = 0; j < section.roundsPaired; j++) {
+			let gameNum;
+			if (j >= player.tnmt.games) {
+				gameNum = -1;
+			} else {
+				gameNum = player.tnmt.games[j];
+			}
 			if (gameNum !== -1) {
 				const game = games[gameNum];
 				let opponentNum, result, color, colorNum;
@@ -452,6 +458,9 @@ function SetupWallChart(section, sortAlgo, playerNumAlgo)
 					pTable = `${pTable}
 						<td class="Name">Bye<br />${score}</td>`;
 				}
+			} else {
+				pTable = `${pTable}
+					<td class="Name">Bye<br />${score}</td>`;
 			}
 		}
 		pTable = `${pTable}
