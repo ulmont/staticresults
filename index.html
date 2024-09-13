@@ -807,7 +807,16 @@ function ShowPairings(section,rp)
 	pairingsDiv.style.display = 'block';
 }
 
-function loadZip(file) {
+function loadSJSON(file) {
+	fetch('file')
+	.then((res) => res.text())
+	.then((jsonText) => {
+		sjson = JSON.parse(jsonText);
+	})
+	.catch((e) => console.error(e));
+}
+
+function loadPTOZ(file) {
 	//
 	//	getBinaryContent takes (path,callback) where callback is function(err,data)
 	//
@@ -823,11 +832,12 @@ function loadZip(file) {
 			zip.file("Json").async("string")
 			.then(function(jsonText) {		
 				ptoz = JSON.parse(jsonText);
-				TestShow(ptoz);
-			});
-		});
+			})
+			.catch((e) => console.error(e));
+		}).catch((e) => console.error(e));
 	});
 }
+
 </script>
 </head>
 <body>
@@ -846,7 +856,9 @@ function loadZip(file) {
 	</div>
 
 	<script>
-	loadZip("tournament.ptoz"); // tournament goes here
+	loadPTOZ("tournament.ptoz"); // WinTD tournament goes here
+	loadSJSON("tournament.sjson"); // SwissSys tournament goes here
+	TestShow(ptoz); // for now just show the WinTD tournament
 	</script>
 </body>
 </html>
