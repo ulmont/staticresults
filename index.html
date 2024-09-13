@@ -492,7 +492,7 @@ function SetupWallChart(section, sortAlgo, playerNumAlgo, colorStringAlgo)
 				if (opponentNum !== -1) {
 					opponent = players[opponentNum];
 					pTable = `${pTable}
-						<td class="Name">${color}&nbsp;&nbsp${playerNumAlgo(opponent, sectionPlayers)}<br />${score}</td>`;
+						<td class="Name">${colorString}&nbsp;&nbsp${playerNumAlgo(opponent, sectionPlayers)}<br />${score}</td>`;
 				} else {
 					pTable = `${pTable}
 						<td class="Name">${byeType}<br />${score}</td>`;
