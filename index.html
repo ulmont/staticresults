@@ -282,7 +282,7 @@ function calcModifiedMedian(player)
 
 	const even = section.roundsPaired / 2.0; // (an even score is equal to exactly one half of the maximum possible score)
 	if (player.tnmt.pts === even) {
-		console.log(player.tnmt.pts + ' in ' + section.roundsPaired + ' is an even score');
+		// console.log(player.tnmt.pts + ' in ' + section.roundsPaired + ' is an even score');
 		// players who tie with even scores (an even score is equal to exactly one half of the maximum possible score), have the highest- and lowest-scoring opponents’ scores excluded.
 		// but don't bother after rounds 1-2 or if somehow we don't have 3 scores listed
 		if ((section.roundsPaired > 2) && (opponentScores.length > 2)) {
@@ -294,7 +294,7 @@ function calcModifiedMedian(player)
 			opponentScores = opponentScores.slice(1, -1);
 		}
 	} else if (player.tnmt.pts > even) {
-		console.log(player.tnmt.pts + ' in ' + section.roundsPaired + ' is a plus score');
+		// console.log(player.tnmt.pts + ' in ' + section.roundsPaired + ' is a plus score');
 		// the lowest-scoring opponent’s score is discarded for tied players with plus scores
 		// but don't bother after rounds 1-2 or if somehow we don't have 3 scores listed
 		if ((section.roundsPaired > 2) && (opponentScores.length > 2)) {
@@ -306,7 +306,7 @@ function calcModifiedMedian(player)
 			opponentScores.shift();
 		}
 	} else {
-		console.log(player.tnmt.pts + ' in ' + section.roundsPaired + ' is a minus score');
+		// console.log(player.tnmt.pts + ' in ' + section.roundsPaired + ' is a minus score');
 		// the highest-scoring for tied players with minus scores
 		// but don't bother after rounds 1-2 or if somehow we don't have 3 scores listed
 		if ((section.roundsPaired > 2) && (opponentScores.length > 2)) {
