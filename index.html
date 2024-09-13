@@ -823,7 +823,6 @@ function loadTournaments(ptozFile, swissSysFile)
 			zip.file("Json").async("string")
 			.then(function(jsonText) {		
 				ptoz = JSON.parse(jsonText);
-				loadSJSON()
 				fetch(swissSysFile)
 					.then((res) => res.text())
 					.then((jsonText) => {
