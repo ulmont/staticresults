@@ -198,6 +198,8 @@ function sortPlayersByScoreTiebreaks(a, b)
 		return 1; // lower score sorts last
 	}
 
+	console.log('Score: ' + a.tnmt.pts + ' is equal for ' + a.base.name + ' and ' + b.base.name + ' moving to Modified Median');
+
 	/* 34E
 	Unless a different method has been posted or announced before the start of the first round, players will expect the following sequence of tiebreak systems to be employed as the first four tiebreakers. 
 	1. Modified Median
@@ -208,7 +210,7 @@ function sortPlayersByScoreTiebreaks(a, b)
 
 	const aMM = calcModifiedMedian(a);
 	const bMM = calcModifiedMedian(b);
-	console.log(aMM + ' for ' + a.base.name + ' vs ' + bMM + ' for ' + b.base.name);
+	// console.log('Modified Median: ' + aMM + ' for ' + a.base.name + ' vs ' + bMM + ' for ' + b.base.name);
 	if (aMM > bMM) {
 		return -1; // higher sorts first
 	}
@@ -217,10 +219,51 @@ function sortPlayersByScoreTiebreaks(a, b)
 		return 1; // lower sorts last
 	}
 
+	console.log('Modified Median: ' + aMM + ' is equal for ' + a.base.name + ' and ' + b.base.name + ' moving to Solkoff');
+	const aS = calcSolkoff(a);
+	const bS = calcSolkoff(b);
+	console.log('Solkoff: ' + aS + ' for ' + a.base.name + ' vs ' + bS + ' for ' + b.base.name);
+	if (aS > bS) {
+		return -1; // higher sorts first
+	}
+
+	if (aS < bS) {
+		return 1; // lower sorts last
+	}
+
+	console.log('Solkoff: ' + aS + ' is equal for ' + a.base.name + ' and ' + b.base.name + ' moving to Cumulative');
+	// Cumulative
+
+	// Cumulative of Opposition
+
 	return 0;
 }
 
-function calcModifiedMedian(player) {
+function calcSolkoff(player) 
+{
+
+	/*34E2. Solkoff.
+	The Solkoff system is the same as the Median system (34E1) except that no opponents’ scores are discarded.
+	The Median system, also known as the Harkness system for inventor Kenneth Harkness, evaluates the strength of a player’s opposition by summing the final scores of his or her opponents and then discarding the highest and lowest of these scores.
+	...
+	These scores are adjusted for unplayed games, which count a half point each, regardless of whether they were byes, forfeits, or simply rounds not played after an opponent withdrew. So an opponent who won the first two games, lost the third, withdrew and did not play rounds four or five would have an adjusted score of 3 points (1+1+0+0.5+0.5 = 3). These adjusted scores are used only to calculate the opponent’s tiebreaks. The player’s own score is not changed.
+
+	If the player involved in the tie has any unplayed games, they count as opponents with adjusted scores of 0.
+	*/
+	let opponentScores = calcOpponentScores(player);
+	// console.log('opponents scores: ' + opponentScores);
+
+	// The Solkoff system is the same as the Median system (34E1) except that no opponents’ scores are discarded.
+	let s = 0.0;
+	opponentScores.forEach(score => {
+		s = s + score;
+	});
+
+	return s;
+}
+
+function calcModifiedMedian(player) 
+{
 	const section = getSection();
 
 	/*34E1. Modified Median
@@ -234,33 +277,8 @@ function calcModifiedMedian(player) {
 
 	If the player involved in the tie has any unplayed games, they count as opponents with adjusted scores of 0.*/
 
-	// ok, first calculate the final scores of opponents.
-	let opponentScores = [];
-	player.tnmt.games.forEach(gameNum => {
-		if (gameNum !== -1) {
-			const game = games[gameNum];
-			// figure out the opponent
-			let opponentNum;
-			if (game.p1 === player.tnmt.playerNo) {
-				opponentNum = game.p2;
-			} else {
-				opponentNum = game.p1;
-			}
-			if (opponentNum !== -1) {
-				const oppScore = calcMMAdjustedScore(players[opponentNum]);
-				opponentScores.push(oppScore);
-			} else {
-				opponentScores.push(0); // unplayed game, counts as opponent with a 0 score.  This is implicitly assuming that these guys are eligible to be dropped later
-			}
-		} else {
-			opponentScores.push(0); // unplayed game, counts as opponent with a 0 score.  This is implicitly assuming that these guys are eligible to be dropped later
-		}
-	});
-	// sort scores low to high
-	opponentScores.sort((a, b) => {
-		return a - b;
-	});
-	console.log('opponents scores pre-slice: ' + opponentScores);
+	let opponentScores = calcOpponentScores(player);
+	// console.log('opponents scores pre-slice: ' + opponentScores);
 
 	const even = section.roundsPaired / 2.0; // (an even score is equal to exactly one half of the maximum possible score)
 	if (player.tnmt.pts === even) {
@@ -301,7 +319,7 @@ function calcModifiedMedian(player) {
 		}
 	}
 
-	console.log('opponents scores post-slice: ' + opponentScores);
+	// console.log('opponents scores post-slice: ' + opponentScores);
 	let mm = 0.0;
 	opponentScores.forEach(score => {
 		mm = mm + score;
@@ -353,6 +371,38 @@ function calcMMAdjustedScore(player)
 	});
 
 	return score;
+}
+
+function calcOpponentScores(player)
+{
+	let opponentScores = [];
+	player.tnmt.games.forEach(gameNum => {
+		if (gameNum !== -1) {
+			const game = games[gameNum];
+			// figure out the opponent
+			let opponentNum;
+			if (game.p1 === player.tnmt.playerNo) {
+				opponentNum = game.p2;
+			} else {
+				opponentNum = game.p1;
+			}
+			if (opponentNum !== -1) {
+				const oppScore = calcMMAdjustedScore(players[opponentNum]);
+				opponentScores.push(oppScore);
+			} else {
+				opponentScores.push(0); // unplayed game, counts as opponent with a 0 score.  This is implicitly assuming that these guys are eligible to be dropped later
+			}
+		} else {
+			opponentScores.push(0); // unplayed game, counts as opponent with a 0 score.  This is implicitly assuming that these guys are eligible to be dropped later
+		}
+	});
+	// sort scores low to high
+	opponentScores.sort((a, b) => {
+		return a - b;
+	});
+	// console.log('opponents scores pre-slice: ' + opponentScores);
+
+	return opponentScores;
 }
 
 function getPlayerPairingNumber(player, sectionPlayers) 
