@@ -362,7 +362,7 @@ function getPlayerPairingNumber(player, sectionPlayers)
 function getPlayerIndex(player, sectionPlayers)
 {
 	const index = sectionPlayers.findIndex((element) => {
-		return (element.tnmt.pairno = player.tnmt.pairno);
+		return (element.tnmt.pairno === player.tnmt.pairno);
 	});
 	
 	return (index + 1);
