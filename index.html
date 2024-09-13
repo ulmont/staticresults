@@ -410,6 +410,7 @@ function SetupWallChart(section, sortAlgo, playerNumAlgo)
 				<td class="Name">${player.base.name}<br />${player.base.rating}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${player.base.id}</td>`;
 		for (let j = 0; j < section.roundsPaired; j++) {
 			let gameNum;
+			let byeType;
 			if (j >= player.tnmt.games.length) {
 				gameNum = -1;
 			} else {
@@ -437,13 +438,16 @@ function SetupWallChart(section, sortAlgo, playerNumAlgo)
 					case '0.0': // deliberate fallthrough
 					case '0.0F': 
 						score += 0.0;
+						byeType = 'Zero';
 						break;
 					case '0.5':
 						score += 0.5;
+						byeType = 'Half';
 						break;
 					case '1.0':
 					case '1.0F': // deliberate fallthrough
 						score += 1.0;
+						byeType = 'Full';
 						break;
 					default:
 						console.log('UNKNOWN RESULT: ' + result);
@@ -456,11 +460,11 @@ function SetupWallChart(section, sortAlgo, playerNumAlgo)
 						<td class="Name">${color}&nbsp;&nbsp${playerNumAlgo(opponent, sectionPlayers)}<br />${score}</td>`;
 				} else {
 					pTable = `${pTable}
-						<td class="Name">Bye<br />${score}</td>`;
+						<td class="Name">${byeType}<br />${score}</td>`;
 				}
 			} else {
 				pTable = `${pTable}
-					<td class="Name">Bye<br />${score}</td>`;
+					<td class="Name">Zero<br />${score}</td>`;
 			}
 		}
 		pTable = `${pTable}
