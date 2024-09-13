@@ -807,23 +807,11 @@ function ShowPairings(section,rp)
 	pairingsDiv.style.display = 'block';
 }
 
-function loadSJSON(file) {
-	fetch('file')
-	.then((res) => res.text())
-	.then((jsonText) => {
-		sjson = JSON.parse(jsonText);
-	})
-	.catch((e) => console.error(e));
-}
-
-function loadPTOZ(file) 
+function loadTournaments(ptozFile, swissSysFile)
 {
-	let ptoz;
-
-	//
 	//	getBinaryContent takes (path,callback) where callback is function(err,data)
 	//
-	JSZipUtils.getBinaryContent(file,function(err,data) {
+	JSZipUtils.getBinaryContent(ptozFile, function(err,data) {
 		if (err) throw err;
 		JSZip.loadAsync(data)
 		.then(function(zip) {
@@ -835,16 +823,18 @@ function loadPTOZ(file)
 			zip.file("Json").async("string")
 			.then(function(jsonText) {		
 				ptoz = JSON.parse(jsonText);
+				loadSJSON()
+				fetch(swissSysFile)
+					.then((res) => res.text())
+					.then((jsonText) => {
+						sjson = JSON.parse(jsonText);
+						TestShow(ptoz); // for now just show the WinTD tournament
+					})
+					.catch((e) => console.error(e));
 			})
 			.catch((e) => console.error(e));
 		}).catch((e) => console.error(e));
 	});
-	
-	// busy wait here and see how it works out
-	while (ptoz === undefined) {
-	}
-
-	return ptoz;
 }
 
 </script>
@@ -865,9 +855,7 @@ function loadPTOZ(file)
 	</div>
 
 	<script>
-	const ptoz = loadPTOZ("tournament.ptoz"); // WinTD tournament goes here
-	loadSJSON("tournament.sjson"); // SwissSys tournament goes here
-	TestShow(ptoz); // for now just show the WinTD tournament
+	loadTournaments('tournament.ptoz', 'tournament.sjson');
 	</script>
 </body>
 </html>
