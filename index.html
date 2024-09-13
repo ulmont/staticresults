@@ -164,10 +164,10 @@ function onSectionChange()
 			SetupRounds(section.roundsPaired);
 			break;
 		case 'Wall Chart':
-			SetupWallChart(section, sortPlayersByPairNo, getPlayerPairingNumber);
+			SetupWallChart(section, sortPlayersByPairNo, getPlayerPairingNumber, getColorString);
 			break;
 		case 'Standings':
-			SetupWallChart(section, sortPlayersByScoreTiebreaks, getPlayerIndex);
+			SetupWallChart(section, sortPlayersByScoreTiebreaks, getPlayerIndex, getResultString);
 			break;
 		default:
 			SetupRounds(section.roundsPaired);
@@ -369,7 +369,41 @@ function getPlayerIndex(player, sectionPlayers)
 	return (index + 1);
 }
 
-function SetupWallChart(section, sortAlgo, playerNumAlgo) 
+function getColorString(color, result)
+{
+	return color;
+}
+
+function getResultString(color, result)
+{
+	/*
+	W - Win
+	L - Loss
+	D - Draw
+	B - Full Point Bye
+	H - Half Point Bye
+	F - Forfeit Loss
+	X - Forfeit Win
+	Z - Forfeit Draw
+	U - Not Paired (also Zero Point Bye)
+	*/
+	switch (result) {
+		case '0.0': 
+			return 'L';
+		case '0.0F':
+			return 'F'; 
+		case '0.5':
+			return 'D';
+		case '1.0':
+			return 'W';
+		case '1.0F':
+			return 'X';
+		default:
+			return 'UN';
+	}
+}
+
+function SetupWallChart(section, sortAlgo, playerNumAlgo, colorStringAlgo) 
 {
 	const sectionPlayers = players.filter((player) => player.tnmt.sectionID === section.id);
 	const playersToShow = sectionPlayers.sort(sortAlgo);
@@ -438,21 +472,22 @@ function SetupWallChart(section, sortAlgo, playerNumAlgo)
 					case '0.0': // deliberate fallthrough
 					case '0.0F': 
 						score += 0.0;
-						byeType = 'Zero';
+						byeType = 'Z';
 						break;
 					case '0.5':
 						score += 0.5;
-						byeType = 'Half';
+						byeType = 'H';
 						break;
 					case '1.0':
 					case '1.0F': // deliberate fallthrough
 						score += 1.0;
-						byeType = 'Full';
+						byeType = 'B';
 						break;
 					default:
 						console.log('UNKNOWN RESULT: ' + result);
 						break;
 				}
+				const colorString = colorStringAlgo(color, result);
 				let opponent;
 				if (opponentNum !== -1) {
 					opponent = players[opponentNum];
@@ -464,7 +499,7 @@ function SetupWallChart(section, sortAlgo, playerNumAlgo)
 				}
 			} else {
 				pTable = `${pTable}
-					<td class="Name">Zero<br />${score}</td>`;
+					<td class="Name">U<br />${score}</td>`;
 			}
 		}
 		pTable = `${pTable}
