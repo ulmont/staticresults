@@ -410,7 +410,7 @@ function SetupWallChart(section, sortAlgo, playerNumAlgo)
 				<td class="Name">${player.base.name}<br />${player.base.rating}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${player.base.id}</td>`;
 		for (let j = 0; j < section.roundsPaired; j++) {
 			let gameNum;
-			if (j >= player.tnmt.games) {
+			if (j >= player.tnmt.games.length) {
 				gameNum = -1;
 			} else {
 				gameNum = player.tnmt.games[j];
