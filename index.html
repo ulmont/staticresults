@@ -317,6 +317,7 @@ function calcMMAdjustedScore(player)
 	player.tnmt.games.forEach(gameNum => {
 		if (gameNum !== -1) {
 			const game = games[gameNum];
+			const result = game.result;
 			if (game.p1 === player.tnmt.playerNo) {
 				if (result == 0) {
 					score = score + 0.5;
