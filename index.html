@@ -361,7 +361,11 @@ function getPlayerPairingNumber(player, sectionPlayers)
 
 function getPlayerIndex(player, sectionPlayers)
 {
-	return (sectionPlayers.findIndex(sectionPlayers) + 1);
+	const index = sectionPlayers.findIndex((element) => {
+		return (element.tnmt.pairno = player.tnmt.pairno);
+	});
+	
+	return (index + 1);
 }
 
 function SetupWallChart(section, sortAlgo, playerNumAlgo) 
