@@ -640,7 +640,7 @@ function PlayerFormat(pnumber)
 {
 	if (pnumber==-1)
 		return "Bye";
-	return players[pnumber]["base"]["name"];
+	return vTable.getPlayers(tourney)[pnumber]["base"]["name"];
 }
 
 function ShowPairingsPTOZ(section,rp)
