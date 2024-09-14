@@ -332,26 +332,16 @@ function calcModifiedMedian(player)
 function calcOpponentScores(player)
 {
 	let opponentScores = [];
-	player.tnmt.games.forEach(gameNum => {
-		if (gameNum !== -1) {
-			const game = games[gameNum];
-			// figure out the opponent
-			let opponentNum;
-			if (game.p1 === player.tnmt.playerNo) {
-				opponentNum = game.p2;
-			} else {
-				opponentNum = game.p1;
-			}
-			if (opponentNum !== -1) {
-				const oppScore = vTable.calcMMAdjustedScore(players[opponentNum]);
-				opponentScores.push(oppScore);
-			} else {
-				opponentScores.push(0); // unplayed game, counts as opponent with a 0 score.  This is implicitly assuming that these guys are eligible to be dropped later
-			}
+	const opponents = vTable.getOpponents(player);
+	opponents.forEach(opponent => {
+		if (opponent !== null) {
+			const oppScore = vTable.calcMMAdjustedScore(opponent);
+			opponentScores.push(oppScore);
 		} else {
-			opponentScores.push(0); // unplayed game, counts as opponent with a 0 score.  This is implicitly assuming that these guys are eligible to be dropped later
+			opponentScores.push(0); // unplayed game, counts as a 0 score.
 		}
 	});
+
 	// sort scores low to high
 	opponentScores.sort((a, b) => {
 		return a - b;
@@ -444,7 +434,7 @@ function SetupWallChart(section, sortAlgo, playerNumAlgo, colorStringAlgo)
 				<td class="Number">${playerNumAlgo(player, sectionPlayers)}</td>
 				<td class="Name">${vTable.getPlayerName(player)}<br />${vTable.getPlayerRating(player)}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${vTable.getPlayerId(player)}</td>`;
 		for (let j = 0; j < vTable.getSectionRoundsPaired(section); j++) {
-			let [roundScore, colorString, playerNum, byeType, isBye] = vTable.calcScoreColorStringPlayerNumByeTypeIsBye(j, section, sectionPlayers, player);
+			let [roundScore, colorString, playerNum, byeType, isBye] = vTable.calcScoreColorStringPlayerNumByeTypeIsBye(j, section, sectionPlayers, player, playerNumAlgo, colorStringAlgo);
 			score = score + roundScore;
 			if (!isBye) { 
 				pTable = `${pTable}
@@ -744,17 +734,17 @@ function loadTournaments(ptozFile, swissSysFile)
 function getVTablePTOZ()
 {
 	let vTable = {};
-	vTable.calcScoreColorStringPlayerNumByeTypeIsBye = function(j, section, sectionPlayers, player) {
+	vTable.calcScoreColorStringPlayerNumByeTypeIsBye = function(j, section, sectionPlayers, player, playerNumAlgo, colorStringAlgo) {
 		// j is just a zero-based round number, so round = j + 1;
 		let gameNum, colorString, playerNum, byeType, isBye;
 		let score = 0.0;
 		if (j >= vTable.getMaxGames(player)) { 
 			gameNum = -1;
 		} else {
-			gameNum = vTable.getPlayerGameNum(player, j + 1);	
+			gameNum = player.tnmt.games[j];
 		}
 		if (gameNum !== -1) {
-			const game = vTable.getPlayerGame(player, gameNum);
+			const game = vTable.getPlayerGame(player, j + 1);
 
 			let opponentNum, result, color, colorNum;
 			console.log(JSON.stringify(game));
@@ -792,8 +782,8 @@ function getVTablePTOZ()
 					break;
 			}
 			colorString = colorStringAlgo(color, result);
-			let playerNum;
 			if (opponentNum !== -1) {
+				const opponent = vTable.getPlayers(tourney)[opponentNum];
 				playerNum = playerNumAlgo(opponent, sectionPlayers);
 			} else {
 				isBye = true;
@@ -811,7 +801,7 @@ function getVTablePTOZ()
 		let score = 0.0;
 		player.tnmt.games.forEach(gameNum => {
 			if (gameNum !== -1) {
-				const game = games[gameNum];
+				const game = vTable.getGames(tourney)[gameNum];
 				const result = game.result;
 				if (game.p1 === player.tnmt.playerNo) {
 					if (result == 0) {
@@ -855,14 +845,37 @@ function getVTablePTOZ()
 	vTable.getGames = function(ptoz) {
 		return ptoz.games;
 	}
-	vTable.getMaxGames = function (player) {
+	vTable.getMaxGames = function(player) {
 		return player.tnmt.games.length;
+	}
+	vTable.getOpponents = function(player) {
+		let opponents = [];
+		player.tnmt.games.forEach(gameNum => {
+			if (gameNum !== -1) {
+				const game = vTable.getGames(tourney)[gameNum];
+				// figure out the opponent
+				let opponentNum;
+				if (game.p1 === player.tnmt.playerNo) {
+					opponentNum = game.p2;
+				} else {
+					opponentNum = game.p1;
+				}
+				if (opponentNum !== -1) {
+					opponents.push(vTable.getPlayers(tourney)[opponentNum]);
+				} else {
+					opponents.push(null); // unplayed game, counts as opponent with a 0 score.  This is implicitly assuming that these guys are eligible to be dropped later
+				}
+			} else {
+				opponents.push(null); // unplayed game, counts as opponent with a 0 score.  This is implicitly assuming that these guys are eligible to be dropped later
+			}
+		});
+		return opponents;
 	}
 	vTable.getPlayers = function(ptoz) {
 		return ptoz.players;
 	}
 	vTable.getPlayerGame = function(player, round) {
-		return player.tnmt.games[round - 1];
+		return vTable.getGames(tourney)[player.tnmt.games[round - 1]];
 	}
 	vTable.getPlayerId = function(player) {
 		return player.base.id;
@@ -886,7 +899,8 @@ function getVTablePTOZ()
 		return section.id;
 	}
 	vTable.getSectionPlayers = function(sectionId) {
-		return getPlayers.filter((player) => player.tnmt.sectionID === section.id);
+		const players = vTable.getPlayers(tourney);
+		return players.filter((player) => player.tnmt.sectionID === sectionId);
 	}
 	vTable.getSectionRoundsPaired = function(section) {
 		return section.roundsPaired;

@@ -53,28 +53,25 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip-utils/0.1.0/jszip-utils.min.js"></script>
 <script type="text/javascript">
 
-function TestShow(ptoz)
+var tourney;
+var vTable;
+function TestShow(ptozOrSJSON)
 {
-	SetupControls(ptoz);
-	SetupGlobals(ptoz);
+	tourney = ptozOrSJSON;
+	vTable = tourney.vTable;
+	SetupGlobals();
+	SetupControls();
 }
 
-function SetupGlobals(ptoz) 
+function SetupGlobals() 
 {
 	// update the title etc.
-	document.getElementById('tName').innerText = ptoz.title;
-	document.getElementById('tDate').innerText = ptoz.dates;
+	document.getElementById('tName').innerText = vTable.getTitle(tourney);
+	document.getElementById('tDate').innerText = vTable.getDate(tourney);
 }
 
-function SetupControls(ptoz)
+function SetupControls()
 {
-	//
-	//	Fish the arrays of the main objects out of the JSON PTOZ into globals
-	//
-	sections = ptoz.sections;
-	players = ptoz.players;
-	games = ptoz.games;
-
 	const controlsDiv = document.getElementById('controlsDiv');
 	controlsDiv.innerHTML = "<table class='ControlOuter'><tr><td id='chartsBox'></td><td id='sectionBox'></td><td id='roundsBox'></td></tr></table>";
 
@@ -106,16 +103,17 @@ function onChartsChange()
 function onSectionChange()
 {
 	let section = getSection();
-	SetupRounds(section.roundsPaired);
+	SetupRounds(vTable.getSectionRoundsPaired(section));
 }
 
 function SetupSections()
 {
+	const sections = vTable.getSections(tourney);
 	const sectionsElement = document.getElementById('sectionBox');
 	let sectionBox;
 	if (sections.length === 1) {
 		// special case the single-section (Open, typically) event
-		sectionBox = `Section: ${sections[0].title}`;
+		sectionBox = `Section: ${vTable.getSectionTitle(sections[0])}`;
 		sectionsElement.innerHTML = sectionBox;
 	} else {
 		sectionBox = "Section:<select id='sectionDD' onchange='onSectionChange()'>";
@@ -125,7 +123,7 @@ function SetupSections()
 			//
 			if (sections[i].roundsPaired == 0)
 				continue;
-			const sectionValue = `<option value=${i}>${sections[i].title}</option>`;
+			const sectionValue = `<option value=${i}>${vTable.getSectionTitle(sections[i])}</option>`;
 			sectionBox = `${sectionBox}${sectionValue}`;
 		}
 		sectionBox = `${sectionBox}
@@ -143,6 +141,7 @@ function SetupSections()
 
 function getSection() 
 {
+	const sections = vTable.getSections(tourney);
 	if (sections.length === 1) {
 		return sections[0];
 	} else {
@@ -161,27 +160,27 @@ function onSectionChange()
 	let chartsValue = chartsDD.options[chartsDD.selectedIndex].value;
 	switch (chartsValue) {
 		case 'Pairings':
-			SetupRounds(section.roundsPaired);
+			SetupRounds(vTable.getSectionRoundsPaired(section));
 			break;
 		case 'Wall Chart':
-			SetupWallChart(section, sortPlayersByPairNo, getPlayerPairingNumber, getColorString);
+			SetupWallChart(section, sortPlayersByPairNo, vTable.getPlayerPairNo, getColorString);
 			break;
 		case 'Standings':
 			SetupWallChart(section, sortPlayersByScoreTiebreaks, getPlayerIndex, getResultString);
 			break;
 		default:
-			SetupRounds(section.roundsPaired);
+			SetupRounds(vTable.getSectionRoundsPaired(section));
 			break;
 	}
 }
 
 function sortPlayersByPairNo(a, b)
 {
-	if (a.tnmt.pairno < b.tnmt.pairno) {
+	if (vTable.getPlayerPairNo(a) < vTable.getPlayerPairNo(b)) {
 		return -1; // lower pairing number sorts first
 	}
 
-	if (a.tnmt.pairno > b.tnmt.pairno) {
+	if (vTable.getPlayerPairNo(a) > vTable.getPlayerPairNo(b)) {
 		return 1; // higher pairing number sorts last
 	}
 
@@ -190,15 +189,17 @@ function sortPlayersByPairNo(a, b)
 
 function sortPlayersByScoreTiebreaks(a, b)
 {
-	if (a.tnmt.pts > b.tnmt.pts) {
+	const aPts = vTable.getPlayerPoints(a);
+	const bPts = vTable.getPlayerPoints(b);
+	if (aPts > bPts) {
 		return -1; // higher score sorts first
 	}
 
-	if (a.tnmt.pts < b.tnmt.pts) {
+	if (aPts < bPts) {
 		return 1; // lower score sorts last
 	}
 
-	console.log('Score: ' + a.tnmt.pts + ' is equal for ' + a.base.name + ' and ' + b.base.name + ' moving to Modified Median');
+	console.log('Score: ' + aPts + ' is equal for ' + vTable.getPlayerName(a) + ' and ' + vTable.getPlayerName(b) + ' moving to Modified Median');
 
 	/* 34E
 	Unless a different method has been posted or announced before the start of the first round, players will expect the following sequence of tiebreak systems to be employed as the first four tiebreakers. 
@@ -210,7 +211,7 @@ function sortPlayersByScoreTiebreaks(a, b)
 
 	const aMM = calcModifiedMedian(a);
 	const bMM = calcModifiedMedian(b);
-	// console.log('Modified Median: ' + aMM + ' for ' + a.base.name + ' vs ' + bMM + ' for ' + b.base.name);
+	// console.log('Modified Median: ' + aMM + ' for ' + vTable.getPlayerName(a) + ' vs ' + bMM + ' for ' + vTable.getPlayerName(b));
 	if (aMM > bMM) {
 		return -1; // higher sorts first
 	}
@@ -219,10 +220,10 @@ function sortPlayersByScoreTiebreaks(a, b)
 		return 1; // lower sorts last
 	}
 
-	console.log('Modified Median: ' + aMM + ' is equal for ' + a.base.name + ' and ' + b.base.name + ' moving to Solkoff');
+	console.log('Modified Median: ' + aMM + ' is equal for ' + vTable.getPlayerName(a) + ' and ' + vTable.getPlayerName(b) + ' moving to Solkoff');
 	const aS = calcSolkoff(a);
 	const bS = calcSolkoff(b);
-	console.log('Solkoff: ' + aS + ' for ' + a.base.name + ' vs ' + bS + ' for ' + b.base.name);
+	console.log('Solkoff: ' + aS + ' for ' + vTable.getPlayerName(a) + ' vs ' + bS + ' for ' + vTable.getPlayerName(b));
 	if (aS > bS) {
 		return -1; // higher sorts first
 	}
@@ -231,7 +232,7 @@ function sortPlayersByScoreTiebreaks(a, b)
 		return 1; // lower sorts last
 	}
 
-	console.log('Solkoff: ' + aS + ' is equal for ' + a.base.name + ' and ' + b.base.name + ' moving to Cumulative');
+	console.log('Solkoff: ' + aS + ' is equal for ' + vTable.getPlayerName(a) + ' and ' + vTable.getPlayerName(b) + ' moving to Cumulative');
 	// Cumulative
 
 	// Cumulative of Opposition
@@ -280,41 +281,41 @@ function calcModifiedMedian(player)
 	let opponentScores = calcOpponentScores(player);
 	// console.log('opponents scores pre-slice: ' + opponentScores);
 
-	const even = section.roundsPaired / 2.0; // (an even score is equal to exactly one half of the maximum possible score)
-	if (player.tnmt.pts === even) {
-		// console.log(player.tnmt.pts + ' in ' + section.roundsPaired + ' is an even score');
+	const even = vTable.getSectionRoundsPaired(section) / 2.0; // (an even score is equal to exactly one half of the maximum possible score)
+	if (vTable.getPlayerPoints(player) === even) {
+		// console.log(vTable.getPlayerPoints(player) + ' in ' + vTable.getSectionRoundsPaired(section) + ' is an even score');
 		// players who tie with even scores (an even score is equal to exactly one half of the maximum possible score), have the highest- and lowest-scoring opponents’ scores excluded.
 		// but don't bother after rounds 1-2 or if somehow we don't have 3 scores listed
-		if ((section.roundsPaired > 2) && (opponentScores.length > 2)) {
+		if ((vTable.getSectionRoundsPaired(section) > 2) && (opponentScores.length > 2)) {
 			opponentScores = opponentScores.slice(1, -1);
 		}
 		// For tournaments of nine or more rounds, the top two and bottom two scores are discarded for even-score ties
 		// but don't bother if somehow we don't still have 3 scores listed.
-		if ((section.roundsPaired > 8) && (opponentScores.length > 2)) {
+		if ((vTable.getSectionRoundsPaired(section) > 8) && (opponentScores.length > 2)) {
 			opponentScores = opponentScores.slice(1, -1);
 		}
-	} else if (player.tnmt.pts > even) {
-		// console.log(player.tnmt.pts + ' in ' + section.roundsPaired + ' is a plus score');
+	} else if (vTable.getPlayerPoints(player) > even) {
+		// console.log(vTable.getPlayerPoints(player) + ' in ' + vTable.getSectionRoundsPaired(section) + ' is a plus score');
 		// the lowest-scoring opponent’s score is discarded for tied players with plus scores
 		// but don't bother after rounds 1-2 or if somehow we don't have 3 scores listed
-		if ((section.roundsPaired > 2) && (opponentScores.length > 2)) {
+		if ((vTable.getSectionRoundsPaired(section) > 2) && (opponentScores.length > 2)) {
 			opponentScores.shift();
 		}
 		// the bottom two scores for plus-score ties
 		// but don't bother if somehow we don't still have 3 scores listed.
-		if ((section.roundsPaired > 8) && (opponentScores.length > 2)) {
+		if ((vTable.getSectionRoundsPaired(section) > 8) && (opponentScores.length > 2)) {
 			opponentScores.shift();
 		}
 	} else {
-		// console.log(player.tnmt.pts + ' in ' + section.roundsPaired + ' is a minus score');
+		// console.log(vTable.getPlayerPoints(player) + ' in ' + vTable.getSectionRoundsPaired(section) + ' is a minus score');
 		// the highest-scoring for tied players with minus scores
 		// but don't bother after rounds 1-2 or if somehow we don't have 3 scores listed
-		if ((section.roundsPaired > 2) && (opponentScores.length > 2)) {
+		if ((vTable.getSectionRoundsPaired(section) > 2) && (opponentScores.length > 2)) {
 			opponentScores.pop();
 		}
 		// the top two scores for minus-score ties.
 		// but don't bother if somehow we don't still have 3 scores listed.
-		if ((section.roundsPaired > 8) && (opponentScores.length > 2)) {
+		if ((vTable.getSectionRoundsPaired(section) > 8) && (opponentScores.length > 2)) {
 			opponentScores.pop();
 		}
 	}
@@ -328,74 +329,19 @@ function calcModifiedMedian(player)
 	return mm;
 }
 
-function calcMMAdjustedScore(player)
-{
-	// 	These scores are adjusted for unplayed games, which count a half point each, regardless of whether they were byes, forfeits, or simply rounds not played after an opponent withdrew.
-	let score = 0.0;
-	player.tnmt.games.forEach(gameNum => {
-		if (gameNum !== -1) {
-			const game = games[gameNum];
-			const result = game.result;
-			if (game.p1 === player.tnmt.playerNo) {
-				if (result == 0) {
-					score = score + 0.5;
-				} else if (result == +1 || result == +3) {
-					score = score + 1.0;
-				} else if (result == -1) {
-					score = score + 0.0;
-				} else if (result == +2) {
-					score = score + 0.5; // forfeit
-				} else if (result == -2 || result == -98) {
-					score = score + 0.5; // forfeit
-				} else {
-					console.log('UNKNOWN RESULT ' + result);
-				}
-			} else {
-				if (result == 0) {
-					score = score + 0.5;
-				} else if (result == -1) {
-					score = score + 1.0;
-				} else if (result == +1) {
-					score = score + 0.0;
-				} else if (result == -2) {
-					score = score + 0.5; // forfeit
-				} else if (result == +2 || result == -98) {
-					score = score + 0.5; // forfeit
-				} else {
-					console.log('UNKNOWN RESULT ' + result);
-				}
-			}
-		} else {
-			score = score + 0.5; 
-		}
-	});
-
-	return score;
-}
-
 function calcOpponentScores(player)
 {
 	let opponentScores = [];
-	player.tnmt.games.forEach(gameNum => {
-		if (gameNum !== -1) {
-			const game = games[gameNum];
-			// figure out the opponent
-			let opponentNum;
-			if (game.p1 === player.tnmt.playerNo) {
-				opponentNum = game.p2;
-			} else {
-				opponentNum = game.p1;
-			}
-			if (opponentNum !== -1) {
-				const oppScore = calcMMAdjustedScore(players[opponentNum]);
-				opponentScores.push(oppScore);
-			} else {
-				opponentScores.push(0); // unplayed game, counts as opponent with a 0 score.  This is implicitly assuming that these guys are eligible to be dropped later
-			}
+	const opponents = vTable.getOpponents(player);
+	opponents.forEach(opponent => {
+		if (opponent !== null) {
+			const oppScore = vTable.calcMMAdjustedScore(opponent);
+			opponentScores.push(oppScore);
 		} else {
-			opponentScores.push(0); // unplayed game, counts as opponent with a 0 score.  This is implicitly assuming that these guys are eligible to be dropped later
+			opponentScores.push(0); // unplayed game, counts as a 0 score.
 		}
 	});
+
 	// sort scores low to high
 	opponentScores.sort((a, b) => {
 		return a - b;
@@ -405,15 +351,10 @@ function calcOpponentScores(player)
 	return opponentScores;
 }
 
-function getPlayerPairingNumber(player, sectionPlayers) 
-{
-	return player.tnmt.pairno;
-}
-
 function getPlayerIndex(player, sectionPlayers)
 {
 	const index = sectionPlayers.findIndex((element) => {
-		return (element.tnmt.pairno === player.tnmt.pairno);
+		return (vTable.getPlayerPairNo(element) === vTable.getPlayerPairNo(player));
 	});
 	
 	return (index + 1);
@@ -455,7 +396,7 @@ function getResultString(color, result)
 
 function SetupWallChart(section, sortAlgo, playerNumAlgo, colorStringAlgo) 
 {
-	const sectionPlayers = players.filter((player) => player.tnmt.sectionID === section.id);
+	const sectionPlayers = vTable.getSectionPlayers(vTable.getSectionId(section));
 	const playersToShow = sectionPlayers.sort(sortAlgo);
 
 	// hide the the pairings table
@@ -476,7 +417,7 @@ function SetupWallChart(section, sortAlgo, playerNumAlgo, colorStringAlgo)
 			<tr>
 				<th class="Number">#</th>
 				<th class="Name">Name<br />Rating / ID</th>`;
-	for (let i = 0 ; i < section.roundsPaired ; i++) {
+	for (let i = 0 ; i < vTable.getSectionRoundsPaired(section) ; i++) {
 		pTable = `${pTable}
 				<th class="Score">Rd ${i+1}</th>`;
 	}
@@ -491,65 +432,16 @@ function SetupWallChart(section, sortAlgo, playerNumAlgo, colorStringAlgo)
 		pTable = `${pTable}
 			<tr>
 				<td class="Number">${playerNumAlgo(player, sectionPlayers)}</td>
-				<td class="Name">${player.base.name}<br />${player.base.rating}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${player.base.id}</td>`;
-		for (let j = 0; j < section.roundsPaired; j++) {
-			let gameNum;
-			let byeType;
-			if (j >= player.tnmt.games.length) {
-				gameNum = -1;
-			} else {
-				gameNum = player.tnmt.games[j];
-			}
-			if (gameNum !== -1) {
-				const game = games[gameNum];
-				let opponentNum, result, color, colorNum;
-				console.log(JSON.stringify(game));
-				if (game.p1 === player.tnmt.playerNo) {
-					opponentNum = game.p2;
-					result = GameResultP1(game.result);
-					colorNum = game.color1;
-				} else {
-					opponentNum = game.p1;
-					result = GameResultP2(game.result);
-					colorNum = game.color2;
-				}
-				if (colorNum === 1) {
-					color = 'W';
-				} else {
-					color = 'B';
-				}
-				switch (result) {
-					case '0.0': // deliberate fallthrough
-					case '0.0F': 
-						score += 0.0;
-						byeType = 'U';
-						break;
-					case '0.5':
-						score += 0.5;
-						byeType = 'H';
-						break;
-					case '1.0':
-					case '1.0F': // deliberate fallthrough
-						score += 1.0;
-						byeType = 'B';
-						break;
-					default:
-						console.log('UNKNOWN RESULT: ' + result);
-						break;
-				}
-				const colorString = colorStringAlgo(color, result);
-				let opponent;
-				if (opponentNum !== -1) {
-					opponent = players[opponentNum];
-					pTable = `${pTable}
-						<td class="Name">${colorString}&nbsp;&nbsp${playerNumAlgo(opponent, sectionPlayers)}<br />${score}</td>`;
-				} else {
-					pTable = `${pTable}
-						<td class="Name">${byeType}<br />${score}</td>`;
-				}
+				<td class="Name">${vTable.getPlayerName(player)}<br />${vTable.getPlayerRating(player)}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${vTable.getPlayerId(player)}</td>`;
+		for (let j = 0; j < vTable.getSectionRoundsPaired(section); j++) {
+			let [roundScore, colorString, playerNum, byeType, isBye] = vTable.calcScoreColorStringPlayerNumByeTypeIsBye(j, section, sectionPlayers, player, playerNumAlgo, colorStringAlgo);
+			score = score + roundScore;
+			if (!isBye) { 
+				pTable = `${pTable}
+					<td class="Name">${colorString}&nbsp;&nbsp${playerNum}<br />${score}</td>`;
 			} else {
 				pTable = `${pTable}
-					<td class="Name">U<br />${score}</td>`;
+					<td class="Name">${byeType}<br />${score}</td>`;
 			}
 		}
 		pTable = `${pTable}
@@ -594,7 +486,7 @@ function onRoundsChange()
 	let roundsValue = roundsDD.options[roundsDD.selectedIndex].value;
 	let section = getSection();
 
-	ShowPairings(section,roundsValue);
+	vTable.ShowPairings(section, roundsValue);
 }
 
 function PullGames(sectionID, round)
@@ -602,6 +494,7 @@ function PullGames(sectionID, round)
 //	Pull the list of game numbers for a section and round
 //
 {
+	const players = vTable.getPlayers(tourney);
 	gamelist = [];
 	for (let i=0 ; i < players.length ; i++) {
 		player = players[i];
@@ -737,10 +630,10 @@ function PlayerFormat(pnumber)
 {
 	if (pnumber==-1)
 		return "Bye";
-	return players[pnumber]["base"]["name"];
+	return vTable.getPlayers(tourney)[pnumber]["base"]["name"];
 }
 
-function ShowPairings(section,rp)
+function ShowPairingsPTOZ(section,rp)
 {
 //
 //	pull array[int] of game numbers and sort by board number, but bubble -1's (byes)
@@ -748,8 +641,8 @@ function ShowPairings(section,rp)
 //
 	gamelist = PullGames(section["id"],rp);
 	gamelist.sort(function(a,b) {
-		let aBd = GameBoard(games[a]);
-		let bBd = GameBoard(games[b]);
+		let aBd = GameBoard(vTable.getGames(tourney)[a]);
+		let bBd = GameBoard(vTable.getGames(tourney)[b]);
 		if (aBd == -1 && bBd == -1)
 			return 0;
 		if (aBd == -1)
@@ -784,7 +677,7 @@ function ShowPairings(section,rp)
 		if (j > 0 && gamelist[j] == gamelist[j - 1])
 			continue;
 		boardRec    = gamelist[j];
-		game        = games[boardRec];
+		game        = vTable.getGames(tourney)[boardRec];
 		board       = GameBoardShow(game);
 		leftPlayer  = GameLeftPlayer(game);
 		rightPlayer = GameRightPlayer(game);
@@ -827,13 +720,199 @@ function loadTournaments(ptozFile, swissSysFile)
 					.then((res) => res.text())
 					.then((jsonText) => {
 						sjson = JSON.parse(jsonText);
-						TestShow(ptoz); // for now just show the WinTD tournament
+						// for now just show the WinTD tournament
+						ptoz.vTable = getVTablePTOZ();
+						TestShow(ptoz); 
 					})
 					.catch((e) => console.error(e));
 			})
 			.catch((e) => console.error(e));
 		}).catch((e) => console.error(e));
 	});
+}
+
+function getVTablePTOZ()
+{
+	let vTable = {};
+	vTable.calcScoreColorStringPlayerNumByeTypeIsBye = function(j, section, sectionPlayers, player, playerNumAlgo, colorStringAlgo) {
+		// j is just a zero-based round number, so round = j + 1;
+		let gameNum, colorString, playerNum, byeType, isBye;
+		let score = 0.0;
+		if (j >= vTable.getMaxGames(player)) { 
+			gameNum = -1;
+		} else {
+			gameNum = player.tnmt.games[j];
+		}
+		if (gameNum !== -1) {
+			const game = vTable.getPlayerGame(player, j + 1);
+
+			let opponentNum, result, color, colorNum;
+			console.log(JSON.stringify(game));
+			if (game.p1 === player.tnmt.playerNo) {
+				opponentNum = game.p2;
+				result = GameResultP1(game.result);
+				colorNum = game.color1;
+			} else {
+				opponentNum = game.p1;
+				result = GameResultP2(game.result);
+				colorNum = game.color2;
+			}
+			if (colorNum === 1) {
+				color = 'W';
+			} else {
+				color = 'B';
+			}
+			switch (result) {
+				case '0.0': // deliberate fallthrough
+				case '0.0F': 
+					score += 0.0;
+					byeType = 'U';
+					break;
+				case '0.5':
+					score += 0.5;
+					byeType = 'H';
+					break;
+				case '1.0':
+				case '1.0F': // deliberate fallthrough
+					score += 1.0;
+					byeType = 'B';
+					break;
+				default:
+					console.log('UNKNOWN RESULT: ' + result);
+					break;
+			}
+			colorString = colorStringAlgo(color, result);
+			if (opponentNum !== -1) {
+				const opponent = vTable.getPlayers(tourney)[opponentNum];
+				playerNum = playerNumAlgo(opponent, sectionPlayers);
+			} else {
+				isBye = true;
+			}
+		} else {
+			isBye = true;
+			byeType = 'U';
+		}
+
+		return [score, colorString, playerNum, byeType, isBye];
+	}
+
+	vTable.calcMMAdjustedScore = function(player) {
+		// 	These scores are adjusted for unplayed games, which count a half point each, regardless of whether they were byes, forfeits, or simply rounds not played after an opponent withdrew.
+		let score = 0.0;
+		player.tnmt.games.forEach(gameNum => {
+			if (gameNum !== -1) {
+				const game = vTable.getGames(tourney)[gameNum];
+				const result = game.result;
+				if (game.p1 === player.tnmt.playerNo) {
+					if (result == 0) {
+						score = score + 0.5;
+					} else if (result == +1 || result == +3) {
+						score = score + 1.0;
+					} else if (result == -1) {
+						score = score + 0.0;
+					} else if (result == +2) {
+						score = score + 0.5; // forfeit
+					} else if (result == -2 || result == -98) {
+						score = score + 0.5; // forfeit
+					} else {
+						console.log('UNKNOWN RESULT ' + result);
+					}
+				} else {
+					if (result == 0) {
+						score = score + 0.5;
+					} else if (result == -1) {
+						score = score + 1.0;
+					} else if (result == +1) {
+						score = score + 0.0;
+					} else if (result == -2) {
+						score = score + 0.5; // forfeit
+					} else if (result == +2 || result == -98) {
+						score = score + 0.5; // forfeit
+					} else {
+						console.log('UNKNOWN RESULT ' + result);
+					}
+				}
+			} else {
+				score = score + 0.5; 
+			}
+		});
+
+		return score;
+	}	
+	vTable.getDate = function(ptoz) {
+		return ptoz.dates;
+	}
+	vTable.getGames = function(ptoz) {
+		return ptoz.games;
+	}
+	vTable.getMaxGames = function(player) {
+		return player.tnmt.games.length;
+	}
+	vTable.getOpponents = function(player) {
+		let opponents = [];
+		player.tnmt.games.forEach(gameNum => {
+			if (gameNum !== -1) {
+				const game = vTable.getGames(tourney)[gameNum];
+				// figure out the opponent
+				let opponentNum;
+				if (game.p1 === player.tnmt.playerNo) {
+					opponentNum = game.p2;
+				} else {
+					opponentNum = game.p1;
+				}
+				if (opponentNum !== -1) {
+					opponents.push(vTable.getPlayers(tourney)[opponentNum]);
+				} else {
+					opponents.push(null); // unplayed game, counts as opponent with a 0 score.  This is implicitly assuming that these guys are eligible to be dropped later
+				}
+			} else {
+				opponents.push(null); // unplayed game, counts as opponent with a 0 score.  This is implicitly assuming that these guys are eligible to be dropped later
+			}
+		});
+		return opponents;
+	}
+	vTable.getPlayers = function(ptoz) {
+		return ptoz.players;
+	}
+	vTable.getPlayerGame = function(player, round) {
+		return vTable.getGames(tourney)[player.tnmt.games[round - 1]];
+	}
+	vTable.getPlayerId = function(player) {
+		return player.base.id;
+	}
+	vTable.getPlayerName = function(player) {
+		return player.base.name;
+	}
+	vTable.getPlayerPairNo = function(player) {
+		return player.tnmt.pairno;
+	}
+	vTable.getPlayerPoints = function(player) {
+		return player.tnmt.pts;
+	}
+	vTable.getPlayerRating = function(player) {
+		return player.base.rating;
+	}
+	vTable.getSections = function(ptoz) {
+		return ptoz.sections;
+	}
+	vTable.getSectionId = function(section) {
+		return section.id;
+	}
+	vTable.getSectionPlayers = function(sectionId) {
+		const players = vTable.getPlayers(tourney);
+		return players.filter((player) => player.tnmt.sectionID === sectionId);
+	}
+	vTable.getSectionRoundsPaired = function(section) {
+		return section.roundsPaired;
+	}
+	vTable.getSectionTitle = function(section) {
+		return section.title;
+	}
+	vTable.getTitle = function(ptoz) {
+		return ptoz.title;
+	}
+	vTable.ShowPairings = ShowPairingsPTOZ;
+	return vTable;
 }
 
 </script>
