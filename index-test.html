@@ -108,7 +108,7 @@ function onSectionChange()
 
 function SetupSections()
 {
-	const sections = vTable.getSections();
+	const sections = vTable.getSections(tourney);
 	const sectionsElement = document.getElementById('sectionBox');
 	let sectionBox;
 	if (sections.length === 1) {
