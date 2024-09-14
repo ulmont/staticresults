@@ -504,6 +504,7 @@ function PullGames(sectionID, round)
 //	Pull the list of game numbers for a section and round
 //
 {
+	const players = vTable.getPlayers(tourney);
 	gamelist = [];
 	for (let i=0 ; i < players.length ; i++) {
 		player = players[i];
