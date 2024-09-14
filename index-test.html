@@ -882,6 +882,9 @@ function getVTablePTOZ()
 	vTable.getSections = function(ptoz) {
 		return ptoz.sections;
 	}
+	vTable.getSectionId = function(section) {
+		return section.id;
+	}
 	vTable.getSectionPlayers = function(sectionId) {
 		return getPlayers.filter((player) => player.tnmt.sectionID === section.id);
 	}
