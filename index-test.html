@@ -651,8 +651,8 @@ function ShowPairingsPTOZ(section,rp)
 //
 	gamelist = PullGames(section["id"],rp);
 	gamelist.sort(function(a,b) {
-		let aBd = GameBoard(games[a]);
-		let bBd = GameBoard(games[b]);
+		let aBd = GameBoard(vTable.getGames(tourney)[a]);
+		let bBd = GameBoard(vTable.getGames(tourney)[b]);
 		if (aBd == -1 && bBd == -1)
 			return 0;
 		if (aBd == -1)
@@ -687,7 +687,7 @@ function ShowPairingsPTOZ(section,rp)
 		if (j > 0 && gamelist[j] == gamelist[j - 1])
 			continue;
 		boardRec    = gamelist[j];
-		game        = games[boardRec];
+		game        = vTable.getGames(tourney)[boardRec];
 		board       = GameBoardShow(game);
 		leftPlayer  = GameLeftPlayer(game);
 		rightPlayer = GameRightPlayer(game);
