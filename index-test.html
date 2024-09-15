@@ -166,7 +166,7 @@ function onSectionChange()
 			SetupWallChart(section, sortPlayersByPairNo, vTable.getPlayerPairNo, getColorString);
 			break;
 		case 'Standings':
-			SetupWallChart(section, sortPlayersByScoreTiebreaks, getPlayerIndex, getResultString);
+			SetupWallChart(section, sortPlayersByScoreTiebreaks, getPlayerIndex, vTable.getResultString);
 			break;
 		default:
 			SetupRounds(vTable.getSectionRoundsPaired(section));
@@ -223,7 +223,7 @@ function sortPlayersByScoreTiebreaks(a, b)
 	console.log('Modified Median: ' + aMM + ' is equal for ' + vTable.getPlayerName(a) + ' and ' + vTable.getPlayerName(b) + ' moving to Solkoff');
 	const aS = calcSolkoff(a);
 	const bS = calcSolkoff(b);
-	console.log('Solkoff: ' + aS + ' for ' + vTable.getPlayerName(a) + ' vs ' + bS + ' for ' + vTable.getPlayerName(b));
+	// console.log('Solkoff: ' + aS + ' for ' + vTable.getPlayerName(a) + ' vs ' + bS + ' for ' + vTable.getPlayerName(b));
 	if (aS > bS) {
 		return -1; // higher sorts first
 	}
@@ -233,11 +233,36 @@ function sortPlayersByScoreTiebreaks(a, b)
 	}
 
 	console.log('Solkoff: ' + aS + ' is equal for ' + vTable.getPlayerName(a) + ' and ' + vTable.getPlayerName(b) + ' moving to Cumulative');
+
 	// Cumulative
+	const aC = calcCumulative(a);
+	const bC = calcCumulative(b);
+    console.log('Cumulative: ' + aC + ' for ' + vTable.getPlayerName(a) + ' vs ' + bC + ' for ' + vTable.getPlayerName(b));
+	if (aC > bC) {
+		return -1; // higher sorts first
+	}
+
+	if (aC < bC) {
+		return 1; // lower sorts last
+	}
+	console.log('Cumukative: ' + aC + ' is equal for ' + vTable.getPlayerName(a) + ' and ' + vTable.getPlayerName(b) + ' moving to Cumulative of Opposition');
 
 	// Cumulative of Opposition
 
 	return 0;
+}
+
+function calcCumulative(player)
+{
+	/*34E3. Cumulative.
+	To determine cumulative tiebreak score, simply add up the cumulative (running) score for each round. For example, if a player’s results were win, loss, win, draw, loss, the wall chart would show a cumulative score round by round as 1, 1, 2, 2.5, 2.5. The cumulative tiebreak total is 9 (1+1+2+2.5+2.5 = 9). If another player scored 2.5 with a sequence 1, 2, 2.5, 2.5, 2.5, the tiebreak points scored would be 10.5 (1+2+2.5+2.5+2.5 = 10.5). The latter player’s tiebreaks are higher because he or she scored earlier and presumably had tougher opposition for the remainder of the event. One point is subtracted from the sum for each unplayed win or full-point bye (22B); likewise, one-half point is subtracted from the sum for each unplayed draw or half-point bye.*/
+	let playerScores = vTable.calcCumulativePlayerScores(player);
+	let s = 0.0;
+	playerScores.forEach(score => {
+		s = s + score;
+	});
+
+	return s;
 }
 
 function calcSolkoff(player) 
@@ -329,6 +354,13 @@ function calcModifiedMedian(player)
 	return mm;
 }
 
+function calcPlayerScores(player)
+{
+	let playerScores = [];
+
+	return playerScores;
+}
+
 function calcOpponentScores(player)
 {
 	let opponentScores = [];
@@ -363,35 +395,6 @@ function getPlayerIndex(player, sectionPlayers)
 function getColorString(color, result)
 {
 	return color;
-}
-
-function getResultString(color, result)
-{
-	/*
-	W - Win
-	L - Loss
-	D - Draw
-	B - Full Point Bye
-	H - Half Point Bye
-	F - Forfeit Loss
-	X - Forfeit Win
-	Z - Forfeit Draw
-	U - Not Paired (also Zero Point Bye)
-	*/
-	switch (result) {
-		case '0.0': 
-			return 'L';
-		case '0.0F':
-			return 'F'; 
-		case '0.5':
-			return 'D';
-		case '1.0':
-			return 'W';
-		case '1.0F':
-			return 'X';
-		default:
-			return 'UN';
-	}
 }
 
 function SetupWallChart(section, sortAlgo, playerNumAlgo, colorStringAlgo) 
@@ -494,7 +497,7 @@ function PullGames(sectionID, round)
 //	Pull the list of game numbers for a section and round
 //
 {
-	const players = vTable.getPlayers(tourney);
+	const players = tourney.players;
 	gamelist = [];
 	for (let i=0 ; i < players.length ; i++) {
 		player = players[i];
@@ -630,7 +633,7 @@ function PlayerFormat(pnumber)
 {
 	if (pnumber==-1)
 		return "Bye";
-	return vTable.getPlayers(tourney)[pnumber]["base"]["name"];
+	return tourney.players[pnumber]["base"]["name"];
 }
 
 function ShowPairingsPTOZ(section,rp)
@@ -641,8 +644,8 @@ function ShowPairingsPTOZ(section,rp)
 //
 	gamelist = PullGames(section["id"],rp);
 	gamelist.sort(function(a,b) {
-		let aBd = GameBoard(vTable.getGames(tourney)[a]);
-		let bBd = GameBoard(vTable.getGames(tourney)[b]);
+		let aBd = GameBoard(tourney.games[a]);
+		let bBd = GameBoard(tourney.games[b]);
 		if (aBd == -1 && bBd == -1)
 			return 0;
 		if (aBd == -1)
@@ -677,7 +680,7 @@ function ShowPairingsPTOZ(section,rp)
 		if (j > 0 && gamelist[j] == gamelist[j - 1])
 			continue;
 		boardRec    = gamelist[j];
-		game        = vTable.getGames(tourney)[boardRec];
+		game        = tourney.games[boardRec];
 		board       = GameBoardShow(game);
 		leftPlayer  = GameLeftPlayer(game);
 		rightPlayer = GameRightPlayer(game);
@@ -700,6 +703,132 @@ function ShowPairingsPTOZ(section,rp)
 	pairingsDiv.style.display = 'block';
 }
 
+function ShowPairingsSJSON(section,rp)
+{
+	let gameResults = [];
+	section.Players.forEach(player => {
+		let resultCopy = player.Results[rp - 1]; // Result coding is Result; Op.; Clr; Brd; Logical ops. 1 & 2; Game pnts"
+		resultCopy = resultCopy.split(';'); // we're going to want these individually from here on out
+		resultCopy.push(player['Pair number']); // save the player's pairing number here for later use
+		gameResults.push(resultCopy);  
+	});
+	// sort byes to the end and otherwise in board number 
+	gameResults.sort(function(a,b) {
+		const aBoard = a[3];
+		const bBoard = b[3];
+		if ((aBoard == 0) && (bBoard == 0)) {
+			// both byes, so sort by, I dunno, player pairing number
+			const aPairNo = a[6];
+			const bPairNo = b[6];
+			return aPairNo - bPairNo; // lower pairing numbers to the front
+		}
+		if (aBoard == 0) {
+			// only a bye for one of them, so sort it to the end
+			return 1; // i.e., a (bye) second
+		}
+		if (bBoard == 0) {
+			// only a bye for one of them, so sort it to the end
+			return -1; // i.e., a first then b (bye)
+		}
+		return aBoard - bBoard; // lower board numbers to the front
+	});
+
+	const pairingsDiv = document.getElementById('pairingsDiv');
+	//
+	//	The table of games consists of an outer table with the header and an
+	//	inner table with the game list, which is embedded in a scrolling div.
+	//
+	let pTable = `<table id="GLOuter">
+		<thead>
+			<tr>
+				<th class="Board">Board</th>
+				<th class="Score">Scr</th>
+				<th class="Name">White</th>
+				<th class="Score">Scr</th>
+				<th class="Name">Black</th>
+			</tr>
+		</thead>
+		<tbody>`;
+
+	let doneBoards = new Set();
+	gameResults.forEach(gameResult => {
+		// Result coding is Result; Op.; Clr; Brd; Logical ops. 1 & 2; Game pnts; Player"
+		let board = gameResult[3];
+		let leftResult, leftName, rightResult, rightName;
+		let duplicate = false;
+
+		if (board == 0) {
+			// bye setup
+			board = '';
+			leftResult = resultToScore(gameResult[0]);
+			leftName = section.Players[gameResult[7] - 1].Name;
+			rightResult = '';
+			rightName = 'Bye';
+		} else {
+			// see if we already did this board
+			duplicate = doneBoards.has(board);
+			if (!duplicate) {
+				// nope, process
+				doneBoards.add(board);
+				if (gameResult[2] === 'W') {
+					leftResult = resultToScore(gameResult[0]);
+					leftName = section.Players[gameResult[7] - 1].Name;			
+					rightResult = (1.0 - leftResult); // ignoring split results
+					rightName = section.Players[gameResult[1] - 1].Name;
+				} else {
+					rightResult = resultToScore(gameResult[0]);
+					rightName = section.Players[gameResult[7] - 1].Name;			
+					leftResult = (1.0 - rightResult); // ignoring split results
+					leftName = section.Players[gameResult[1] - 1].Name;
+				}
+			} else {
+				// yup, already did this board
+			}
+		}
+		
+		if (!duplicate) {
+			resultLine = `<tr>
+				<td class="Board">${board}</td>
+				<td class="Score">${leftResult}</td>
+				<td class="Name">${leftName}</td>
+				<td class="Score">${rightResult}</td>
+				<td class="Name">${rightName}</td>
+			</tr>`;
+			pTable = `${pTable}${resultLine}`;
+		}
+	});
+
+	pairingsDiv.innerHTML = `${pTable}
+			</tbody>
+		</table>`;
+	pairingsDiv.style.display = 'block';
+}
+
+function resultToScore(result) 
+{
+	switch (result) {
+		case '-': // deliberate fallthrough
+		case 'F': 
+		case 'U': 
+			return 0.0;
+			break;
+		case '=':  // deliberate fallthrough
+		case 'Z':
+		case 'H':
+			return 0.5;
+			break;
+		case '+': // deliberate fallthrough
+		case 'X': 
+		case 'B': 
+			return 1.0;
+			break;
+		default:
+			console.log('UNKNOWN RESULT: ' + result);
+			return 0.0;
+			break;
+	}
+}
+
 function loadTournaments(ptozFile, swissSysFile)
 {
 	//	getBinaryContent takes (path,callback) where callback is function(err,data)
@@ -720,9 +849,25 @@ function loadTournaments(ptozFile, swissSysFile)
 					.then((res) => res.text())
 					.then((jsonText) => {
 						sjson = JSON.parse(jsonText);
-						// for now just show the WinTD tournament
-						ptoz.vTable = getVTablePTOZ();
-						TestShow(ptoz); 
+
+						// figure out which is more recent.  This is a bit of a crapshoot as it depends on the date field, which is kind of arbitrary especially for the PTOZ version.
+						// if there are two dates in the ptoz separated by a - or space, try to take the last one as the ending date
+						let lastIndex = Math.max(ptoz.dates.lastIndexOf('-'), ptoz.dates.lastIndexOf(' '));
+						if (lastIndex !== -1) {
+							ptoz.dates = ptoz.dates.substring(lastIndex + 1);
+						}
+						let ptozDate = new Date(Date.parse(ptoz.dates) + 1000*60*60*12);
+						let ssDate = new Date(Date.parse(sjson.Overview['Ending date']) + 1000*60*60*12);
+
+						// show whichever has the theoretical later ending date
+						if (ptozDate > ssDate) {
+							ptoz.vTable = getVTablePTOZ();
+							TestShow(ptoz); 
+						} else {
+							sjson.vTable = getVTableSwissSys();
+							TestShow(sjson);
+						}
+
 					})
 					.catch((e) => console.error(e));
 			})
@@ -734,18 +879,80 @@ function loadTournaments(ptozFile, swissSysFile)
 function getVTablePTOZ()
 {
 	let vTable = {};
+	vTable.calcCumulativePlayerScores = function(player) {
+		let playerScores = [];
+		let score = 0.0;
+		let byeAdjustment = 0.0;
+
+		player.tnmt.games.forEach(gameNum => {
+			if (gameNum !== -1) {
+				const game = tourney.games[gameNum];
+				const result = game.result;
+				if (game.p1 === player.tnmt.playerNo) {
+					if (result == 0) {
+						score = score + 0.5;
+						if (game.p2 === -1) {
+							byeAdjustment = byeAdjustment + 0.5; // unplayed game
+						}
+					} else if (result == +1 || result == +3) {
+						score = score + 1.0;
+						if (game.p2 === -1) {
+							byeAdjustment = byeAdjustment + 1.0; // unplayed game
+						}
+					} else if (result == -1) {
+						score = score + 0.0;
+					} else if (result == +2) {
+						// forfeit win 
+						score = score + 1.0;
+						byeAdjustment = byeAdjustment + 1.0; // unplayed game
+					} else if (result == -2 || result == -98) {
+						// forfeit loss
+					} else {
+						console.log('UNKNOWN RESULT ' + result);
+					}
+				} else {
+					if (result == 0) {
+						score = score + 0.5;
+						if (game.p1 === -1) {
+							byeAdjustment = byeAdjustment + 0.5; // unplayed game
+						}
+					} else if (result == -1) {
+						score = score + 1.0;
+						if (game.p1 === -1) {
+							byeAdjustment = byeAdjustment + 1.0; // unplayed game
+						}
+					} else if (result == +1) {
+						score = score + 0.0;
+					} else if (result == -2) {
+						// forfeit win 
+						score = score + 1.0;
+						byeAdjustment = byeAdjustment + 1.0; // unplayed game
+					} else if (result == +2 || result == -98) {
+						// forfeit loss
+					} else {
+						console.log('UNKNOWN RESULT ' + result);
+					}
+				}
+			} else {
+				// unplayed game, zero score 
+			}
+			playerScores.push(score);
+		});
+		playerScores.push(0 - byeAdjustment);
+
+		return playerScores;
+	}
 	vTable.calcScoreColorStringPlayerNumByeTypeIsBye = function(j, section, sectionPlayers, player, playerNumAlgo, colorStringAlgo) {
 		// j is just a zero-based round number, so round = j + 1;
 		let gameNum, colorString, playerNum, byeType, isBye;
 		let score = 0.0;
-		if (j >= vTable.getMaxGames(player)) { 
+		if (j >= player.tnmt.games.length) {
 			gameNum = -1;
 		} else {
 			gameNum = player.tnmt.games[j];
 		}
 		if (gameNum !== -1) {
-			const game = vTable.getPlayerGame(player, j + 1);
-
+			const game = tourney.games[player.tnmt.games[j]];
 			let opponentNum, result, color, colorNum;
 			console.log(JSON.stringify(game));
 			if (game.p1 === player.tnmt.playerNo) {
@@ -783,7 +990,7 @@ function getVTablePTOZ()
 			}
 			colorString = colorStringAlgo(color, result);
 			if (opponentNum !== -1) {
-				const opponent = vTable.getPlayers(tourney)[opponentNum];
+				const opponent = tourney.players[opponentNum];
 				playerNum = playerNumAlgo(opponent, sectionPlayers);
 			} else {
 				isBye = true;
@@ -795,13 +1002,12 @@ function getVTablePTOZ()
 
 		return [score, colorString, playerNum, byeType, isBye];
 	}
-
 	vTable.calcMMAdjustedScore = function(player) {
 		// 	These scores are adjusted for unplayed games, which count a half point each, regardless of whether they were byes, forfeits, or simply rounds not played after an opponent withdrew.
 		let score = 0.0;
 		player.tnmt.games.forEach(gameNum => {
 			if (gameNum !== -1) {
-				const game = vTable.getGames(tourney)[gameNum];
+				const game = tourney.games[gameNum];
 				const result = game.result;
 				if (game.p1 === player.tnmt.playerNo) {
 					if (result == 0) {
@@ -842,17 +1048,11 @@ function getVTablePTOZ()
 	vTable.getDate = function(ptoz) {
 		return ptoz.dates;
 	}
-	vTable.getGames = function(ptoz) {
-		return ptoz.games;
-	}
-	vTable.getMaxGames = function(player) {
-		return player.tnmt.games.length;
-	}
 	vTable.getOpponents = function(player) {
 		let opponents = [];
 		player.tnmt.games.forEach(gameNum => {
 			if (gameNum !== -1) {
-				const game = vTable.getGames(tourney)[gameNum];
+				const game = tourney.games[gameNum];
 				// figure out the opponent
 				let opponentNum;
 				if (game.p1 === player.tnmt.playerNo) {
@@ -861,7 +1061,7 @@ function getVTablePTOZ()
 					opponentNum = game.p1;
 				}
 				if (opponentNum !== -1) {
-					opponents.push(vTable.getPlayers(tourney)[opponentNum]);
+					opponents.push(tourney.players[opponentNum]);
 				} else {
 					opponents.push(null); // unplayed game, counts as opponent with a 0 score.  This is implicitly assuming that these guys are eligible to be dropped later
 				}
@@ -870,12 +1070,6 @@ function getVTablePTOZ()
 			}
 		});
 		return opponents;
-	}
-	vTable.getPlayers = function(ptoz) {
-		return ptoz.players;
-	}
-	vTable.getPlayerGame = function(player, round) {
-		return vTable.getGames(tourney)[player.tnmt.games[round - 1]];
 	}
 	vTable.getPlayerId = function(player) {
 		return player.base.id;
@@ -892,6 +1086,33 @@ function getVTablePTOZ()
 	vTable.getPlayerRating = function(player) {
 		return player.base.rating;
 	}
+	vTable.getResultString = function(color, result) {
+		/*
+		W - Win
+		L - Loss
+		D - Draw
+		B - Full Point Bye
+		H - Half Point Bye
+		F - Forfeit Loss
+		X - Forfeit Win
+		Z - Forfeit Draw
+		U - Not Paired (also Zero Point Bye)
+		*/
+		switch (result) {
+			case '0.0': 
+				return 'L';
+			case '0.0F':
+				return 'F'; 
+			case '0.5':
+				return 'D';
+			case '1.0':
+				return 'W';
+			case '1.0F':
+				return 'X';
+			default:
+				return 'UN';
+		}
+	}
 	vTable.getSections = function(ptoz) {
 		return ptoz.sections;
 	}
@@ -899,8 +1120,7 @@ function getVTablePTOZ()
 		return section.id;
 	}
 	vTable.getSectionPlayers = function(sectionId) {
-		const players = vTable.getPlayers(tourney);
-		return players.filter((player) => player.tnmt.sectionID === sectionId);
+		return tourney.players.filter((player) => player.tnmt.sectionID === sectionId);
 	}
 	vTable.getSectionRoundsPaired = function(section) {
 		return section.roundsPaired;
@@ -912,6 +1132,271 @@ function getVTablePTOZ()
 		return ptoz.title;
 	}
 	vTable.ShowPairings = ShowPairingsPTOZ;
+	return vTable;
+}
+
+function getVTableSwissSys()
+{
+	let vTable = {};
+	vTable.calcCumulativePlayerScores = function(player) {
+		// 	These scores are adjusted for unplayed games, which count zero points each, regardless of whether they were byes, forfeits, or simply rounds not played after an opponent withdrew.
+		let playerScores = [];
+		let score = 0.0;
+		let byeAdjustment = 0.0;
+
+		player.Results.forEach(gameResult => {
+			// "-;28;W;116;28;0;0"  "U;0;-;0;0;0;0"
+			const items = gameResult.split(';');
+
+			let result = items[0];
+			switch (result) {
+				case '-':
+					score += 0.0;
+					playerScores.push(score);
+					break;
+				case '=':  
+					score += 0.5;
+					playerScores.push(score);
+					break;
+				case '+': 
+					score += 1.0;
+					playerScores.push(score);
+					break;
+				case 'F': // deliberate fallthrough
+				case 'U': 
+					score += 0.0;
+					playerScores.push(score);
+					break;
+				case 'Z': // deliberate fallthrough
+				case 'H':
+					score += 0.5;
+					byeAdjustment += 0.5; // these are unplayed, so they need an adjustment later
+					playerScores.push(score);
+					break;
+				case 'X': 
+				case 'B': 
+					score += 1.0;
+					byeAdjustment += 1.0; // these are unplayed, so they need an adjustment later
+					playerScores.push(score);
+					break;
+				default:
+					console.log('UNKNOWN RESULT: ' + result);
+					playerScores.push(score);
+					break;
+			}
+		});
+		playerScores.push(0 - byeAdjustment);
+
+		return playerScores;
+	}
+	vTable.calcScoreColorStringPlayerNumByeTypeIsBye = function(j, section, sectionPlayers, player, playerNumAlgo, colorStringAlgo) {
+		// j is just a zero-based round number, so round = j + 1;
+		let gameNum, colorString, playerNum, byeType, isBye;
+		let score = 0.0;
+
+		const gameResult = player.Results[j]; // "-;28;W;116;28;0;0"  "U;0;-;0;0;0;0"
+		const items = gameResult.split(';');
+
+		const opponentNum = items[1];
+		const board = items[3];
+		if (board == 0) {
+			isBye = true;
+		}
+
+		let result = items[0];
+		switch (result) {
+			case '-': // deliberate fallthrough
+			case 'F': 
+			case 'U': 
+				score += 0.0;
+				byeType = 'U';
+				break;
+			case '=':  // deliberate fallthrough
+			case 'Z':
+			case 'H':
+				score += 0.5;
+				byeType = 'H';
+				break;
+			case '+': // deliberate fallthrough
+			case 'X': 
+			case 'B': 
+				score += 1.0;
+				byeType = 'B';
+				break;
+			default:
+				console.log('UNKNOWN RESULT: ' + result);
+				break;
+		}
+
+		let color = items[2];
+		colorString = colorStringAlgo(color, result);
+		if (!isBye) {
+			const opponent = section.Players[opponentNum - 1];
+			playerNum = playerNumAlgo(opponent, sectionPlayers);
+		} 
+
+		return [score, colorString, playerNum, byeType, isBye];
+	}
+	vTable.calcMMAdjustedScore = function(player) {
+		// 	These scores are adjusted for unplayed games, which count a half point each, regardless of whether they were byes, forfeits, or simply rounds not played after an opponent withdrew.
+		let score = 0.0;
+
+		player.Results.forEach(gameResult => {
+			// "-;28;W;116;28;0;0"  "U;0;-;0;0;0;0"
+			const items = gameResult.split(';');
+
+			let result = items[0];
+			switch (result) {
+				case '-':
+					score += 0.0;
+					break;
+				case '=':  
+					score += 0.5;
+					break;
+				case '+': 
+					score += 1.0;
+					break;
+				case 'F': // deliberate fallthrough
+				case 'U': 
+				case 'Z':
+				case 'H':
+				case 'X': 
+				case 'B': 
+					// all of these are unplayed games, so they count 0.5
+					score += 0.5;
+					break;
+				default:
+					console.log('UNKNOWN RESULT: ' + result);
+					break;
+			}
+		});
+
+		return score;
+	}	
+	vTable.getDate = function(sjson) {
+		return `${sjson.Overview['Starting date']}-${sjson.Overview['Ending date']}`;
+	}
+	vTable.getOpponents = function(player) {
+		// first figure out what section this player is in.  We basically know this players' index so that shouldn't take long.
+		let section;
+		let playerPairNo = player['Pair number'];
+		let playerIndex = playerPairNo - 1;
+		sjson.Sections.forEach(sectionToTest => {
+			if (sectionToTest.Players[playerIndex] === player) {
+				section = sectionToTest;
+			}
+		});
+
+		let opponents = [];
+		player.Results.forEach(gameResult => {
+			const items = gameResult.split(';');
+			const opponentNum = items[1];
+			const board = items[3];
+			if (board == 0) {
+				opponents.push(null); // unplayed game, counts as opponent with a 0 score.  This is implicitly assuming that these guys are eligible to be dropped later
+			} else {
+				opponents.push(section.Players[opponentNum - 1]);
+			}
+		});
+		return opponents;
+	}
+	vTable.getPlayerId = function(player) {
+		return player.ID;
+	}
+	vTable.getPlayerName = function(player) {
+		return player.Name;
+	}
+	vTable.getPlayerPairNo = function(player) {
+		return player['Pair number'];
+	}
+	vTable.getPlayerPoints = function(player) {
+		let score = 0.0;
+
+		player.Results.forEach(gameResult => {
+			// "-;28;W;116;28;0;0"  "U;0;-;0;0;0;0"
+			const items = gameResult.split(';');
+
+			let result = items[0];
+			switch (result) {
+				case '-': // deliberate fallthrough
+				case 'F': 
+				case 'U': 
+					score += 0.0;
+					break;
+				case '=': // deliberate fallthrough
+				case 'Z':
+				case 'H':
+					score += 0.5;
+					break;
+				case '+': // deliberate fallthrough
+				case 'X': 
+				case 'B': 
+					score += 1.0;
+					break;
+				default:
+					console.log('UNKNOWN RESULT: ' + result);
+					break;
+			}
+		});
+
+		return score;
+	}
+	vTable.getPlayerRating = function(player) {
+		return player.Rating;
+	}
+	vTable.getResultString = function(color, result) {
+		/*
+		W - Win
+		L - Loss
+		D - Draw
+		B - Full Point Bye
+		H - Half Point Bye
+		F - Forfeit Loss
+		X - Forfeit Win
+		Z - Forfeit Draw
+		U - Not Paired (also Zero Point Bye)
+		*/
+		switch (result) {		
+			case '-': 
+				return 'L';
+			case '=':
+				return 'D';
+			case '+':
+				return 'W';
+			case 'F': // deliberate fallthrough - all of these are already codes
+			case 'U': 
+			case 'Z':
+			case 'H':
+			case 'X': 
+			case 'B': 
+				return result;
+			default:
+				console.log('UNKNOWN RESULT: ' + result);
+				return 'UN';
+		}		
+	}
+	vTable.getSections = function(sjson) {
+		return sjson.Sections;
+	}
+	vTable.getSectionId = function(section) {
+		const index = tourney.Sections.findIndex((sectionToTest) => sectionToTest == section);
+
+		return index;
+	}
+	vTable.getSectionPlayers = function(sectionId) {
+		const sectionPlayers = tourney.Sections[sectionId].Players;
+		return Array.from(sectionPlayers);
+	}
+	vTable.getSectionRoundsPaired = function(section) {
+		return section['Rounds paired'];
+	}
+	vTable.getSectionTitle = function(section) {
+		return section['Section name'];
+	}
+	vTable.getTitle = function(sjson) {
+		return sjson.Overview['Tournament title'];
+	}
+	vTable.ShowPairings = ShowPairingsSJSON;
 	return vTable;
 }
 
