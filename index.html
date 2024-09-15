@@ -245,11 +245,41 @@ function sortPlayersByScoreTiebreaks(a, b)
 	if (aC < bC) {
 		return 1; // lower sorts last
 	}
-	console.log('Cumukative: ' + aC + ' is equal for ' + vTable.getPlayerName(a) + ' and ' + vTable.getPlayerName(b) + ' moving to Cumulative of Opposition');
+	console.log('Cumulative: ' + aC + ' is equal for ' + vTable.getPlayerName(a) + ' and ' + vTable.getPlayerName(b) + ' moving to Cumulative of Opposition');
 
 	// Cumulative of Opposition
+	const aCO = calcCumulativeOfOpposition(a);
+	const bCO = calcCumulativeOfOpposition(b);
+    console.log('Cumulative of Opposition: ' + aCO + ' for ' + vTable.getPlayerName(a) + ' vs ' + bCO + ' for ' + vTable.getPlayerName(b));
+	if (aCO > bCO) {
+		return -1; // higher sorts first
+	}
+
+	if (aCO < bCO) {
+		return 1; // lower sorts last
+	}
+	console.log('Cumulative of Opposition: ' + aCO + ' is equal for ' + vTable.getPlayerName(a) + ' and ' + vTable.getPlayerName(b) + ' out of tiebreakers');
 
 	return 0;
+}
+
+function calcCumulativeOfOpposition(player)
+{
+	/*34E9. Cumulative scores of opposition.
+	The cumulative tiebreak points of each opponent are calculated as in 34E3 and these are added together.*/
+	
+	let opponentScores = 0.0;
+	const opponents = vTable.getOpponents(player);
+	opponents.forEach(opponent => {
+		if (opponent !== null) {
+			const oppScore = calcCumulative(opponent);
+			opponentScores = opponentScores + oppScore;
+		} else {
+			// unplayed game, counts as a 0 score.
+		}
+	});
+
+	return opponentScores;
 }
 
 function calcCumulative(player)
