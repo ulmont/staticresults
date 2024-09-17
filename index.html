@@ -73,7 +73,7 @@ function SetupGlobals()
 function SetupControls()
 {
 	const controlsDiv = document.getElementById('controlsDiv');
-	controlsDiv.innerHTML = "<table class='ControlOuter'><tr><td id='chartsBox'></td><td id='sectionBox'></td><td id='roundsBox'></td></tr></table>";
+	controlsDiv.innerHTML = "<table class='ControlOuter' style='width: 100%;'><tr><td id='chartsBox'></td><td id='sectionBox'></td><td id='roundsBox'></td></tr></table>";
 
 	SetupCharts();
 }
@@ -445,7 +445,7 @@ function SetupWallChart(section, sortAlgo, playerNumAlgo, colorStringAlgo)
 	2198      14497790	1	2	2.5	3.5	4.5
 	*/
 	const wallChartDiv = document.getElementById('wallChartDiv');
-	let pTable = `<table id="GLOuter">
+	let pTable = `<table id="GLOuter" style='width: 100%;'>
 		<thead>
 			<tr>
 				<th class="Number">#</th>
@@ -690,7 +690,7 @@ function ShowPairingsPTOZ(section,rp)
 	//	The table of games consists of an outer table with the header and an
 	//	inner table with the game list, which is embedded in a scrolling div.
 	//
-	let pTable = `<table id="GLOuter">
+	let pTable = `<table id="GLOuter" style='width: 100%;'>
 		<thead>
 			<tr>
 				<th class="Board">Board</th>
@@ -768,7 +768,7 @@ function ShowPairingsSJSON(section,rp)
 	//	The table of games consists of an outer table with the header and an
 	//	inner table with the game list, which is embedded in a scrolling div.
 	//
-	let pTable = `<table id="GLOuter">
+	let pTable = `<table id="GLOuter" style='width: 100%;'>
 		<thead>
 			<tr>
 				<th class="Board">Board</th>
@@ -890,14 +890,13 @@ function loadTournaments(ptozFile, swissSysFile)
 						let ssDate = new Date(Date.parse(sjson.Overview['Ending date']) + 1000*60*60*12);
 
 						// show whichever has the theoretical later ending date
-						if (ptozDate > ssDate) {
+ 						if (ptozDate > ssDate) {
 							ptoz.vTable = getVTablePTOZ();
 							TestShow(ptoz); 
 						} else {
 							sjson.vTable = getVTableSwissSys();
 							TestShow(sjson);
-						}
-
+						} 
 					})
 					.catch((e) => console.error(e));
 			})
@@ -937,6 +936,10 @@ function getVTablePTOZ()
 						byeAdjustment = byeAdjustment + 1.0; // unplayed game
 					} else if (result == -2 || result == -98) {
 						// forfeit loss
+						score = score + 0.0;
+					} else if (result === 99) {
+						// not played yet
+						score = score + 0.0;
 					} else {
 						console.log('UNKNOWN RESULT ' + result);
 					}
@@ -959,6 +962,10 @@ function getVTablePTOZ()
 						byeAdjustment = byeAdjustment + 1.0; // unplayed game
 					} else if (result == +2 || result == -98) {
 						// forfeit loss
+						score = score + 0.0;
+					} else if (result === 99) {
+						// not played yet
+						score = score + 0.0;
 					} else {
 						console.log('UNKNOWN RESULT ' + result);
 					}
@@ -1014,6 +1021,11 @@ function getVTablePTOZ()
 					score += 1.0;
 					byeType = 'B';
 					break;
+				case '': // unplayed game
+				case '   ': // deliberate fallthrough
+					score += 0.0; 
+					byeType = 'U';
+					break;
 				default:
 					console.log('UNKNOWN RESULT: ' + result);
 					break;
@@ -1050,6 +1062,8 @@ function getVTablePTOZ()
 						score = score + 0.5; // forfeit
 					} else if (result == -2 || result == -98) {
 						score = score + 0.5; // forfeit
+					} else if (result == 99) {
+						score = score + 0.0; // not played yet
 					} else {
 						console.log('UNKNOWN RESULT ' + result);
 					}
@@ -1064,6 +1078,8 @@ function getVTablePTOZ()
 						score = score + 0.5; // forfeit
 					} else if (result == +2 || result == -98) {
 						score = score + 0.5; // forfeit
+					} else if (result == 99) {
+						score = score + 0.0; // not played yet
 					} else {
 						console.log('UNKNOWN RESULT ' + result);
 					}
@@ -1114,10 +1130,15 @@ function getVTablePTOZ()
 		return player.tnmt.pts;
 	}
 	vTable.getPlayerRating = function(player) {
-		return player.base.rating;
+		if (player.base.rating !== undefined) {
+			return player.base.rating;
+		} else {
+			return 'Unr';
+		}
 	}
 	vTable.getResultString = function(color, result) {
 		/*
+		'', '   ' - Paired but not yet played
 		W - Win
 		L - Loss
 		D - Draw
@@ -1129,6 +1150,9 @@ function getVTablePTOZ()
 		U - Not Paired (also Zero Point Bye)
 		*/
 		switch (result) {
+			case '':
+			case '   ': // deliberate fallthrough
+				return 'A';
 			case '0.0': 
 				return 'L';
 			case '0.0F':
@@ -1372,7 +1396,11 @@ function getVTableSwissSys()
 		return score;
 	}
 	vTable.getPlayerRating = function(player) {
-		return player.Rating;
+		if (player.Rating !== undefined) {
+			return player.Rating;
+		} else {
+			return 'Unr';
+		}
 	}
 	vTable.getResultString = function(color, result) {
 		/*
@@ -1399,6 +1427,7 @@ function getVTableSwissSys()
 			case 'H':
 			case 'X': 
 			case 'B': 
+			case 'A':
 				return result;
 			default:
 				console.log('UNKNOWN RESULT: ' + result);
@@ -1441,10 +1470,10 @@ function getVTableSwissSys()
 	<div id="controlsDiv">
 	</div>
 
-	<div id="pairingsDiv" style="height: 60%; display:none">
+	<div id="pairingsDiv" style="height: 60%; width: 100%; display:none">
 	</div>
 
-	<div id="wallChartDiv" style="height: 60%; display:none">
+	<div id="wallChartDiv" style="height: 60%; width: 100%; display:none">
 	</div>
 
 	<script>
