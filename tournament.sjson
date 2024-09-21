@@ -5,7 +5,7 @@
     "Tournament title": "The Tulane Classic",
     "Starting date": "09/21/2024",
     "Ending date": "09/22/2024",
-    "Trace": "3.3.3.7.1.7.11.7.1.3."
+    "Trace": "3.7.3.7.3.3.3.7.1.7."
   },
   "Sections": [
     {
@@ -695,7 +695,7 @@
           "Current result": " ",
           "Note": "Result coding is Result; Op.; Clr; Brd; Logical ops. 1 & 2; Game pnts",
           "Results": [
-            "~;9;W;0;9;9;0"
+            "~;9;W;201;9;9;0"
           ]
         },
         {
@@ -713,7 +713,7 @@
           "Email": "jack.calder@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;10;B;0;10;10;0"
+            "~;10;B;202;10;10;0"
           ]
         },
         {
@@ -731,7 +731,7 @@
           "Email": "tchance503@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;11;W;0;11;11;0"
+            "~;11;W;203;11;11;0"
           ]
         },
         {
@@ -749,7 +749,7 @@
           "Email": "teddylw@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;12;B;0;12;12;0"
+            "~;12;B;204;12;12;0"
           ]
         },
         {
@@ -787,7 +787,7 @@
           "Email": "courtney.landry@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;13;W;0;13;13;0"
+            "~;13;W;205;13;13;0"
           ]
         },
         {
@@ -805,7 +805,7 @@
           "Email": "lukabrekalo49@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;15;B;0;15;15;0"
+            "~;15;B;206;15;15;0"
           ]
         },
         {
@@ -823,7 +823,7 @@
           "Email": "reagans@aol.com",
           "Current result": " ",
           "Results": [
-            "~;16;W;0;16;16;0"
+            "~;16;W;207;16;16;0"
           ]
         },
         {
@@ -844,7 +844,7 @@
           "Email": "aubreyestewart@yahoo.com",
           "Current result": " ",
           "Results": [
-            "~;1;B;0;1;1;0"
+            "~;1;B;201;1;1;0"
           ]
         },
         {
@@ -862,7 +862,7 @@
           "Email": "bsamarel@tulane.edu",
           "Current result": " ",
           "Results": [
-            "~;2;W;0;2;2;0"
+            "~;2;W;202;2;2;0"
           ]
         },
         {
@@ -883,7 +883,7 @@
           "Email": "nathaliedajko@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;3;B;0;3;3;0"
+            "~;3;B;203;3;3;0"
           ]
         },
         {
@@ -901,7 +901,7 @@
           "Email": "angelique@myluxurystudio.com",
           "Current result": " ",
           "Results": [
-            "~;4;W;0;4;4;0"
+            "~;4;W;204;4;4;0"
           ]
         },
         {
@@ -919,7 +919,7 @@
           "Email": "jlamontern@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;6;B;0;6;6;0"
+            "~;6;B;205;6;6;0"
           ]
         },
         {
@@ -955,7 +955,7 @@
           "Email": "kobiclipari@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;7;W;0;7;7;0"
+            "~;7;W;206;7;7;0"
           ]
         },
         {
@@ -972,7 +972,7 @@
           "Email": "notaidanoconnor@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;8;B;0;8;8;0"
+            "~;8;B;207;8;8;0"
           ]
         },
         {
