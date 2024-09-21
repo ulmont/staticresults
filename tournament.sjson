@@ -5,7 +5,7 @@
     "Tournament title": "The Tulane Classic",
     "Starting date": "09/21/2024",
     "Ending date": "09/22/2024",
-    "Trace": "3.7.3.7.3.3.3.7.1.7."
+    "Trace": "3.7.0.0.0.0.0.0.0.0."
   },
   "Sections": [
     {
@@ -658,7 +658,7 @@
       "Type": 0,
       "Section title": "U1400",
       "Section time control": "g/60;i30",
-      "Number of players": 17,
+      "Number of players": 18,
       "Number of teams": 0,
       "Rounds paired": 1,
       "Rounds played": 0,
@@ -695,7 +695,7 @@
           "Current result": " ",
           "Note": "Result coding is Result; Op.; Clr; Brd; Logical ops. 1 & 2; Game pnts",
           "Results": [
-            "~;9;W;201;9;9;0"
+            "~;10;W;201;10;10;0"
           ]
         },
         {
@@ -713,7 +713,7 @@
           "Email": "jack.calder@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;10;B;202;10;10;0"
+            "~;11;B;202;11;11;0"
           ]
         },
         {
@@ -731,7 +731,7 @@
           "Email": "tchance503@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;11;W;203;11;11;0"
+            "~;12;W;203;12;12;0"
           ]
         },
         {
@@ -749,7 +749,7 @@
           "Email": "teddylw@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;12;B;204;12;12;0"
+            "~;13;B;204;13;13;0"
           ]
         },
         {
@@ -774,6 +774,19 @@
         },
         {
           "Pair number": 6,
+          "Name": "Mohiuddin, Zunair",
+          "ID": "30239567",
+          "Rating": 1066,
+          "Rating2": 1000,
+          "Exp1": "07/31/2025",
+          "State": "LA",
+          "Current result": " ",
+          "Results": [
+            "~;18;B;208;0;0;0"
+          ]
+        },
+        {
+          "Pair number": 7,
           "Name": "Landry, Jack",
           "ID": "17177377",
           "Rating": 1063,
@@ -787,11 +800,11 @@
           "Email": "courtney.landry@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;13;W;205;13;13;0"
+            "~;14;W;205;14;14;0"
           ]
         },
         {
-          "Pair number": 7,
+          "Pair number": 8,
           "Name": "Brekao, Luka",
           "ID": "16058618",
           "Rating": 989,
@@ -805,11 +818,11 @@
           "Email": "lukabrekalo49@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;15;B;206;15;15;0"
+            "~;16;B;206;16;16;0"
           ]
         },
         {
-          "Pair number": 8,
+          "Pair number": 9,
           "Name": "Sledge, Wyatt C",
           "ID": "31225814",
           "Rating": 954,
@@ -823,11 +836,11 @@
           "Email": "reagans@aol.com",
           "Current result": " ",
           "Results": [
-            "~;16;W;207;16;16;0"
+            "~;17;W;207;17;17;0"
           ]
         },
         {
-          "Pair number": 9,
+          "Pair number": 10,
           "Name": "Wells, Torian Latravis",
           "ID": "30692424",
           "Rating": 886,
@@ -848,7 +861,7 @@
           ]
         },
         {
-          "Pair number": 10,
+          "Pair number": 11,
           "Name": "Samarel, Brett",
           "ID": "31666329",
           "Rating": 845,
@@ -866,7 +879,7 @@
           ]
         },
         {
-          "Pair number": 11,
+          "Pair number": 12,
           "Name": "Klingler, James Elliot",
           "ID": "31221304",
           "Rating": 839,
@@ -887,7 +900,7 @@
           ]
         },
         {
-          "Pair number": 12,
+          "Pair number": 13,
           "Name": "Arcuri, Jeremy",
           "ID": "30771273",
           "Rating": 762,
@@ -905,7 +918,7 @@
           ]
         },
         {
-          "Pair number": 13,
+          "Pair number": 14,
           "Name": "Lamonte, Bradley",
           "ID": "30978063",
           "Rating": 445,
@@ -919,11 +932,11 @@
           "Email": "jlamontern@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;6;B;205;6;6;0"
+            "~;7;B;205;7;7;0"
           ]
         },
         {
-          "Pair number": 14,
+          "Pair number": 15,
           "Name": "Falconer, Beau",
           "ID": "31570503",
           "Rating": 444,
@@ -942,7 +955,7 @@
           ]
         },
         {
-          "Pair number": 15,
+          "Pair number": 16,
           "Name": "Lipari, Kobi",
           "ID": "31334465",
           "Exp1": "09/30/2025",
@@ -955,11 +968,11 @@
           "Email": "kobiclipari@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;7;W;206;7;7;0"
+            "~;8;W;206;8;8;0"
           ]
         },
         {
-          "Pair number": 16,
+          "Pair number": 17,
           "Name": "O'Connor, Aidan",
           "ID": "32028500",
           "Exp1": "09/30/2025",
@@ -972,11 +985,11 @@
           "Email": "notaidanoconnor@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;8;B;207;8;8;0"
+            "~;9;B;207;9;9;0"
           ]
         },
         {
-          "Pair number": 17,
+          "Pair number": 18,
           "Name": "Weber, Jack",
           "ID": "32034438",
           "Exp1": "09/30/2025",
@@ -987,9 +1000,9 @@
           "Zip": "19087",
           "Phone": "(484) 431-2895",
           "Email": "jackweber03@gmail.com",
-          "Current result": "1",
+          "Current result": " ",
           "Results": [
-            "B;-1;-;0;-1;-1;0"
+            "~;6;W;0;-1;-1;0"
           ]
         }
       ],
