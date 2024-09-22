@@ -790,7 +790,7 @@ function ShowPairingsSJSON(section,rp)
 		if (board == 0) {
 			// bye setup
 			board = '';
-			leftResult = resultToScore(gameResult[0]);
+			leftResult = resultToScore(gameResult[0], false);
 			leftName = section.Players[gameResult[7] - 1].Name;
 			rightResult = '';
 			rightName = 'Bye';
@@ -801,14 +801,14 @@ function ShowPairingsSJSON(section,rp)
 				// nope, process
 				doneBoards.add(board);
 				if (gameResult[2] === 'W') {
-					leftResult = resultToScore(gameResult[0]);
+					leftResult = resultToScore(gameResult[0], false);
 					leftName = section.Players[gameResult[7] - 1].Name;			
-					rightResult = (1.0 - leftResult); // ignoring split results
+					rightResult = resultToScore(gameResult[0], true);
 					rightName = section.Players[gameResult[1] - 1].Name;
 				} else {
-					rightResult = resultToScore(gameResult[0]);
+					rightResult = resultToScore(gameResult[0], false);
 					rightName = section.Players[gameResult[7] - 1].Name;			
-					leftResult = (1.0 - rightResult); // ignoring split results
+					leftResult = resultToScore(gameResult[0], true);
 					leftName = section.Players[gameResult[1] - 1].Name;
 				}
 			} else {
@@ -834,23 +834,38 @@ function ShowPairingsSJSON(section,rp)
 	pairingsDiv.style.display = 'block';
 }
 
-function resultToScore(result) 
+function resultToScore(result, flip = false) 
 {
 	switch (result) {
 		case '-': // deliberate fallthrough
 		case 'F': 
-		case 'U': 
+			if (flip) {
+				return 1.0; // opposite of a loss is a win, opposite of a forfeit loss is a forfeit win
+			}
 			return 0.0;
 			break;
+		case 'Z': 
+			if (flip) {
+				return 0.0; // assume forfeit draw is vs. forfeit loss.
+			}
+			return 0.5; 
 		case '=':  // deliberate fallthrough
-		case 'Z':
 		case 'H':
-			return 0.5;
+			return 0.5; // these two results don't flip
 			break;
 		case '+': // deliberate fallthrough
 		case 'X': 
-		case 'B': 
+			if (flip) {
+				return 0.0; // opposite of a win is a loss, opposite of a forfeit win is a forfeit loss.
+			}
 			return 1.0;
+			break;
+		case 'B': 
+			return 1.0; // this result doesn't flip since there's no opponent.
+			break; 
+		case '~': // unplayed game
+		case 'U': 
+			return 0.0; // this result doesn't flip since there's no game here.
 			break;
 		default:
 			console.log('UNKNOWN RESULT: ' + result);
@@ -1218,6 +1233,7 @@ function getVTableSwissSys()
 					break;
 				case 'F': // deliberate fallthrough
 				case 'U': 
+				case '~': 
 					score += 0.0;
 					playerScores.push(score);
 					break;
@@ -1262,6 +1278,7 @@ function getVTableSwissSys()
 			case '-': // deliberate fallthrough
 			case 'F': 
 			case 'U': 
+			case '~':
 				score += 0.0;
 				byeType = 'U';
 				break;
@@ -1301,6 +1318,9 @@ function getVTableSwissSys()
 
 			let result = items[0];
 			switch (result) {
+				case '~': // this game is pending so it's absolutely no result yet.
+					score += 0.0;
+					break;
 				case '-':
 					score += 0.0;
 					break;
@@ -1375,6 +1395,7 @@ function getVTableSwissSys()
 				case '-': // deliberate fallthrough
 				case 'F': 
 				case 'U': 
+				case '~':
 					score += 0.0;
 					break;
 				case '=': // deliberate fallthrough
@@ -1414,7 +1435,9 @@ function getVTableSwissSys()
 		Z - Forfeit Draw
 		U - Not Paired (also Zero Point Bye)
 		*/
-		switch (result) {		
+		switch (result) {	
+			case '~':
+				return 'A'; // not played yet	
 			case '-': 
 				return 'L';
 			case '=':
