@@ -478,7 +478,7 @@ function SetupWallChart(section, sortAlgo, playerNumAlgo, colorStringAlgo)
 			}
 		}
 		pTable = `${pTable}
-			<td class="Score">${score}</td>
+			<td class="Score">${score.toFixed(1)}</td>
 		</tr>`;
 	}
 	wallChartDiv.innerHTML = `${pTable}
@@ -716,13 +716,25 @@ function ShowPairingsPTOZ(section,rp)
 		rightPlayer = GameRightPlayer(game);
 		leftName    = PlayerFormat(leftPlayer);
 		leftResult  = GameLeftResult(game);
+		leftPoints = vTable.getPlayerPoints(leftPlayer);
 		rightName   = PlayerFormat(rightPlayer);
 		rightResult = GameRightResult(game);
+		rightPoints = vTable.getPlayerPoints(rightPlayer);
+		if (leftPoints !== undefined) {
+			leftPoints = '(' + leftPoints.toFixed(1) + ')';
+		} else {
+			leftPoints = '';
+		}
+		if (rightPoints !== undefined) {
+			rightPoints = '(' + rightPoints.toFixed(1) + ')';
+		} else {
+			rightPoints = '';
+		}
 		resultLine = `<tr>
 			<td class="Board">${board}</td>
-			<td class="Score">${leftResult}</td>
+			<td class="Score">${leftResult} ${leftPoints}</td>
 			<td class="Name">${leftName}</td>
-			<td class="Score">${rightResult}</td>
+			<td class="Score">${rightResult} ${rightPoints}</td>
 			<td class="Name">${rightName}</td>
 		</tr>`;
 		pTable += resultLine;
@@ -784,7 +796,7 @@ function ShowPairingsSJSON(section,rp)
 	gameResults.forEach(gameResult => {
 		// Result coding is Result; Op.; Clr; Brd; Logical ops. 1 & 2; Game pnts; Player"
 		let board = gameResult[3];
-		let leftResult, leftName, rightResult, rightName;
+		let leftResult, leftName, leftPoints, rightResult, rightName, rightPoints;
 		let duplicate = false;
 
 		if (board == 0) {
@@ -802,26 +814,41 @@ function ShowPairingsSJSON(section,rp)
 				doneBoards.add(board);
 				if (gameResult[2] === 'W') {
 					leftResult = resultToScore(gameResult[0], false);
-					leftName = section.Players[gameResult[7] - 1].Name;			
+					leftName = section.Players[gameResult[7] - 1].Name;
+					leftPoints = vTable.getPlayerPoints(section.Players[gameResult[7] - 1]);			
 					rightResult = resultToScore(gameResult[0], true);
 					rightName = section.Players[gameResult[1] - 1].Name;
+					rightPoints = vTable.getPlayerPoints(section.Players[gameResult[1] - 1]);			
 				} else {
 					rightResult = resultToScore(gameResult[0], false);
 					rightName = section.Players[gameResult[7] - 1].Name;			
+					rightPoints = vTable.getPlayerPoints(section.Players[gameResult[7] - 1]);			
 					leftResult = resultToScore(gameResult[0], true);
 					leftName = section.Players[gameResult[1] - 1].Name;
+					leftPoints = vTable.getPlayerPoints(section.Players[gameResult[1] - 1]);			
 				}
 			} else {
 				// yup, already did this board
 			}
 		}
+
+		if (leftPoints !== undefined) {
+			leftPoints = '(' + leftPoints.toFixed(1) + ')';
+		} else {
+			leftPoints = '';
+		}
+		if (rightPoints !== undefined) {
+			rightPoints = '(' + rightPoints.toFixed(1) + ')';
+		} else {
+			rightPoints = '';
+		}
 		
 		if (!duplicate) {
 			resultLine = `<tr>
 				<td class="Board">${board}</td>
-				<td class="Score">${leftResult}</td>
+				<td class="Score">${leftResult} ${leftPoints}</td>
 				<td class="Name">${leftName}</td>
-				<td class="Score">${rightResult}</td>
+				<td class="Score">${rightResult} ${rightPoints}</td>
 				<td class="Name">${rightName}</td>
 			</tr>`;
 			pTable = `${pTable}${resultLine}`;
@@ -1053,6 +1080,7 @@ function getVTablePTOZ()
 				isBye = true;
 			}
 		} else {
+			score += 0.0;
 			isBye = true;
 			byeType = 'U';
 		}
