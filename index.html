@@ -1170,6 +1170,12 @@ function getVTablePTOZ()
 		return player.tnmt.pairno;
 	}
 	vTable.getPlayerPoints = function(player) {
+		if (player === undefined) {
+			return undefined;
+		}
+		if (player.tnmt === undefined) {
+			return undefined;
+		}
 		return player.tnmt.pts;
 	}
 	vTable.getPlayerRating = function(player) {
