@@ -716,10 +716,10 @@ function ShowPairingsPTOZ(section,rp)
 		rightPlayer = GameRightPlayer(game);
 		leftName    = PlayerFormat(leftPlayer);
 		leftResult  = GameLeftResult(game);
-		leftPoints = vTable.getPlayerPoints(leftPlayer);
+		leftPoints = vTable.getPlayerPoints(tourney.players[leftPlayer]);
 		rightName   = PlayerFormat(rightPlayer);
 		rightResult = GameRightResult(game);
-		rightPoints = vTable.getPlayerPoints(rightPlayer);
+		rightPoints = vTable.getPlayerPoints(tourney.players[rightPlayer]);
 		if (leftPoints !== undefined) {
 			leftPoints = '(' + leftPoints.toFixed(1) + ')';
 		} else {
