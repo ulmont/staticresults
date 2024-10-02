@@ -1534,7 +1534,28 @@ function getVTableSwissSys()
 	</div>
 
 	<script>
-	loadTournaments('tournament.ptoz', 'tournament.sjson');
+		// see if we got tournament parameters or not
+		let ptozFileName = 'tournament.ptoz';
+		let sjsonFileName = 'tournament.sjson';
+		const get = window.location.search;
+		const i = get.indexOf('?');
+		if (i !== -1) {
+			const params = new Map();
+			const pairs = get.substring(i + 1).split('&');
+			pairs.forEach(pair => { 
+				const nameVal = pair.split('=');
+				params.set(nameVal[0], nameVal[1]);
+			});
+			pfn = params.get('ptoz');
+			if (pfn !== undefined) {
+				ptozFileName = pfn;
+			}
+			sfn = params.get('sjson');
+			if (sfn !== undefined) {
+				sjsonFileName = sfn;
+			}
+		}
+	loadTournaments(ptozFileName, sjsonFileName);
 	</script>
 </body>
 </html>
