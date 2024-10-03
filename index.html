@@ -956,7 +956,7 @@ function getVTablePTOZ()
 		let byeAdjustment = 0.0;
 
 		player.tnmt.games.forEach(gameNum => {
-			if (gameNum !== -1) {
+			if ((gameNum !== -1) && (gameNum !== null)) {
 				const game = tourney.games[gameNum];
 				const result = game.result;
 				if (game.p1 === player.tnmt.playerNo) {
@@ -1030,7 +1030,7 @@ function getVTablePTOZ()
 		} else {
 			gameNum = player.tnmt.games[j];
 		}
-		if (gameNum !== -1) {
+		if ((gameNum !== -1) && (gameNum !== null)) {
 			const game = tourney.games[player.tnmt.games[j]];
 			let opponentNum, result, color, colorNum;
 			console.log(JSON.stringify(game));
@@ -1091,7 +1091,7 @@ function getVTablePTOZ()
 		// 	These scores are adjusted for unplayed games, which count a half point each, regardless of whether they were byes, forfeits, or simply rounds not played after an opponent withdrew.
 		let score = 0.0;
 		player.tnmt.games.forEach(gameNum => {
-			if (gameNum !== -1) {
+			if ((gameNum !== -1) && (gameNum !== null)) {
 				const game = tourney.games[gameNum];
 				const result = game.result;
 				if (game.p1 === player.tnmt.playerNo) {
@@ -1140,7 +1140,7 @@ function getVTablePTOZ()
 	vTable.getOpponents = function(player) {
 		let opponents = [];
 		player.tnmt.games.forEach(gameNum => {
-			if (gameNum !== -1) {
+			if ((gameNum !== -1) && (gameNum !== null)) {
 				const game = tourney.games[gameNum];
 				// figure out the opponent
 				let opponentNum;
