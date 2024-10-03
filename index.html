@@ -1161,7 +1161,11 @@ function getVTablePTOZ()
 		return opponents;
 	}
 	vTable.getPlayerId = function(player) {
-		return player.base.id;
+		if (player.base.id !== undefined) {
+			return player.base.id;
+		} else {
+			return '';
+		}
 	}
 	vTable.getPlayerName = function(player) {
 		return player.base.name;
@@ -1409,7 +1413,11 @@ function getVTableSwissSys()
 		return opponents;
 	}
 	vTable.getPlayerId = function(player) {
-		return player.ID;
+		if (player.ID !== undefined) {
+			return player.ID;
+		} else {
+			return '';
+		}
 	}
 	vTable.getPlayerName = function(player) {
 		return player.Name;
