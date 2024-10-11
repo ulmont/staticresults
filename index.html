@@ -1180,7 +1180,50 @@ function getVTablePTOZ()
 		if (player.tnmt === undefined) {
 			return undefined;
 		}
-		return player.tnmt.pts;
+
+		let score = 0.0;
+		player.tnmt.games.forEach(gameNum => {
+			if ((gameNum !== -1) && (gameNum !== null)) {
+				const game = tourney.games[gameNum];
+				const result = game.result;
+				// "result":{"type":"integer","description":"Result. +1=1st player wins, -1=2nd player wins, 0=draw,+2=1st player wins by forfeit, -2=2nd player wins by forfeit, 98=double forfeit, 99=No result yet"},
+				if (game.p1 === player.tnmt.playerNo) {
+					if (result == 0) {
+						score = score + 0.5;
+					} else if (result == +1 || result == +3) {
+						score = score + 1.0;
+					} else if (result == -1) {
+						score = score + 0.0;
+					} else if (result == +2) {
+						score = score + 1.0; // forfeit
+					} else if (result == -2 || result == -98) {
+						score = score + 0.0; // forfeit loss or double forfeit
+					} else if (result == 99) {
+						score = score + 0.0; // not played yet
+					} else {
+						console.log('UNKNOWN RESULT ' + result);
+					}
+				} else {
+					if (result == 0) {
+						score = score + 0.5;
+					} else if (result == -1) {
+						score = score + 1.0;
+					} else if (result == +1) {
+						score = score + 0.0;
+					} else if (result == -2) {
+						score = score + 1.0; // forfeit
+					} else if (result == +2 || result == -98) {
+						score = score + 0.0; // forfeit loss or double forfeit
+					} else if (result == 99) {
+						score = score + 0.0; // not played yet
+					} else {
+						console.log('UNKNOWN RESULT ' + result);
+					}
+				}
+			}
+		});
+
+		return score;		
 	}
 	vTable.getPlayerRating = function(player) {
 		if (player.base.rating !== undefined) {
