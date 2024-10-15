@@ -924,11 +924,57 @@ function loadTournaments(ptozFile, swissSysFile)
 
 						// figure out which is more recent.  This is a bit of a crapshoot as it depends on the date field, which is kind of arbitrary especially for the PTOZ version.
 						// if there are two dates in the ptoz separated by a - or space, try to take the last one as the ending date
-						let lastIndex = Math.max(ptoz.dates.lastIndexOf('-'), ptoz.dates.lastIndexOf(' '));
-						if (lastIndex !== -1) {
-							ptoz.dates = ptoz.dates.substring(lastIndex + 1);
+						const origPtozDate = ptoz.dates;
+						console.log('ptoz date string: ' + origPtozDate);
+						ptoz.dates = ptoz.dates.trim();
+						if (ptoz.dates.length > '10/15/2024'.length) {
+							let lastIndex = Math.max(ptoz.dates.lastIndexOf('-'), ptoz.dates.lastIndexOf(' '));
+							if (lastIndex !== -1) {
+								ptoz.dates = ptoz.dates.substring(lastIndex + 1);
+							}
 						}
-						let ptozDate = new Date(Date.parse(ptoz.dates) + 1000*60*60*12);
+						// detect and process 10/15/2024, 10-15-2024, 2024-10-15, 2024/10/15
+						let ptozDate;
+						let splitter;
+						if (ptoz.dates.lastIndexOf('-') !== -1) {
+							// 10-15-2024 or 2024-10-15
+							splitter = '-';
+						} else if (ptoz.dates.lastIndexOf('-') !== -1) {
+							// 10/15/2024 or 2024/10/15
+							splitter = '/';
+						}
+						if (splitter !== undefined) {
+							const parts = ptoz.dates.split(splitter);
+							let year, month, day;
+							if (parts.length === 3) { 
+								if (parts[0].length === 4) {
+									year = Number.parseInt(parts[0]);
+									if (parts[1].length == 2) {
+										month = Number.parseInt(parts[1]);
+									}
+									if (parts[2].length === 2) {
+										day = Number.parseInt(parts[2]);
+									}
+								} else if (parts[0].length === 2) {
+									month = Number.parseInt(parts[0]);
+									if (parts[1].length == 2) {
+										day = Number.parseInt(parts[1]);
+									}
+									if (parts[2].length === 4) {
+										year = Number.parseInt(parts[2]);
+									}
+								}
+							} 
+							if ((year !== undefined) && (month !== undefined) && (day !== undefined)) {
+								// new Date(year, monthIndex, day, hours)
+								ptozDate = new Date(year, (month - 1), day, 12); 
+							}
+						}
+						if (ptozDate === undefined) {
+							// yolo it
+							ptozDate = new Date(Date.parse(ptoz.dates) + 1000*60*60*12);
+						}
+						console.log('ptoz date parsed: ' + ptozDate);
 						let ssDate = new Date(Date.parse(sjson.Overview['Ending date']) + 1000*60*60*12);
 
 						// show whichever has the theoretical later ending date
