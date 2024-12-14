@@ -5,7 +5,7 @@
     "Tournament title": "Holiday Swiss",
     "Starting date": "12/14/2024",
     "Ending date": "12/14/2024",
-    "Trace": "3.7.3.3.3.3.3.3.3.7."
+    "Trace": "1.3.3.3.3.3.3.3.7.1."
   },
   "Sections": [
     {
@@ -15,11 +15,11 @@
       "Section time control": "g/40;d5",
       "Number of players": 26,
       "Number of teams": 0,
-      "Rounds paired": 1,
-      "Rounds played": 0,
+      "Rounds paired": 2,
+      "Rounds played": 1,
       "Rating to use": 0,
       "Engine": 1,
-      "Last unrestricted round": 0,
+      "Last unrestricted round": 1,
       "Need search options": false,
       "Final round": 5,
       "Coin toss": 0,
@@ -27,7 +27,7 @@
       "Acceleration": 0,
       "Blitz": false,
       "Got logic": true,
-      "Pair table items": 12,
+      "Pair table items": 13,
       "Team pair table items": 0,
       "Players": [
         {
@@ -49,7 +49,8 @@
           "Current result": " ",
           "Note": "Result coding is Result; Op.; Clr; Brd; Logical ops. 1 & 2; Game pnts",
           "Results": [
-            "~;13;B;101;13;0;0"
+            "-;13;B;101;13;0;0",
+            "~;22;W;108;18;0;0"
           ]
         },
         {
@@ -70,9 +71,10 @@
           "Phone": "(207) 751-2078",
           "Email": "eliolyle@gmail.com",
           "Reserved byes": "2 ",
-          "Current result": " ",
+          "Current result": "½",
           "Results": [
-            "~;14;W;102;14;0;0"
+            "+;14;W;102;14;0;0",
+            "H;-1;-;0;-1;0;0"
           ]
         },
         {
@@ -93,7 +95,8 @@
           "Email": "a@a.edu",
           "Current result": " ",
           "Results": [
-            "~;15;B;103;15;0;0"
+            "+;15;B;103;15;0;0",
+            "~;11;W;102;10;0;0"
           ]
         },
         {
@@ -114,7 +117,8 @@
           "Email": "asquitiro@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;16;W;104;16;0;0"
+            "=;16;W;104;16;0;0",
+            "~;20;B;105;16;0;0"
           ]
         },
         {
@@ -136,7 +140,8 @@
           "Email": "thadeusbeavers@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;17;B;105;17;0;0"
+            "+;17;B;105;17;0;0",
+            "~;13;W;103;11;0;0"
           ]
         },
         {
@@ -158,7 +163,8 @@
           "Email": "ausjanusa@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;18;W;106;18;0;0"
+            "+;18;W;106;18;0;0",
+            "~;10;B;101;12;0;0"
           ]
         },
         {
@@ -180,7 +186,8 @@
           "Email": "anhtigone@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;19;B;107;19;0;0"
+            "=;19;B;107;19;0;0",
+            "~;9;W;106;19;0;0"
           ]
         },
         {
@@ -193,7 +200,8 @@
           "State": "LA",
           "Current result": " ",
           "Results": [
-            "~;26;W;112;0;0;0"
+            "+;26;W;112;0;0;0",
+            "~;12;B;104;13;0;0"
           ]
         },
         {
@@ -214,7 +222,8 @@
           "Email": "harryjames4000@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;20;W;108;20;0;0"
+            "=;20;W;108;20;0;0",
+            "~;7;B;106;20;0;0"
           ]
         },
         {
@@ -235,7 +244,8 @@
           "Email": "jrichert37@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;22;B;109;22;0;0"
+            "+;22;B;109;22;0;0",
+            "~;6;W;101;3;0;0"
           ]
         },
         {
@@ -257,7 +267,8 @@
           "Email": "kevinapper@yahoo.com",
           "Current result": " ",
           "Results": [
-            "~;24;W;110;24;0;0"
+            "+;24;W;110;24;0;0",
+            "~;3;B;102;5;0;0"
           ]
         },
         {
@@ -278,7 +289,8 @@
           "Email": "albinet896@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;25;B;111;25;0;0"
+            "+;25;B;111;25;0;0",
+            "~;8;W;104;6;0;0"
           ]
         },
         {
@@ -299,7 +311,8 @@
           "Email": "gdnatal504@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;1;W;101;1;0;0"
+            "+;1;W;101;1;0;0",
+            "~;5;B;103;8;0;0"
           ]
         },
         {
@@ -317,7 +330,8 @@
           "Email": "will.tabor@yahoo.com",
           "Current result": " ",
           "Results": [
-            "~;2;B;102;2;0;0"
+            "-;2;B;102;2;0;0",
+            "~;25;W;109;22;0;0"
           ]
         },
         {
@@ -335,7 +349,8 @@
           "Email": "burks.rives@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;3;W;103;3;0;0"
+            "-;3;W;103;3;0;0",
+            "~;18;B;110;24;0;0"
           ]
         },
         {
@@ -353,7 +368,8 @@
           "Email": "annie.mcglynn@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;4;B;104;4;0;0"
+            "=;4;B;104;4;0;0",
+            "~;19;W;107;4;0;0"
           ]
         },
         {
@@ -374,7 +390,8 @@
           "Email": "xande1@bellsouth.net",
           "Current result": " ",
           "Results": [
-            "~;5;W;105;5;0;0"
+            "-;5;W;105;5;0;0",
+            "~;24;B;111;25;0;0"
           ]
         },
         {
@@ -395,7 +412,8 @@
           "Email": "fang00976@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;6;B;106;6;0;0"
+            "-;6;B;106;6;0;0",
+            "~;15;W;110;1;0;0"
           ]
         },
         {
@@ -416,7 +434,8 @@
           "Email": "haripaed@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;7;W;107;7;0;0"
+            "=;7;W;107;7;0;0",
+            "~;16;B;107;7;0;0"
           ]
         },
         {
@@ -434,7 +453,8 @@
           "Email": "a@a.edu",
           "Current result": " ",
           "Results": [
-            "~;9;B;108;9;0;0"
+            "=;9;B;108;9;0;0",
+            "~;4;W;105;9;0;0"
           ]
         },
         {
@@ -453,6 +473,7 @@
           "Withdrew": true,
           "Current result": "0",
           "Results": [
+            "U;0;-;0;0;0;0",
             "U;0;-;0;0;0;0"
           ]
         },
@@ -471,7 +492,8 @@
           "Email": "kevinapper@yahoo.com",
           "Current result": " ",
           "Results": [
-            "~;10;W;109;10;0;0"
+            "-;10;W;109;10;0;0",
+            "~;1;B;108;14;0;0"
           ]
         },
         {
@@ -493,6 +515,7 @@
           "Withdrew": true,
           "Current result": "0",
           "Results": [
+            "U;0;-;0;0;0;0",
             "U;0;-;0;0;0;0"
           ]
         },
@@ -510,7 +533,8 @@
           "Email": "Julesloganlaird33@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;11;B;110;11;0;0"
+            "-;11;B;110;11;0;0",
+            "~;17;W;111;15;0;0"
           ]
         },
         {
@@ -527,7 +551,8 @@
           "Email": "albcasanova90@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;12;W;111;12;0;0"
+            "-;12;W;111;12;0;0",
+            "~;14;B;109;17;0;0"
           ]
         },
         {
@@ -542,9 +567,11 @@
           "Zip": "70131",
           "Phone": "(504) 717-9976",
           "Email": "mercadelcharlyn@gmail.com",
-          "Current result": " ",
+          "PAB": 2,
+          "Current result": "1",
           "Results": [
-            "~;8;B;112;-1;0;0"
+            "-;8;B;112;-1;0;0",
+            "B;0;-;0;-1;0;0"
           ]
         }
       ],
@@ -566,11 +593,11 @@
       "Section time control": "g/40;d5",
       "Number of players": 24,
       "Number of teams": 1,
-      "Rounds paired": 1,
-      "Rounds played": 0,
+      "Rounds paired": 2,
+      "Rounds played": 1,
       "Rating to use": 0,
       "Engine": 1,
-      "Last unrestricted round": 0,
+      "Last unrestricted round": 1,
       "Need search options": false,
       "First board": 14,
       "Final round": 5,
@@ -601,7 +628,8 @@
           "Current result": " ",
           "Note": "Result coding is Result; Op.; Clr; Brd; Logical ops. 1 & 2; Game pnts",
           "Results": [
-            "~;13;W;201;13;13;0"
+            "+;13;W;201;13;13;0",
+            "~;8;B;201;7;0;0"
           ]
         },
         {
@@ -622,7 +650,8 @@
           "Email": "etodd3@tulane.edu",
           "Current result": " ",
           "Results": [
-            "~;14;B;202;14;14;0"
+            "+;14;B;202;14;14;0",
+            "~;7;W;202;8;0;0"
           ]
         },
         {
@@ -640,7 +669,8 @@
           "Email": "shamikdas1@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;15;W;203;15;15;0"
+            "+;15;W;203;15;15;0",
+            "~;10;B;203;9;0;0"
           ]
         },
         {
@@ -658,7 +688,8 @@
           "Email": "mechekids3@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;16;B;204;16;17;0"
+            "+;16;B;204;16;17;0",
+            "~;9;W;204;10;0;0"
           ]
         },
         {
@@ -672,7 +703,8 @@
           "State": "LA",
           "Current result": " ",
           "Results": [
-            "~;17;W;205;17;0;0"
+            "+;17;W;205;17;0;0",
+            "~;12;B;205;11;0;0"
           ]
         },
         {
@@ -691,7 +723,8 @@
           "Email": "anindyab0064@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;18;B;206;18;18;0"
+            "+;18;B;206;18;18;0",
+            "~;11;W;206;12;0;0"
           ]
         },
         {
@@ -709,7 +742,8 @@
           "Email": "a@a.edu",
           "Current result": " ",
           "Results": [
-            "~;19;W;207;19;19;0"
+            "+;19;W;207;19;19;0",
+            "~;2;B;202;1;0;0"
           ]
         },
         {
@@ -727,7 +761,8 @@
           "Email": "jack.calder@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;20;B;208;20;20;0"
+            "+;20;B;208;20;20;0",
+            "~;1;W;201;2;0;0"
           ]
         },
         {
@@ -745,7 +780,8 @@
           "Email": "a@a.edu",
           "Current result": " ",
           "Results": [
-            "~;21;W;209;21;21;0"
+            "+;21;W;209;21;21;0",
+            "~;4;B;204;3;0;0"
           ]
         },
         {
@@ -763,7 +799,8 @@
           "Email": "jamescl2010@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;22;B;210;22;22;0"
+            "+;22;B;210;22;22;0",
+            "~;3;W;203;4;0;0"
           ]
         },
         {
@@ -781,7 +818,8 @@
           "Email": "ashley@gillenhalldesign.com",
           "Current result": " ",
           "Results": [
-            "~;23;W;211;23;23;0"
+            "+;23;W;211;23;23;0",
+            "~;6;B;206;5;0;0"
           ]
         },
         {
@@ -799,7 +837,8 @@
           "Email": "mraltonjamison@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;24;B;212;24;24;0"
+            "+;24;B;212;24;24;0",
+            "~;5;W;205;6;0;0"
           ]
         },
         {
@@ -817,7 +856,8 @@
           "Email": "jack.noel@me.com",
           "Current result": " ",
           "Results": [
-            "~;1;B;201;1;1;0"
+            "-;1;B;201;1;1;0",
+            "~;20;W;207;19;0;0"
           ]
         },
         {
@@ -838,7 +878,8 @@
           "Email": "jerrylmacdonald@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;2;W;202;2;2;0"
+            "-;2;W;202;2;2;0",
+            "~;19;B;208;20;0;0"
           ]
         },
         {
@@ -856,7 +897,8 @@
           "Email": "wklieder@aol.com",
           "Current result": " ",
           "Results": [
-            "~;3;B;203;3;3;0"
+            "-;3;B;203;3;3;0",
+            "~;22;W;209;21;0;0"
           ]
         },
         {
@@ -869,7 +911,8 @@
           "State": "LA",
           "Current result": " ",
           "Results": [
-            "~;4;W;204;4;0;0"
+            "-;4;W;204;4;0;0",
+            "~;21;B;210;22;0;0"
           ]
         },
         {
@@ -888,7 +931,8 @@
           "Reserved byes": "3 ",
           "Current result": " ",
           "Results": [
-            "~;5;B;205;5;4;0"
+            "-;5;B;205;5;4;0",
+            "~;24;W;211;23;0;0"
           ]
         },
         {
@@ -905,7 +949,8 @@
           "Email": "taojin703@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;6;W;206;6;6;0"
+            "-;6;W;206;6;6;0",
+            "~;23;B;212;24;0;0"
           ]
         },
         {
@@ -924,7 +969,8 @@
           "Email": "anindyab0064@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;7;B;207;7;7;0"
+            "-;7;B;207;7;7;0",
+            "~;14;W;208;13;0;0"
           ]
         },
         {
@@ -942,7 +988,8 @@
           "Email": "kimlepratt@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;8;W;208;8;8;0"
+            "-;8;W;208;8;8;0",
+            "~;13;B;207;14;0;0"
           ]
         },
         {
@@ -960,7 +1007,8 @@
           "Email": "anand2explore@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;9;B;209;9;9;0"
+            "-;9;B;209;9;9;0",
+            "~;16;W;210;15;0;0"
           ]
         },
         {
@@ -978,7 +1026,8 @@
           "Email": "barbervalen@yahoo.com",
           "Current result": " ",
           "Results": [
-            "~;10;W;210;10;10;0"
+            "-;10;W;210;10;10;0",
+            "~;15;B;209;16;0;0"
           ]
         },
         {
@@ -996,7 +1045,8 @@
           "Email": "alycepud26@yahoo.com",
           "Current result": " ",
           "Results": [
-            "~;11;B;211;11;11;0"
+            "-;11;B;211;11;11;0",
+            "~;18;W;212;17;0;0"
           ]
         },
         {
@@ -1012,7 +1062,8 @@
           "Email": "contactjohnthomasjr@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;12;W;212;12;12;0"
+            "-;12;W;212;12;12;0",
+            "~;17;B;211;18;0;0"
           ]
         }
       ],
@@ -1024,6 +1075,7 @@
           "Rating": 0,
           "Current result": " ",
           "Results": [
+            "~;0;-;0;0;0;0",
             "~;0;-;0;0;0;0"
           ]
         }
