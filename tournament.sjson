@@ -5,7 +5,7 @@
     "Tournament title": "Holiday Swiss",
     "Starting date": "12/14/2024",
     "Ending date": "12/14/2024",
-    "Trace": "3.3.3.3.3.3.3.7.3.3."
+    "Trace": "3.3.3.3.3.3.3.7.3.7."
   },
   "Sections": [
     {
@@ -13,7 +13,7 @@
       "Type": 0,
       "Section title": "Open",
       "Section time control": "g/40;d5",
-      "Number of players": 25,
+      "Number of players": 26,
       "Number of teams": 0,
       "Rounds paired": 1,
       "Rounds played": 0,
@@ -49,7 +49,7 @@
           "Current result": " ",
           "Note": "Result coding is Result; Op.; Clr; Brd; Logical ops. 1 & 2; Game pnts",
           "Results": [
-            "~;12;B;101;12;0;0"
+            "~;13;B;101;13;0;0"
           ]
         },
         {
@@ -72,7 +72,7 @@
           "Reserved byes": "2 ",
           "Current result": " ",
           "Results": [
-            "~;13;W;102;13;0;0"
+            "~;14;W;102;14;0;0"
           ]
         },
         {
@@ -93,7 +93,7 @@
           "Email": "a@a.edu",
           "Current result": " ",
           "Results": [
-            "~;14;B;103;14;0;0"
+            "~;15;B;103;15;0;0"
           ]
         },
         {
@@ -114,7 +114,7 @@
           "Email": "asquitiro@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;15;W;104;15;0;0"
+            "~;16;W;104;16;0;0"
           ]
         },
         {
@@ -136,7 +136,7 @@
           "Email": "thadeusbeavers@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;16;B;105;16;0;0"
+            "~;17;B;105;17;0;0"
           ]
         },
         {
@@ -158,7 +158,7 @@
           "Email": "ausjanusa@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;17;W;106;17;0;0"
+            "~;18;W;106;18;0;0"
           ]
         },
         {
@@ -180,11 +180,24 @@
           "Email": "anhtigone@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;18;B;107;18;0;0"
+            "~;19;B;107;19;0;0"
           ]
         },
         {
           "Pair number": 8,
+          "Name": "Crochet, Michael J",
+          "ID": "12426877",
+          "Rating": 1772,
+          "Rating2": 1645,
+          "Exp1": "Life",
+          "State": "LA",
+          "Current result": " ",
+          "Results": [
+            "~;26;W;112;0;0;0"
+          ]
+        },
+        {
+          "Pair number": 9,
           "Name": "James, Harry H",
           "ID": "30229199",
           "Rating": 1731,
@@ -201,11 +214,11 @@
           "Email": "harryjames4000@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;19;W;108;19;0;0"
+            "~;20;W;108;20;0;0"
           ]
         },
         {
-          "Pair number": 9,
+          "Pair number": 10,
           "Name": "Richert, Josh",
           "ID": "12843313",
           "Rating": 1715,
@@ -222,11 +235,11 @@
           "Email": "jrichert37@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;21;B;109;21;0;0"
+            "~;22;B;109;22;0;0"
           ]
         },
         {
-          "Pair number": 10,
+          "Pair number": 11,
           "Name": "Apper, Kevin A",
           "ID": "12480458",
           "Rating": 1704,
@@ -244,11 +257,11 @@
           "Email": "kevinapper@yahoo.com",
           "Current result": " ",
           "Results": [
-            "~;23;W;110;23;0;0"
+            "~;24;W;110;24;0;0"
           ]
         },
         {
-          "Pair number": 11,
+          "Pair number": 12,
           "Name": "Binet, George Albert",
           "ID": "12417077",
           "Rating": 1685,
@@ -265,11 +278,11 @@
           "Email": "albinet896@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;24;B;111;24;0;0"
+            "~;25;B;111;25;0;0"
           ]
         },
         {
-          "Pair number": 12,
+          "Pair number": 13,
           "Name": "Natal, Gregory",
           "ID": "31912622",
           "Rating": 1584,
@@ -290,7 +303,7 @@
           ]
         },
         {
-          "Pair number": 13,
+          "Pair number": 14,
           "Name": "Tabor, Patrick",
           "ID": "30917661",
           "Rating": 1551,
@@ -308,7 +321,7 @@
           ]
         },
         {
-          "Pair number": 14,
+          "Pair number": 15,
           "Name": "Rives, Burks Allen",
           "ID": "13130860",
           "Rating": 1492,
@@ -326,7 +339,7 @@
           ]
         },
         {
-          "Pair number": 15,
+          "Pair number": 16,
           "Name": "McGlynn-Wright, Theo",
           "ID": "30664464",
           "Rating": 1470,
@@ -344,7 +357,7 @@
           ]
         },
         {
-          "Pair number": 16,
+          "Pair number": 17,
           "Name": "Alexander, Bryan",
           "ID": "12550823",
           "Rating": 1466,
@@ -365,7 +378,7 @@
           ]
         },
         {
-          "Pair number": 17,
+          "Pair number": 18,
           "Name": "Zhang, Aaron James",
           "ID": "16496233",
           "Rating": 1417,
@@ -386,7 +399,7 @@
           ]
         },
         {
-          "Pair number": 18,
+          "Pair number": 19,
           "Name": "Hari, Surya",
           "ID": "31645562",
           "Rating": 1402,
@@ -407,7 +420,7 @@
           ]
         },
         {
-          "Pair number": 19,
+          "Pair number": 20,
           "Name": "Pridgeon, Patrick",
           "ID": "31343188",
           "Rating": 1377,
@@ -421,11 +434,11 @@
           "Email": "a@a.edu",
           "Current result": " ",
           "Results": [
-            "~;8;B;108;8;0;0"
+            "~;9;B;108;9;0;0"
           ]
         },
         {
-          "Pair number": 20,
+          "Pair number": 21,
           "Name": "Mohiuddin, Zunair",
           "ID": "30239567",
           "Rating": 1276,
@@ -444,7 +457,7 @@
           ]
         },
         {
-          "Pair number": 21,
+          "Pair number": 22,
           "Name": "Kabachnik, Kevin",
           "ID": "17055557",
           "Rating": 1238,
@@ -458,11 +471,11 @@
           "Email": "kevinapper@yahoo.com",
           "Current result": " ",
           "Results": [
-            "~;9;W;109;9;0;0"
+            "~;10;W;109;10;0;0"
           ]
         },
         {
-          "Pair number": 22,
+          "Pair number": 23,
           "Name": "Klingler, James Elliot",
           "ID": "31221304",
           "Rating": 1108,
@@ -484,7 +497,7 @@
           ]
         },
         {
-          "Pair number": 23,
+          "Pair number": 24,
           "Name": "Laird, Jules",
           "ID": "32175065",
           "Exp1": "11/30/2025",
@@ -497,11 +510,11 @@
           "Email": "Julesloganlaird33@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;10;B;110;10;0;0"
+            "~;11;B;110;11;0;0"
           ]
         },
         {
-          "Pair number": 24,
+          "Pair number": 25,
           "Name": "Casanova Diaz, Alberto",
           "ID": "31941470",
           "Exp1": "06/30/2025",
@@ -514,11 +527,11 @@
           "Email": "albcasanova90@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;11;W;111;11;0;0"
+            "~;12;W;111;12;0;0"
           ]
         },
         {
-          "Pair number": 25,
+          "Pair number": 26,
           "Name": "Mercadel, Kristofferson Carlos",
           "ID": "32081677",
           "Exp1": "10/31/2025",
@@ -529,10 +542,9 @@
           "Zip": "70131",
           "Phone": "(504) 717-9976",
           "Email": "mercadelcharlyn@gmail.com",
-          "PAB": 1,
-          "Current result": "1",
+          "Current result": " ",
           "Results": [
-            "B;0;-;0;-1;0;0"
+            "~;8;B;112;-1;0;0"
           ]
         }
       ],
