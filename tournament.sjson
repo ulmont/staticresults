@@ -5,7 +5,7 @@
     "Tournament title": "2025 Louisiana Pro - Am",
     "Starting date": "03/29/2025",
     "Ending date": "03/30/2025",
-    "Trace": "3.3.3.7.3.3.3.7.1.3."
+    "Trace": "3.7.3.7.3.3.7.1.6.3."
   },
   "Sections": [
     {
@@ -13,7 +13,7 @@
       "Type": 0,
       "Section title": "Amateur",
       "Section time control": "g/60;i30",
-      "Number of players": 23,
+      "Number of players": 24,
       "Number of teams": 0,
       "Rounds paired": 1,
       "Rounds played": 0,
@@ -187,7 +187,7 @@
           "Email": "sledgewyatt@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;19;W;208;19;19;0"
+            "~;22;W;210;19;19;0"
           ]
         },
         {
@@ -226,7 +226,7 @@
           "Email": "Julesloganlaird33@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;21;W;210;21;21;0"
+            "~;19;W;208;22;22;0"
           ]
         },
         {
@@ -247,7 +247,7 @@
           "Email": "teddylw@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;22;B;211;22;22;0"
+            "~;23;B;211;23;23;0"
           ]
         },
         {
@@ -395,7 +395,7 @@
           "Email": "rrohner@tulane.edu",
           "Current result": " ",
           "Results": [
-            "~;8;B;208;8;8;0"
+            "~;10;B;208;8;8;0"
           ]
         },
         {
@@ -417,6 +417,17 @@
         },
         {
           "Pair number": 21,
+          "Name": "Charlot, Alfred",
+          "ID": "31810300",
+          "Exp1": "03/31/2025",
+          "State": "LA",
+          "Current result": " ",
+          "Results": [
+            "~;24;B;212;0;0;0"
+          ]
+        },
+        {
+          "Pair number": 22,
           "Name": "Glorioso, Jared J",
           "ID": "32289929",
           "Exp1": "02/28/2027",
@@ -429,11 +440,11 @@
           "Email": "thegloriosofamily@yahoo.com",
           "Current result": " ",
           "Results": [
-            "~;10;B;210;10;10;0"
+            "~;8;B;210;10;10;0"
           ]
         },
         {
-          "Pair number": 22,
+          "Pair number": 23,
           "Name": "McDonald, Tyler",
           "ID": "32236309",
           "Exp1": "01/31/2026",
@@ -450,7 +461,7 @@
           ]
         },
         {
-          "Pair number": 23,
+          "Pair number": 24,
           "Name": "Randle, Brandon Jamar",
           "ID": "32364823",
           "Exp1": "03/31/2026",
@@ -461,9 +472,9 @@
           "Zip": "70047",
           "Phone": "(985) 343-8406",
           "Email": "randlebrandon5@gmail.com",
-          "Current result": "1",
+          "Current result": " ",
           "Results": [
-            "B;-1;-;0;-1;-1;0"
+            "~;21;W;212;-1;-1;0"
           ]
         }
       ],
