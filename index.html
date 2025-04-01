@@ -467,7 +467,7 @@ function SetupWallChart(section, sortAlgo, playerNumAlgo, colorStringAlgo)
 		pTable = `${pTable}		
 			<tr>
 				<td class="Number">${playerNumAlgo(player, sectionPlayers)}</td>
-				<td class="Name">${vTable.getPlayerName(player)}<br />${vTable.getPlayerRating(player)}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />${playerIdLink}</td>`;
+				<td class="Name">${vTable.getPlayerName(player)}<br />${vTable.getPlayerRating(player, section)}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />${playerIdLink}</td>`;
 		for (let j = 0; j < vTable.getSectionRoundsPaired(section); j++) {
 			let [roundScore, colorString, playerNum, byeType, isBye] = vTable.calcScoreColorStringPlayerNumByeTypeIsBye(j, section, sectionPlayers, player, playerNumAlgo, colorStringAlgo);
 			score = score + roundScore;
@@ -1273,11 +1273,24 @@ function getVTablePTOZ()
 
 		return score;		
 	}
-	vTable.getPlayerRating = function(player) {
-		if (player.base.rating !== undefined) {
-			return player.base.rating;
+	vTable.getPlayerRating = function(player, section) {
+		let tcParts = section.TC.split(';'); // "G/90;d5"
+		tcParts[0].replace(/[^\d]/g, '');
+		tcParts[1].replace(/[^\d]/g, '');
+		tcParts[0] = Number.parseInt(tcParts[0]);
+		tcParts[1] = Number.parseInt(tcParts[1]);
+		if ((tcParts[0] + tcParts[1]) < 30) {
+			if (player.base.localrate !== undefined) {
+				return player.base.localrate;
+			} else {
+				return 'Unr';
+			}
 		} else {
-			return 'Unr';
+			if (player.base.rating !== undefined) {
+				return player.base.rating;
+			} else {
+				return 'Unr';
+			}
 		}
 	}
 	vTable.getResultString = function(color, result) {
@@ -1549,7 +1562,7 @@ function getVTableSwissSys()
 
 		return score;
 	}
-	vTable.getPlayerRating = function(player) {
+	vTable.getPlayerRating = function(player, section) {
 		if (player.Rating !== undefined) {
 			return player.Rating;
 		} else {
