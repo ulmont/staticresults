@@ -1275,8 +1275,8 @@ function getVTablePTOZ()
 	}
 	vTable.getPlayerRating = function(player, section) {
 		let tcParts = section.TC.split(';'); // "G/90;d5"
-		tcParts[0].replace(/[^\d]/g, '');
-		tcParts[1].replace(/[^\d]/g, '');
+		tcParts[0] = tcParts[0].replace(/[^\d]/g, '');
+		tcParts[1] = tcParts[1].replace(/[^\d]/g, '');
 		tcParts[0] = Number.parseInt(tcParts[0]);
 		tcParts[1] = Number.parseInt(tcParts[1]);
 		if ((tcParts[0] + tcParts[1]) < 30) {
