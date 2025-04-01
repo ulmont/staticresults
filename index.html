@@ -462,10 +462,12 @@ function SetupWallChart(section, sortAlgo, playerNumAlgo, colorStringAlgo)
 
 	for (const [i, player] of playersToShow.entries()) {
 		let score = 0.0;
-		pTable = `${pTable}
+		let playerId = vTable.getPlayerId(player);
+		let playerIdLink = (playerId.length > 0) ? `<a href=https://www.uschess.org/msa/MbrDtlMain.php?${playerId}>${playerId}</a>` : '';
+		pTable = `${pTable}		
 			<tr>
 				<td class="Number">${playerNumAlgo(player, sectionPlayers)}</td>
-				<td class="Name">${vTable.getPlayerName(player)}<br />${vTable.getPlayerRating(player)}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${vTable.getPlayerId(player)}</td>`;
+				<td class="Name">${vTable.getPlayerName(player)}<br />${vTable.getPlayerRating(player)}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />${playerIdLink}</td>`;
 		for (let j = 0; j < vTable.getSectionRoundsPaired(section); j++) {
 			let [roundScore, colorString, playerNum, byeType, isBye] = vTable.calcScoreColorStringPlayerNumByeTypeIsBye(j, section, sectionPlayers, player, playerNumAlgo, colorStringAlgo);
 			score = score + roundScore;
