@@ -5,7 +5,7 @@
     "Tournament title": "Second Annual Tulane Quick",
     "Starting date": "04/19/2025",
     "Ending date": "04/19/2025",
-    "Trace": "1.3.7.1.3.7.1.1.3.7."
+    "Trace": "3.3.3.3.7.1.3.7.1.3."
   },
   "Sections": [
     {
@@ -1173,7 +1173,7 @@
       "Number of players": 22,
       "Number of teams": 0,
       "Rounds paired": 6,
-      "Rounds played": 5,
+      "Rounds played": 6,
       "Rating to use": 0,
       "Engine": 4,
       "Last unrestricted round": 5,
@@ -1185,7 +1185,7 @@
       "Acceleration": 0,
       "Blitz": false,
       "Got logic": true,
-      "Pair table items": 12,
+      "Pair table items": 11,
       "Team pair table items": 0,
       "Players": [
         {
@@ -1201,7 +1201,7 @@
           "Zip": "70005",
           "Phone": "(504) 427-1327",
           "Email": "flor_guan@yahoo.com",
-          "Current result": " ",
+          "Current result": "½",
           "Note": "Result coding is Result; Op.; Clr; Brd; Logical ops. 1 & 2; Game pnts",
           "Results": [
             "+;12;W;201;12;12;0",
@@ -1225,7 +1225,7 @@
           "Zip": "39571",
           "Phone": "(228) 254-0246",
           "Email": "stephentrest7@gmail.com",
-          "Current result": " ",
+          "Current result": "1",
           "Results": [
             "X;13;-;202;13;13;0",
             "-;11;W;202;10;10;0",
@@ -1251,7 +1251,7 @@
           "Birth date": "2013",
           "Phone": "(225) 937-0441",
           "Email": "reagans@aol.com",
-          "Current result": " ",
+          "Current result": "1",
           "Results": [
             "+;14;W;203;14;14;0",
             "+;10;B;203;11;11;0",
@@ -1274,7 +1274,7 @@
           "Zip": "70118",
           "Phone": "(214) 732-4031",
           "Email": "ashbgillen@gmail.com",
-          "Current result": " ",
+          "Current result": "1",
           "Results": [
             "-;15;B;204;15;15;0",
             "+;17;W;206;20;17;0",
@@ -1300,7 +1300,7 @@
           "Birth date": "2005",
           "Phone": "(816) 820-9754",
           "Email": "Asherjosephson@gmail.com",
-          "Current result": " ",
+          "Current result": "1",
           "Results": [
             "+;16;W;205;16;16;0",
             "-;20;B;204;15;15;0",
@@ -1324,11 +1324,11 @@
           "Phone": "(816) 820-9754",
           "Email": "notaidanoconnor@gmail.com",
           "Reserved byes": "5z 6z ",
-          "Current result": "0",
+          "Current result": "1",
           "Results": [
             "-;17;B;206;17;17;0",
             "-;16;W;207;16;16;0",
-            "-;21;B;209;12;12;0",
+            "+;21;B;209;12;12;0",
             "+;18;W;209;22;18;0",
             "U;-1;-;0;-1;-1;0",
             "U;-1;-;0;-1;-1;0"
@@ -1347,7 +1347,7 @@
           "Zip": "70506",
           "Phone": "(479) 282-4405",
           "Email": "vimala.srec@gmail.com",
-          "Current result": " ",
+          "Current result": "½",
           "Results": [
             "+;18;W;207;18;18;0",
             "+;15;B;205;17;20;0",
@@ -1373,7 +1373,7 @@
           "Birth date": "2014",
           "Phone": "(504) 799-9185",
           "Email": "nathaliedajko@gmail.com",
-          "Current result": " ",
+          "Current result": "1",
           "Results": [
             "+;19;B;208;19;19;0",
             "-;1;W;201;1;1;0",
@@ -1396,7 +1396,7 @@
           "Zip": "70734",
           "Phone": "(225) 290-5371",
           "Email": "mraltonjamison@gmail.com",
-          "Current result": " ",
+          "Current result": "0",
           "Results": [
             "-;20;W;209;20;20;0",
             "-;18;B;208;18;18;0",
@@ -1419,7 +1419,7 @@
           "Zip": "70791",
           "Phone": "(904) 874-4047",
           "Email": "bnesto3@gmail.com",
-          "Current result": " ",
+          "Current result": "0",
           "Results": [
             "+;21;B;210;21;21;0",
             "-;3;W;203;2;2;0",
@@ -1442,7 +1442,7 @@
           "Zip": "70124",
           "Phone": "(212) 203-2638",
           "Email": "chandramenon@yahoo.com",
-          "Current result": " ",
+          "Current result": "0",
           "Results": [
             "+;22;W;211;22;22;0",
             "+;2;B;202;3;3;0",
@@ -1465,7 +1465,7 @@
           "Zip": "70116",
           "Phone": "(816) 820-9754",
           "Email": "bsamarel@tulane.edu",
-          "Current result": " ",
+          "Current result": "1",
           "Results": [
             "-;1;B;201;1;1;0",
             "-;19;W;209;19;19;0",
@@ -1511,7 +1511,7 @@
           "Zip": "04468",
           "Phone": "(907) 209-8123",
           "Email": "haixue.shen@gmail.com",
-          "Current result": " ",
+          "Current result": "1",
           "Results": [
             "-;3;B;203;3;3;0",
             "+;21;W;210;21;21;0",
@@ -1534,7 +1534,7 @@
           "Zip": "70115",
           "Phone": "(740) 816-6299",
           "Email": "seanne_falconer@yahoo.com",
-          "Current result": " ",
+          "Current result": "0",
           "Results": [
             "+;4;W;204;4;4;0",
             "-;7;W;205;5;5;0",
@@ -1557,7 +1557,7 @@
           "Zip": "70808",
           "Phone": "(225) 239-9482",
           "Email": "morgan.t.lentz@gmail.com",
-          "Current result": " ",
+          "Current result": "0",
           "Results": [
             "-;5;B;205;5;5;0",
             "+;6;B;207;6;6;0",
@@ -1580,7 +1580,7 @@
           "Zip": "70005",
           "Phone": "(225) 329-3300",
           "Email": "lpeng.br@gmail.com",
-          "Current result": " ",
+          "Current result": "0",
           "Results": [
             "+;6;W;206;6;6;0",
             "-;4;B;206;7;4;0",
@@ -1603,7 +1603,7 @@
           "Zip": "39571",
           "Phone": "(971) 255-8001",
           "Email": "rosalie.hagglund@gmail.com",
-          "Current result": " ",
+          "Current result": "0",
           "Results": [
             "-;7;B;207;7;7;0",
             "+;9;W;208;9;9;0",
@@ -1626,7 +1626,7 @@
           "Zip": "70820",
           "Phone": "(916) 502-3172",
           "Email": "carmichael.cathy@gmail.com",
-          "Current result": " ",
+          "Current result": "1",
           "Results": [
             "-;8;W;208;8;8;0",
             "+;12;B;209;12;12;0",
@@ -1649,7 +1649,7 @@
           "Phone": "(401) 660-4710",
           "Email": "chloebohannan@gmail.com",
           "Reserved byes": "3 4 5z 6z ",
-          "Current result": "0",
+          "Current result": "½",
           "Results": [
             "+;9;B;209;9;9;0",
             "+;5;W;204;4;7;0",
@@ -1676,7 +1676,7 @@
           "Results": [
             "-;10;W;210;10;10;0",
             "-;14;B;210;14;14;0",
-            "+;6;W;209;9;9;0",
+            "-;6;W;209;9;9;0",
             "H;-1;-;0;-1;-1;0",
             "H;-1;-;0;-1;-1;0",
             "U;-1;-;0;-1;-1;0"
@@ -1694,7 +1694,7 @@
           "Zip": "70115",
           "Phone": "(847) 942-4520",
           "Email": "brittany.k.sloan@gmail.com",
-          "Current result": " ",
+          "Current result": "0",
           "Results": [
             "-;11;B;211;11;11;0",
             "B;-1;-;0;-1;-1;0",
