@@ -903,6 +903,37 @@ function resultToScore(result, flip = false)
 	}
 }
 
+function parsePTOZDate(dateString)
+{
+	const splitSlash = dateString.split(/\/|-/);
+	const splitDash = dateString.split('-');
+	var startDate;
+	var endDate;
+	if (splitSlash.length === 6) {
+		// we have a start date and an end date
+		startDate = dateParse(splitSlash, 0);
+		endDate = dateParse(splitSlash, 3);
+	} else if (splitSlash.length === 3) {
+		// we have one date
+		startDate = dateParse(splitSlash, 0);
+		endDate = startDate;
+	} else if (splitDash.length === 6) {
+		// we have a start date and an end date
+		startDate = dateParse(splitDash, 0);
+		endDate = dateParse(splitDash, 4);
+	} else if (splitDash.length === 3) {
+		// we have one date
+		startDate = dateParse(splitDash, 0);
+		endDate = startDate;
+	}
+	let ptozDate = endDate;
+	if (ptozDate === undefined) {
+		// yolo it
+		ptozDate = new Date(Date.parse(dateString) + 1000*60*60*12);
+	}
+	return ptozDate;
+}
+
 function dateParse(parts, i) 
 {
 	let year, month, day;
@@ -965,32 +996,7 @@ function loadTournaments(ptozFile, swissSysFile)
 
 						// detect and process 10/15/2024, 10-15-2024, 2024-10-15, 2024/10/15
 						// but also detect and process all of those 2024-10-15-2025-04-22
-						const splitSlash = ptoz.dates.split(/\/|-/);
-						const splitDash = ptoz.dates.split('-');
-						var startDate;
-						var endDate;
-						if (splitSlash.length === 6) {
-							// we have a start date and an end date
-							startDate = dateParse(splitSlash, 0);
-							endDate = dateParse(splitSlash, 3);
-						} else if (splitSlash.length === 3) {
-							// we have one date
-							startDate = dateParse(splitSlash, 0);
-							endDate = startDate;
-						} else if (splitDash.length === 6) {
-							// we have a start date and an end date
-							startDate = dateParse(splitDash, 0);
-							endDate = dateParse(splitDash, 4);
-						} else if (splitDash.length === 3) {
-							// we have one date
-							startDate = dateParse(splitDash, 0);
-							endDate = startDate;
-						}
-						let ptozDate = endDate;
-						if (ptozDate === undefined) {
-							// yolo it
-							ptozDate = new Date(Date.parse(ptoz.dates) + 1000*60*60*12);
-						}
+						const ptozDate = parsePTOZDate(ptoz.dates);
 						console.log('ptoz date parsed: ' + ptozDate);
 						let ssDate = new Date(Date.parse(sjson.Overview['Ending date']) + 1000*60*60*12);
 
