@@ -961,12 +961,7 @@ function loadTournaments(ptozFile, swissSysFile)
 						const origPtozDate = ptoz.dates;
 						console.log('ptoz date string: ' + origPtozDate);
 						ptoz.dates = ptoz.dates.trim();
-						if (ptoz.dates.length > '10/15/2024'.length) {
-							let lastIndex = Math.max(ptoz.dates.lastIndexOf('-'), ptoz.dates.lastIndexOf(' '));
-							if (lastIndex !== -1) {
-								ptoz.dates = ptoz.dates.substring(lastIndex + 1);
-							}
-						}
+
 						// detect and process 10/15/2024, 10-15-2024, 2024-10-15, 2024/10/15
 						// but also detect and process all of those 2024-10-15-2025-04-22
 						const splitSlash = ptoz.dates.split('/');
