@@ -903,6 +903,38 @@ function resultToScore(result, flip = false)
 	}
 }
 
+function dateParse(parts, i) 
+{
+	let year, month, day;
+	if (parts[i].length === 4) {
+		year = Number.parseInt(parts[i]);
+		i++;
+		if (parts[i].length == 2) {
+			month = Number.parseInt(parts[i]);
+		}
+		i++;
+		if (parts[i].length === 2) {
+			day = Number.parseInt(parts[i]);
+		}
+	} else if (parts[i].length === 2) {
+		month = Number.parseInt(parts[i]);
+		i++;
+		if (parts[i].length == 2) {
+			day = Number.parseInt(parts[i]);
+		}
+		i++;
+		if (parts[i].length === 4) {
+			year = Number.parseInt(parts[i]);
+		}
+	}
+	if ((year !== undefined) && (month !== undefined) && (day !== undefined)) {
+		// new Date(year, monthIndex, day, hours)
+		return new Date(year, (month - 1), day, 12); 
+	} else {
+		return undefined;
+	}
+}
+
 function loadTournaments(ptozFile, swissSysFile)
 {
 	//	getBinaryContent takes (path,callback) where callback is function(err,data)
@@ -936,42 +968,29 @@ function loadTournaments(ptozFile, swissSysFile)
 							}
 						}
 						// detect and process 10/15/2024, 10-15-2024, 2024-10-15, 2024/10/15
-						let ptozDate;
-						let splitter;
-						if (ptoz.dates.lastIndexOf('-') !== -1) {
-							// 10-15-2024 or 2024-10-15
-							splitter = '-';
-						} else if (ptoz.dates.lastIndexOf('-') !== -1) {
-							// 10/15/2024 or 2024/10/15
-							splitter = '/';
+						// but also detect and process all of those 2024-10-15-2025-04-22
+						const splitSlash = ptoz.dates.split('/');
+						const splitDash = ptoz.dates.split('-');
+						var startDate;
+						var endDate;
+						if (splitSlash.length === 6) {
+							// we have a start date and an end date
+							startDate = dateParse(splitSlash, 0);
+							endDate = dateParse(splitSlash, 3);
+						} else if (splitSlash.length === 3) {
+							// we have one date
+							startDate = dateParse(splitSlash, 0);
+							endDate = startDate;
+						} else if (splitDash.length === 7) {
+							// we have a start date and an end date
+							startDate = dateParse(splitDash, 0);
+							endDate = dateParse(splitDash, 4);
+						} else if (splitDash.length === 3) {
+							// we have one date
+							startDate = dateParse(splitDash, 0);
+							endDate = startDate;
 						}
-						if (splitter !== undefined) {
-							const parts = ptoz.dates.split(splitter);
-							let year, month, day;
-							if (parts.length === 3) { 
-								if (parts[0].length === 4) {
-									year = Number.parseInt(parts[0]);
-									if (parts[1].length == 2) {
-										month = Number.parseInt(parts[1]);
-									}
-									if (parts[2].length === 2) {
-										day = Number.parseInt(parts[2]);
-									}
-								} else if (parts[0].length === 2) {
-									month = Number.parseInt(parts[0]);
-									if (parts[1].length == 2) {
-										day = Number.parseInt(parts[1]);
-									}
-									if (parts[2].length === 4) {
-										year = Number.parseInt(parts[2]);
-									}
-								}
-							} 
-							if ((year !== undefined) && (month !== undefined) && (day !== undefined)) {
-								// new Date(year, monthIndex, day, hours)
-								ptozDate = new Date(year, (month - 1), day, 12); 
-							}
-						}
+						let ptozDate = endDate;
 						if (ptozDate === undefined) {
 							// yolo it
 							ptozDate = new Date(Date.parse(ptoz.dates) + 1000*60*60*12);
