@@ -959,12 +959,13 @@ function loadTournaments(ptozFile, swissSysFile)
 						// figure out which is more recent.  This is a bit of a crapshoot as it depends on the date field, which is kind of arbitrary especially for the PTOZ version.
 						// if there are two dates in the ptoz separated by a - or space, try to take the last one as the ending date
 						const origPtozDate = ptoz.dates;
-						console.log('ptoz date string: ' + origPtozDate);
-						ptoz.dates = ptoz.dates.trim();
+						console.log('ptoz raw date string: ' + origPtozDate);
+						ptoz.dates = ptoz.dates.trim().replace(/[^0-9\/-]/g, '');
+						console.log('ptoz cooked date string: ' + origPtozDate);
 
 						// detect and process 10/15/2024, 10-15-2024, 2024-10-15, 2024/10/15
 						// but also detect and process all of those 2024-10-15-2025-04-22
-						const splitSlash = ptoz.dates.split('/');
+						const splitSlash = ptoz.dates.split(/\/|-/);
 						const splitDash = ptoz.dates.split('-');
 						var startDate;
 						var endDate;
@@ -976,7 +977,7 @@ function loadTournaments(ptozFile, swissSysFile)
 							// we have one date
 							startDate = dateParse(splitSlash, 0);
 							endDate = startDate;
-						} else if (splitDash.length === 7) {
+						} else if (splitDash.length === 6) {
 							// we have a start date and an end date
 							startDate = dateParse(splitDash, 0);
 							endDate = dateParse(splitDash, 4);
