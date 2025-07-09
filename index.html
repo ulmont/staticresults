@@ -1254,7 +1254,7 @@ function getVTablePTOZ()
 
 		let roundsPaired = tourney.sections[player.tnmt.sectionID].roundsPaired;
 		
-		for (const [i, gameNum] of playersToShow.entries()) {
+		for (const [i, gameNum] of player.tnmt.games.entries()) {
 			if ((i < roundsPaired) && (gameNum !== -1) && (gameNum !== null)) {
 				const game = tourney.games[gameNum];
 				const result = game.result;
