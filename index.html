@@ -155,9 +155,9 @@ function getSection()
 function onSectionChange()
 {
 	const section = getSection();
+	const chartsDD = document.getElementById("chartsDD");
+	const chartsValue = chartsDD.options[chartsDD.selectedIndex].value;
 
-	let chartsDD = document.getElementById("chartsDD");
-	let chartsValue = chartsDD.options[chartsDD.selectedIndex].value;
 	switch (chartsValue) {
 		case 'Pairings':
 			SetupRounds(vTable.getSectionRoundsPaired(section));
@@ -668,7 +668,7 @@ function PlayerFormat(pnumber)
 	return tourney.players[pnumber]["base"]["name"];
 }
 
-function ShowPairingsPTOZ(section,rp)
+function ShowPairingsPTOZ(section, rp)
 {
 //
 //	pull array[int] of game numbers and sort by board number, but bubble -1's (byes)
@@ -1251,8 +1251,11 @@ function getVTablePTOZ()
 		}
 
 		let score = 0.0;
-		player.tnmt.games.forEach(gameNum => {
-			if ((gameNum !== -1) && (gameNum !== null)) {
+
+		let roundsPaired = tourney.sections[player.tnmt.sectionID].roundsPaired;
+		
+		for (const [i, gameNum] of playersToShow.entries()) {
+			if ((i < roundsPaired) && (gameNum !== -1) && (gameNum !== null)) {
 				const game = tourney.games[gameNum];
 				const result = game.result;
 				// "result":{"type":"integer","description":"Result. +1=1st player wins, -1=2nd player wins, 0=draw,+2=1st player wins by forfeit, -2=2nd player wins by forfeit, 98=double forfeit, 99=No result yet"},
@@ -1290,7 +1293,7 @@ function getVTablePTOZ()
 					}
 				}
 			}
-		});
+		}
 
 		return score;		
 	}
