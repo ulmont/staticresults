@@ -718,10 +718,10 @@ function ShowPairingsPTOZ(section, rp)
 		rightPlayer = GameRightPlayer(game);
 		leftName    = PlayerFormat(leftPlayer);
 		leftResult  = GameLeftResult(game);
-		leftPoints = vTable.getPlayerPoints(tourney.players[leftPlayer]);
+		leftPoints = vTable.getPlayerPoints(tourney.players[leftPlayer], rp);
 		rightName   = PlayerFormat(rightPlayer);
 		rightResult = GameRightResult(game);
-		rightPoints = vTable.getPlayerPoints(tourney.players[rightPlayer]);
+		rightPoints = vTable.getPlayerPoints(tourney.players[rightPlayer], rp);
 		if (leftPoints !== undefined) {
 			leftPoints = '(' + leftPoints.toFixed(1) + ')';
 		} else {
@@ -817,17 +817,17 @@ function ShowPairingsSJSON(section,rp)
 				if (gameResult[2] === 'W') {
 					leftResult = resultToScore(gameResult[0], false);
 					leftName = section.Players[gameResult[7] - 1].Name;
-					leftPoints = vTable.getPlayerPoints(section.Players[gameResult[7] - 1]);			
+					leftPoints = vTable.getPlayerPoints(section.Players[gameResult[7] - 1], rp);			
 					rightResult = resultToScore(gameResult[0], true);
 					rightName = section.Players[gameResult[1] - 1].Name;
-					rightPoints = vTable.getPlayerPoints(section.Players[gameResult[1] - 1]);			
+					rightPoints = vTable.getPlayerPoints(section.Players[gameResult[1] - 1], rp);			
 				} else {
 					rightResult = resultToScore(gameResult[0], false);
 					rightName = section.Players[gameResult[7] - 1].Name;			
-					rightPoints = vTable.getPlayerPoints(section.Players[gameResult[7] - 1]);			
+					rightPoints = vTable.getPlayerPoints(section.Players[gameResult[7] - 1], rp);			
 					leftResult = resultToScore(gameResult[0], true);
 					leftName = section.Players[gameResult[1] - 1].Name;
-					leftPoints = vTable.getPlayerPoints(section.Players[gameResult[1] - 1]);			
+					leftPoints = vTable.getPlayerPoints(section.Players[gameResult[1] - 1], rp);			
 				}
 			} else {
 				// yup, already did this board
@@ -1242,7 +1242,7 @@ function getVTablePTOZ()
 	vTable.getPlayerPairNo = function(player) {
 		return player.tnmt.pairno;
 	}
-	vTable.getPlayerPoints = function(player) {
+	vTable.getPlayerPoints = function(player, maxRounds = Number.MAX_SAFE_INTEGER) {
 		if (player === undefined) {
 			return undefined;
 		}
@@ -1251,11 +1251,9 @@ function getVTablePTOZ()
 		}
 
 		let score = 0.0;
-
-		let roundsPaired = tourney.sections[player.tnmt.sectionID].roundsPaired;
 		
 		for (const [i, gameNum] of player.tnmt.games.entries()) {
-			if ((i < roundsPaired) && (gameNum !== -1) && (gameNum !== null)) {
+			if ((i < maxRounds) && (gameNum !== -1) && (gameNum !== null)) {
 				const game = tourney.games[gameNum];
 				const result = game.result;
 				// "result":{"type":"integer","description":"Result. +1=1st player wins, -1=2nd player wins, 0=draw,+2=1st player wins by forfeit, -2=2nd player wins by forfeit, 98=double forfeit, 99=No result yet"},
@@ -1557,36 +1555,38 @@ function getVTableSwissSys()
 	vTable.getPlayerPairNo = function(player) {
 		return player['Pair number'];
 	}
-	vTable.getPlayerPoints = function(player) {
+	vTable.getPlayerPoints = function(player, maxRounds = Number.MAX_SAFE_INTEGER) {
 		let score = 0.0;
 
-		player.Results.forEach(gameResult => {
-			// "-;28;W;116;28;0;0"  "U;0;-;0;0;0;0"
-			const items = gameResult.split(';');
+		for (const [i, gameResult] of player.Results.entries()) {
+			if (i < maxRounds) {
+				// "-;28;W;116;28;0;0"  "U;0;-;0;0;0;0"
+				const items = gameResult.split(';');
 
-			let result = items[0];
-			switch (result) {
-				case '-': // deliberate fallthrough
-				case 'F': 
-				case 'U': 
-				case '~':
-					score += 0.0;
-					break;
-				case '=': // deliberate fallthrough
-				case 'Z':
-				case 'H':
-					score += 0.5;
-					break;
-				case '+': // deliberate fallthrough
-				case 'X': 
-				case 'B': 
-					score += 1.0;
-					break;
-				default:
-					console.log('UNKNOWN RESULT: ' + result);
-					break;
+				let result = items[0];
+				switch (result) {
+					case '-': // deliberate fallthrough
+					case 'F': 
+					case 'U': 
+					case '~':
+						score += 0.0;
+						break;
+					case '=': // deliberate fallthrough
+					case 'Z':
+					case 'H':
+						score += 0.5;
+						break;
+					case '+': // deliberate fallthrough
+					case 'X': 
+					case 'B': 
+						score += 1.0;
+						break;
+					default:
+						console.log('UNKNOWN RESULT: ' + result);
+						break;
+				}
 			}
-		});
+		}
 
 		return score;
 	}
