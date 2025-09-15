@@ -490,7 +490,7 @@ function SetupWallChart(section, sortAlgo, playerNumAlgo, colorStringAlgo)
 			<td class="Score">${score.toFixed(1)}</td>`;
 		if (perfRounds != 0) {
 			pTable = `${pTable}
-				<td class="Score">${(perfTotal / perfRounds).toFixed(1)}</td>`;
+				<td class="Score">${(perfTotal / perfRounds).toFixed(0)}</td>`;
 		} else {
 			pTable = `${pTable}
 				<td class="Score">N/A</td>`;
