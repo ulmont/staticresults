@@ -1110,6 +1110,7 @@ function getVTablePTOZ()
 		let gameNum, colorString, playerNum, byeType, isBye;
 		let score = 0.0;
 		let perfScore = Number.NaN;
+		let playedGame = true;
 		if (j >= player.tnmt.games.length) {
 			gameNum = -1;
 		} else {
@@ -1134,8 +1135,9 @@ function getVTablePTOZ()
 				color = 'B';
 			}
 			switch (result) {
-				case '0.0': // deliberate fallthrough
 				case '0.0F': 
+					playedGame = false;
+				case '0.0': // deliberate fallthrough
 					score += 0.0;
 					byeType = 'U';
 					break;
@@ -1143,17 +1145,20 @@ function getVTablePTOZ()
 					score += 0.5;
 					byeType = 'H';
 					break;
-				case '1.0':
-				case '1.0F': // deliberate fallthrough
+				case '1.0F': 
+					playedGame = false;
+				case '1.0': // deliberate fallthrough
 					score += 1.0;
 					byeType = 'B';
 					break;
 				case '': // unplayed game
 				case '   ': // deliberate fallthrough
+					playedGame = false;
 					score += 0.0; 
 					byeType = 'U';
 					break;
 				default:
+					playedGame = false;
 					console.log('UNKNOWN RESULT: ' + result);
 					break;
 			}
@@ -1161,9 +1166,16 @@ function getVTablePTOZ()
 			if (opponentNum !== -1) {
 				opponent = tourney.players[opponentNum];
 				playerNum = playerNumAlgo(opponent, sectionPlayers);
-				const oppRating = vTable.getPlayerRating(opponent, section);
-				if (oppRating != 'Unr') {
-					perfScore = oppRating;
+				if (playedGame) {
+					const oppRating = vTable.getPlayerRating(opponent, section);
+					if (oppRating != 'Unr') {
+						perfScore = oppRating;
+						if (score === 0.0) {
+							perfScore = perfScore - 400;
+						} else if (score === 1.0) {
+							perfScore = perfScore + 400;
+						}
+					}
 				}
 			} else {
 				isBye = true;
@@ -1452,6 +1464,7 @@ function getVTableSwissSys()
 		let gameNum, colorString, playerNum, byeType, isBye;
 		let score = 0.0;
 		let perfScore = Number.NaN;
+		let playedGame = true;
 
 		const gameResult = player.Results[j]; // "-;28;W;116;28;0;0"  "U;0;-;0;0;0;0"
 		const items = gameResult.split(';');
@@ -1464,26 +1477,30 @@ function getVTableSwissSys()
 
 		let result = items[0];
 		switch (result) {
-			case '-': // deliberate fallthrough
 			case 'F': 
 			case 'U': 
 			case '~':
+				playedGame = false;
+			case '-': // deliberate fallthrough
 				score += 0.0;
 				byeType = 'U';
 				break;
-			case '=':  // deliberate fallthrough
 			case 'Z':
 			case 'H':
+				playedGame = false;
+			case '=':  // deliberate fallthrough
 				score += 0.5;
 				byeType = 'H';
 				break;
-			case '+': // deliberate fallthrough
 			case 'X': 
 			case 'B': 
+				playedGame = false;
+			case '+': // deliberate fallthrough
 				score += 1.0;
 				byeType = 'B';
 				break;
 			default:
+				playedGame = false;
 				console.log('UNKNOWN RESULT: ' + result);
 				break;
 		}
@@ -1493,9 +1510,16 @@ function getVTableSwissSys()
 		if (!isBye) {
 			const opponent = section.Players[opponentNum - 1];
 			playerNum = playerNumAlgo(opponent, sectionPlayers);
-			const oppRating = vTable.getPlayerRating(opponent, section);
-			if (oppRating != 'Unr') {
-				perfScore = oppRating;
+			if (playedGame) {
+				const oppRating = vTable.getPlayerRating(opponent, section);
+				if (oppRating != 'Unr') {
+					perfScore = oppRating;
+					if (score === 0.0) {
+						perfScore = perfScore - 400;
+					} else if (score === 1.0) {
+						perfScore = perfScore + 400;
+					}
+				}
 			}
 		} 
 
