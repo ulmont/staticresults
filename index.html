@@ -1161,7 +1161,7 @@ function getVTablePTOZ()
 			if (opponentNum !== -1) {
 				opponent = tourney.players[opponentNum];
 				playerNum = playerNumAlgo(opponent, sectionPlayers);
-				const oppRating = vtable.getPlayerRating(opponent, section);
+				const oppRating = vTable.getPlayerRating(opponent, section);
 				if (oppRating != 'Unr') {
 					perfScore = oppRating;
 				}
@@ -1493,7 +1493,7 @@ function getVTableSwissSys()
 		if (!isBye) {
 			const opponent = section.Players[opponentNum - 1];
 			playerNum = playerNumAlgo(opponent, sectionPlayers);
-			const oppRating = vtable.getPlayerRating(opponent, section);
+			const oppRating = vTable.getPlayerRating(opponent, section);
 			if (oppRating != 'Unr') {
 				perfScore = oppRating;
 			}
