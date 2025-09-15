@@ -477,7 +477,7 @@ function SetupWallChart(section, sortAlgo, playerNumAlgo, colorStringAlgo)
 			if (!isBye) { 
 				pTable = `${pTable}
 					<td class="Name">${colorString}&nbsp;&nbsp${playerNum}<br />${score}</td>`;
-				if (perfScore != Number.NaN) { // that is, wasn't a game against an unrated player
+				if (!isNaN(perfScore)) { // that is, wasn't a game against an unrated player
 					perfRounds = perfRounds + 1;
 					perfTotal = perfTotal + perfScore;
 				}
