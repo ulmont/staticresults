@@ -490,11 +490,6 @@ function SetupWallChart(section, sortAlgo, playerNumAlgo, colorStringAlgo)
 			<td class="Score">${score.toFixed(1)}</td>`;
 		if (oppRatings.length > 0) {
 			let perf = calcPerformanceRating(player, section, oppRatings, playedScore);
-			if (playedScore === oppRatings.length) { // perfect score, give at least +50 if they have a rating
-				if (vTable.getPlayerRating(player, section) !== 'Unr') {
-					perf = Math.max(perf, vTable.getPlayerRating(player, section) + 50);
-				}
-			}
 			pTable = `${pTable}
 				<td class="Score">${(perf).toFixed(0)}</td>`;
 		} else {
@@ -511,15 +506,27 @@ function SetupWallChart(section, sortAlgo, playerNumAlgo, colorStringAlgo)
 }
 
 function calcPerformanceRating(player, section, oppRatings, playedScore) {
-	// iterate here until we figure out the correct rating to roughly match the result
+	// do some special handling for all losses / all wins.
+	if (playedScore === 0) {
+		// perfect losses, take the lower of rating -50 and 
+	}
+
+
+
+
+				if (playedScore === oppRatings.length) { // perfect score, give at least +50 if they have a rating
+				if (vTable.getPlayerRating(player, section) !== 'Unr') {
+					perf = Math.max(perf, vTable.getPlayerRating(player, section) + 50);
+				}
+			}// iterate here until we figure out the correct rating to roughly match the result
 	// just start with a guess of either the current rating, if they have one, or their average opponent rating if they don't
 	let oppTotal = 0;
 	oppRatings.forEach(oppRating => {
 		oppTotal = oppTotal + oppRating;
 	});
 	const oppAverage = oppTotal / oppRatings.length;
-	let perfLow = Math.floor(oppAverage - 800); // at this point you'd be expected to lose each game.
-	let perfHigh = Math.ceil(oppAverage + 800); // at this point you'd be expected to win each game.
+	let perfLow = Math.floor(oppAverage - 400); // at this point you'd be expected to lose each game.
+	let perfHigh = Math.ceil(oppAverage + 400); // at this point you'd be expected to win each game.
 	let perf = vTable.getPlayerRating(player, section);
 	if (perf === 'Unr') {
 		perf = oppAverage;
@@ -558,11 +565,32 @@ function calcPerformanceRating(player, section, oppRatings, playedScore) {
 	return perf;
 }
 
-// formula from approximating formulas for the US Chess Rating System
+// formula combining Section 4.1 of the rating formula and approximating formulas from the US Chess Rating System
 function calcProvisionalWinningExpectancies(rating, oppRatings) {
 	let total = 0;
 	oppRatings.forEach(oppRating => {
 		// provisional winning expectancy is 0 if the opponent is 400+ higher, 1 if the opponent is 400+ lower, or a calculation
+		const diff = rating - oppRating;
+		if (diff <= -400) { 
+			total = total + 0.0; // no chance
+		} else if (diff >= 400) {
+			total = total + 1.0; // no chance the other way.
+		} else {
+			const diff = rating - oppRating;
+			const power = (0 - diff)/400;
+			const tenPart = Math.pow(10, power);
+			const denom = tenPart + 1;
+			const chance = 1 / denom;
+			total = total + chance;
+		}
+	});
+	return total;
+}
+
+// formula from approximating formulas for the US Chess Rating System
+/* function calcProvisionalWinningExpectancies(rating, oppRatings) {
+	let total = 0;
+	oppRatings.forEach(oppRating => {
 		const diff = rating - oppRating;
 		const power = (0 - diff)/400;
 		const tenPart = Math.pow(10, power);
@@ -571,7 +599,7 @@ function calcProvisionalWinningExpectancies(rating, oppRatings) {
 		total = total + chance;
 	});
 	return total;
-}
+} */
 
 // formula from Section 4.1 of the rating formula
 /* function calcProvisionalWinningExpectancies(rating, oppRatings) {
