@@ -558,7 +558,23 @@ function calcPerformanceRating(player, section, oppRatings, playedScore) {
 	return perf;
 }
 
+// formula from approximating formulas for the US Chess Rating System
 function calcProvisionalWinningExpectancies(rating, oppRatings) {
+	let total = 0;
+	oppRatings.forEach(oppRating => {
+		// provisional winning expectancy is 0 if the opponent is 400+ higher, 1 if the opponent is 400+ lower, or a calculation
+		const diff = rating - oppRating;
+		const power = (0 - diff)/400;
+		const tenPart = Math.pow(10, power);
+		const denom = tenPart + 1;
+		const chance = 1 / denom;
+		total = total + chance;
+	});
+	return total;
+}
+
+// formula from Section 4.1 of the rating formula
+/* function calcProvisionalWinningExpectancies(rating, oppRatings) {
 	let total = 0;
 	oppRatings.forEach(oppRating => {
 		// provisional winning expectancy is 0 if the opponent is 400+ higher, 1 if the opponent is 400+ lower, or a calculation
@@ -573,7 +589,7 @@ function calcProvisionalWinningExpectancies(rating, oppRatings) {
 	});
 	return total;
 }
-
+ */
 function SetupRounds(sectionRounds)
 {
 	// hide the wall chart table
