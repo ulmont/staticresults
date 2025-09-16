@@ -502,7 +502,7 @@ function SetupWallChart(section, sortAlgo, playerNumAlgo, colorStringAlgo)
 			if (perf === 'Unr') {
 				perf = oppAverage;
 			}
-			const epsilon = Math.pow(10, -7);
+			const epsilon = Math.pow(10, -3);
 			let provExpectancies = calcProvisionalWinningExpectancies(perf, oppRatings);
 			let diff = provExpectancies - playedScore;
 			let delta = Math.abs(diff);
