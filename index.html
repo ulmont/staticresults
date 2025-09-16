@@ -513,7 +513,7 @@ function calcPerformanceRating(player, section, oppRatings, playedScore, oppScor
 	let perf = 0;
 	let rating = vTable.getPlayerRating(player, section);
 	if (rating === 'Unr') {
-		rating = 0;
+		rating = 1300; // this approximates the "age based ranking" for adults
 	}
 	for (const [i, oppScore] of oppScores.entries()) {
 		let oppRating = oppRatings[i];
