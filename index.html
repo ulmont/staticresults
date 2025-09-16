@@ -522,11 +522,11 @@ function calcPerformanceRating(player, section, oppRatings, playedScore) {
 
 	// do some special handling for all losses / all wins.
 	if (playedScore === 0) {
-		// perfect losses, take the lower of rating -50 and the average opponents -400
-		perf = Math.min(perf - 50, perfLow);
+		// perfect losses, take the average opponents -400
+		perf = perfLow
 	} else if (playedScore === oppRatings.length) {
-		// perfect wins, take the higher of rating + 50 and the average opponents +400
-		perf = Math.max(perf + 50, perfHigh);
+		// perfect wins, take the average opponents +400
+		perf = perfHigh;
 	} else {
 		// iterate here until we figure out the correct rating to roughly match the result
 		// clip the rating into the low-high range if necessary
@@ -565,7 +565,7 @@ function calcPerformanceRating(player, section, oppRatings, playedScore) {
 }
 
 // formula combining Section 4.1 of the rating formula and approximating formulas from the US Chess Rating System
-/* function calcProvisionalWinningExpectancies(rating, oppRatings) {
+function calcProvisionalWinningExpectancies(rating, oppRatings) {
 	let total = 0;
 	oppRatings.forEach(oppRating => {
 		// provisional winning expectancy is 0 if the opponent is 400+ higher, 1 if the opponent is 400+ lower, or a calculation
@@ -584,10 +584,10 @@ function calcPerformanceRating(player, section, oppRatings, playedScore) {
 		}
 	});
 	return total;
-}*/
+}
 
 // formula from approximating formulas for the US Chess Rating System
-function calcProvisionalWinningExpectancies(rating, oppRatings) {
+/* function calcProvisionalWinningExpectancies(rating, oppRatings) {
 	let total = 0;
 	oppRatings.forEach(oppRating => {
 		const diff = rating - oppRating;
@@ -598,7 +598,7 @@ function calcProvisionalWinningExpectancies(rating, oppRatings) {
 		total = total + chance;
 	});
 	return total;
-} 
+}  */
 
 // formula from Section 4.1 of the rating formula
 /* function calcProvisionalWinningExpectancies(rating, oppRatings) {
