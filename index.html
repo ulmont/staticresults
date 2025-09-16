@@ -532,7 +532,7 @@ function calcPerformanceRating(player, section, oppRatings, playedScore) {
 	let diff = provExpectancies - playedScore;
 	let delta = Math.abs(diff);
 	while (delta > epsilon) {
-		console.log(`score ${playedScore} estimate ${provExpectancies} diff ${diff} low ${perfLow} high ${perfHigh}`);
+		console.log(`score ${playedScore} estimate ${provExpectancies} low ${perfLow} perf ${perf} high ${perfHigh} diff ${diff} `);
 		let oldPerf = perf;
 		if (diff > 0) {
 			// make this the new high water mark
