@@ -507,12 +507,17 @@ function SetupWallChart(section, sortAlgo, playerNumAlgo, colorStringAlgo)
 			let diff = provExpectancies - playedScore;
 			let delta = Math.abs(diff);
 			while (delta > epsilon) {
+				let oldPerf = perf;
 				if (diff > 0) {
 					// make this the new high water mark
 					perfHigh = perf;
 				} else {
 					// make this the new low water mark
 					perfLow = perf;
+				}
+				if (Math.abs(oldPerf - perf) < 2) {
+					// this is about as good as we can do, bail out
+					break;
 				}
 				// next guess averages our new bounds
 				perf = (perfHigh + perfLow) / 2;
