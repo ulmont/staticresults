@@ -479,7 +479,7 @@ function SetupWallChart(section, sortAlgo, playerNumAlgo, colorStringAlgo)
 					<td class="Name">${colorString}&nbsp;&nbsp${playerNum}<br />${score}</td>`;
 				if (!isNaN(oppRating)) { // that is, wasn't a game against an unrated player
 					oppRatings.push(oppRating);
-					playedScore = score + roundScore;
+					playedScore = playedScore + roundScore;
 				}
 			} else {
 				pTable = `${pTable}
