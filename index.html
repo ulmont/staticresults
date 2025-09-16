@@ -524,6 +524,9 @@ function calcPerformanceRating(player, section, oppRatings, playedScore) {
 	if (perf === 'Unr') {
 		perf = oppAverage;
 	}
+	// clip the rating into the low-high range if necessary
+	perf = Math.max(perfLow, perf);
+	pref = Math.min(perfHigh, perf);
 	const epsilon = Math.pow(10, -3);
 	let provExpectancies = calcProvisionalWinningExpectancies(perf, oppRatings);
 	let diff = provExpectancies - playedScore;
