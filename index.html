@@ -462,9 +462,9 @@ function SetupWallChart(section, sortAlgo, playerNumAlgo, colorStringAlgo)
 	<tbody>`;
 
 	for (const [i, player] of playersToShow.entries()) {
-		let perfRounds = 0;
-		let perfTotal = 0;
+		let oppRatings = [];
 		let score = 0.0;
+		let playedScore = 0.0;
 		let playerId = vTable.getPlayerId(player);
 		let playerIdLink = (playerId.length > 0) ? `<a href=https://www.uschess.org/msa/MbrDtlMain.php?${playerId}>${playerId}</a>` : '';
 		pTable = `${pTable}		
@@ -472,14 +472,14 @@ function SetupWallChart(section, sortAlgo, playerNumAlgo, colorStringAlgo)
 				<td class="Number">${playerNumAlgo(player, sectionPlayers)}</td>
 				<td class="Name">${vTable.getPlayerName(player)}<br />${vTable.getPlayerRating(player, section)}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />${playerIdLink}</td>`;
 		for (let j = 0; j < vTable.getSectionRoundsPaired(section); j++) {
-			let [roundScore, colorString, playerNum, byeType, isBye, perfScore] = vTable.calcScoreColorStringPlayerNumByeTypeIsByePerfScore(j, section, sectionPlayers, player, playerNumAlgo, colorStringAlgo);
+			let [roundScore, colorString, playerNum, byeType, isBye, oppRating] = vTable.calcScoreColorStringPlayerNumByeTypeIsByeOppRating(j, section, sectionPlayers, player, playerNumAlgo, colorStringAlgo);
 			score = score + roundScore;
 			if (!isBye) { 
 				pTable = `${pTable}
 					<td class="Name">${colorString}&nbsp;&nbsp${playerNum}<br />${score}</td>`;
-				if (!isNaN(perfScore)) { // that is, wasn't a game against an unrated player
-					perfRounds = perfRounds + 1;
-					perfTotal = perfTotal + perfScore;
+				if (!isNaN(oppRating)) { // that is, wasn't a game against an unrated player
+					oppRatings.push(oppRating);
+					playedScore = score + roundScore;
 				}
 			} else {
 				pTable = `${pTable}
@@ -488,9 +488,32 @@ function SetupWallChart(section, sortAlgo, playerNumAlgo, colorStringAlgo)
 		}
 		pTable = `${pTable}
 			<td class="Score">${score.toFixed(1)}</td>`;
-		if (perfRounds != 0) {
+		if (oppRatings.length > 0) {
+			// iterate here until we figure out the correct rating to roughly match the result
+			// just start with a guess of either the current rating, if they have one, or 1000 if they don't
+			let perfLow = 0; // can't go below 0
+			let perfHigh = 5000; // can't really go above about 2800
+			let perf = vTable.getPlayerRating(player, section);
+			if (perf === 'Unr') {
+				perf = 1000;
+			}
+			const epsilon = Math.pow(10, -7);
+			let provExpectancies = calcProvisionalWinningExpectancies(perf, oppRatings);
+			let diff = provExpectancies - playedScore;
+			let delta = Math.abs(diff);
+			while (delta > epsilon) {
+				if (diff > 0) {
+					// make this the new high water mark
+					perfHigh = perf;
+				} else {
+					// make this the new low water mark
+					perfLow = perf;
+				}
+				// next guess averages our new bounds
+				perf = (perfHigh + perfLow) / 2;
+			}
 			pTable = `${pTable}
-				<td class="Score">${(perfTotal / perfRounds).toFixed(0)}</td>`;
+				<td class="Score">${(perf).toFixed(0)}</td>`;
 		} else {
 			pTable = `${pTable}
 				<td class="Score">N/A</td>`;
@@ -502,6 +525,22 @@ function SetupWallChart(section, sortAlgo, playerNumAlgo, colorStringAlgo)
 			</tbody>
 		</table>`;
 	wallChartDiv.style.display = 'block';
+}
+
+function calcProvisionalWinningExpectancies(rating, oppRatings) {
+	let total = 0;
+	oppRatings.forEach(oppRating => {
+		// provisional winning expectancy is 0 if the opponent is 400+ higher, 1 if the opponent is 400+ lower, or a calculation
+		const diff = rating - oppRating;
+		if (diff <= 400) { 
+			total = total + 0.0; // no chance
+		} else if (diff >= 400) {
+			total = total + 1.0; // no chance the other way.
+		} else {
+			total = 0.5 + (diff / 800); calculation
+		}
+	});
+	return total;
 }
 
 function SetupRounds(sectionRounds)
@@ -1105,11 +1144,10 @@ function getVTablePTOZ()
 
 		return playerScores;
 	}
-	vTable.calcScoreColorStringPlayerNumByeTypeIsByePerfScore = function(j, section, sectionPlayers, player, playerNumAlgo, colorStringAlgo) {
+	vTable.calcScoreColorStringPlayerNumByeTypeIsByeOppRating = function(j, section, sectionPlayers, player, playerNumAlgo, colorStringAlgo) {
 		// j is just a zero-based round number, so round = j + 1;
 		let gameNum, colorString, playerNum, byeType, isBye;
 		let score = 0.0;
-		let perfScore = Number.NaN;
 		let playedGame = true;
 		if (j >= player.tnmt.games.length) {
 			gameNum = -1;
@@ -1167,14 +1205,9 @@ function getVTablePTOZ()
 				opponent = tourney.players[opponentNum];
 				playerNum = playerNumAlgo(opponent, sectionPlayers);
 				if (playedGame) {
-					const oppRating = vTable.getPlayerRating(opponent, section);
-					if (oppRating != 'Unr') {
-						perfScore = oppRating;
-						if (score === 0.0) {
-							perfScore = perfScore - 400;
-						} else if (score === 1.0) {
-							perfScore = perfScore + 400;
-						}
+					oppRating = vTable.getPlayerRating(opponent, section);
+					if (oppRating === 'Unr') {
+						oppRating = Number.NaN;
 					}
 				}
 			} else {
@@ -1186,7 +1219,7 @@ function getVTablePTOZ()
 			byeType = 'U';
 		}
 
-		return [score, colorString, playerNum, byeType, isBye, perfScore];
+		return [score, colorString, playerNum, byeType, isBye, oppRating];
 	}
 	vTable.calcMMAdjustedScore = function(player) {
 		// 	These scores are adjusted for unplayed games, which count a half point each, regardless of whether they were byes, forfeits, or simply rounds not played after an opponent withdrew.
@@ -1459,11 +1492,10 @@ function getVTableSwissSys()
 
 		return playerScores;
 	}
-	vTable.calcScoreColorStringPlayerNumByeTypeIsByePerfScore = function(j, section, sectionPlayers, player, playerNumAlgo, colorStringAlgo) {
+	vTable.calcScoreColorStringPlayerNumByeTypeIsByeOppRating = function(j, section, sectionPlayers, player, playerNumAlgo, colorStringAlgo) {
 		// j is just a zero-based round number, so round = j + 1;
 		let gameNum, colorString, playerNum, byeType, isBye;
 		let score = 0.0;
-		let perfScore = Number.NaN;
 		let playedGame = true;
 
 		const gameResult = player.Results[j]; // "-;28;W;116;28;0;0"  "U;0;-;0;0;0;0"
@@ -1511,19 +1543,14 @@ function getVTableSwissSys()
 			const opponent = section.Players[opponentNum - 1];
 			playerNum = playerNumAlgo(opponent, sectionPlayers);
 			if (playedGame) {
-				const oppRating = vTable.getPlayerRating(opponent, section);
-				if (oppRating != 'Unr') {
-					perfScore = oppRating;
-					if (score === 0.0) {
-						perfScore = perfScore - 400;
-					} else if (score === 1.0) {
-						perfScore = perfScore + 400;
-					}
+				let oppRating = vTable.getPlayerRating(opponent, section);
+				if (oppRating === 'Unr') {
+					oppRating = Number.NaN;
 				}
 			}
 		} 
 
-		return [score, colorString, playerNum, byeType, isBye, perfScore];
+		return [score, colorString, playerNum, byeType, isBye, oppRating];
 	}
 	vTable.calcMMAdjustedScore = function(player) {
 		// 	These scores are adjusted for unplayed games, which count a half point each, regardless of whether they were byes, forfeits, or simply rounds not played after an opponent withdrew.
