@@ -541,12 +541,12 @@ function calcPerformanceRating(player, section, oppRatings, playedScore) {
 			// make this the new low water mark
 			perfLow = perf;
 		}
+		// next guess averages our new bounds
+		perf = (perfHigh + perfLow) / 2;
 		if (Math.abs(oldPerf - perf) < 2) {
 			// this is about as good as we can do, bail out
 			break;
 		}
-		// next guess averages our new bounds
-		perf = (perfHigh + perfLow) / 2;
 		provExpectancies = calcProvisionalWinningExpectancies(perf, oppRatings);
 		diff = provExpectancies - playedScore;
 		delta = Math.abs(diff);
