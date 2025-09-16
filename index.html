@@ -489,45 +489,7 @@ function SetupWallChart(section, sortAlgo, playerNumAlgo, colorStringAlgo)
 		pTable = `${pTable}
 			<td class="Score">${score.toFixed(1)}</td>`;
 		if (oppRatings.length > 0) {
-			// iterate here until we figure out the correct rating to roughly match the result
-			// just start with a guess of either the current rating, if they have one, or their average opponent rating if they don't
-			let oppTotal = 0;
-			oppRatings.forEach(oppRating => {
-				oppTotal = oppTotal + oppRating;
-			});
-			const oppAverage = oppTotal / oppRatings.length;
-			let perfLow = Math.floor(oppAverage - 400); // at this point you'd be expected to lose each game.
-			let perfHigh = Math.ceil(oppAverage + 400); // at this point you'd be expected to win each game.
-			let perf = vTable.getPlayerRating(player, section);
-			if (perf === 'Unr') {
-				perf = oppAverage;
-			}
-			const epsilon = Math.pow(10, -3);
-			let provExpectancies = calcProvisionalWinningExpectancies(perf, oppRatings);
-			let diff = provExpectancies - playedScore;
-			let delta = Math.abs(diff);
-			while (delta > epsilon) {
-				let oldPerf = perf;
-				if (diff > 0) {
-					// make this the new high water mark
-					perfHigh = perf;
-				} else {
-					// make this the new low water mark
-					perfLow = perf;
-				}
-				if (Math.abs(oldPerf - perf) < 2) {
-					// this is about as good as we can do, bail out
-					break;
-				}
-				// next guess averages our new bounds
-				perf = (perfHigh + perfLow) / 2;
-				provExpectancies = calcProvisionalWinningExpectancies(perf, oppRatings);
-				diff = provExpectancies - playedScore;
-				delta = Math.abs(diff);
-			}
-			if (perf < 100) { // can't go below 100
-				perf = 100;
-			}
+			let perf = calcPerformanceRating(player, section, oppRatings);
 			if (playedScore === oppRatings.length) { // perfect score, give at least +50 if they have a rating
 				if (vTable.getPlayerRating(player, section) !== 'Unr') {
 					perf = Math.max(perf, vTable.getPlayerRating(player, section) + 50);
@@ -546,6 +508,51 @@ function SetupWallChart(section, sortAlgo, playerNumAlgo, colorStringAlgo)
 			</tbody>
 		</table>`;
 	wallChartDiv.style.display = 'block';
+}
+
+function calcPerformanceRating(player, section, oppRatings) {
+	// iterate here until we figure out the correct rating to roughly match the result
+	// just start with a guess of either the current rating, if they have one, or their average opponent rating if they don't
+	let oppTotal = 0;
+	oppRatings.forEach(oppRating => {
+		oppTotal = oppTotal + oppRating;
+	});
+	const oppAverage = oppTotal / oppRatings.length;
+	let perfLow = Math.floor(oppAverage - 400); // at this point you'd be expected to lose each game.
+	let perfHigh = Math.ceil(oppAverage + 400); // at this point you'd be expected to win each game.
+	let perf = vTable.getPlayerRating(player, section);
+	if (perf === 'Unr') {
+		perf = oppAverage;
+	}
+	const epsilon = Math.pow(10, -3);
+	let provExpectancies = calcProvisionalWinningExpectancies(perf, oppRatings);
+	let diff = provExpectancies - playedScore;
+	let delta = Math.abs(diff);
+	while (delta > epsilon) {
+		console.log(`score ${playedScore} estimate ${provExpectancies} diff ${diff} low ${perfLow} high ${perfHigh}`);
+		let oldPerf = perf;
+		if (diff > 0) {
+			// make this the new high water mark
+			perfHigh = perf;
+		} else {
+			// make this the new low water mark
+			perfLow = perf;
+		}
+		if (Math.abs(oldPerf - perf) < 2) {
+			// this is about as good as we can do, bail out
+			break;
+		}
+		// next guess averages our new bounds
+		perf = (perfHigh + perfLow) / 2;
+		provExpectancies = calcProvisionalWinningExpectancies(perf, oppRatings);
+		diff = provExpectancies - playedScore;
+		delta = Math.abs(diff);
+	}
+	if (perf < 100) { // can't go below 100
+		perf = 100;
+	}
+
+	return perf;
 }
 
 function calcProvisionalWinningExpectancies(rating, oppRatings) {
