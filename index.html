@@ -548,12 +548,12 @@ function calcProvisionalWinningExpectancies(rating, oppRatings) {
 	oppRatings.forEach(oppRating => {
 		// provisional winning expectancy is 0 if the opponent is 400+ higher, 1 if the opponent is 400+ lower, or a calculation
 		const diff = rating - oppRating;
-		if (diff <= 400) { 
+		if (diff <= -400) { 
 			total = total + 0.0; // no chance
 		} else if (diff >= 400) {
 			total = total + 1.0; // no chance the other way.
 		} else {
-			total = 0.5 + (diff / 800); calculation
+			total = 0.5 + (diff / 800.0); calculation
 		}
 	});
 	return total;
