@@ -517,13 +517,15 @@ function SetupWallChart(section, sortAlgo, playerNumAlgo, colorStringAlgo)
 				// next guess averages our new bounds
 				perf = (perfHigh + perfLow) / 2;
 				provExpectancies = calcProvisionalWinningExpectancies(perf, oppRatings);
+				diff = provExpectancies - playedScore;
+				delta = Math.abs(diff);
 			}
 			if (perf < 100) { // can't go below 100
 				perf = 100;
 			}
 			if (playedScore === oppRatings.length) { // perfect score, give at least +50 if they have a rating
 				if (vTable.getPlayerRating(player, section) !== 'Unr') {
-					perf = Math.max(perf, vTable.getPlayerRating(player, section));
+					perf = Math.max(perf, vTable.getPlayerRating(player, section) + 50);
 				}
 			}
 			pTable = `${pTable}
