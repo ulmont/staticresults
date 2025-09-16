@@ -522,11 +522,11 @@ function calcPerformanceRating(player, section, oppRatings, playedScore) {
 
 	// do some special handling for all losses / all wins.
 	if (playedScore === 0) {
-		// perfect losses, take the average opponents -400
-		perf = perfLow
+		// perfect losses, take the average opponents -400 (or current rating, if lower)
+		perf = Math.min(perfLow, perf);
 	} else if (playedScore === oppRatings.length) {
-		// perfect wins, take the average opponents +400
-		perf = perfHigh;
+		// perfect wins, take the average opponents +400 (or current rating, if higher)
+		perf = Math.max(perfHigh, perf);
 	} else {
 		// iterate here until we figure out the correct rating to roughly match the result
 		// clip the rating into the low-high range if necessary
