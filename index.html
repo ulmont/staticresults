@@ -506,20 +506,7 @@ function SetupWallChart(section, sortAlgo, playerNumAlgo, colorStringAlgo)
 }
 
 function calcPerformanceRating(player, section, oppRatings, playedScore) {
-	// do some special handling for all losses / all wins.
-	if (playedScore === 0) {
-		// perfect losses, take the lower of rating -50 and 
-	}
-
-
-
-
-				if (playedScore === oppRatings.length) { // perfect score, give at least +50 if they have a rating
-				if (vTable.getPlayerRating(player, section) !== 'Unr') {
-					perf = Math.max(perf, vTable.getPlayerRating(player, section) + 50);
-				}
-			}// iterate here until we figure out the correct rating to roughly match the result
-	// just start with a guess of either the current rating, if they have one, or their average opponent rating if they don't
+	// calculate average opponent rating and high/low bars
 	let oppTotal = 0;
 	oppRatings.forEach(oppRating => {
 		oppTotal = oppTotal + oppRating;
@@ -527,36 +514,48 @@ function calcPerformanceRating(player, section, oppRatings, playedScore) {
 	const oppAverage = oppTotal / oppRatings.length;
 	let perfLow = Math.floor(oppAverage - 400); // at this point you'd be expected to lose each game.
 	let perfHigh = Math.ceil(oppAverage + 400); // at this point you'd be expected to win each game.
+	// just start with a guess of either the current rating, if they have one, or their average opponent rating if they don't
 	let perf = vTable.getPlayerRating(player, section);
 	if (perf === 'Unr') {
 		perf = oppAverage;
 	}
-	// clip the rating into the low-high range if necessary
-	perf = Math.max(perfLow, perf);
-	pref = Math.min(perfHigh, perf);
-	const epsilon = Math.pow(10, -4);
-	let provExpectancies = calcProvisionalWinningExpectancies(perf, oppRatings);
-	let diff = provExpectancies - playedScore;
-	let delta = Math.abs(diff);
-	while (delta > epsilon) {
-		console.log(`score ${playedScore} estimate ${provExpectancies} low ${perfLow} perf ${perf} high ${perfHigh} diff ${diff} `);
-		let oldPerf = perf;
-		if (diff > 0) {
-			// make this the new high water mark
-			perfHigh = perf;
-		} else {
-			// make this the new low water mark
-			perfLow = perf;
+
+	// do some special handling for all losses / all wins.
+	if (playedScore === 0) {
+		// perfect losses, take the lower of rating -50 and the average opponents -400
+		perf = Math.min(perf - 50, perfLow);
+	} else if (playedScore === oppRatings.length) {
+		// perfect wins, take the higher of rating + 50 and the average opponents +400
+		perf = Math.max(perf + 50, perfHigh);
+	} else {
+		// iterate here until we figure out the correct rating to roughly match the result
+		// clip the rating into the low-high range if necessary
+		perf = Math.max(perfLow, perf);
+		pref = Math.min(perfHigh, perf);
+		const epsilon = Math.pow(10, -4);
+		let provExpectancies = calcProvisionalWinningExpectancies(perf, oppRatings);
+		let diff = provExpectancies - playedScore;
+		let delta = Math.abs(diff);
+		while (delta > epsilon) {
+			console.log(`score ${playedScore} estimate ${provExpectancies} low ${perfLow} perf ${perf} high ${perfHigh} diff ${diff} `);
+			let oldPerf = perf;
+			if (diff > 0) {
+				// make this the new high water mark
+				perfHigh = perf;
+			} else {
+				// make this the new low water mark
+				perfLow = perf;
+			}
+			// next guess averages our new bounds
+			perf = (perfHigh + perfLow) / 2;
+			if (Math.abs(oldPerf - perf) < 1) {
+				// this is about as good as we can do, bail out
+				break;
+			}
+			provExpectancies = calcProvisionalWinningExpectancies(perf, oppRatings);
+			diff = provExpectancies - playedScore;
+			delta = Math.abs(diff);
 		}
-		// next guess averages our new bounds
-		perf = (perfHigh + perfLow) / 2;
-		if (Math.abs(oldPerf - perf) < 1) {
-			// this is about as good as we can do, bail out
-			break;
-		}
-		provExpectancies = calcProvisionalWinningExpectancies(perf, oppRatings);
-		diff = provExpectancies - playedScore;
-		delta = Math.abs(diff);
 	}
 	if (perf < 100) { // can't go below 100
 		perf = 100;
@@ -566,7 +565,7 @@ function calcPerformanceRating(player, section, oppRatings, playedScore) {
 }
 
 // formula combining Section 4.1 of the rating formula and approximating formulas from the US Chess Rating System
-function calcProvisionalWinningExpectancies(rating, oppRatings) {
+/* function calcProvisionalWinningExpectancies(rating, oppRatings) {
 	let total = 0;
 	oppRatings.forEach(oppRating => {
 		// provisional winning expectancy is 0 if the opponent is 400+ higher, 1 if the opponent is 400+ lower, or a calculation
@@ -585,10 +584,10 @@ function calcProvisionalWinningExpectancies(rating, oppRatings) {
 		}
 	});
 	return total;
-}
+}*/
 
 // formula from approximating formulas for the US Chess Rating System
-/* function calcProvisionalWinningExpectancies(rating, oppRatings) {
+function calcProvisionalWinningExpectancies(rating, oppRatings) {
 	let total = 0;
 	oppRatings.forEach(oppRating => {
 		const diff = rating - oppRating;
@@ -599,7 +598,7 @@ function calcProvisionalWinningExpectancies(rating, oppRatings) {
 		total = total + chance;
 	});
 	return total;
-} */
+} 
 
 // formula from Section 4.1 of the rating formula
 /* function calcProvisionalWinningExpectancies(rating, oppRatings) {
