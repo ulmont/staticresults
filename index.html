@@ -489,7 +489,7 @@ function SetupWallChart(section, sortAlgo, playerNumAlgo, colorStringAlgo)
 		pTable = `${pTable}
 			<td class="Score">${score.toFixed(1)}</td>`;
 		if (oppRatings.length > 0) {
-			let perf = calcPerformanceRating(player, section, oppRatings);
+			let perf = calcPerformanceRating(player, section, oppRatings, playedScore);
 			if (playedScore === oppRatings.length) { // perfect score, give at least +50 if they have a rating
 				if (vTable.getPlayerRating(player, section) !== 'Unr') {
 					perf = Math.max(perf, vTable.getPlayerRating(player, section) + 50);
@@ -510,7 +510,7 @@ function SetupWallChart(section, sortAlgo, playerNumAlgo, colorStringAlgo)
 	wallChartDiv.style.display = 'block';
 }
 
-function calcPerformanceRating(player, section, oppRatings) {
+function calcPerformanceRating(player, section, oppRatings, playedScore) {
 	// iterate here until we figure out the correct rating to roughly match the result
 	// just start with a guess of either the current rating, if they have one, or their average opponent rating if they don't
 	let oppTotal = 0;
