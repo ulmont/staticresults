@@ -478,11 +478,9 @@ function SetupWallChart(section, sortAlgo, playerNumAlgo, colorStringAlgo)
 			if (!isBye) { 
 				pTable = `${pTable}
 					<td class="Name">${colorString}&nbsp;&nbsp${playerNum}<br />${score}</td>`;
-				if (!isNaN(oppRating)) { // that is, wasn't a game against an unrated player
-					oppRatings.push(oppRating);
+					oppRatings.push(oppRating); // may be NaN
 					oppScores.push(roundScore);
 					playedScore = playedScore + roundScore;
-				}
 			} else {
 				pTable = `${pTable}
 					<td class="Name">${byeType}<br />${score}</td>`;
@@ -493,7 +491,7 @@ function SetupWallChart(section, sortAlgo, playerNumAlgo, colorStringAlgo)
 		if (oppRatings.length > 0) {
 			let perf = calcPerformanceRating(player, section, oppRatings, playedScore, oppScores);
 			pTable = `${pTable}
-				<td class="Score">${(perf).toFixed(0)}</td>`;
+				<td class="Score">${(Math.floor(perf)).toFixed(0)}</td>`;
 		} else {
 			pTable = `${pTable}
 				<td class="Score">N/A</td>`;
@@ -513,25 +511,24 @@ function calcPerformanceRating(player, section, oppRatings, playedScore, oppScor
 	}
 	// calculate average opponent rating and high/low bars
 	let perf = 0;
-	let oppTotal = 0;
-	oppRatings.forEach(oppRating => {
-		oppTotal = oppTotal + oppRating;
-	});
-	const oppAverage = oppTotal / oppRatings.length;
 	let rating = vTable.getPlayerRating(player, section);
 	if (rating === 'Unr') {
-		rating = oppAverage;
+		rating = 0;
 	}
-	for (const [i, oppRating] of oppRatings.entries()) {
-		if (oppScores[i] === 1.0) {
+	for (const [i, oppScore] of oppScores.entries()) {
+		let oppRating = oppRatings[i];
+		if (isNaN(oppRating)) {
+			oppRating = 0;
+		}
+		if (oppScore === 1.0) {
 			if ((rating - 350) > oppRating) {
 				perf = perf + rating + 50;
 			} else {
 				perf = perf + oppRating + 400;
 			}
-		} else if (oppScores[i] === 0.5) {
+		} else if (oppScore === 0.5) {
 			perf = perf + oppRating;
-		} else if (oppScores[i] === 0.0) {
+		} else if (oppScore === 0.0) {
 			perf = perf + oppRating - 400;
 		}
 	}
@@ -544,7 +541,7 @@ function calcPerformanceRating(player, section, oppRatings, playedScore, oppScor
 	// calculate average opponent rating and high/low bars
 	let oppTotal = 0;
 	oppRatings.forEach(oppRating => {
-		oppTotal = oppTotal + oppRating;
+		oppTotal = oppTotal + oppRating; // NOTE MAY HAVE A NaN HERE
 	});
 	const oppAverage = oppTotal / oppRatings.length;
 	let perfLow = Math.floor(oppAverage - 400); // at this point you'd be expected to lose each game.
