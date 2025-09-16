@@ -527,7 +527,7 @@ function calcPerformanceRating(player, section, oppRatings, playedScore) {
 	// clip the rating into the low-high range if necessary
 	perf = Math.max(perfLow, perf);
 	pref = Math.min(perfHigh, perf);
-	const epsilon = Math.pow(10, -3);
+	const epsilon = Math.pow(10, -4);
 	let provExpectancies = calcProvisionalWinningExpectancies(perf, oppRatings);
 	let diff = provExpectancies - playedScore;
 	let delta = Math.abs(diff);
