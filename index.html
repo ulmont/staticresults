@@ -518,8 +518,8 @@ function calcPerformanceRating(player, section, oppRatings, playedScore) {
 		oppTotal = oppTotal + oppRating;
 	});
 	const oppAverage = oppTotal / oppRatings.length;
-	let perfLow = Math.floor(oppAverage - 400); // at this point you'd be expected to lose each game.
-	let perfHigh = Math.ceil(oppAverage + 400); // at this point you'd be expected to win each game.
+	let perfLow = Math.floor(oppAverage - 800); // at this point you'd be expected to lose each game.
+	let perfHigh = Math.ceil(oppAverage + 800); // at this point you'd be expected to win each game.
 	let perf = vTable.getPlayerRating(player, section);
 	if (perf === 'Unr') {
 		perf = oppAverage;
@@ -543,7 +543,7 @@ function calcPerformanceRating(player, section, oppRatings, playedScore) {
 		}
 		// next guess averages our new bounds
 		perf = (perfHigh + perfLow) / 2;
-		if (Math.abs(oldPerf - perf) < 2) {
+		if (Math.abs(oldPerf - perf) < 1) {
 			// this is about as good as we can do, bail out
 			break;
 		}
