@@ -522,7 +522,7 @@ function SetupWallChart(section, sortAlgo, playerNumAlgo, colorStringAlgo)
 				perf = 100;
 			}
 			if (playedScore === oppRatings.length) { // perfect score, give at least +50 if they have a rating
-				if (getPlayerRating(player, section) !== 'Unr') {
+				if (vTable.getPlayerRating(player, section) !== 'Unr') {
 					perf = Math.max(perf, getPlayerRating(player, section));
 				}
 			}
