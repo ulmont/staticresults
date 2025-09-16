@@ -1146,7 +1146,7 @@ function getVTablePTOZ()
 	}
 	vTable.calcScoreColorStringPlayerNumByeTypeIsByeOppRating = function(j, section, sectionPlayers, player, playerNumAlgo, colorStringAlgo) {
 		// j is just a zero-based round number, so round = j + 1;
-		let gameNum, colorString, playerNum, byeType, isBye;
+		let gameNum, colorString, playerNum, byeType, isBye, oppRating;
 		let score = 0.0;
 		let playedGame = true;
 		if (j >= player.tnmt.games.length) {
@@ -1497,6 +1497,7 @@ function getVTableSwissSys()
 		let gameNum, colorString, playerNum, byeType, isBye;
 		let score = 0.0;
 		let playedGame = true;
+		let oppRating;
 
 		const gameResult = player.Results[j]; // "-;28;W;116;28;0;0"  "U;0;-;0;0;0;0"
 		const items = gameResult.split(';');
@@ -1543,7 +1544,7 @@ function getVTableSwissSys()
 			const opponent = section.Players[opponentNum - 1];
 			playerNum = playerNumAlgo(opponent, sectionPlayers);
 			if (playedGame) {
-				let oppRating = vTable.getPlayerRating(opponent, section);
+				oppRating = vTable.getPlayerRating(opponent, section);
 				if (oppRating === 'Unr') {
 					oppRating = Number.NaN;
 				}
