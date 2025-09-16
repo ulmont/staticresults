@@ -553,7 +553,7 @@ function calcProvisionalWinningExpectancies(rating, oppRatings) {
 		} else if (diff >= 400) {
 			total = total + 1.0; // no chance the other way.
 		} else {
-			total = total + 0.5 + (diff / 800.0); calculation
+			total = total + 0.5 + (diff / 800.0); // calculation
 		}
 	});
 	return total;
