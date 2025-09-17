@@ -478,7 +478,7 @@ function SetupWallChart(section, sortAlgo, playerNumAlgo, colorStringAlgo)
 			if (!isBye) { 
 				pTable = `${pTable}
 					<td class="Name">${colorString}&nbsp;&nbsp${playerNum}<br />${score}</td>`;
-					oppRatings.push(oppRating); // may be NaN
+					oppRatings.push(oppRating); 
 					oppScores.push(roundScore);
 					playedScore = playedScore + roundScore;
 			} else {
@@ -512,16 +512,13 @@ function calcPerformanceRating(player, section, oppRatings, playedScore, oppScor
 	// calculate average opponent rating and high/low bars
 	let perf = 0;
 	let rating = vTable.getPlayerRating(player, section);
-	if (rating === 'Unr') {
-		rating = 1300; // this approximates the "age based ranking" for adults
-	}
 	for (const [i, oppScore] of oppScores.entries()) {
 		let oppRating = oppRatings[i];
-		if (isNaN(oppRating)) {
+		if (oppRating === 'Unr') {
 			oppRating = 0;
 		}
 		if (oppScore === 1.0) {
-			if ((rating - 350) > oppRating) {
+			if ((rating !== 'Unr') && ((rating - 350) > oppRating)) { // special case for playing weaker players
 				perf = perf + rating + 50;
 			} else {
 				perf = perf + oppRating + 400;
@@ -1312,9 +1309,6 @@ function getVTablePTOZ()
 				playerNum = playerNumAlgo(opponent, sectionPlayers);
 				if (playedGame) {
 					oppRating = vTable.getPlayerRating(opponent, section);
-					if (oppRating === 'Unr') {
-						oppRating = Number.NaN;
-					}
 				}
 			} else {
 				isBye = true;
@@ -1651,9 +1645,6 @@ function getVTableSwissSys()
 			playerNum = playerNumAlgo(opponent, sectionPlayers);
 			if (playedGame) {
 				oppRating = vTable.getPlayerRating(opponent, section);
-				if (oppRating === 'Unr') {
-					oppRating = Number.NaN;
-				}
 			}
 		} 
 
