@@ -488,14 +488,14 @@ function SetupWallChart(section, sortAlgo, playerNumAlgo, colorStringAlgo)
 		}
 		pTable = `${pTable}
 			<td class="Score">${score.toFixed(1)}</td>`;
-		if (opponents.length > 0) {
 			let perf = calcPerformanceRating(player, section, opponents, oppScores);
-			pTable = `${pTable}
-				<td class="Score">${(Math.floor(perf)).toFixed(0)}</td>`;
-		} else {
-			pTable = `${pTable}
-				<td class="Score">N/A</td>`;
-		}
+			if (perf !== 0) {
+				pTable = `${pTable}
+					<td class="Score">${(Math.floor(perf)).toFixed(0)}</td>`;
+			} else {
+				pTable = `${pTable}
+					<td class="Score">N/A</td>`;
+			}
 		pTable = `${pTable}
 		</tr>`;
 	}
@@ -524,8 +524,8 @@ function calcPerformanceRatingByPlayerSection(player, section) {
 }
 
 function calcPerformanceRating(player, section, opponents, oppScores) {
-	if (oppRatings.length === 0) {
-		return Number.NaN;
+	if (opponents.length === 0) {
+		return 0; // I got nothin'
 	}
 	// calculate average opponent rating and high/low bars
 	let perf = 0;
@@ -557,9 +557,14 @@ function calcPerformanceRating(player, section, opponents, oppScores) {
 			perf = perf + oppRating - 400;
 		}
 	}
-	perf = perf / oppRatings.length;
 
-	return perf;
+	if (divisor === 0) {
+		return 0; // I got nothin
+	} else {
+		perf = perf / divisor;
+
+		return perf;
+	}
 } 
 
 /* function calcPerformanceRating(player, section, oppRatings, playedScore) {
