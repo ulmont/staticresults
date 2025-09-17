@@ -456,11 +456,13 @@ function SetupWallChart(section, sortAlgo, playerNumAlgo, colorStringAlgo)
 	}
 	pTable = `${pTable}
 			<th class="Score">Total</th>
-			<th class="Score">Perf (SwissSys)</th>
-			<th class="Score">Perf (TPR)</th>
+			<th class="Score">Perf (SwissSys¹)</th>
+			<th class="Score">Perf (TPR²)</th>
 		</tr>
 	</thead>
-	<tbody>`;
+	<tbody>
+	¹ Follows USCF 34.E.10 but gives (current rating + 50) for victories against an opponent 350 or more rating points below the player (including unrated players), attempts to first calculate a performance rating for an unrated opponent before calculating a player's performance, and ignores games between two unrated players.
+	² Follows FIDE Title Regulations 1.4.6 through 1.4.9, ignoring 1.4.6.b (relating to minimum ratings of titled players) and 1.4.6.d (relating to the minimum rating of an unrated player).
 
 	for (const [i, player] of playersToShow.entries()) {
 		let opponents = [];
