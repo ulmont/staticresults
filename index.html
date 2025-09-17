@@ -516,11 +516,7 @@ function calcPerformanceRatingByPlayerSection(player, section) {
 			oppScores.push(roundScore);
 		}
 	}
-	if (oppRatings.length > 0) {
-		return calcPerformanceRating(player, section, opponents, oppScores);
-	} else {
-		return 0; // this shouldn't be reachable for anything we care about, but to cover the case
-	}
+	return calcPerformanceRating(player, section, opponents, oppScores);
 }
 
 function calcPerformanceRating(player, section, opponents, oppScores) {
