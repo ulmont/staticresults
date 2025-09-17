@@ -457,7 +457,7 @@ function SetupWallChart(section, sortAlgo, playerNumAlgo, colorStringAlgo)
 	pTable = `${pTable}
 			<th class="Score">Total</th>
 			<th class="Score">Perf (SwissSys)</th>
-			<th class="Score">Perf (FIDE)</th>
+			<th class="Score">Perf (TPR)</th>
 		</tr>
 	</thead>
 	<tbody>`;
@@ -514,7 +514,7 @@ function SetupWallChart(section, sortAlgo, playerNumAlgo, colorStringAlgo)
 	wallChartDiv.style.display = 'block';
 }
 
-function calcPerformanceRatingSwissSysByPlayerSection(player, section) {
+function calcPerformanceRatingByPlayerSection(player, section, calcPerformanceRating) {
 	const sectionPlayers = vTable.getSectionPlayers(vTable.getSectionId(section));
 	let opponents = [];
 	let oppScores = [];
@@ -525,7 +525,7 @@ function calcPerformanceRatingSwissSysByPlayerSection(player, section) {
 			oppScores.push(roundScore);
 		}
 	}
-	return calcPerformanceRatingSwissSys(player, section, opponents, oppScores);
+	return calcPerformanceRating(player, section, opponents, oppScores);
 }
 
 function calcPerformanceRatingSwissSys(player, section, opponents, oppScores) {
@@ -547,7 +547,7 @@ function calcPerformanceRatingSwissSys(player, section, opponents, oppScores) {
 				continue;
 			} else {
 				// see if we can calculate something for the opponent.
-				oppRating = calcPerformanceRatingSwissSysByPlayerSection(opponents[i], section);
+				oppRating = calcPerformanceRatingByPlayerSection(opponents[i], section, calcPerformanceRatingSwissSys);
 			}
 		}
 		divisor = divisor + 1;
@@ -574,7 +574,7 @@ function calcPerformanceRatingSwissSys(player, section, opponents, oppScores) {
 	}
 } 
 
-// see the title regulations Sections 1.4.6 through 1.4.9, ignoring 1.4.6(b)
+// see the title regulations Sections 1.4.6 through 1.4.9, ignoring 1.4.6.b and 1.4.6.d
 function calcPerformanceRatingFIDE(player, section, opponents, oppScores) {
 	// calculate average opponent rating 
 	let oppTotal = 0;
@@ -582,7 +582,13 @@ function calcPerformanceRatingFIDE(player, section, opponents, oppScores) {
 	for (const [i, oppScore] of oppScores.entries()) {
 		let oppRating = vTable.getPlayerRating(opponents[i], section);
 		if (oppRating === 'Unr') {
-			oppRating = 1400; // FIDE title regs 1.4.6.d, radically wrong for our player pool
+			if (rating === 'Unr') {
+				// both unrated, this game is not relevant
+				continue;
+			} else {
+				// see if we can calculate something for the opponent.
+				oppRating = calcPerformanceRatingByPlayerSection(opponents[i], section, calcPerformanceRatingFIDE);
+			}
 		}
 		oppTotal = oppTotal + oppRating;
 		score = score + oppScore;
