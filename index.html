@@ -581,6 +581,7 @@ function calcPerformanceRatingFIDE(player, section, opponents, oppScores) {
 	// calculate average opponent rating 
 	let oppTotal = 0;
 	let score = 0;
+	let rating = vTable.getPlayerRating(player, section);
 	for (const [i, oppScore] of oppScores.entries()) {
 		let oppRating = vTable.getPlayerRating(opponents[i], section);
 		if (oppRating === 'Unr') {
