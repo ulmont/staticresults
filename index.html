@@ -581,6 +581,7 @@ function calcPerformanceRatingFIDE(player, section, opponents, oppScores) {
 	// calculate average opponent rating 
 	let oppTotal = 0;
 	let score = 0;
+	let divisor = 0;
 	let rating = vTable.getPlayerRating(player, section);
 	for (const [i, oppScore] of oppScores.entries()) {
 		let oppRating = vTable.getPlayerRating(opponents[i], section);
@@ -593,11 +594,16 @@ function calcPerformanceRatingFIDE(player, section, opponents, oppScores) {
 				oppRating = calcPerformanceRatingByPlayerSection(opponents[i], section, calcPerformanceRatingFIDE);
 			}
 		}
+		divisor = divisor + 1;
 		oppTotal = oppTotal + oppRating;
 		score = score + oppScore;
 	};
-	const rA = oppTotal / opponents.length;
-	score = score / opponents.length;
+	if (divisor === 0) {
+		return 0; // I got nothin
+	}
+
+	const rA = oppTotal / divisor;
+	score = score / divisor;
 
 	const dp = [-800, -677, -589, -538, -501, -470, -444, -422, -401, -383, -366, -351, -336, -322, -309, -296, -284, -273, -262, -251, -240, -230, -220, -211, -202, -193, -184, -175, -166, -158, -149, -141, -133, -125, -117, -110, -102, -95, -87, -80, -72, -65, -57, -50, -43, -36, -29, -21, -14, -7, 0, 7, 14, 21, 29, 36, 43, 50, 57, 65, 72, 80, 87, 95, 102, 110, 117, 125, 133, 141, 149, 158, 166, 175, 184, 193, 202, 211, 220, 230, 240, 251, 262, 273, 284, 296, 309, 322, 336, 351, 366, 383, 401, 422, 444, 470, 501, 538, 589, 677, 800];
 	const i = Math.round(score * 100);
