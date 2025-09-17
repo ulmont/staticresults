@@ -527,9 +527,9 @@ function calcPerformanceRating(player, section, opponents, oppScores) {
 	let perf = 0;
 	let divisor = 0;
 	let rating = vTable.getPlayerRating(player, section);
-	let oppUnrated = (oppRating === 'Unr');
 	for (const [i, oppScore] of oppScores.entries()) {
 		let oppRating = vTable.getPlayerRating(opponents[i], section);
+		let oppUnrated = (oppRating === 'Unr');
 		// if the opponent is unrated and the current player is not, it's possible we might be able to actually derive a rating for that opponent (based on their performance rating) that would allow a meaningful comparison against the current player.
 		// but if both players are unrated just ignore the game
 		if (oppUnrated) {
