@@ -511,7 +511,6 @@ function calcPerformanceRatingByPlayerSection(player, section) {
 	let oppScores = [];
 	for (let j = 0; j < vTable.getSectionRoundsPaired(section); j++) {
 		let [roundScore, colorString, playerNum, byeType, isBye, opponent] = vTable.calcScoreColorStringPlayerNumByeTypeIsByeOpponent(j, section, sectionPlayers, player, vTable.getPlayerPairNo, getColorString);
-		score = score + roundScore;
 		if (opponent !== undefined) {
 			opponents.push(opponent); 
 			oppScores.push(roundScore);
