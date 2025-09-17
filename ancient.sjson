@@ -1,0 +1,57 @@
+{
+  "Overview": {
+    "Program": "SwissSys",
+    "Version": 11.75,
+    "VersionString": "11.75",
+    "Tournament title": "Ancient",
+    "Tournament time controls": "G/15;d0",
+    "Starting date": "1999-01-01",
+    "Ending date": "1999-01-01",
+    "Trace": "6.6.7.11.0.0.0.0.0.0."
+  },
+  "Sections": [
+    {
+      "Section name": "Open",
+      "Type": 0,
+      "Section title": "Open",
+      "Section time control": "G/15;d0",
+      "Number of players": 1,
+      "Number of teams": 0,
+      "Rounds paired": 0,
+      "Rounds played": 0,
+      "Rating to use": 1,
+      "Need search options": false,
+      "Final round": 4,
+      "Team cut": 4,
+      "Acceleration": 0,
+      "Blitz": false,
+      "Pair table items": 0,
+      "Team pair table items": 0,
+      "Players": [
+        {
+          "Pair number": 1,
+          "Name": "Campbell, Richard",
+          "ID": "16722147",
+          "Rating": 1523,
+          "Rating2": 1667,
+          "Club": "USA",
+          "Sex": "M",
+          "Birth date": "1977",
+          "Note": "Result coding is Result; Op.; Clr; Brd; Logical ops. 1 & 2; Game pnts",
+          "Results": [
+          ]
+        }
+      ],
+      "Teams": [
+      ],
+      "Prizes": {
+        "Place prizes": [
+        ],
+        "Class prizes": [
+        ]
+      },
+      "Ladder": {
+      }
+    }
+  ]
+}
