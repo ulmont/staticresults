@@ -488,7 +488,7 @@ function SetupWallChart(section, sortAlgo, playerNumAlgo, colorStringAlgo)
 		}
 		pTable = `${pTable}
 			<td class="Score">${score.toFixed(1)}</td>`;
-		if (oppRatings.length > 0) {
+		if (opponents.length > 0) {
 			let perf = calcPerformanceRating(player, section, opponents, oppScores);
 			pTable = `${pTable}
 				<td class="Score">${(Math.floor(perf)).toFixed(0)}</td>`;
