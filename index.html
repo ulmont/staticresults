@@ -1338,6 +1338,9 @@ function getVTablePTOZ()
 			if (opponentNum !== -1) {
 				opponent = tourney.players[opponentNum];
 				playerNum = playerNumAlgo(opponent, sectionPlayers);
+				if (!playedGame) {
+					opponent = undefined;
+				}
 			} else {
 				isBye = true;
 				opponent = undefined;
