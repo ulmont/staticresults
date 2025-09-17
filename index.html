@@ -547,7 +547,7 @@ function calcPerformanceRatingSwissSys(player, section, opponents, oppScores) {
 				continue;
 			} else {
 				// see if we can calculate something for the opponent.
-				oppRating = calcPerformanceRatingByPlayerSection(opponents[i], section);
+				oppRating = calcPerformanceRatingSwissSysByPlayerSection(opponents[i], section);
 			}
 		}
 		divisor = divisor + 1;
