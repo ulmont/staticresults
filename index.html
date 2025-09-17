@@ -506,10 +506,11 @@ function SetupWallChart(section, sortAlgo, playerNumAlgo, colorStringAlgo)
 }
 
 function calcPerformanceRatingByPlayerSection(player, section) {
+	const sectionPlayers = vTable.getSectionPlayers(vTable.getSectionId(section));
 	let opponents = [];
 	let oppScores = [];
 	for (let j = 0; j < vTable.getSectionRoundsPaired(section); j++) {
-		let [roundScore, colorString, playerNum, byeType, isBye, opponent] = vTable.calcScoreColorStringPlayerNumByeTypeIsByeOpponent(j, section, sectionPlayers, player, playerNumAlgo, colorStringAlgo);
+		let [roundScore, colorString, playerNum, byeType, isBye, opponent] = vTable.calcScoreColorStringPlayerNumByeTypeIsByeOpponent(j, section, sectionPlayers, player, vTable.getPlayerPairNo, getColorString);
 		score = score + roundScore;
 		if (opponent !== undefined) {
 			opponents.push(opponent); 
