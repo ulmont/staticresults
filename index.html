@@ -456,7 +456,8 @@ function SetupWallChart(section, sortAlgo, playerNumAlgo, colorStringAlgo)
 	}
 	pTable = `${pTable}
 			<th class="Score">Total</th>
-			<th class="Score">Performance</th>
+			<th class="Score">Perf (SwissSys)</th>
+			<th class="Score">Perf (FIDE)</th>
 		</tr>
 	</thead>
 	<tbody>`;
@@ -488,14 +489,22 @@ function SetupWallChart(section, sortAlgo, playerNumAlgo, colorStringAlgo)
 		}
 		pTable = `${pTable}
 			<td class="Score">${score.toFixed(1)}</td>`;
-			let perf = calcPerformanceRating(player, section, opponents, oppScores);
-			if (perf !== 0) {
-				pTable = `${pTable}
-					<td class="Score">${(Math.floor(perf)).toFixed(0)}</td>`;
-			} else {
-				pTable = `${pTable}
-					<td class="Score">N/A</td>`;
-			}
+		let perf = calcPerformanceRatingSwissSys(player, section, opponents, oppScores);
+		if (perf !== 0) {
+			pTable = `${pTable}
+				<td class="Score">${(Math.floor(perf)).toFixed(0)}</td>`;
+		} else {
+			pTable = `${pTable}
+				<td class="Score">N/A</td>`;
+		}
+		let tpr = calcPerformanceRatingFIDE(player, section, opponents, oppScores);
+		if (tpr !== 0) {
+			pTable = `${pTable}
+				<td class="Score">${(Math.floor(tpr)).toFixed(0)}</td>`;
+		} else {
+			pTable = `${pTable}
+				<td class="Score">N/A</td>`;
+		}
 		pTable = `${pTable}
 		</tr>`;
 	}
@@ -505,7 +514,7 @@ function SetupWallChart(section, sortAlgo, playerNumAlgo, colorStringAlgo)
 	wallChartDiv.style.display = 'block';
 }
 
-function calcPerformanceRatingByPlayerSection(player, section) {
+function calcPerformanceRatingSwissSysByPlayerSection(player, section) {
 	const sectionPlayers = vTable.getSectionPlayers(vTable.getSectionId(section));
 	let opponents = [];
 	let oppScores = [];
@@ -516,10 +525,10 @@ function calcPerformanceRatingByPlayerSection(player, section) {
 			oppScores.push(roundScore);
 		}
 	}
-	return calcPerformanceRating(player, section, opponents, oppScores);
+	return calcPerformanceRatingSwissSys(player, section, opponents, oppScores);
 }
 
-function calcPerformanceRating(player, section, opponents, oppScores) {
+function calcPerformanceRatingSwissSys(player, section, opponents, oppScores) {
 	if (opponents.length === 0) {
 		return 0; // I got nothin'
 	}
@@ -565,118 +574,29 @@ function calcPerformanceRating(player, section, opponents, oppScores) {
 	}
 } 
 
-/* function calcPerformanceRating(player, section, oppRatings, playedScore) {
-	// calculate average opponent rating and high/low bars
+// see the title regulations Sections 1.4.6 through 1.4.9, ignoring 1.4.6(b)
+function calcPerformanceRatingFIDE(player, section, opponents, oppScores) {
+	// calculate average opponent rating 
 	let oppTotal = 0;
-	oppRatings.forEach(oppRating => {
-		oppTotal = oppTotal + oppRating; // NOTE MAY HAVE A NaN HERE
-	});
-	const oppAverage = oppTotal / oppRatings.length;
-	let perfLow = Math.floor(oppAverage - 400); // at this point you'd be expected to lose each game.
-	let perfHigh = Math.ceil(oppAverage + 400); // at this point you'd be expected to win each game.
-	// just start with a guess of either the current rating, if they have one, or their average opponent rating if they don't
-	let perf = vTable.getPlayerRating(player, section);
-	if (perf === 'Unr') {
-		perf = oppAverage;
-	}
-
-	// do some special handling for all losses / all wins.
-	if (playedScore === 0) {
-		// perfect losses, take the average opponents -400 (or current rating, if lower)
-		perf = Math.min(perfLow, perf);
-	} else if (playedScore === oppRatings.length) {
-		// perfect wins, take the average opponents +400 (or current rating, if higher)
-		perf = Math.max(perfHigh, perf);
-	} else {
-		// iterate here until we figure out the correct rating to roughly match the result
-		// clip the rating into the low-high range if necessary
-		perf = Math.max(perfLow, perf);
-		pref = Math.min(perfHigh, perf);
-		const epsilon = Math.pow(10, -4);
-		let provExpectancies = calcProvisionalWinningExpectancies(perf, oppRatings);
-		let diff = provExpectancies - playedScore;
-		let delta = Math.abs(diff);
-		while (delta > epsilon) {
-			console.log(`score ${playedScore} estimate ${provExpectancies} low ${perfLow} perf ${perf} high ${perfHigh} diff ${diff} `);
-			let oldPerf = perf;
-			if (diff > 0) {
-				// make this the new high water mark
-				perfHigh = perf;
-			} else {
-				// make this the new low water mark
-				perfLow = perf;
-			}
-			// next guess averages our new bounds
-			perf = (perfHigh + perfLow) / 2;
-			if (Math.abs(oldPerf - perf) < 1) {
-				// this is about as good as we can do, bail out
-				break;
-			}
-			provExpectancies = calcProvisionalWinningExpectancies(perf, oppRatings);
-			diff = provExpectancies - playedScore;
-			delta = Math.abs(diff);
+	let score = 0;
+	for (const [i, oppScore] of oppScores.entries()) {
+		let oppRating = vTable.getPlayerRating(opponents[i], section);
+		if (oppRating === 'Unr') {
+			oppRating = 1400; // FIDE title regs 1.4.6.d, radically wrong for our player pool
 		}
-	}
-	if (perf < 100) { // can't go below 100
-		perf = 100;
-	}
+		oppTotal = oppTotal + oppRating;
+		score = score + oppScore;
+	};
+	const rA = oppTotal / opponents.length;
+
+	const dp = [-800, -677, -589, -538, -501, -470, -444, -422, -401, -383, -366, -351, -336, -322, -309, -296, -284, -273, -262, -251, -240, -230, -220, -211, -202, -193, -184, -175, -166, -158, -149, -141, -133, -125, -117, -110, -102, -95, -87, -80, -72, -65, -57, -50, -43, -36, -29, -21, -14, -7, 0, 7, 14, 21, 29, 36, 43, 50, 57, 65, 72, 80, 87, 95, 102, 110, 117, 125, 133, 141, 149, 158, 166, 175, 184, 193, 202, 211, 220, 230, 240, 251, 262, 273, 284, 296, 309, 322, 336, 351, 366, 383, 401, 422, 444, 470, 501, 538, 589, 677, 800];
+	const i = Math.floor(score * 100);
+
+	const perf = rA + dp[i];
 
 	return perf;
-} */
+} 
 
-// formula combining Section 4.1 of the rating formula and approximating formulas from the US Chess Rating System
-/* function calcProvisionalWinningExpectancies(rating, oppRatings) {
-	let total = 0;
-	oppRatings.forEach(oppRating => {
-		// provisional winning expectancy is 0 if the opponent is 400+ higher, 1 if the opponent is 400+ lower, or a calculation
-		const diff = rating - oppRating;
-		if (diff <= -400) { 
-			total = total + 0.0; // no chance
-		} else if (diff >= 400) {
-			total = total + 1.0; // no chance the other way.
-		} else {
-			const diff = rating - oppRating;
-			const power = (0 - diff)/400;
-			const tenPart = Math.pow(10, power);
-			const denom = tenPart + 1;
-			const chance = 1 / denom;
-			total = total + chance;
-		}
-	});
-	return total;
-} */
-
-// formula from approximating formulas for the US Chess Rating System
-/* function calcProvisionalWinningExpectancies(rating, oppRatings) {
-	let total = 0;
-	oppRatings.forEach(oppRating => {
-		const diff = rating - oppRating;
-		const power = (0 - diff)/400;
-		const tenPart = Math.pow(10, power);
-		const denom = tenPart + 1;
-		const chance = 1 / denom;
-		total = total + chance;
-	});
-	return total;
-}  */
-
-// formula from Section 4.1 of the rating formula
-/* function calcProvisionalWinningExpectancies(rating, oppRatings) {
-	let total = 0;
-	oppRatings.forEach(oppRating => {
-		// provisional winning expectancy is 0 if the opponent is 400+ higher, 1 if the opponent is 400+ lower, or a calculation
-		const diff = rating - oppRating;
-		if (diff <= -400) { 
-			total = total + 0.0; // no chance
-		} else if (diff >= 400) {
-			total = total + 1.0; // no chance the other way.
-		} else {
-			total = total + 0.5 + (diff / 800.0); // calculation
-		}
-	});
-	return total;
-}
- */
 function SetupRounds(sectionRounds)
 {
 	// hide the wall chart table
