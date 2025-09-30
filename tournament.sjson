@@ -7,7 +7,7 @@
     "Tournament time controls": "G/15;D0",
     "Starting date": "2025-09-29",
     "Ending date": "2025-09-29",
-    "Trace": "7.11.7.1.3.7.1.3.7.3."
+    "Trace": "1.3.7.1.3.7.7.4.3.7."
   },
   "Sections": [
     {
@@ -15,18 +15,18 @@
       "Type": 0,
       "Number of players": 26,
       "Number of teams": 0,
-      "Rounds paired": 3,
-      "Rounds played": 2,
+      "Rounds paired": 4,
+      "Rounds played": 3,
       "Rating to use": 0,
       "Engine": 1,
-      "Last unrestricted round": 2,
+      "Last unrestricted round": 3,
       "Need search options": false,
       "Coin toss": 1,
       "Team cut": 4,
       "Acceleration": 1,
       "Blitz": false,
       "Got logic": true,
-      "Pair table items": 14,
+      "Pair table items": 15,
       "Team pair table items": 0,
       "Players": [
         {
@@ -41,14 +41,15 @@
           "Sex": "M",
           "State": "LA",
           "Birth date": "2012",
-          "Adjusted scores": "2,4,6",
-          "Fictitious points": "2,2,2",
+          "Adjusted scores": "2,4,6,7",
+          "Fictitious points": "2,2,2,1",
           "Current result": " ",
           "Note": "Result coding is Result; Op.; Clr; Brd; Logical ops. 1 & 2; Game pnts",
           "Results": [
             "+;8;W;1;8;0;0",
             "+;6;B;1;6;0;0",
-            "~;9;W;1;3;0;0"
+            "+;9;W;1;3;0;0",
+            "~;3;B;1;3;0;0"
           ]
         },
         {
@@ -63,13 +64,14 @@
           "Sex": "M",
           "State": "LA",
           "Birth date": "2001",
-          "Adjusted scores": "2,2,4",
-          "Fictitious points": "2,2,2",
+          "Adjusted scores": "2,2,4,5",
+          "Fictitious points": "2,2,2,1",
           "Current result": " ",
           "Results": [
             "-;9;B;2;9;0;0",
             "+;11;W;4;11;0;0",
-            "~;10;B;3;9;0;0"
+            "+;10;B;3;9;0;0",
+            "~;6;W;3;22;0;0"
           ]
         },
         {
@@ -84,13 +86,14 @@
           "Sex": "M",
           "State": "LA",
           "Birth date": "1972",
-          "Adjusted scores": "2,4,6",
-          "Fictitious points": "2,2,2",
+          "Adjusted scores": "2,4,6,7",
+          "Fictitious points": "2,2,2,1",
           "Current result": " ",
           "Results": [
             "+;10;W;3;10;0;0",
             "+;7;B;2;7;0;0",
-            "~;4;W;2;1;0;0"
+            "+;4;W;2;1;0;0",
+            "~;1;W;1;1;0;0"
           ]
         },
         {
@@ -105,13 +108,14 @@
           "Sex": "M",
           "State": "LA",
           "Birth date": "1949",
-          "Adjusted scores": "2,2,4",
-          "Fictitious points": "2,2,2",
+          "Adjusted scores": "2,2,4,3",
+          "Fictitious points": "2,2,2,1",
           "Current result": " ",
           "Results": [
             "-;11;B;4;11;0;0",
             "+;17;W;5;17;0;0",
-            "~;3;B;2;10;0;0"
+            "-;3;B;2;10;0;0",
+            "~;10;W;7;12;0;0"
           ]
         },
         {
@@ -119,19 +123,22 @@
           "Name": "Watts, Gordon R",
           "ID": "12505032",
           "Rating": 1700,
+          "ID2": "39995054",
           "Rating2": 1810,
           "Exp1": "12/31/2026",
           "Club": "USA",
           "Sex": "M",
           "State": "LA",
           "Birth date": "1967",
-          "Adjusted scores": "2,4,4",
-          "Fictitious points": "2,2,2",
-          "Current result": " ",
+          "Reserved byes": "4 ",
+          "Adjusted scores": "2,4,4,0",
+          "Fictitious points": "2,2,2,0",
+          "Current result": "Â½",
           "Results": [
             "+;12;W;5;12;0;0",
             "-;9;B;3;9;0;0",
-            "~;20;W;4;11;0;0"
+            "+;20;W;4;11;0;0",
+            "H;-1;-;0;-1;0;0"
           ]
         },
         {
@@ -146,13 +153,14 @@
           "Sex": "M",
           "State": "LA",
           "Birth date": "1856",
-          "Adjusted scores": "2,4,4",
-          "Fictitious points": "2,2,2",
+          "Adjusted scores": "2,4,4,4",
+          "Fictitious points": "2,2,2,1",
           "Current result": " ",
           "Results": [
             "+;13;B;6;13;0;0",
             "-;1;W;1;1;0;0",
-            "~;11;B;5;20;0;0"
+            "=;11;B;5;20;0;0",
+            "~;2;B;3;11;0;0"
           ]
         },
         {
@@ -167,13 +175,14 @@
           "Sex": "M",
           "State": "LA",
           "Birth date": "1988",
-          "Adjusted scores": "2,4,4",
-          "Fictitious points": "2,2,2",
+          "Adjusted scores": "2,4,4,3",
+          "Fictitious points": "2,2,2,1",
           "Current result": " ",
           "Results": [
-            "+;26;W;14;0;0;0",
+            "+;21;W;14;0;0;0",
             "-;3;W;2;3;0;0",
-            "~;21;B;6;21;0;0"
+            "-;22;B;6;21;0;0",
+            "~;8;B;8;15;0;0"
           ]
         },
         {
@@ -188,13 +197,14 @@
           "Sex": "M",
           "State": "LA",
           "Birth date": "2007",
-          "Adjusted scores": "2,2,4",
-          "Fictitious points": "2,2,2",
+          "Adjusted scores": "2,2,4,3",
+          "Fictitious points": "2,2,2,1",
           "Current result": " ",
           "Results": [
             "-;1;B;1;1;0;0",
             "+;18;W;6;18;0;0",
-            "~;22;B;7;22;0;0"
+            "-;23;B;7;22;0;0",
+            "~;7;W;8;19;0;0"
           ]
         },
         {
@@ -209,13 +219,14 @@
           "Sex": "M",
           "State": "LA",
           "Birth date": "1977",
-          "Adjusted scores": "2,4,6",
-          "Fictitious points": "2,2,2",
+          "Adjusted scores": "2,4,6,5",
+          "Fictitious points": "2,2,2,1",
           "Current result": " ",
           "Results": [
             "+;2;W;2;2;0;0",
             "+;5;W;3;5;0;0",
-            "~;1;B;1;2;0;0"
+            "-;1;B;1;2;0;0",
+            "~;15;B;4;23;0;0"
           ]
         },
         {
@@ -230,13 +241,14 @@
           "Sex": "M",
           "State": "CA",
           "Birth date": "1990",
-          "Adjusted scores": "2,2,4",
-          "Fictitious points": "2,2,2",
+          "Adjusted scores": "2,2,4,3",
+          "Fictitious points": "2,2,2,1",
           "Current result": " ",
           "Results": [
             "-;3;B;3;3;0;0",
             "+;19;W;7;19;0;0",
-            "~;2;W;3;4;0;0"
+            "-;2;W;3;4;0;0",
+            "~;4;B;7;20;0;0"
           ]
         },
         {
@@ -244,19 +256,21 @@
           "Name": "Acuna, Nino Octavio",
           "ID": "31358118",
           "Rating": 1414,
+          "ID2": "39994970",
           "Rating2": 1716,
           "Exp1": "09/30/2026",
           "Club": "USA",
           "Sex": "M",
           "State": "LA",
           "Birth date": "2007",
-          "Adjusted scores": "2,4,4",
-          "Fictitious points": "2,2,2",
+          "Adjusted scores": "2,4,4,4",
+          "Fictitious points": "2,2,2,1",
           "Current result": " ",
           "Results": [
             "+;4;W;4;4;0;0",
             "-;2;B;4;2;0;0",
-            "~;6;W;5;5;0;0"
+            "=;6;W;5;5;0;0",
+            "~;20;B;5;6;0;0"
           ]
         },
         {
@@ -271,13 +285,14 @@
           "Sex": "M",
           "State": "LA",
           "Birth date": "1987",
-          "Adjusted scores": "2,2,2",
-          "Fictitious points": "2,2,2",
+          "Adjusted scores": "2,2,2,3",
+          "Fictitious points": "2,2,2,1",
           "Current result": " ",
           "Results": [
             "-;5;B;5;5;0;0",
-            "-;21;W;8;20;0;0",
-            "~;18;B;8;18;0;0"
+            "-;22;W;8;20;0;0",
+            "+;18;B;8;18;0;0",
+            "~;16;W;9;4;0;0"
           ]
         },
         {
@@ -292,13 +307,15 @@
           "Sex": "M",
           "State": "LA",
           "Birth date": "2014",
-          "Adjusted scores": "2,2,2",
-          "Fictitious points": "2,2,2",
-          "Current result": " ",
+          "Reserved byes": "4 ",
+          "Adjusted scores": "2,2,2,0",
+          "Fictitious points": "2,2,2,0",
+          "Current result": "Â½",
           "Results": [
             "-;6;W;6;6;0;0",
             "-;20;B;9;21;0;0",
-            "~;19;B;9;19;0;0"
+            "-;19;B;9;19;0;0",
+            "H;-1;-;0;-1;0;0"
           ]
         },
         {
@@ -314,12 +331,13 @@
           "State": "LA",
           "Birth date": "2014",
           "Reserved byes": "2 3z 4z ",
-          "Adjusted scores": "0,0,0",
-          "Fictitious points": "0,0,0",
+          "Adjusted scores": "0,0,0,0",
+          "Fictitious points": "0,0,0,0",
           "Current result": "0",
           "Results": [
             "-;20;W;8;20;0;0",
             "H;-1;-;0;-1;0;0",
+            "U;-1;-;0;-1;0;0",
             "U;-1;-;0;-1;0;0"
           ]
         },
@@ -335,13 +353,14 @@
           "Sex": "M",
           "State": "LA",
           "Birth date": "1960",
-          "Adjusted scores": "0,0,2",
-          "Fictitious points": "0,0,0",
+          "Adjusted scores": "0,0,2,4",
+          "Fictitious points": "0,0,0,0",
           "Current result": " ",
           "Results": [
-            "-;21;B;9;21;0;0",
-            "+;25;W;11;22;0;0",
-            "~;26;B;10;24;0;0"
+            "-;22;B;9;21;0;0",
+            "+;26;W;11;22;0;0",
+            "+;21;B;10;24;0;0",
+            "~;9;W;4;7;0;0"
           ]
         },
         {
@@ -356,92 +375,120 @@
           "Sex": "F",
           "State": "LA",
           "Birth date": "1996",
-          "Adjusted scores": "0,0,0",
-          "Fictitious points": "0,0,0",
+          "Adjusted scores": "0,0,0,2",
+          "Fictitious points": "0,0,0,0",
           "Current result": " ",
           "Results": [
-            "-;22;W;10;22;0;0",
-            "-;24;B;12;24;0;0",
-            "~;23;W;12;23;0;0"
+            "-;23;W;10;22;0;0",
+            "-;25;B;12;24;0;0",
+            "+;24;W;12;23;0;0",
+            "~;12;B;9;25;0;0"
           ]
         },
         {
           "Pair number": 17,
           "Name": "Brooks, Sara",
           "ID": "32530917",
+          "ID2": "39994988",
           "Exp1": "08/31/2027",
           "Club": "USA",
           "Sex": "F",
           "State": "LA",
           "Birth date": "2003",
-          "Adjusted scores": "0,2,2",
-          "Fictitious points": "0,0,0",
+          "Adjusted scores": "0,2,2,2",
+          "Fictitious points": "0,0,0,0",
           "Current result": " ",
           "Results": [
-            "+;23;B;11;23;0;0",
+            "+;24;B;11;23;0;0",
             "-;4;B;5;4;0;0",
-            "~;24;W;11;26;0;0"
+            "-;25;W;11;26;0;0",
+            "~;21;W;10;18;0;0"
           ]
         },
         {
           "Pair number": 18,
           "Name": "Castellano, German Daniel, Sr",
           "ID": "32212589",
+          "ID2": "39994996",
           "Rating2": 1415,
           "Exp1": "12/31/2025",
           "Club": "USA",
           "Sex": "M",
           "State": "LA",
           "Birth date": "1994",
-          "Adjusted scores": "0,2,2",
-          "Fictitious points": "0,0,0",
+          "Adjusted scores": "0,2,2,2",
+          "Fictitious points": "0,0,0,0",
           "Current result": " ",
           "Results": [
-            "+;24;W;12;24;0;0",
+            "+;25;W;12;24;0;0",
             "-;8;B;6;8;0;0",
-            "~;12;W;8;12;0;0"
+            "-;12;W;8;12;0;0",
+            "~;24;B;11;17;0;0"
           ]
         },
         {
           "Pair number": 19,
           "Name": "Frangos, Nicholas",
           "ID": "31963152",
+          "ID2": "39995020",
           "Rating2": 959,
           "Exp1": "08/31/2026",
           "Club": "USA",
           "Sex": "M",
           "State": "LA",
           "Birth date": "1992",
-          "Adjusted scores": "0,2,2",
-          "Fictitious points": "0,0,0",
+          "Adjusted scores": "0,2,2,4",
+          "Fictitious points": "0,0,0,0",
           "Current result": " ",
           "Results": [
-            "+;25;B;13;25;0;0",
+            "+;26;B;13;25;0;0",
             "-;10;B;7;10;0;0",
-            "~;13;W;9;13;0;0"
+            "+;13;W;9;13;0;0",
+            "~;25;B;6;8;0;0"
           ]
         },
         {
           "Pair number": 20,
           "Name": "Nguyen, Landon",
           "ID": "32536798",
+          "ID2": "39995038",
           "Rating2": 1306,
           "Exp1": "08/31/2026",
           "Club": "USA",
           "Sex": "M",
           "State": "LA",
           "Birth date": "2014",
-          "Adjusted scores": "0,2,4",
-          "Fictitious points": "0,0,0",
+          "Adjusted scores": "0,2,4,4",
+          "Fictitious points": "0,0,0,0",
           "Current result": " ",
           "Results": [
             "+;14;B;8;14;0;0",
             "+;13;W;9;12;0;0",
-            "~;5;B;4;6;0;0"
+            "-;5;B;4;6;0;0",
+            "~;11;W;5;10;0;0"
           ]
         },
         {
           "Pair number": 21,
+          "Name": "Abram Jr., Shelton Daris",
+          "ID": "32587697",
+          "ID2": "39995046",
+          "Club": "USA",
+          "Sex": "M",
+          "Birth date": "1987",
+          "Adjusted scores": "0,0,2,2",
+          "PAB": 2,
+          "Fictitious points": "0,0,0,0",
+          "Current result": " ",
+          "Results": [
+            "-;7;B;14;-1;0;0",
+            "B;0;-;0;-1;0;0",
+            "-;15;W;10;17;0;0",
+            "~;17;B;10;24;0;0"
+          ]
+        },
+        {
+          "Pair number": 22,
           "Name": "Villamil, Nahum Jose",
           "ID": "32033246",
           "ID2": "4418093",
@@ -451,17 +498,18 @@
           "Sex": "M",
           "State": "LA",
           "Birth date": "1997",
-          "Adjusted scores": "0,2,4",
-          "Fictitious points": "0,0,0",
+          "Adjusted scores": "0,2,4,6",
+          "Fictitious points": "0,0,0,0",
           "Current result": " ",
           "Results": [
             "+;15;W;9;15;0;0",
             "+;12;B;8;13;0;0",
-            "~;7;W;6;7;0;0"
+            "+;7;W;6;7;0;0",
+            "~;23;W;2;2;0;0"
           ]
         },
         {
-          "Pair number": 22,
+          "Pair number": 23,
           "Name": "Presti, Matthew M",
           "ID": "30492072",
           "ID2": "39964094",
@@ -471,86 +519,76 @@
           "Sex": "M",
           "State": "LA",
           "Birth date": "1985",
-          "Adjusted scores": "0,2,4",
-          "Fictitious points": "0,0,0",
+          "Adjusted scores": "0,2,4,6",
+          "Fictitious points": "0,0,0,0",
           "Current result": " ",
           "Results": [
             "+;16;B;10;16;0;0",
-            "+;23;W;10;15;0;0",
-            "~;8;W;7;8;0;0"
+            "+;24;W;10;15;0;0",
+            "+;8;W;7;8;0;0",
+            "~;22;B;2;9;0;0"
           ]
         },
         {
-          "Pair number": 23,
+          "Pair number": 24,
           "Name": "Abram, Shelton Daris, Iii",
           "ID": "32493569",
+          "ID2": "39994961",
           "Rating2": 498,
           "Exp1": "06/30/2026",
           "Club": "USA",
           "Sex": "M",
           "State": "LA",
           "Birth date": "2015",
-          "Adjusted scores": "0,0,0",
-          "Fictitious points": "0,0,0",
+          "Adjusted scores": "0,0,0,0",
+          "Fictitious points": "0,0,0,0",
           "Current result": " ",
           "Results": [
             "-;17;W;11;17;0;0",
-            "-;22;B;10;25;0;0",
-            "~;16;B;12;16;0;0"
+            "-;23;B;10;25;0;0",
+            "-;16;B;12;16;0;0",
+            "~;18;W;11;21;0;0"
           ]
         },
         {
-          "Pair number": 24,
+          "Pair number": 25,
           "Name": "Facchinei, Joseph",
           "ID": "32586935",
+          "ID2": "39995003",
           "Exp1": "09/30/2026",
           "Club": "USA",
           "Sex": "M",
           "State": "LA",
           "Birth date": "1999",
-          "Adjusted scores": "0,0,2",
-          "Fictitious points": "0,0,0",
+          "Adjusted scores": "0,0,2,4",
+          "Fictitious points": "0,0,0,0",
           "Current result": " ",
           "Results": [
             "-;18;B;12;18;0;0",
             "+;16;W;12;16;0;0",
-            "~;17;B;11;15;0;0"
+            "+;17;B;11;15;0;0",
+            "~;19;W;6;16;0;0"
           ]
         },
         {
-          "Pair number": 25,
+          "Pair number": 26,
           "Name": "Fiore, Felix",
           "ID": "32593180",
+          "ID2": "39995011",
           "Exp1": "09/30/2026",
           "Club": "USA",
           "Sex": "M",
           "State": "LA",
           "Birth date": "2019",
           "Reserved byes": "3 4 ",
-          "Adjusted scores": "0,0,0",
-          "Fictitious points": "0,0,0",
+          "Adjusted scores": "0,0,0,0",
+          "Fictitious points": "0,0,0,0",
           "Current result": "Â½",
           "Results": [
             "-;19;W;13;19;0;0",
             "-;15;B;11;23;0;0",
+            "H;-1;-;0;-1;0;0",
             "H;-1;-;0;-1;0;0"
-          ]
-        },
-        {
-          "Pair number": 26,
-          "Name": "Shelton The Dad",
-          "ID": "32587697",
-          "Club": "USA",
-          "Sex": "M",
-          "Birth date": "1987",
-          "Adjusted scores": "0,0,2",
-          "PAB": 2,
-          "Fictitious points": "0,0,0",
-          "Current result": " ",
-          "Results": [
-            "-;7;B;14;-1;0;0",
-            "B;0;-;0;-1;0;0",
-            "~;15;W;10;17;0;0"
           ]
         }
       ],
