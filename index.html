@@ -1733,10 +1733,27 @@ function getVTableSwissSys()
 		return score;
 	}
 	vTable.getPlayerRating = function(player, section) {
-		if (player.Rating !== undefined) {
-			return player.Rating;
+		let tc = tourney.Overview['Tournament time controls'];
+		if ((tc === undefined) || (tc === "")) {
+			tc = "G/15;d0";
+		}
+		let tcParts = tc.split(';');
+		tcParts[0] = tcParts[0].replace(/[^\d]/g, '');
+		tcParts[1] = tcParts[1].replace(/[^\d]/g, '');
+		tcParts[0] = Number.parseInt(tcParts[0]);
+		tcParts[1] = Number.parseInt(tcParts[1]);
+		if ((tcParts[0] + tcParts[1]) < 30) {
+			if (player.Rating2 !== undefined) {
+				return player.Rating2;
+			} else {
+				return 'Unr';
+			}
 		} else {
-			return 'Unr';
+			if (player.Rating !== undefined) {
+				return player.Rating;
+			} else {
+				return 'Unr';
+			}
 		}
 	}
 	vTable.getResultString = function(color, result) {
