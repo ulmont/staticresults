@@ -6,7 +6,7 @@
     "Tournament title": "New Orleans Chess Day Swiss 2025",
     "Starting date": "10/11/2025",
     "Ending date": "10/11/2025",
-    "Trace": "3.7.3.3.3.3.3.3.3.3."
+    "Trace": "3.7.3.3.3.7.7.4.6.3."
   },
   "Sections": [
     {
@@ -14,7 +14,7 @@
       "Type": 0,
       "Section title": "Open",
       "Section time control": "g/40;d5",
-      "Number of players": 35,
+      "Number of players": 36,
       "Number of teams": 0,
       "Rounds paired": 1,
       "Rounds played": 0,
@@ -101,7 +101,7 @@
           "Fictitious points": "2",
           "Current result": " ",
           "Results": [
-            "~;12;W;102;11;0;0"
+            "~;13;W;102;11;0;0"
           ]
         },
         {
@@ -125,7 +125,7 @@
           "Fictitious points": "2",
           "Current result": " ",
           "Results": [
-            "~;13;B;103;12;0;0"
+            "~;14;B;103;13;0;0"
           ]
         },
         {
@@ -149,7 +149,7 @@
           "Fictitious points": "2",
           "Current result": " ",
           "Results": [
-            "~;14;W;104;13;0;0"
+            "~;15;W;104;14;0;0"
           ]
         },
         {
@@ -173,7 +173,7 @@
           "Fictitious points": "2",
           "Current result": " ",
           "Results": [
-            "~;15;B;105;14;0;0"
+            "~;16;B;105;15;0;0"
           ]
         },
         {
@@ -196,7 +196,7 @@
           "Fictitious points": "2",
           "Current result": " ",
           "Results": [
-            "~;16;W;106;15;0;0"
+            "~;17;W;106;16;0;0"
           ]
         },
         {
@@ -218,7 +218,7 @@
           "Fictitious points": "2",
           "Current result": " ",
           "Results": [
-            "~;17;B;107;16;0;0"
+            "~;18;B;107;17;0;0"
           ]
         },
         {
@@ -236,7 +236,7 @@
           "Fictitious points": "2",
           "Current result": " ",
           "Results": [
-            "~;18;W;108;17;0;0"
+            "~;19;W;108;18;0;0"
           ]
         },
         {
@@ -259,7 +259,7 @@
           "Fictitious points": "2",
           "Current result": " ",
           "Results": [
-            "~;19;B;109;2;0;0"
+            "~;20;B;109;2;0;0"
           ]
         },
         {
@@ -287,6 +287,20 @@
         },
         {
           "Pair number": 12,
+          "Name": "Richert, Josh P",
+          "ID": "12843313",
+          "Rating": 1573,
+          "Rating2": 1669,
+          "Exp1": "03/31/2026",
+          "State": "LA",
+          "Reserved byes": "1 ",
+          "Adjusted scores": "0",
+          "Results": [
+            "H;0;-;0;0;0;0"
+          ]
+        },
+        {
+          "Pair number": 13,
           "Name": "Zhang, Aaron James",
           "ID": "16496233",
           "Rating": 1549,
@@ -310,7 +324,7 @@
           ]
         },
         {
-          "Pair number": 13,
+          "Pair number": 14,
           "Name": "Edwards, Cedric",
           "ID": "12455580",
           "Rating": 1540,
@@ -330,7 +344,7 @@
           ]
         },
         {
-          "Pair number": 14,
+          "Pair number": 15,
           "Name": "McGlynn-Wright, Theo",
           "ID": "30664464",
           "Rating": 1536,
@@ -353,7 +367,7 @@
           ]
         },
         {
-          "Pair number": 15,
+          "Pair number": 16,
           "Name": "Campbell, Richard Ulmont",
           "ID": "16722147",
           "Rating": 1535,
@@ -371,7 +385,7 @@
           ]
         },
         {
-          "Pair number": 16,
+          "Pair number": 17,
           "Name": "Sutton, Jarred",
           "ID": "31379245",
           "Rating": 1520,
@@ -394,7 +408,7 @@
           ]
         },
         {
-          "Pair number": 17,
+          "Pair number": 18,
           "Name": "McDonald, Tyler",
           "ID": "32236309",
           "Rating": 1449,
@@ -414,7 +428,7 @@
           ]
         },
         {
-          "Pair number": 18,
+          "Pair number": 19,
           "Name": "Cumurovic, Amar",
           "ID": "12724963",
           "Rating": 1445,
@@ -433,11 +447,11 @@
           "Fictitious points": "2",
           "Current result": " ",
           "Results": [
-            "~;9;B;108;19;0;0"
+            "~;9;B;108;20;0;0"
           ]
         },
         {
-          "Pair number": 19,
+          "Pair number": 20,
           "Name": "Ochs, Andrew",
           "ID": "31567942",
           "Rating": 1442,
@@ -457,11 +471,11 @@
           "Fictitious points": "2",
           "Current result": " ",
           "Results": [
-            "~;10;W;109;18;0;0"
+            "~;10;W;109;19;0;0"
           ]
         },
         {
-          "Pair number": 20,
+          "Pair number": 21,
           "Name": "Ren, Hannah",
           "ID": "30884711",
           "Rating": 1427,
@@ -480,11 +494,11 @@
           "Adjusted scores": "0",
           "Current result": " ",
           "Results": [
-            "~;27;B;110;27;0;0"
+            "~;28;B;110;28;0;0"
           ]
         },
         {
-          "Pair number": 21,
+          "Pair number": 22,
           "Name": "Nguyen, Landon",
           "ID": "32536798",
           "Rating": 1425,
@@ -499,11 +513,11 @@
           "Adjusted scores": "0",
           "Current result": " ",
           "Results": [
-            "~;28;W;111;28;0;0"
+            "~;29;W;111;29;0;0"
           ]
         },
         {
-          "Pair number": 22,
+          "Pair number": 23,
           "Name": "Dowd, Simon Edward",
           "ID": "30562890",
           "Rating": 1316,
@@ -521,11 +535,11 @@
           "Adjusted scores": "0",
           "Current result": " ",
           "Results": [
-            "~;30;B;112;30;0;0"
+            "~;31;B;112;31;0;0"
           ]
         },
         {
-          "Pair number": 23,
+          "Pair number": 24,
           "Name": "Menon, Maurice Jerry",
           "ID": "30171073",
           "Rating": 1274,
@@ -544,11 +558,11 @@
           "Adjusted scores": "0",
           "Current result": " ",
           "Results": [
-            "~;31;W;113;31;0;0"
+            "~;32;W;113;32;0;0"
           ]
         },
         {
-          "Pair number": 24,
+          "Pair number": 25,
           "Name": "Harendra, Aaruran",
           "ID": "30905883",
           "Rating": 1186,
@@ -566,11 +580,11 @@
           "Adjusted scores": "0",
           "Current result": " ",
           "Results": [
-            "~;32;B;114;32;0;0"
+            "~;33;B;114;33;0;0"
           ]
         },
         {
-          "Pair number": 25,
+          "Pair number": 26,
           "Name": "Sledge, Wyatt C",
           "ID": "31225814",
           "Rating": 1127,
@@ -588,11 +602,11 @@
           "Adjusted scores": "0",
           "Current result": " ",
           "Results": [
-            "~;33;W;115;33;0;0"
+            "~;34;W;115;34;0;0"
           ]
         },
         {
-          "Pair number": 26,
+          "Pair number": 27,
           "Name": "Macdonald, Gerald",
           "ID": "12939491",
           "Rating": 1074,
@@ -610,11 +624,11 @@
           "Adjusted scores": "0",
           "Current result": " ",
           "Results": [
-            "~;34;B;116;34;0;0"
+            "~;35;B;116;35;0;0"
           ]
         },
         {
-          "Pair number": 27,
+          "Pair number": 28,
           "Name": "D'Aquin, Leila A",
           "ID": "14194534",
           "Rating": 990,
@@ -633,11 +647,11 @@
           "Adjusted scores": "0",
           "Current result": " ",
           "Results": [
-            "~;20;W;110;20;0;0"
+            "~;21;W;110;21;0;0"
           ]
         },
         {
-          "Pair number": 28,
+          "Pair number": 29,
           "Name": "Granger, Trey",
           "ID": "14268321",
           "Rating": 912,
@@ -650,11 +664,11 @@
           "Adjusted scores": "0",
           "Current result": " ",
           "Results": [
-            "~;21;B;111;21;0;0"
+            "~;22;B;111;22;0;0"
           ]
         },
         {
-          "Pair number": 29,
+          "Pair number": 30,
           "Name": "Li, Shawn",
           "ID": "30588836",
           "Rating": 898,
@@ -677,7 +691,7 @@
           ]
         },
         {
-          "Pair number": 30,
+          "Pair number": 31,
           "Name": "McKinnie, Matthew",
           "ID": "31462597",
           "Rating": 820,
@@ -693,11 +707,11 @@
           "Adjusted scores": "0",
           "Current result": " ",
           "Results": [
-            "~;22;W;112;22;0;0"
+            "~;23;W;112;23;0;0"
           ]
         },
         {
-          "Pair number": 31,
+          "Pair number": 32,
           "Name": "Brooks, Sara",
           "ID": "32530917",
           "Rating": 667,
@@ -712,11 +726,11 @@
           "Adjusted scores": "0",
           "Current result": " ",
           "Results": [
-            "~;23;B;113;23;0;0"
+            "~;24;B;113;24;0;0"
           ]
         },
         {
-          "Pair number": 32,
+          "Pair number": 33,
           "Name": "McKinnie, Luke",
           "ID": "31462587",
           "Rating": 605,
@@ -732,11 +746,11 @@
           "Adjusted scores": "0",
           "Current result": " ",
           "Results": [
-            "~;24;W;114;24;0;0"
+            "~;25;W;114;25;0;0"
           ]
         },
         {
-          "Pair number": 33,
+          "Pair number": 34,
           "Name": "Queyrouze, Jacques",
           "ID": "31599484",
           "Rating": 577,
@@ -751,11 +765,11 @@
           "Adjusted scores": "0",
           "Current result": " ",
           "Results": [
-            "~;25;B;115;25;0;0"
+            "~;26;B;115;26;0;0"
           ]
         },
         {
-          "Pair number": 34,
+          "Pair number": 35,
           "Name": "Deshotel, Ethan L",
           "ID": "32421276",
           "Rating": 329,
@@ -774,11 +788,11 @@
           "Adjusted scores": "0",
           "Current result": " ",
           "Results": [
-            "~;26;W;116;26;0;0"
+            "~;27;W;116;27;0;0"
           ]
         },
         {
-          "Pair number": 35,
+          "Pair number": 36,
           "Name": "Olson, Andy",
           "ID": "32574660",
           "Sex": "M",
