@@ -1,12 +1,13 @@
 {
   "Overview": {
     "Program": "SwissSys",
-    "Version": 11.74,
-    "VersionString": "11.74",
+    "Version": 11.75,
+    "VersionString": "11.75",
     "Tournament title": "New Orleans Chess Day Swiss 2025",
+    "Tournament time controls": "g/40;d5",
     "Starting date": "10/11/2025",
     "Ending date": "10/11/2025",
-    "Trace": "1.3.3.3.7.1.1.3.7.7."
+    "Trace": "0.0.0.0.0.0.0.0.0.0."
   },
   "Sections": [
     {
@@ -50,7 +51,7 @@
           "Phone": "(504) 952-1959",
           "Email": "dexwebster1@gmail.com",
           "Reserved byes": "1 ",
-          "Adjusted scores": "0,1,4",
+          "Adjusted scores": "0,0,0",
           "Fictitious points": "0,2,1",
           "Current result": " ",
           "Note": "Result coding is Result; Op.; Clr; Brd; Logical ops. 1 & 2; Game pnts",
@@ -76,7 +77,7 @@
           "Birth date": "1972",
           "Phone": "(816) 820-9754",
           "Email": "asquitiro@gmail.com",
-          "Adjusted scores": "2,2,5",
+          "Adjusted scores": "0,0,0",
           "Fictitious points": "2,2,1",
           "Current result": " ",
           "Results": [
@@ -102,7 +103,7 @@
           "Birth date": "1967",
           "Phone": "(225) 772-9550",
           "Email": "MarkLSchulingkamp@gmail.com",
-          "Adjusted scores": "2,0,3",
+          "Adjusted scores": "0,0,0",
           "Fictitious points": "2,2,1",
           "Current result": " ",
           "Results": [
@@ -128,7 +129,7 @@
           "Birth date": "2012",
           "Phone": "(504) 701-9010",
           "Email": "anhtigone@gmail.com",
-          "Adjusted scores": "2,2,5",
+          "Adjusted scores": "0,0,0",
           "Fictitious points": "2,2,1",
           "Current result": " ",
           "Results": [
@@ -154,7 +155,7 @@
           "Birth date": "1989",
           "Phone": "(216) 385-9616",
           "Email": "boecker.maxwell@gmail.com",
-          "Adjusted scores": "2,2,5",
+          "Adjusted scores": "0,0,0",
           "Fictitious points": "2,2,1",
           "Current result": " ",
           "Results": [
@@ -180,7 +181,7 @@
           "Birth date": "1960",
           "Phone": "(504) 237-5065",
           "Email": "rtagorda317@yahoo.com",
-          "Adjusted scores": "2,2,5",
+          "Adjusted scores": "0,0,0",
           "Fictitious points": "2,2,1",
           "Current result": " ",
           "Results": [
@@ -205,7 +206,7 @@
           "Birth date": "1972",
           "Phone": "(504) 458-1666",
           "Email": "jefferydarensbourg@gmail.com",
-          "Adjusted scores": "2,0,3",
+          "Adjusted scores": "0,0,0",
           "Fictitious points": "2,2,1",
           "Current result": " ",
           "Results": [
@@ -229,13 +230,14 @@
           "Birth date": "1943",
           "Phone": "(985) 290-0559",
           "Email": "kvakovgeo@gmail.com",
-          "Adjusted scores": "2,2,3",
+          "Withdrew": true,
+          "Adjusted scores": "0,0,0",
           "Fictitious points": "2,2,1",
-          "Current result": " ",
+          "Current result": "0",
           "Results": [
             "+;18;B;107;17;0;0",
             "-;2;B;101;2;0;0",
-            "~;16;W;106;16;0;0"
+            "-;16;W;106;16;0;0"
           ]
         },
         {
@@ -249,7 +251,7 @@
           "Zip": "70809",
           "Phone": "(225) 276-5682",
           "Email": "dontburntheday@icloud.com",
-          "Adjusted scores": "2,2,3",
+          "Adjusted scores": "0,0,0",
           "Fictitious points": "2,2,1",
           "Current result": " ",
           "Results": [
@@ -274,7 +276,7 @@
           "Birth date": "1956",
           "Phone": "(504) 444-9561",
           "Email": "albinet896@gmail.com",
-          "Adjusted scores": "2,1,2",
+          "Adjusted scores": "0,0,0",
           "Fictitious points": "2,2,1",
           "Current result": " ",
           "Results": [
@@ -299,7 +301,7 @@
           "Birth date": "2007",
           "Phone": "(504) 452-7075",
           "Email": "reed.urcia@gmail.com",
-          "Adjusted scores": "2,0,3",
+          "Adjusted scores": "0,0,0",
           "Fictitious points": "2,2,1",
           "Current result": " ",
           "Results": [
@@ -317,7 +319,7 @@
           "Exp1": "03/31/2026",
           "State": "LA",
           "Reserved byes": "1 ",
-          "Adjusted scores": "0,1,2",
+          "Adjusted scores": "0,0,0",
           "Fictitious points": "0,0,1",
           "Current result": " ",
           "Results": [
@@ -343,7 +345,7 @@
           "Birth date": "2011",
           "Phone": "(504) 256-5585",
           "Email": "fang00976@gmail.com",
-          "Adjusted scores": "2,2,3",
+          "Adjusted scores": "0,0,0",
           "Fictitious points": "2,2,1",
           "Current result": " ",
           "Results": [
@@ -365,7 +367,7 @@
           "Zip": "38901",
           "Phone": "(662) 934-8671",
           "Email": "cedricedwards@hotmail.com",
-          "Adjusted scores": "2,0,3",
+          "Adjusted scores": "0,0,0",
           "Fictitious points": "2,2,1",
           "Current result": " ",
           "Results": [
@@ -390,7 +392,7 @@
           "Birth date": "2015",
           "Phone": "(206) 501-9725",
           "Email": "teddylw@gmail.com",
-          "Adjusted scores": "2,0,1",
+          "Adjusted scores": "0,0,0",
           "Fictitious points": "2,2,1",
           "Current result": " ",
           "Results": [
@@ -410,13 +412,13 @@
           "Sex": "M",
           "State": "LA",
           "Birth date": "1977",
-          "Adjusted scores": "2,0,3",
+          "Adjusted scores": "0,0,0",
           "Fictitious points": "2,0,1",
-          "Current result": " ",
+          "Current result": "1",
           "Results": [
             "-;6;W;105;7;0;0",
             "+;12;B;120;12;0;0",
-            "~;8;B;106;8;0;0"
+            "+;8;B;106;8;0;0"
           ]
         },
         {
@@ -435,7 +437,7 @@
           "Birth date": "1999",
           "Phone": "(816) 820-9754",
           "Email": "asquitiro@gmail.com",
-          "Adjusted scores": "2,2,3",
+          "Adjusted scores": "0,0,0",
           "Fictitious points": "2,2,1",
           "Current result": " ",
           "Results": [
@@ -457,7 +459,7 @@
           "Zip": "70002",
           "Phone": "(352) 216-7131",
           "Email": "mcdonaldt19@yahoo.com",
-          "Adjusted scores": "2,0,3",
+          "Adjusted scores": "0,0,0",
           "Fictitious points": "2,2,1",
           "Current result": " ",
           "Results": [
@@ -482,7 +484,7 @@
           "Birth date": "1990",
           "Phone": "(504) 874-0285",
           "Email": "acumur1@yahoo.com",
-          "Adjusted scores": "2,0,3",
+          "Adjusted scores": "0,0,0",
           "Fictitious points": "2,2,1",
           "Current result": " ",
           "Results": [
@@ -508,9 +510,9 @@
           "Phone": "(504) 427-1327",
           "Email": "flor_guan@yahoo.com",
           "Reserved byes": "3 ",
-          "Adjusted scores": "2,1,1",
+          "Adjusted scores": "0,0,0",
           "Fictitious points": "2,2,0",
-          "Current result": "Â½",
+          "Current result": "Â",
           "Results": [
             "=;10;W;109;19;0;0",
             "-;3;B;106;30;0;0",
@@ -534,7 +536,7 @@
           "Birth date": "2013",
           "Phone": "(225) 202-1704",
           "Email": "Renmaoming@gmail.com",
-          "Adjusted scores": "0,2,4",
+          "Adjusted scores": "0,0,0",
           "Fictitious points": "0,0,0",
           "Current result": " ",
           "Results": [
@@ -607,7 +609,7 @@
           "Phone": "(212) 203-2638",
           "Email": "chandramenon@yahoo.com",
           "Reserved byes": "4 5 ",
-          "Adjusted scores": "0,2,4",
+          "Adjusted scores": "0,0,0",
           "Fictitious points": "0,0,0",
           "Current result": " ",
           "Results": [
@@ -632,7 +634,7 @@
           "Birth date": "2013",
           "Phone": "(713) 890-2503",
           "Email": "ps_harendra@yahoo.com",
-          "Adjusted scores": "0,2,2",
+          "Adjusted scores": "0,0,0",
           "Fictitious points": "0,0,0",
           "Current result": " ",
           "Results": [
@@ -657,7 +659,7 @@
           "Birth date": "2013",
           "Phone": "(225) 937-0441",
           "Email": "reagans@aol.com",
-          "Adjusted scores": "0,2,2",
+          "Adjusted scores": "0,0,0",
           "Fictitious points": "0,0,0",
           "Current result": " ",
           "Results": [
@@ -682,7 +684,7 @@
           "Birth date": "1974",
           "Phone": "(616) 690-7000",
           "Email": "jerrylmacdonald@gmail.com",
-          "Adjusted scores": "0,2,2",
+          "Adjusted scores": "0,0,0",
           "Fictitious points": "0,0,0",
           "Current result": " ",
           "Results": [
@@ -708,7 +710,7 @@
           "Phone": "(504) 432-1201",
           "Email": "ldaquin@yahoo.com",
           "Reserved byes": "4 5 ",
-          "Adjusted scores": "0,0,2",
+          "Adjusted scores": "0,0,0",
           "Fictitious points": "0,0,0",
           "Current result": " ",
           "Results": [
@@ -728,7 +730,7 @@
           "Zip": "71106",
           "Phone": "(318) 780-4018",
           "Email": "grangeriii@icloud.com",
-          "Adjusted scores": "0,2,2",
+          "Adjusted scores": "0,0,0",
           "Fictitious points": "0,0,0",
           "Current result": " ",
           "Results": [
@@ -754,7 +756,7 @@
           "Phone": "(907) 209-8123",
           "Email": "haixue.shen@gmail.com",
           "Reserved byes": "1 ",
-          "Adjusted scores": "0,1,3",
+          "Adjusted scores": "0,0,0",
           "Fictitious points": "0,0,0",
           "Current result": " ",
           "Results": [
@@ -776,7 +778,7 @@
           "Zip": "70002",
           "Phone": "(504) 432-5602",
           "Email": "cmckinnie4764@gmail.com",
-          "Adjusted scores": "0,2,2",
+          "Adjusted scores": "0,0,0",
           "Fictitious points": "0,0,0",
           "Current result": " ",
           "Results": [
@@ -798,7 +800,7 @@
           "Zip": "70068",
           "Phone": "(504) 539-0124",
           "Email": "htebazile667@gmail.com",
-          "Adjusted scores": "0,0,2",
+          "Adjusted scores": "0,0,0",
           "Fictitious points": "0,0,0",
           "Current result": " ",
           "Results": [
@@ -820,7 +822,7 @@
           "Zip": "70002",
           "Phone": "(504) 432-5602",
           "Email": "cmckinnie4764@gmail.com",
-          "Adjusted scores": "0,0,2",
+          "Adjusted scores": "0,0,0",
           "Fictitious points": "0,0,0",
           "Current result": " ",
           "Results": [
@@ -889,7 +891,7 @@
           "Zip": "70115",
           "Phone": "(414) 335-8008",
           "Email": "andy.m.olson@gmail.com",
-          "Adjusted scores": "0,2,2",
+          "Adjusted scores": "0,0,0",
           "PAB": 1,
           "Fictitious points": "0,0,0",
           "Current result": " ",
