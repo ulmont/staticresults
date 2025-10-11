@@ -1735,7 +1735,10 @@ function getVTableSwissSys()
 	vTable.getPlayerRating = function(player, section) {
 		let tc = tourney.Overview['Tournament time controls'];
 		if ((tc === undefined) || (tc === "")) {
-			tc = "G/15;d0";
+			tc = tourney.Sections[0]['Section time control'];
+			if ((tc === undefined) || (tc === "")) {
+				tc = "G/15;d0";
+			}
 		}
 		let tcParts = tc.split(';');
 		tcParts[0] = tcParts[0].replace(/[^\d]/g, '');
