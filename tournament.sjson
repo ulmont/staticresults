@@ -6,7 +6,7 @@
     "Tournament title": "New Orleans Chess Day Swiss 2025",
     "Starting date": "10/11/2025",
     "Ending date": "10/11/2025",
-    "Trace": "3.7.3.3.3.3.3.7.1.3."
+    "Trace": "3.7.3.3.3.3.3.3.3.3."
   },
   "Sections": [
     {
@@ -77,7 +77,7 @@
           "Fictitious points": "2",
           "Current result": " ",
           "Results": [
-            "~;11;B;0;10;0;0"
+            "~;11;B;101;10;0;0"
           ]
         },
         {
@@ -101,7 +101,7 @@
           "Fictitious points": "2",
           "Current result": " ",
           "Results": [
-            "~;12;W;0;11;0;0"
+            "~;12;W;102;11;0;0"
           ]
         },
         {
@@ -125,7 +125,7 @@
           "Fictitious points": "2",
           "Current result": " ",
           "Results": [
-            "~;13;B;0;12;0;0"
+            "~;13;B;103;12;0;0"
           ]
         },
         {
@@ -149,7 +149,7 @@
           "Fictitious points": "2",
           "Current result": " ",
           "Results": [
-            "~;14;W;0;13;0;0"
+            "~;14;W;104;13;0;0"
           ]
         },
         {
@@ -173,7 +173,7 @@
           "Fictitious points": "2",
           "Current result": " ",
           "Results": [
-            "~;15;B;0;14;0;0"
+            "~;15;B;105;14;0;0"
           ]
         },
         {
@@ -196,7 +196,7 @@
           "Fictitious points": "2",
           "Current result": " ",
           "Results": [
-            "~;16;W;0;15;0;0"
+            "~;16;W;106;15;0;0"
           ]
         },
         {
@@ -218,7 +218,7 @@
           "Fictitious points": "2",
           "Current result": " ",
           "Results": [
-            "~;17;B;0;16;0;0"
+            "~;17;B;107;16;0;0"
           ]
         },
         {
@@ -236,7 +236,7 @@
           "Fictitious points": "2",
           "Current result": " ",
           "Results": [
-            "~;18;W;0;17;0;0"
+            "~;18;W;108;17;0;0"
           ]
         },
         {
@@ -259,7 +259,7 @@
           "Fictitious points": "2",
           "Current result": " ",
           "Results": [
-            "~;19;B;0;2;0;0"
+            "~;19;B;109;2;0;0"
           ]
         },
         {
@@ -282,7 +282,7 @@
           "Fictitious points": "2",
           "Current result": " ",
           "Results": [
-            "~;2;W;0;3;0;0"
+            "~;2;W;101;3;0;0"
           ]
         },
         {
@@ -306,7 +306,7 @@
           "Fictitious points": "2",
           "Current result": " ",
           "Results": [
-            "~;3;B;0;4;0;0"
+            "~;3;B;102;4;0;0"
           ]
         },
         {
@@ -326,7 +326,7 @@
           "Fictitious points": "2",
           "Current result": " ",
           "Results": [
-            "~;4;W;0;5;0;0"
+            "~;4;W;103;5;0;0"
           ]
         },
         {
@@ -349,7 +349,7 @@
           "Fictitious points": "2",
           "Current result": " ",
           "Results": [
-            "~;5;B;0;6;0;0"
+            "~;5;B;104;6;0;0"
           ]
         },
         {
@@ -359,12 +359,15 @@
           "Rating": 1535,
           "Rating2": 1662,
           "Exp1": "05/31/2026",
+          "Club": "USA",
+          "Sex": "M",
           "State": "LA",
+          "Birth date": "1977",
           "Adjusted scores": "2",
           "Fictitious points": "2",
           "Current result": " ",
           "Results": [
-            "~;6;W;0;7;0;0"
+            "~;6;W;105;7;0;0"
           ]
         },
         {
@@ -387,7 +390,7 @@
           "Fictitious points": "2",
           "Current result": " ",
           "Results": [
-            "~;7;B;0;8;0;0"
+            "~;7;B;106;8;0;0"
           ]
         },
         {
@@ -407,7 +410,7 @@
           "Fictitious points": "2",
           "Current result": " ",
           "Results": [
-            "~;8;W;0;9;0;0"
+            "~;8;W;107;9;0;0"
           ]
         },
         {
@@ -430,7 +433,7 @@
           "Fictitious points": "2",
           "Current result": " ",
           "Results": [
-            "~;9;B;0;19;0;0"
+            "~;9;B;108;19;0;0"
           ]
         },
         {
@@ -454,7 +457,7 @@
           "Fictitious points": "2",
           "Current result": " ",
           "Results": [
-            "~;10;W;0;18;0;0"
+            "~;10;W;109;18;0;0"
           ]
         },
         {
@@ -477,7 +480,7 @@
           "Adjusted scores": "0",
           "Current result": " ",
           "Results": [
-            "~;27;B;0;27;0;0"
+            "~;27;B;110;27;0;0"
           ]
         },
         {
@@ -496,7 +499,7 @@
           "Adjusted scores": "0",
           "Current result": " ",
           "Results": [
-            "~;28;W;0;28;0;0"
+            "~;28;W;111;28;0;0"
           ]
         },
         {
@@ -518,7 +521,7 @@
           "Adjusted scores": "0",
           "Current result": " ",
           "Results": [
-            "~;30;B;0;30;0;0"
+            "~;30;B;112;30;0;0"
           ]
         },
         {
@@ -541,7 +544,7 @@
           "Adjusted scores": "0",
           "Current result": " ",
           "Results": [
-            "~;31;W;0;31;0;0"
+            "~;31;W;113;31;0;0"
           ]
         },
         {
@@ -563,7 +566,7 @@
           "Adjusted scores": "0",
           "Current result": " ",
           "Results": [
-            "~;32;B;0;32;0;0"
+            "~;32;B;114;32;0;0"
           ]
         },
         {
@@ -585,7 +588,7 @@
           "Adjusted scores": "0",
           "Current result": " ",
           "Results": [
-            "~;33;W;0;33;0;0"
+            "~;33;W;115;33;0;0"
           ]
         },
         {
@@ -607,7 +610,7 @@
           "Adjusted scores": "0",
           "Current result": " ",
           "Results": [
-            "~;34;B;0;34;0;0"
+            "~;34;B;116;34;0;0"
           ]
         },
         {
@@ -630,7 +633,7 @@
           "Adjusted scores": "0",
           "Current result": " ",
           "Results": [
-            "~;20;W;0;20;0;0"
+            "~;20;W;110;20;0;0"
           ]
         },
         {
@@ -647,7 +650,7 @@
           "Adjusted scores": "0",
           "Current result": " ",
           "Results": [
-            "~;21;B;0;21;0;0"
+            "~;21;B;111;21;0;0"
           ]
         },
         {
@@ -666,7 +669,7 @@
           "Birth date": "2012",
           "Phone": "(907) 209-8123",
           "Email": "haixue.shen@gmail.com",
-          "Reserved byes": "1 2 ",
+          "Reserved byes": "1 ",
           "Adjusted scores": "0",
           "Current result": "Â½",
           "Results": [
@@ -690,7 +693,7 @@
           "Adjusted scores": "0",
           "Current result": " ",
           "Results": [
-            "~;22;W;0;22;0;0"
+            "~;22;W;112;22;0;0"
           ]
         },
         {
@@ -709,7 +712,7 @@
           "Adjusted scores": "0",
           "Current result": " ",
           "Results": [
-            "~;23;B;0;23;0;0"
+            "~;23;B;113;23;0;0"
           ]
         },
         {
@@ -729,7 +732,7 @@
           "Adjusted scores": "0",
           "Current result": " ",
           "Results": [
-            "~;24;W;0;24;0;0"
+            "~;24;W;114;24;0;0"
           ]
         },
         {
@@ -748,7 +751,7 @@
           "Adjusted scores": "0",
           "Current result": " ",
           "Results": [
-            "~;25;B;0;25;0;0"
+            "~;25;B;115;25;0;0"
           ]
         },
         {
@@ -771,7 +774,7 @@
           "Adjusted scores": "0",
           "Current result": " ",
           "Results": [
-            "~;26;W;0;26;0;0"
+            "~;26;W;116;26;0;0"
           ]
         },
         {
