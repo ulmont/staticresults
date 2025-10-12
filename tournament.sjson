@@ -7,7 +7,7 @@
     "Tournament time controls": "g/40;d5",
     "Starting date": "10/11/2025",
     "Ending date": "10/11/2025",
-    "Trace": "1.3.3.3.7.1.3.7.3.7."
+    "Trace": "3.7.7.4.3.7.1.3.7.3."
   },
   "Sections": [
     {
@@ -18,7 +18,7 @@
       "Number of players": 36,
       "Number of teams": 0,
       "Rounds paired": 5,
-      "Rounds played": 4,
+      "Rounds played": 5,
       "Rating to use": 0,
       "Engine": 1,
       "Last unrestricted round": 4,
@@ -52,14 +52,14 @@
           "Email": "dexwebster1@gmail.com",
           "Reserved byes": "1 ",
           "Fictitious points": "0,2,1,0,0",
-          "Current result": " ",
+          "Current result": "1",
           "Note": "Result coding is Result; Op.; Clr; Brd; Logical ops. 1 & 2; Game pnts",
           "Results": [
             "H;-1;-;0;-1;0;0",
             "+;10;B;105;10;0;0",
             "+;21;W;103;21;0;0",
             "+;30;B;102;30;0;0",
-            "~;4;B;101;4;0;0"
+            "+;4;B;101;4;0;0"
           ]
         },
         {
@@ -107,13 +107,13 @@
           "Phone": "(225) 772-9550",
           "Email": "MarkLSchulingkamp@gmail.com",
           "Fictitious points": "2,2,1,0,0",
-          "Current result": " ",
+          "Current result": "1",
           "Results": [
             "-;13;W;102;11;0;0",
             "+;20;W;106;24;0;0",
             "+;14;B;105;24;0;0",
             "=;16;B;103;13;0;0",
-            "~;10;W;104;13;0;0"
+            "+;10;W;104;13;0;0"
           ]
         },
         {
@@ -134,13 +134,13 @@
           "Phone": "(504) 701-9010",
           "Email": "anhtigone@gmail.com",
           "Fictitious points": "2,2,1,0,0",
-          "Current result": " ",
+          "Current result": "0",
           "Results": [
             "+;14;B;103;13;0;0",
             "+;9;W;102;9;0;0",
             "+;6;B;102;6;0;0",
             "=;2;B;101;2;0;0",
-            "~;1;W;101;1;0;0"
+            "-;1;W;101;1;0;0"
           ]
         },
         {
@@ -161,13 +161,13 @@
           "Phone": "(216) 385-9616",
           "Email": "boecker.maxwell@gmail.com",
           "Fictitious points": "2,2,1,0,0",
-          "Current result": " ",
+          "Current result": "1",
           "Results": [
             "+;15;W;104;14;0;0",
             "+;13;B;103;13;0;0",
             "-;2;W;101;2;0;0",
             "+;21;B;105;16;0;0",
-            "~;27;W;103;11;0;0"
+            "+;27;W;103;11;0;0"
           ]
         },
         {
@@ -188,13 +188,13 @@
           "Phone": "(504) 237-5065",
           "Email": "rtagorda317@yahoo.com",
           "Fictitious points": "2,2,1,0,0",
-          "Current result": " ",
+          "Current result": "1",
           "Results": [
             "+;16;B;105;15;0;0",
             "+;17;W;104;17;0;0",
             "-;4;W;102;4;0;0",
             "=;13;B;104;21;0;0",
-            "~;30;W;106;16;0;0"
+            "+;30;W;106;16;0;0"
           ]
         },
         {
@@ -214,13 +214,13 @@
           "Phone": "(504) 458-1666",
           "Email": "jefferydarensbourg@gmail.com",
           "Fictitious points": "2,2,1,0,0",
-          "Current result": " ",
+          "Current result": "0",
           "Results": [
             "-;17;W;106;16;0;0",
             "+;25;B;107;25;0;0",
             "+;24;B;104;14;0;0",
             "+;26;W;106;25;0;0",
-            "~;11;B;102;27;0;0"
+            "-;11;B;102;27;0;0"
           ]
         },
         {
@@ -261,13 +261,13 @@
           "Phone": "(225) 276-5682",
           "Email": "dontburntheday@icloud.com",
           "Fictitious points": "2,2,1,0,0",
-          "Current result": " ",
+          "Current result": "1",
           "Results": [
             "+;19;W;108;18;0;0",
             "-;4;B;102;4;0;0",
             "-;30;W;107;17;0;0",
             "-;10;B;109;12;0;0",
-            "~;36;W;112;32;0;0"
+            "+;36;W;112;32;0;0"
           ]
         },
         {
@@ -287,13 +287,13 @@
           "Phone": "(504) 444-9561",
           "Email": "albinet896@gmail.com",
           "Fictitious points": "2,2,1,0,0",
-          "Current result": " ",
+          "Current result": "0",
           "Results": [
             "=;20;B;109;2;0;0",
             "-;1;W;105;1;0;0",
             "+;18;B;110;28;0;0",
             "+;9;W;109;27;0;0",
-            "~;3;B;104;30;0;0"
+            "-;3;B;104;30;0;0"
           ]
         },
         {
@@ -313,13 +313,13 @@
           "Phone": "(504) 452-7075",
           "Email": "reed.urcia@gmail.com",
           "Fictitious points": "2,2,1,0,0",
-          "Current result": " ",
+          "Current result": "1",
           "Results": [
             "-;2;W;101;3;0;0",
             "+;27;B;108;26;0;0",
             "+;19;W;108;18;0;0",
             "+;25;B;107;26;0;0",
-            "~;7;W;102;5;0;0"
+            "+;7;W;102;5;0;0"
           ]
         },
         {
@@ -360,13 +360,13 @@
           "Phone": "(504) 256-5585",
           "Email": "fang00976@gmail.com",
           "Fictitious points": "2,2,1,0,0",
-          "Current result": " ",
+          "Current result": "1",
           "Results": [
             "+;3;B;102;4;0;0",
             "-;5;W;103;5;0;0",
             "+;17;B;109;30;0;0",
             "=;6;W;104;3;0;0",
-            "~;16;B;105;3;0;0"
+            "+;16;B;105;3;0;0"
           ]
         },
         {
@@ -383,13 +383,13 @@
           "Phone": "(662) 934-8671",
           "Email": "cedricedwards@hotmail.com",
           "Fictitious points": "2,2,1,0,0",
-          "Current result": " ",
+          "Current result": "½",
           "Results": [
             "-;4;W;103;5;0;0",
             "+;29;B;109;27;0;0",
             "-;3;W;105;7;0;0",
             "+;23;B;110;23;0;0",
-            "~;21;W;107;21;0;0"
+            "=;21;W;107;21;0;0"
           ]
         },
         {
@@ -409,13 +409,13 @@
           "Phone": "(206) 501-9725",
           "Email": "teddylw@gmail.com",
           "Fictitious points": "2,2,1,0,0",
-          "Current result": " ",
+          "Current result": "1",
           "Results": [
             "-;5;B;104;6;0;0",
             "-;24;W;110;29;0;0",
             "+;35;B;116;22;0;0",
             "=;29;W;111;29;0;0",
-            "~;33;B;111;29;0;0"
+            "+;33;B;111;29;0;0"
           ]
         },
         {
@@ -430,13 +430,13 @@
           "State": "LA",
           "Birth date": "1977",
           "Fictitious points": "2,0,1,0,0",
-          "Current result": " ",
+          "Current result": "0",
           "Results": [
             "-;6;W;105;7;0;0",
             "+;12;B;120;12;0;0",
             "+;8;B;106;8;0;0",
             "=;3;W;103;5;0;0",
-            "~;13;W;105;6;0;0"
+            "-;13;W;105;6;0;0"
           ]
         },
         {
@@ -480,13 +480,13 @@
           "Phone": "(352) 216-7131",
           "Email": "mcdonaldt19@yahoo.com",
           "Fictitious points": "2,2,1,0,0",
-          "Current result": " ",
+          "Current result": "0",
           "Results": [
             "-;8;W;107;9;0;0",
             "+;36;B;111;31;0;0",
             "-;10;W;110;11;0;0",
             "+;32;B;113;32;0;0",
-            "~;25;W;108;25;0;0"
+            "-;25;W;108;25;0;0"
           ]
         },
         {
@@ -506,13 +506,13 @@
           "Phone": "(504) 874-0285",
           "Email": "acumur1@yahoo.com",
           "Fictitious points": "2,2,1,0,0",
-          "Current result": " ",
+          "Current result": "1",
           "Results": [
             "-;9;B;108;20;0;0",
             "+;26;W;112;32;0;0",
             "-;11;B;108;31;0;0",
             "+;33;W;114;33;0;0",
-            "~;31;B;109;26;0;0"
+            "+;31;B;109;26;0;0"
           ]
         },
         {
@@ -533,13 +533,13 @@
           "Email": "flor_guan@yahoo.com",
           "Reserved byes": "3 ",
           "Fictitious points": "2,2,0,0,0",
-          "Current result": " ",
+          "Current result": "0",
           "Results": [
             "=;10;W;109;19;0;0",
             "-;3;B;106;30;0;0",
             "H;-1;-;0;-1;0;0",
             "+;34;W;115;34;0;0",
-            "~;26;B;110;31;0;0"
+            "-;26;B;110;31;0;0"
           ]
         },
         {
@@ -560,13 +560,13 @@
           "Phone": "(225) 202-1704",
           "Email": "Renmaoming@gmail.com",
           "Fictitious points": "0,0,0,0,0",
-          "Current result": " ",
+          "Current result": "½",
           "Results": [
             "+;28;B;110;28;0;0",
             "+;31;W;113;36;0;0",
             "-;1;B;103;1;0;0",
             "-;5;W;105;6;0;0",
-            "~;14;B;107;14;0;0"
+            "=;14;B;107;14;0;0"
           ]
         },
         {
@@ -610,13 +610,13 @@
           "Phone": "(985) 705-1684",
           "Email": "simondowd20@gmail.com",
           "Fictitious points": "0,0,0,0,0",
-          "Current result": " ",
+          "Current result": "1",
           "Results": [
             "-;31;B;112;31;0;0",
             "-;33;W;115;34;0;0",
             "+;22;B;117;35;0;0",
             "-;14;W;110;14;0;0",
-            "~;29;B;113;36;0;0"
+            "+;29;B;113;36;0;0"
           ]
         },
         {
@@ -663,13 +663,13 @@
           "Phone": "(713) 890-2503",
           "Email": "ps_harendra@yahoo.com",
           "Fictitious points": "0,0,0,0,0",
-          "Current result": " ",
+          "Current result": "1",
           "Results": [
             "+;33;B;114;33;0;0",
             "-;7;W;107;7;0;0",
             "+;31;B;112;32;0;0",
             "-;11;W;107;7;0;0",
-            "~;18;B;108;18;0;0"
+            "+;18;B;108;18;0;0"
           ]
         },
         {
@@ -689,13 +689,13 @@
           "Phone": "(225) 937-0441",
           "Email": "reagans@aol.com",
           "Fictitious points": "0,0,0,0,0",
-          "Current result": " ",
+          "Current result": "1",
           "Results": [
             "+;34;W;115;34;0;0",
             "-;19;B;112;11;0;0",
             "+;32;W;113;33;0;0",
             "-;7;B;106;11;0;0",
-            "~;20;W;110;19;0;0"
+            "+;20;W;110;19;0;0"
           ]
         },
         {
@@ -715,13 +715,13 @@
           "Phone": "(616) 690-7000",
           "Email": "jerrylmacdonald@gmail.com",
           "Fictitious points": "0,0,0,0,0",
-          "Current result": " ",
+          "Current result": "0",
           "Results": [
             "+;35;B;116;35;0;0",
             "-;11;W;108;14;0;0",
             "+;33;B;114;36;0;0",
             "+;12;W;108;10;0;0",
-            "~;5;B;103;7;0;0"
+            "-;5;B;103;7;0;0"
           ]
         },
         {
@@ -763,13 +763,13 @@
           "Phone": "(318) 780-4018",
           "Email": "grangeriii@icloud.com",
           "Fictitious points": "0,0,0,0,0",
-          "Current result": " ",
+          "Current result": "0",
           "Results": [
             "+;22;B;111;22;0;0",
             "-;14;W;109;15;0;0",
             "-;12;W;111;12;0;0",
             "=;15;B;111;15;0;0",
-            "~;23;W;113;15;0;0"
+            "-;23;W;113;15;0;0"
           ]
         },
         {
@@ -790,13 +790,13 @@
           "Email": "haixue.shen@gmail.com",
           "Reserved byes": "1 ",
           "Fictitious points": "0,0,0,0,0",
-          "Current result": " ",
+          "Current result": "0",
           "Results": [
             "H;-1;-;0;-1;0;0",
             "+;22;W;114;20;0;0",
             "+;9;B;107;13;0;0",
             "-;1;W;102;1;0;0",
-            "~;6;B;106;10;0;0"
+            "-;6;B;106;10;0;0"
           ]
         },
         {
@@ -813,13 +813,13 @@
           "Phone": "(504) 432-5602",
           "Email": "cmckinnie4764@gmail.com",
           "Fictitious points": "0,0,0,0,0",
-          "Current result": " ",
+          "Current result": "0",
           "Results": [
             "+;23;W;112;23;0;0",
             "-;21;B;113;18;0;0",
             "-;25;W;112;19;0;0",
             "+;17;B;112;17;0;0",
-            "~;19;W;109;20;0;0"
+            "-;19;W;109;20;0;0"
           ]
         },
         {
@@ -836,13 +836,13 @@
           "Phone": "(504) 539-0124",
           "Email": "htebazile667@gmail.com",
           "Fictitious points": "0,0,0,0,0",
-          "Current result": " ",
+          "Current result": "1",
           "Results": [
             "-;24;B;113;24;0;0",
             "+;35;W;117;19;0;0",
             "-;26;B;113;25;0;0",
             "-;18;W;113;18;0;0",
-            "~;34;B;114;9;0;0"
+            "+;34;B;114;9;0;0"
           ]
         },
         {
@@ -859,13 +859,13 @@
           "Phone": "(504) 432-5602",
           "Email": "cmckinnie4764@gmail.com",
           "Fictitious points": "0,0,0,0,0",
-          "Current result": " ",
+          "Current result": "0",
           "Results": [
             "-;25;W;114;25;0;0",
             "+;23;B;115;22;0;0",
             "-;27;W;114;26;0;0",
             "-;19;B;114;19;0;0",
-            "~;15;W;111;-1;0;0"
+            "-;15;W;111;-1;0;0"
           ]
         },
         {
@@ -883,13 +883,13 @@
           "Email": "jhqueyro@gmail.com",
           "PAB": 3,
           "Fictitious points": "0,0,0,0,0",
-          "Current result": " ",
+          "Current result": "0",
           "Results": [
             "-;26;B;115;26;0;0",
             "-;28;W;116;23;0;0",
             "B;0;-;0;-1;0;0",
             "-;20;B;115;20;0;0",
-            "~;32;W;114;22;0;0"
+            "-;32;W;114;22;0;0"
           ]
         },
         {
@@ -932,22 +932,57 @@
           "Email": "andy.m.olson@gmail.com",
           "PAB": 1,
           "Fictitious points": "0,0,0,0,0",
-          "Current result": " ",
+          "Current result": "0",
           "Results": [
             "B;0;-;0;-1;0;0",
             "-;18;W;111;21;0;0",
             "-;28;B;115;27;0;0",
             "-;22;W;116;22;0;0",
-            "~;9;B;112;23;0;0"
+            "-;9;B;112;23;0;0"
           ]
         }
       ],
       "Teams": [
       ],
       "Prizes": {
+        "Unrated in top class": true,
         "Place prizes": [
         ],
         "Class prizes": [
+          {
+            "Top": 2400,
+            "Bottom": 1400,
+            "Name": "Open",
+            "Details": [
+              {
+                "Value": 240,
+                "Description": "",
+                "Priority": 101
+              },
+              {
+                "Value": 120,
+                "Description": "",
+                "Priority": 102
+              }
+            ]
+          },
+          {
+            "Top": 1399,
+            "Bottom": 1,
+            "Name": "U1400",
+            "Details": [
+              {
+                "Value": 150,
+                "Description": "",
+                "Priority": 103
+              },
+              {
+                "Value": 90,
+                "Description": "",
+                "Priority": 104
+              }
+            ]
+          }
         ]
       },
       "Ladder": {
