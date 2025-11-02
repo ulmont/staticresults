@@ -467,7 +467,7 @@ function SetupWallChart(section, sortAlgo, playerNumAlgo, colorStringAlgo)
 		let oppScores = [];
 		let score = 0.0;
 		let playerId = vTable.getPlayerId(player);
-		let playerIdLink = (playerId.length > 0) ? `<a href=https://ratings.uschess.org/player/16722147${playerId}>${playerId}</a>` : '';
+		let playerIdLink = (playerId.length > 0) ? `<a href=https://ratings.uschess.org/player/${playerId}>${playerId}</a>` : '';
 		pTable = `${pTable}		
 			<tr>
 				<td class="Number">${playerNumAlgo(player, sectionPlayers)}</td>
