@@ -6,7 +6,7 @@
     "Tournament title": "2025 Downriver Classic",
     "Starting date": "11/08/2025",
     "Ending date": "11/09/2025",
-    "Trace": "3.3.3.3.3.7.3.3.3.3."
+    "Trace": "3.7.6.1.7.4.1.3.7.3."
   },
   "Sections": [
     {
@@ -694,7 +694,7 @@
       "Type": 0,
       "Section title": "U1500",
       "Section time control": "g/60;i30",
-      "Number of players": 20,
+      "Number of players": 21,
       "Number of teams": 0,
       "Rounds paired": 1,
       "Rounds played": 0,
@@ -727,7 +727,7 @@
           "Current result": " ",
           "Note": "Result coding is Result; Op.; Clr; Brd; Logical ops. 1 & 2; Game pnts",
           "Results": [
-            "~;11;B;201;11;11;0"
+            "~;12;B;201;12;12;0"
           ]
         },
         {
@@ -742,11 +742,24 @@
           "Reserved byes": "2 ",
           "Current result": " ",
           "Results": [
-            "~;12;W;202;12;12;0"
+            "~;13;W;202;13;13;0"
           ]
         },
         {
           "Pair number": 3,
+          "Name": "Grundmeyer Jr, Ennis H, Jr",
+          "ID": "14462718",
+          "Rating": 1400,
+          "Rating2": 1627,
+          "Exp1": "09/30/2026",
+          "State": "LA",
+          "Reserved byes": "1 ",
+          "Results": [
+            "H;0;-;0;0;0;0"
+          ]
+        },
+        {
+          "Pair number": 4,
           "Name": "Nguyen, Landon",
           "ID": "32536798",
           "Rating": 1320,
@@ -759,11 +772,11 @@
           "Email": "realnails504@yahoo.com",
           "Current result": " ",
           "Results": [
-            "~;13;B;203;13;13;0"
+            "~;14;B;203;14;14;0"
           ]
         },
         {
-          "Pair number": 4,
+          "Pair number": 5,
           "Name": "Menon, Maurice Jerry",
           "ID": "30171073",
           "Rating": 1257,
@@ -777,11 +790,11 @@
           "Reserved byes": "2 3 ",
           "Current result": " ",
           "Results": [
-            "~;14;W;204;14;14;0"
+            "~;15;W;204;15;15;0"
           ]
         },
         {
-          "Pair number": 5,
+          "Pair number": 6,
           "Name": "Sledge, Wyatt C",
           "ID": "31225814",
           "Rating": 1157,
@@ -794,11 +807,11 @@
           "Email": "reagans@aol.com",
           "Current result": " ",
           "Results": [
-            "~;15;B;205;15;15;0"
+            "~;16;B;205;16;16;0"
           ]
         },
         {
-          "Pair number": 6,
+          "Pair number": 7,
           "Name": "Macdonald, Gerald",
           "ID": "12939491",
           "Rating": 1144,
@@ -812,11 +825,11 @@
           "Reserved byes": "4 5 ",
           "Current result": " ",
           "Results": [
-            "~;17;W;206;17;17;0"
+            "~;18;W;206;18;18;0"
           ]
         },
         {
-          "Pair number": 7,
+          "Pair number": 8,
           "Name": "Deville, Darrel",
           "ID": "32539452",
           "Rating": 1128,
@@ -829,11 +842,11 @@
           "Email": "darrel.deville@protonmail.com",
           "Current result": " ",
           "Results": [
-            "~;18;B;207;18;18;0"
+            "~;19;B;207;19;19;0"
           ]
         },
         {
-          "Pair number": 8,
+          "Pair number": 9,
           "Name": "Drell, Tyler Mark",
           "ID": "31693567",
           "Rating": 1109,
@@ -843,11 +856,11 @@
           "Email": "drell.tyler1@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;19;W;208;19;19;0"
+            "~;20;W;208;20;20;0"
           ]
         },
         {
-          "Pair number": 9,
+          "Pair number": 10,
           "Name": "Gillen, Brennan",
           "ID": "31612020",
           "Rating": 1097,
@@ -862,7 +875,7 @@
           ]
         },
         {
-          "Pair number": 10,
+          "Pair number": 11,
           "Name": "McGlynn-Wright, Theo",
           "ID": "30664464",
           "Rating": 1085,
@@ -875,11 +888,11 @@
           "Email": "teddylw@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;20;B;209;20;20;0"
+            "~;21;B;209;21;21;0"
           ]
         },
         {
-          "Pair number": 11,
+          "Pair number": 12,
           "Name": "Wells, Torian Latravis",
           "ID": "30692424",
           "Rating": 1055,
@@ -896,7 +909,7 @@
           ]
         },
         {
-          "Pair number": 12,
+          "Pair number": 13,
           "Name": "Granger, Trey",
           "ID": "14268321",
           "Rating": 1040,
@@ -913,7 +926,7 @@
           ]
         },
         {
-          "Pair number": 13,
+          "Pair number": 14,
           "Name": "Higgins, Stephen",
           "ID": "32531219",
           "Rating": 936,
@@ -923,11 +936,11 @@
           "Email": "stephenchiggins@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;3;W;203;3;3;0"
+            "~;4;W;203;4;4;0"
           ]
         },
         {
-          "Pair number": 14,
+          "Pair number": 15,
           "Name": "Foster, Chad",
           "ID": "30397527",
           "Rating": 905,
@@ -937,11 +950,11 @@
           "Email": "chadjamesonfoster@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;4;B;204;4;4;0"
+            "~;5;B;204;5;5;0"
           ]
         },
         {
-          "Pair number": 15,
+          "Pair number": 16,
           "Name": "Glorioso, Jared J",
           "ID": "32289929",
           "Rating": 703,
@@ -955,11 +968,11 @@
           "Reserved byes": "2 3 ",
           "Current result": " ",
           "Results": [
-            "~;5;W;205;5;5;0"
+            "~;6;W;205;6;6;0"
           ]
         },
         {
-          "Pair number": 16,
+          "Pair number": 17,
           "Name": "Falconer, Beau",
           "ID": "31570503",
           "Rating": 559,
@@ -974,7 +987,7 @@
           ]
         },
         {
-          "Pair number": 17,
+          "Pair number": 18,
           "Name": "Harding, Cole Thomas",
           "ID": "32404859",
           "Rating": 437,
@@ -987,11 +1000,11 @@
           "Email": "robynmharding@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;6;B;206;6;6;0"
+            "~;7;B;206;7;7;0"
           ]
         },
         {
-          "Pair number": 18,
+          "Pair number": 19,
           "Name": "Anderson, Stewart",
           "ID": "32045728",
           "Exp1": "09/30/2026",
@@ -1000,22 +1013,22 @@
           "Email": "anderson.stewart@rogers.com",
           "Current result": " ",
           "Results": [
-            "~;7;W;207;7;7;0"
+            "~;8;W;207;8;8;0"
           ]
         },
         {
-          "Pair number": 19,
+          "Pair number": 20,
           "Name": "Barker, Mark",
           "ID": "32661378",
           "Phone": "(504) 295-7294",
           "Email": "barker.mark@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;8;B;208;8;8;0"
+            "~;9;B;208;9;9;0"
           ]
         },
         {
-          "Pair number": 20,
+          "Pair number": 21,
           "Name": "Hurstell, Scott",
           "ID": "32621846",
           "Exp1": "10/31/2026",
@@ -1024,7 +1037,7 @@
           "Email": "s.hurstell@outlook.com",
           "Current result": " ",
           "Results": [
-            "~;10;W;209;10;10;0"
+            "~;11;W;209;11;11;0"
           ]
         }
       ],
