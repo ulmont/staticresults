@@ -7,7 +7,7 @@
     "Tournament time controls": "G/15;D0",
     "Starting date": "2025-12-08",
     "Ending date": "2025-12-08",
-    "Trace": "3.7.3.7.7.4.7.4.3.7."
+    "Trace": "3.7.3.7.7.4.3.7.3.7."
   },
   "Sections": [
     {
@@ -15,11 +15,11 @@
       "Type": 0,
       "Number of players": 25,
       "Number of teams": 0,
-      "Rounds paired": 2,
-      "Rounds played": 1,
+      "Rounds paired": 3,
+      "Rounds played": 2,
       "Rating to use": 0,
       "Engine": 1,
-      "Last unrestricted round": 1,
+      "Last unrestricted round": 2,
       "Need search options": false,
       "Coin toss": 1,
       "Team cut": 4,
@@ -38,13 +38,15 @@
           "Rating2": 2055,
           "Exp1": "05/31/2026",
           "Club": "USA",
+          "Sex": "M",
           "State": "LA",
           "Birth date": "2012",
           "Current result": " ",
           "Note": "Result coding is Result; Op.; Clr; Brd; Logical ops. 1 & 2; Game pnts",
           "Results": [
             "+;15;B;2;15;0;0",
-            "~;7;W;1;7;0;0"
+            "-;7;W;1;7;0;0",
+            "~;20;B;5;12;0;0"
           ]
         },
         {
@@ -52,13 +54,18 @@
           "Name": "Myers, Brad John",
           "ID": "12780486",
           "Rating": 1972,
+          "ID2": "39977390",
           "Rating2": 1954,
           "Exp1": "03/31/2026",
+          "Club": "USA",
+          "Sex": "M",
           "State": "VT",
+          "Birth date": "1984",
           "Current result": " ",
           "Results": [
             "+;16;W;3;16;0;0",
-            "~;9;B;2;9;0;0"
+            "-;9;B;2;9;0;0",
+            "~;12;W;4;15;0;0"
           ]
         },
         {
@@ -69,13 +76,15 @@
           "ID2": "30955335",
           "Rating2": 2075,
           "Exp1": "06/30/2026",
+          "Club": "USA",
           "Sex": "M",
           "State": "LA",
           "Birth date": "1989",
           "Current result": " ",
           "Results": [
             "+;17;B;4;17;0;0",
-            "~;10;W;3;10;0;0"
+            "-;10;W;3;10;0;0",
+            "~;15;B;6;18;0;0"
           ]
         },
         {
@@ -87,12 +96,14 @@
           "Rating2": 1963,
           "Exp1": "11/30/2026",
           "Club": "USA",
+          "Sex": "M",
           "State": "LA",
           "Birth date": "1979",
           "Current result": " ",
           "Results": [
             "+;18;W;5;18;0;0",
-            "~;14;B;4;14;0;0"
+            "+;14;B;4;14;0;0",
+            "~;9;W;1;9;0;0"
           ]
         },
         {
@@ -110,7 +121,8 @@
           "Current result": " ",
           "Results": [
             "+;19;B;6;19;0;0",
-            "~;23;W;5;23;0;0"
+            "+;23;W;5;23;0;0",
+            "~;10;B;2;10;0;0"
           ]
         },
         {
@@ -121,13 +133,15 @@
           "ID2": "30945232",
           "Rating2": 1707,
           "Exp1": "07/31/2026",
+          "Club": "USA",
           "State": "LA",
           "Birth date": "1949",
           "Reserved byes": "1 ",
           "Current result": " ",
           "Results": [
             "H;-1;-;0;-1;0;0",
-            "~;25;W;6;25;0;0"
+            "-;25;W;6;25;0;0",
+            "~;18;B;9;23;0;0"
           ]
         },
         {
@@ -135,14 +149,18 @@
           "Name": "Watts, Gordon R",
           "ID": "12505032",
           "Rating": 1700,
+          "ID2": "39995054",
           "Rating2": 1892,
           "Exp1": "12/31/2026",
+          "Club": "USA",
           "Sex": "M",
           "State": "LA",
+          "Birth date": "1967",
           "Current result": " ",
           "Results": [
             "+;20;W;7;20;0;0",
-            "~;1;B;1;1;0;0"
+            "+;1;B;1;1;0;0",
+            "~;25;W;3;25;0;0"
           ]
         },
         {
@@ -158,7 +176,8 @@
           "Current result": " ",
           "Results": [
             "-;14;W;1;14;0;0",
-            "~;18;B;7;18;0;0"
+            "-;18;B;7;18;0;0",
+            "~;22;W;10;17;0;0"
           ]
         },
         {
@@ -169,13 +188,15 @@
           "ID2": "30967627",
           "Rating2": 1718,
           "Exp1": "05/31/2026",
+          "Club": "USA",
           "Sex": "M",
           "State": "LA",
           "Birth date": "1977",
           "Current result": " ",
           "Results": [
             "+;21;B;8;21;0;0",
-            "~;2;W;2;2;0;0"
+            "+;2;W;2;2;0;0",
+            "~;4;B;1;4;0;0"
           ]
         },
         {
@@ -183,13 +204,18 @@
           "Name": "Urcia, Reed Joseph",
           "ID": "31115764",
           "Rating": 1570,
+          "ID2": "39956954",
           "Rating2": 1706,
           "Exp1": "04/30/2026",
+          "Club": "USA",
+          "Sex": "M",
           "State": "LA",
+          "Birth date": "2007",
           "Current result": " ",
           "Results": [
             "+;22;W;9;22;0;0",
-            "~;3;B;3;3;0;0"
+            "+;3;B;3;3;0;0",
+            "~;5;W;2;5;0;0"
           ]
         },
         {
@@ -198,13 +224,18 @@
           "ID": "31379245",
           "Rating": 1494,
           "Provisional": true,
+          "ID2": "39982106",
           "Rating2": 1523,
           "Exp1": "10/31/2026",
+          "Club": "USA",
+          "Sex": "M",
           "State": "LA",
+          "Birth date": "1999",
           "Current result": " ",
           "Results": [
             "-;23;B;10;23;0;0",
-            "~;19;W;8;19;0;0"
+            "+;19;W;8;19;0;0",
+            "~;21;B;7;20;0;0"
           ]
         },
         {
@@ -212,14 +243,19 @@
           "Name": "Squitiro, Andrew",
           "ID": "13642993",
           "Rating": 1438,
+          "ID2": "39946339",
           "Rating2": 1702,
           "Exp1": "04/30/2026",
+          "Club": "USA",
+          "Sex": "M",
           "State": "LA",
+          "Birth date": "1989",
           "Reserved byes": "2 ",
-          "Current result": "½",
+          "Current result": " ",
           "Results": [
             "+;24;W;11;24;0;0",
-            "H;-1;-;0;-1;0;0"
+            "H;-1;-;0;-1;0;0",
+            "~;2;B;4;1;0;0"
           ]
         },
         {
@@ -231,13 +267,15 @@
           "ID2": "39994970",
           "Rating2": 1769,
           "Exp1": "09/30/2026",
+          "Club": "USA",
           "Sex": "M",
           "State": "LA",
           "Birth date": "2007",
           "Current result": " ",
           "Results": [
             "-;25;B;12;25;0;0",
-            "~;20;W;9;20;0;0"
+            "-;20;W;9;20;0;0",
+            "~;17;B;11;19;0;0"
           ]
         },
         {
@@ -245,13 +283,18 @@
           "Name": "Paley, Oren",
           "ID": "15827994",
           "Rating": 1415,
+          "ID2": "39967239",
           "Rating2": 1768,
           "Exp1": "11/30/2026",
+          "Club": "USA",
+          "Sex": "M",
           "State": "CA",
+          "Birth date": "1990",
           "Current result": " ",
           "Results": [
             "+;8;B;1;1;0;0",
-            "~;4;W;4;4;0;0"
+            "-;4;W;4;4;0;0",
+            "~;23;B;8;21;0;0"
           ]
         },
         {
@@ -263,13 +306,15 @@
           "ID2": "39977412",
           "Rating2": 1771,
           "Exp1": "09/30/2026",
+          "Club": "USA",
           "Sex": "M",
           "State": "LA",
           "Birth date": "1987",
           "Current result": " ",
           "Results": [
             "-;1;W;2;2;0;0",
-            "~;22;B;10;21;0;0"
+            "+;22;B;10;21;0;0",
+            "~;3;W;6;2;0;0"
           ]
         },
         {
@@ -278,13 +323,18 @@
           "ID": "32536798",
           "Rating": 1338,
           "Provisional": true,
+          "ID2": "39995038",
           "Rating2": 1575,
           "Exp1": "08/31/2026",
+          "Club": "USA",
+          "Sex": "M",
           "State": "LA",
+          "Birth date": "2014",
           "Current result": " ",
           "Results": [
             "-;2;B;3;3;0;0",
-            "~;21;W;11;22;0;0"
+            "-;21;W;11;22;0;0",
+            "~;19;B;12;22;0;0"
           ]
         },
         {
@@ -296,12 +346,14 @@
           "Rating2": 1348,
           "Exp1": "04/30/2026",
           "Club": "USA",
+          "Sex": "M",
           "State": "LA",
           "Birth date": "2014",
           "Current result": " ",
           "Results": [
             "-;3;W;4;4;0;0",
-            "~;24;B;12;24;0;0"
+            "-;24;B;12;24;0;0",
+            "~;13;W;11;8;0;0"
           ]
         },
         {
@@ -314,12 +366,14 @@
           "Rating2": 1466,
           "Exp1": "01/31/2026",
           "Club": "USA",
+          "Sex": "M",
           "State": "LA",
           "Birth date": "1997",
           "Current result": " ",
           "Results": [
             "-;4;B;5;5;0;0",
-            "~;8;W;7;8;0;0"
+            "+;8;W;7;8;0;0",
+            "~;6;W;9;3;0;0"
           ]
         },
         {
@@ -338,7 +392,8 @@
           "Current result": " ",
           "Results": [
             "-;5;W;6;6;0;0",
-            "~;11;B;8;11;0;0"
+            "-;11;B;8;11;0;0",
+            "~;16;W;12;13;0;0"
           ]
         },
         {
@@ -346,13 +401,18 @@
           "Name": "McGlynn-Wright, Theo",
           "ID": "30664464",
           "Rating": 1070,
+          "ID2": "39971880",
           "Rating2": 1403,
           "Exp1": "08/31/2027",
+          "Club": "USA",
+          "Sex": "M",
           "State": "LA",
+          "Birth date": "2015",
           "Current result": " ",
           "Results": [
             "-;7;B;7;8;0;0",
-            "~;13;B;9;13;0;0"
+            "+;13;B;9;13;0;0",
+            "~;1;W;5;11;0;0"
           ]
         },
         {
@@ -362,11 +422,14 @@
           "Rating": 866,
           "Rating2": 1047,
           "Exp1": "12/31/2026",
+          "Club": "USA",
+          "Sex": "M",
           "State": "LA",
           "Current result": " ",
           "Results": [
             "-;9;W;8;9;0;0",
-            "~;16;B;11;15;0;0"
+            "+;16;B;11;15;0;0",
+            "~;11;W;7;14;0;0"
           ]
         },
         {
@@ -374,13 +437,18 @@
           "Name": "Scheidt, Richard",
           "ID": "15081270",
           "Rating": 424,
+          "ID2": "39964124",
           "Rating2": 1266,
           "Exp1": "02/28/2027",
+          "Club": "USA",
+          "Sex": "M",
           "State": "LA",
+          "Birth date": "1960",
           "Current result": " ",
           "Results": [
             "-;10;B;9;10;0;0",
-            "~;15;W;10;16;0;0"
+            "-;15;W;10;16;0;0",
+            "~;8;B;10;16;0;0"
           ]
         },
         {
@@ -390,13 +458,15 @@
           "ID2": "39994996",
           "Rating2": 1615,
           "Exp1": "12/31/2025",
+          "Club": "USA",
           "Sex": "M",
           "State": "LA",
           "Birth date": "1994",
           "Current result": " ",
           "Results": [
             "+;11;W;10;11;0;0",
-            "~;5;B;5;5;0;0"
+            "-;5;B;5;5;0;0",
+            "~;14;W;8;6;0;0"
           ]
         },
         {
@@ -407,10 +477,11 @@
           "Sex": "F",
           "Birth date": "1996",
           "Reserved byes": "3 4 ",
-          "Current result": " ",
+          "Current result": "½",
           "Results": [
             "-;12;B;11;12;0;0",
-            "~;17;W;12;17;0;0"
+            "+;17;W;12;17;0;0",
+            "H;-1;-;0;-1;0;0"
           ]
         },
         {
@@ -425,7 +496,8 @@
           "Current result": " ",
           "Results": [
             "+;13;W;12;13;0;0",
-            "~;6;B;6;6;0;0"
+            "+;6;B;6;6;0;0",
+            "~;7;B;3;7;0;0"
           ]
         }
       ],
