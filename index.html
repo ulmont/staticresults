@@ -1439,14 +1439,20 @@ function getVTablePTOZ()
 		tcParts[0] = Number.parseInt(tcParts[0]);
 		tcParts[1] = Number.parseInt(tcParts[1]);
 		if ((tcParts[0] + tcParts[1]) < 30) {
-			if (player.base.localrate !== undefined) {
+			// ok, we should use quick if we have it
+			if ((section.SecondRating === 1004) && (player.base.localrate !== undefined)) {
 				return player.base.localrate;
+			} else if ((section.MainRating === 1004) && (player.base.rating !== undefined)) {
+				return player.base.rating;
 			} else {
 				return 'Unr';
 			}
 		} else {
-			if (player.base.rating !== undefined) {
+			// ok, we should use regular if we have it
+			if ((section.MainRating === 1) && (player.base.rating !== undefined)) {
 				return player.base.rating;
+			} else if ((section.SecondRating === 1004) && (player.base.localrate !== undefined)) {
+				return player.base.localrate;
 			} else {
 				return 'Unr';
 			}
