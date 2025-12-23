@@ -6,7 +6,7 @@
     "Tournament title": "A Lower Decatur Christmas, FIDE-rated",
     "Starting date": "12/22/2025",
     "Ending date": "12/22/2025",
-    "Trace": "3.7.7.4.3.7.3.7.7.4."
+    "Trace": "3.7.3.7.3.7.7.4.3.7."
   },
   "Sections": [
     {
@@ -17,7 +17,7 @@
       "Number of players": 24,
       "Number of teams": 0,
       "Rounds paired": 4,
-      "Rounds played": 3,
+      "Rounds played": 4,
       "Rating to use": 0,
       "Engine": 1,
       "Last unrestricted round": 3,
@@ -43,13 +43,13 @@
           "Sex": "M",
           "Birth date": "2007",
           "Email": "eliolyle@gmail.com",
-          "Current result": " ",
+          "Current result": "1",
           "Note": "Result coding is Result; Op.; Clr; Brd; Logical ops. 1 & 2; Game pnts",
           "Results": [
             "+;13;W;1;13;0;0",
             "+;9;B;1;9;0;0",
             "+;4;W;1;4;0;0",
-            "~;19;B;1;8;0;0"
+            "+;19;B;1;8;0;0"
           ]
         },
         {
@@ -64,12 +64,12 @@
           "Sex": "M",
           "State": "VT",
           "Birth date": "1984",
-          "Current result": " ",
+          "Current result": "1",
           "Results": [
             "-;14;B;2;14;0;0",
             "+;24;W;6;24;0;0",
             "+;11;B;4;11;0;0",
-            "~;22;W;3;19;0;0"
+            "+;22;W;3;19;0;0"
           ]
         },
         {
@@ -84,12 +84,12 @@
           "Sex": "M",
           "State": "LA",
           "Birth date": "1989",
-          "Current result": " ",
+          "Current result": "1",
           "Results": [
             "+;15;W;3;15;0;0",
             "+;10;B;2;10;0;0",
             "-;8;W;2;8;0;0",
-            "~;4;B;4;5;0;0"
+            "+;4;B;4;5;0;0"
           ]
         },
         {
@@ -104,12 +104,12 @@
           "Sex": "M",
           "State": "LA",
           "Birth date": "1960",
-          "Current result": " ",
+          "Current result": "0",
           "Results": [
             "+;16;B;4;16;0;0",
             "+;11;W;3;11;0;0",
             "-;1;B;1;1;0;0",
-            "~;3;W;4;10;0;0"
+            "-;3;W;4;10;0;0"
           ]
         },
         {
@@ -121,12 +121,12 @@
           "Club": "UKR",
           "Sex": "M",
           "Birth date": "2005",
-          "Current result": " ",
+          "Current result": "0",
           "Results": [
             "+;17;W;5;17;0;0",
             "-;19;B;4;14;0;0",
             "+;14;W;5;14;0;0",
-            "~;8;B;2;3;0;0"
+            "-;8;B;2;3;0;0"
           ]
         },
         {
@@ -142,12 +142,12 @@
           "State": "LA",
           "Birth date": "1972",
           "Reserved byes": "2 ",
-          "Current result": " ",
+          "Current result": "0",
           "Results": [
             "+;18;B;6;18;0;0",
             "H;-1;-;0;-1;0;0",
             "-;19;W;3;19;0;0",
-            "~;13;B;6;22;0;0"
+            "-;13;B;6;22;0;0"
           ]
         },
         {
@@ -183,12 +183,12 @@
           "Sex": "M",
           "State": "LA",
           "Birth date": "1967",
-          "Current result": " ",
+          "Current result": "1",
           "Results": [
             "+;20;B;8;20;0;0",
             "+;14;W;5;19;0;0",
             "+;3;B;2;3;0;0",
-            "~;5;W;2;1;0;0"
+            "+;5;W;2;1;0;0"
           ]
         },
         {
@@ -203,12 +203,12 @@
           "Sex": "M",
           "State": "LA",
           "Birth date": "1977",
-          "Current result": " ",
+          "Current result": "0",
           "Results": [
             "+;21;W;9;21;0;0",
             "-;1;W;1;1;0;0",
             "=;20;B;6;20;0;0",
-            "~;10;B;5;13;0;0"
+            "-;10;B;5;13;0;0"
           ]
         },
         {
@@ -223,12 +223,12 @@
           "Sex": "M",
           "State": "LA",
           "Birth date": "2007",
-          "Current result": " ",
+          "Current result": "1",
           "Results": [
             "+;22;B;10;22;0;0",
             "-;3;W;2;3;0;0",
             "+;24;B;7;22;0;0",
-            "~;9;W;5;4;0;0"
+            "+;9;W;5;4;0;0"
           ]
         },
         {
@@ -243,12 +243,12 @@
           "Sex": "M",
           "State": "LA",
           "Birth date": "1988",
-          "Current result": " ",
+          "Current result": "0",
           "Results": [
             "+;23;W;11;23;0;0",
             "-;4;B;3;4;0;0",
             "-;2;W;4;2;0;0",
-            "~;16;B;8;20;0;0"
+            "-;16;B;8;20;0;0"
           ]
         },
         {
@@ -263,12 +263,12 @@
           "Sex": "M",
           "State": "LA",
           "Birth date": "1999",
-          "Current result": " ",
+          "Current result": "0",
           "Results": [
             "-;24;B;12;24;0;0",
             "-;20;W;10;20;0;0",
             "-;22;B;9;24;0;0",
-            "~;23;W;11;24;0;0"
+            "-;23;W;11;24;0;0"
           ]
         },
         {
@@ -284,12 +284,12 @@
           "State": "LA",
           "Birth date": "1989",
           "Reserved byes": "3 ",
-          "Current result": " ",
+          "Current result": "1",
           "Results": [
             "-;1;B;1;1;0;0",
             "+;21;W;8;21;0;0",
             "H;-1;-;0;-1;0;0",
-            "~;6;W;6;9;0;0"
+            "+;6;W;6;9;0;0"
           ]
         },
         {
@@ -304,12 +304,12 @@
           "Sex": "M",
           "State": "CA",
           "Birth date": "1990",
-          "Current result": " ",
+          "Current result": "0",
           "Results": [
             "+;2;W;2;2;0;0",
             "-;8;B;5;5;0;0",
             "-;5;B;5;5;0;0",
-            "~;20;W;7;16;0;0"
+            "-;20;W;7;16;0;0"
           ]
         },
         {
@@ -324,12 +324,12 @@
           "Sex": "M",
           "State": "LA",
           "Birth date": "1987",
-          "Current result": " ",
+          "Current result": "1",
           "Results": [
             "-;3;B;3;3;0;0",
             "-;22;W;9;22;0;0",
             "+;21;B;10;21;0;0",
-            "~;24;W;9;17;0;0"
+            "+;24;W;9;17;0;0"
           ]
         },
         {
@@ -344,12 +344,12 @@
           "Sex": "M",
           "State": "LA",
           "Birth date": "2004",
-          "Current result": " ",
+          "Current result": "1",
           "Results": [
             "-;4;W;4;4;0;0",
             "+;23;B;11;23;0;0",
             "-;7;B;8;7;0;0",
-            "~;11;W;8;14;0;0"
+            "+;11;W;8;14;0;0"
           ]
         },
         {
@@ -364,12 +364,12 @@
           "Sex": "M",
           "State": "LA",
           "Birth date": "1960",
-          "Current result": " ",
+          "Current result": "1",
           "Results": [
             "-;5;B;5;5;0;0",
             "-;7;W;7;7;0;0",
             "+;23;B;11;23;0;0",
-            "~;21;W;10;15;0;0"
+            "+;21;W;10;15;0;0"
           ]
         },
         {
@@ -404,12 +404,12 @@
           "Sex": "M",
           "State": "LA",
           "Birth date": "1993",
-          "Current result": " ",
+          "Current result": "0",
           "Results": [
             "+;7;B;7;7;0;0",
             "+;5;W;4;8;0;0",
             "+;6;B;3;6;0;0",
-            "~;1;W;1;2;0;0"
+            "-;1;W;1;2;0;0"
           ]
         },
         {
@@ -419,12 +419,12 @@
           "Club": "USA",
           "Sex": "M",
           "Birth date": "2012",
-          "Current result": " ",
+          "Current result": "1",
           "Results": [
             "-;8;W;8;8;0;0",
             "+;12;B;10;12;0;0",
             "=;9;W;6;9;0;0",
-            "~;14;B;7;11;0;0"
+            "+;14;B;7;11;0;0"
           ]
         },
         {
@@ -434,12 +434,12 @@
           "Club": "USA",
           "Sex": "M",
           "Birth date": "2013",
-          "Current result": " ",
+          "Current result": "0",
           "Results": [
             "-;9;B;9;9;0;0",
             "-;13;B;8;13;0;0",
             "-;15;W;10;15;0;0",
-            "~;17;B;10;23;0;0"
+            "-;17;B;10;23;0;0"
           ]
         },
         {
@@ -449,12 +449,12 @@
           "Club": "USA",
           "Sex": "M",
           "Birth date": "1969",
-          "Current result": " ",
+          "Current result": "0",
           "Results": [
             "-;10;W;10;10;0;0",
             "+;15;B;9;15;0;0",
             "+;12;W;9;10;0;0",
-            "~;2;B;3;6;0;0"
+            "-;2;B;3;6;0;0"
           ]
         },
         {
@@ -464,12 +464,12 @@
           "Club": "USA",
           "Sex": "M",
           "Birth date": "2004",
-          "Current result": " ",
+          "Current result": "1",
           "Results": [
             "-;11;B;11;11;0;0",
             "-;16;W;11;16;0;0",
             "-;17;W;11;17;0;0",
-            "~;12;B;11;21;0;0"
+            "+;12;B;11;21;0;0"
           ]
         },
         {
@@ -483,12 +483,12 @@
           "Sex": "M",
           "State": "LA",
           "Birth date": "1994",
-          "Current result": " ",
+          "Current result": "0",
           "Results": [
             "+;12;W;12;12;0;0",
             "-;2;B;6;2;0;0",
             "-;10;W;7;12;0;0",
-            "~;15;B;9;12;0;0"
+            "-;15;B;9;12;0;0"
           ]
         }
       ],
