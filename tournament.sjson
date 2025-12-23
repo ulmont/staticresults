@@ -3,51 +3,50 @@
     "Program": "SwissSys",
     "Version": 11.75,
     "VersionString": "11.75",
-    "Tournament title": "DOWNRIVER HOLIDAY PARTY",
-    "Tournament time controls": "G/15;D0",
-    "Starting date": "2025-12-08",
-    "Ending date": "2025-12-08",
-    "Trace": "3.7.3.7.3.7.3.7.3.7."
+    "Tournament title": "A Lower Decatur Christmas, FIDE-rated",
+    "Starting date": "12/22/2025",
+    "Ending date": "12/22/2025",
+    "Trace": "3.7.6.6.7.4.6.6.6.6."
   },
   "Sections": [
     {
-      "Section name": "OPEN",
+      "Section name": "Open",
       "Type": 0,
-      "Number of players": 25,
+      "Section title": "Open",
+      "Section time control": "g/15;d0",
+      "Number of players": 24,
       "Number of teams": 0,
-      "Rounds paired": 4,
-      "Rounds played": 4,
+      "Rounds paired": 1,
+      "Rounds played": 0,
       "Rating to use": 0,
       "Engine": 1,
-      "Last unrestricted round": 3,
+      "Last unrestricted round": 0,
       "Need search options": false,
+      "Final round": 4,
       "Coin toss": 1,
       "Team cut": 4,
       "Acceleration": 0,
       "Blitz": false,
       "Got logic": true,
-      "Pair table items": 13,
+      "Pair table items": 12,
       "Team pair table items": 0,
       "Players": [
         {
           "Pair number": 1,
-          "Name": "Le-Tran, Leo",
-          "ID": "30587257",
-          "Rating": 2008,
-          "ID2": "39946436",
-          "Rating2": 2055,
-          "Exp1": "05/31/2026",
+          "Name": "Sharp, Elio",
+          "ID": "16711394",
+          "Rating": 2000,
+          "ID2": "30990920",
+          "Rating2": 1867,
+          "Exp1": "05/31/2027",
           "Club": "USA",
           "Sex": "M",
-          "State": "LA",
-          "Birth date": "2012",
-          "Current result": "1",
+          "Birth date": "2007",
+          "Email": "eliolyle@gmail.com",
+          "Current result": " ",
           "Note": "Result coding is Result; Op.; Clr; Brd; Logical ops. 1 & 2; Game pnts",
           "Results": [
-            "+;15;B;2;15;0;0",
-            "-;7;W;1;7;0;0",
-            "+;17;B;5;12;0;0",
-            "+;23;W;3;11;0;0"
+            "~;13;W;1;13;0;0"
           ]
         },
         {
@@ -62,12 +61,9 @@
           "Sex": "M",
           "State": "VT",
           "Birth date": "1984",
-          "Current result": "1",
+          "Current result": " ",
           "Results": [
-            "+;16;W;3;16;0;0",
-            "+;9;B;2;9;0;0",
-            "-;5;W;1;5;0;0",
-            "+;11;B;4;15;0;0"
+            "~;14;B;2;14;0;0"
           ]
         },
         {
@@ -82,56 +78,61 @@
           "Sex": "M",
           "State": "LA",
           "Birth date": "1989",
-          "Current result": "1",
+          "Current result": " ",
           "Results": [
-            "+;17;B;4;17;0;0",
-            "+;10;W;3;10;0;0",
-            "-;7;B;2;7;0;0",
-            "+;15;W;5;20;0;0"
+            "~;15;W;3;15;0;0"
           ]
         },
         {
           "Pair number": 4,
-          "Name": "Hallila, Andrew Allan",
-          "ID": "12877242",
-          "Rating": 1934,
-          "ID2": "39946355",
-          "Rating2": 1963,
-          "Exp1": "11/30/2026",
+          "Name": "Riley, Nathaniel",
+          "ID": "11352758",
+          "Rating": 1917,
+          "ID2": "39947025",
+          "Rating2": 1961,
+          "Exp1": "01/31/2026",
           "Club": "USA",
           "Sex": "M",
           "State": "LA",
-          "Birth date": "1979",
-          "Current result": "1",
+          "Birth date": "1960",
+          "Current result": " ",
           "Results": [
-            "+;18;W;5;18;0;0",
-            "+;14;B;4;14;0;0",
-            "-;25;W;3;25;0;0",
-            "+;20;B;6;23;0;0"
+            "~;16;B;4;16;0;0"
           ]
         },
         {
           "Pair number": 5,
-          "Name": "Billings, Matthew",
-          "ID": "16032286",
-          "Rating": 1912,
-          "ID2": "39921255",
-          "Rating2": 1879,
-          "Exp1": "06/30/2027",
-          "Club": "USA",
+          "Name": "LYTVIAK, denys",
+          "ID": "31687062",
+          "Rating": 1900,
+          "ID2": "34169369",
+          "Club": "UKR",
           "Sex": "M",
-          "State": "LA",
-          "Birth date": "2001",
-          "Current result": "1",
+          "Birth date": "2005",
+          "Current result": " ",
           "Results": [
-            "+;19;B;6;19;0;0",
-            "+;23;W;5;23;0;0",
-            "+;2;B;1;2;0;0",
-            "+;12;W;2;7;0;0"
+            "~;17;W;5;17;0;0"
           ]
         },
         {
           "Pair number": 6,
+          "Name": "Darensbourg, Jeffery",
+          "ID": "12699870",
+          "Rating": 1807,
+          "ID2": "39958574",
+          "Rating2": 1884,
+          "Exp1": "05/31/2026",
+          "Club": "USA",
+          "Sex": "M",
+          "State": "LA",
+          "Birth date": "1972",
+          "Current result": " ",
+          "Results": [
+            "~;18;B;6;18;0;0"
+          ]
+        },
+        {
+          "Pair number": 7,
           "Name": "Apper, Kevin A",
           "ID": "12480458",
           "Rating": 1700,
@@ -139,19 +140,16 @@
           "Rating2": 1707,
           "Exp1": "07/31/2026",
           "Club": "USA",
+          "Sex": "M",
           "State": "LA",
           "Birth date": "1949",
-          "Reserved byes": "1 ",
-          "Current result": "½",
+          "Current result": " ",
           "Results": [
-            "H;-1;-;0;-1;0;0",
-            "-;25;W;6;25;0;0",
-            "+;8;B;10;8;0;0",
-            "=;9;B;7;9;0;0"
+            "~;19;W;7;19;0;0"
           ]
         },
         {
-          "Pair number": 7,
+          "Pair number": 8,
           "Name": "Watts, Gordon R",
           "ID": "12505032",
           "Rating": 1700,
@@ -162,30 +160,9 @@
           "Sex": "M",
           "State": "LA",
           "Birth date": "1967",
-          "Current result": "0",
+          "Current result": " ",
           "Results": [
-            "+;20;W;7;20;0;0",
-            "+;1;B;1;1;0;0",
-            "+;3;W;2;3;0;0",
-            "-;25;B;1;5;0;0"
-          ]
-        },
-        {
-          "Pair number": 8,
-          "Name": "Goodman, Daniel Yale",
-          "ID": "16655066",
-          "Rating": 1641,
-          "ID2": "39946517",
-          "Club": "USA",
-          "Sex": "M",
-          "State": "MA",
-          "Birth date": "1986",
-          "Current result": "0",
-          "Results": [
-            "-;14;W;1;14;0;0",
-            "-;18;B;7;18;0;0",
-            "-;6;W;10;6;0;0",
-            "-;13;B;11;22;0;0"
+            "~;20;B;8;20;0;0"
           ]
         },
         {
@@ -200,17 +177,14 @@
           "Sex": "M",
           "State": "LA",
           "Birth date": "1977",
-          "Current result": "½",
+          "Current result": " ",
           "Results": [
-            "+;21;B;8;21;0;0",
-            "-;2;W;2;2;0;0",
-            "-;20;B;6;17;0;0",
-            "=;6;W;7;6;0;0"
+            "~;21;W;9;21;0;0"
           ]
         },
         {
           "Pair number": 10,
-          "Name": "Urcia, Reed Joseph",
+          "Name": "Urcia, Reed",
           "ID": "31115764",
           "Rating": 1570,
           "ID2": "39956954",
@@ -220,20 +194,33 @@
           "Sex": "M",
           "State": "LA",
           "Birth date": "2007",
-          "Current result": "1",
+          "Current result": " ",
           "Results": [
-            "+;22;W;9;22;0;0",
-            "-;3;B;3;3;0;0",
-            "-;12;W;4;18;0;0",
-            "+;18;B;8;17;0;0"
+            "~;22;B;10;22;0;0"
           ]
         },
         {
           "Pair number": 11,
+          "Name": "Efler, Tobias",
+          "ID": "32232406",
+          "Rating": 1529,
+          "ID2": "39982076",
+          "Rating2": 1738,
+          "Exp1": "01/31/2026",
+          "Club": "USA",
+          "Sex": "M",
+          "State": "LA",
+          "Birth date": "1988",
+          "Current result": " ",
+          "Results": [
+            "~;23;W;11;23;0;0"
+          ]
+        },
+        {
+          "Pair number": 12,
           "Name": "Sutton, Jarred",
           "ID": "31379245",
           "Rating": 1494,
-          "Provisional": true,
           "ID2": "39982106",
           "Rating2": 1523,
           "Exp1": "10/31/2026",
@@ -241,16 +228,13 @@
           "Sex": "M",
           "State": "LA",
           "Birth date": "1999",
-          "Current result": "0",
+          "Current result": " ",
           "Results": [
-            "-;23;B;10;23;0;0",
-            "+;19;W;8;19;0;0",
-            "+;21;B;7;20;0;0",
-            "-;2;W;4;1;0;0"
+            "~;24;B;12;24;0;0"
           ]
         },
         {
-          "Pair number": 12,
+          "Pair number": 13,
           "Name": "Squitiro, Andrew",
           "ID": "13642993",
           "Rating": 1438,
@@ -261,34 +245,9 @@
           "Sex": "M",
           "State": "LA",
           "Birth date": "1989",
-          "Reserved byes": "2 ",
-          "Current result": "0",
+          "Current result": " ",
           "Results": [
-            "+;24;W;11;24;0;0",
-            "H;-1;-;0;-1;0;0",
-            "+;10;B;4;1;0;0",
-            "-;5;B;2;25;0;0"
-          ]
-        },
-        {
-          "Pair number": 13,
-          "Name": "Acuna, Nino Octavio",
-          "ID": "31358118",
-          "Rating": 1428,
-          "Provisional": true,
-          "ID2": "39994970",
-          "Rating2": 1769,
-          "Exp1": "09/30/2026",
-          "Club": "USA",
-          "Sex": "M",
-          "State": "LA",
-          "Birth date": "2007",
-          "Current result": "1",
-          "Results": [
-            "-;25;B;12;25;0;0",
-            "-;20;W;9;20;0;0",
-            "=;19;B;11;19;0;0",
-            "+;8;W;11;19;0;0"
+            "~;1;B;1;1;0;0"
           ]
         },
         {
@@ -303,20 +262,16 @@
           "Sex": "M",
           "State": "CA",
           "Birth date": "1990",
-          "Current result": "1",
+          "Current result": " ",
           "Results": [
-            "+;8;B;1;1;0;0",
-            "-;4;W;4;4;0;0",
-            "-;23;B;8;21;0;0",
-            "+;21;W;9;18;0;0"
+            "~;2;W;2;2;0;0"
           ]
         },
         {
           "Pair number": 15,
-          "Name": "Arceneaux, Thomas, Jr",
+          "Name": "Arceneaux, Thomas",
           "ID": "32046470",
           "Rating": 1386,
-          "Provisional": true,
           "ID2": "39977412",
           "Rating2": 1771,
           "Exp1": "09/30/2026",
@@ -324,82 +279,16 @@
           "Sex": "M",
           "State": "LA",
           "Birth date": "1987",
-          "Current result": "0",
+          "Current result": " ",
           "Results": [
-            "-;1;W;2;2;0;0",
-            "+;22;B;10;21;0;0",
-            "+;18;W;9;23;0;0",
-            "-;3;B;5;2;0;0"
+            "~;3;B;3;3;0;0"
           ]
         },
         {
           "Pair number": 16,
-          "Name": "Nguyen, Landon",
-          "ID": "32536798",
-          "Rating": 1338,
-          "Provisional": true,
-          "ID2": "39995038",
-          "Rating2": 1575,
-          "Exp1": "08/31/2026",
-          "Club": "USA",
-          "Sex": "M",
-          "State": "LA",
-          "Birth date": "2014",
-          "Current result": "1",
-          "Results": [
-            "-;2;B;3;3;0;0",
-            "-;21;W;11;22;0;0",
-            "+;22;B;12;22;0;0",
-            "+;17;W;10;21;0;0"
-          ]
-        },
-        {
-          "Pair number": 17,
-          "Name": "Klingler, James Elliot",
-          "ID": "31221304",
-          "Rating": 1308,
-          "ID2": "39954692",
-          "Rating2": 1348,
-          "Exp1": "04/30/2026",
-          "Club": "USA",
-          "Sex": "M",
-          "State": "LA",
-          "Birth date": "2014",
-          "Current result": "0",
-          "Results": [
-            "-;3;W;4;4;0;0",
-            "+;24;B;12;24;0;0",
-            "-;1;W;5;9;0;0",
-            "-;16;B;10;10;0;0"
-          ]
-        },
-        {
-          "Pair number": 18,
-          "Name": "McDonald, Tyler",
-          "ID": "32236309",
-          "Rating": 1301,
-          "Provisional": true,
-          "ID2": "39995860",
-          "Rating2": 1466,
-          "Exp1": "01/31/2026",
-          "Club": "USA",
-          "Sex": "M",
-          "State": "LA",
-          "Birth date": "1997",
-          "Current result": "0",
-          "Results": [
-            "-;4;B;5;5;0;0",
-            "+;8;W;7;8;0;0",
-            "-;15;B;9;10;0;0",
-            "-;10;W;8;14;0;0"
-          ]
-        },
-        {
-          "Pair number": 19,
           "Name": "Gunnels, Ethan",
           "ID": "32225631",
           "Rating": 1207,
-          "Provisional": true,
           "ID2": "39977455",
           "Rating2": 1461,
           "Exp1": "01/31/2027",
@@ -407,75 +296,107 @@
           "Sex": "M",
           "State": "LA",
           "Birth date": "2004",
-          "Current result": "1",
+          "Current result": " ",
           "Results": [
-            "-;5;W;6;6;0;0",
-            "-;11;B;8;11;0;0",
-            "=;13;W;11;13;0;0",
-            "+;22;W;12;13;0;0"
+            "~;4;W;4;4;0;0"
           ]
         },
         {
-          "Pair number": 20,
-          "Name": "McGlynn-Wright, Theo",
-          "ID": "30664464",
-          "Rating": 1070,
-          "ID2": "39971880",
-          "Rating2": 1403,
-          "Exp1": "08/31/2027",
-          "Club": "USA",
-          "Sex": "M",
-          "State": "LA",
-          "Birth date": "2015",
-          "Current result": "0",
-          "Results": [
-            "-;7;B;7;8;0;0",
-            "+;13;B;9;13;0;0",
-            "+;9;W;6;11;0;0",
-            "-;4;W;6;3;0;0"
-          ]
-        },
-        {
-          "Pair number": 21,
-          "Name": "Falconer, Beauregard Samuel",
-          "ID": "31570503",
-          "Rating": 866,
-          "Rating2": 1047,
-          "Exp1": "12/31/2026",
-          "Club": "USA",
-          "Sex": "M",
-          "State": "LA",
-          "Current result": "0",
-          "Results": [
-            "-;9;W;8;9;0;0",
-            "+;16;B;11;15;0;0",
-            "-;11;W;7;14;0;0",
-            "-;14;B;9;16;0;0"
-          ]
-        },
-        {
-          "Pair number": 22,
+          "Pair number": 17,
           "Name": "Scheidt, Richard",
           "ID": "15081270",
           "Rating": 424,
           "ID2": "39964124",
           "Rating2": 1266,
-          "Exp1": "02/28/2027",
+          "Exp1": "01/31/2026",
           "Club": "USA",
           "Sex": "M",
           "State": "LA",
           "Birth date": "1960",
-          "Current result": "0",
+          "Current result": " ",
           "Results": [
-            "-;10;B;9;10;0;0",
-            "-;15;W;10;16;0;0",
-            "-;16;W;12;16;0;0",
-            "-;19;B;12;8;0;0"
+            "~;5;B;5;5;0;0"
+          ]
+        },
+        {
+          "Pair number": 18,
+          "Name": "Badawy, Baylee",
+          "ID": "30168958",
+          "Rating": 372,
+          "Rating2": 782,
+          "Exp1": "10/31/2026",
+          "State": "LA",
+          "Current result": " ",
+          "Results": [
+            "~;6;W;6;6;0;0"
+          ]
+        },
+        {
+          "Pair number": 19,
+          "Name": "Aslam, Muhammad Usama",
+          "ID": "32628337",
+          "ID2": "7806558",
+          "Rating2": 1977,
+          "Exp1": "10/31/2026",
+          "Club": "PAK",
+          "Sex": "M",
+          "State": "LA",
+          "Birth date": "1993",
+          "Current result": " ",
+          "Results": [
+            "~;7;B;7;7;0;0"
+          ]
+        },
+        {
+          "Pair number": 20,
+          "Name": "Le, Nam Thien",
+          "Club": "USA",
+          "Sex": "M",
+          "Birth date": "2012",
+          "Current result": " ",
+          "Results": [
+            "~;8;W;8;8;0;0"
+          ]
+        },
+        {
+          "Pair number": 21,
+          "Name": "Green, Leonidas",
+          "ID": "32779099",
+          "Club": "USA",
+          "Sex": "M",
+          "Birth date": "2013",
+          "Current result": " ",
+          "Results": [
+            "~;9;B;9;9;0;0"
+          ]
+        },
+        {
+          "Pair number": 22,
+          "Name": "Brown, Andy",
+          "ID": "32748760",
+          "Club": "USA",
+          "Sex": "M",
+          "Birth date": "1969",
+          "Current result": " ",
+          "Results": [
+            "~;10;W;10;10;0;0"
           ]
         },
         {
           "Pair number": 23,
-          "Name": "Castellano, German Daniel, Sr",
+          "Name": "Pittman, Kye",
+          "ID": "32784743",
+          "Club": "USA",
+          "Sex": "M",
+          "Birth date": "2004",
+          "Current result": " ",
+          "Results": [
+            "~;11;B;11;11;0;0"
+          ]
+        },
+        {
+          "Pair number": 24,
+          "Name": "Castellano, German",
           "ID": "32212589",
           "ID2": "39994996",
           "Rating2": 1615,
@@ -484,45 +405,9 @@
           "Sex": "M",
           "State": "LA",
           "Birth date": "1994",
-          "Current result": "0",
+          "Current result": " ",
           "Results": [
-            "+;11;W;10;11;0;0",
-            "-;5;B;5;5;0;0",
-            "+;14;W;8;15;0;0",
-            "-;1;B;3;4;0;0"
-          ]
-        },
-        {
-          "Pair number": 24,
-          "Name": "Baylee, Badawy",
-          "ID": "39914534",
-          "Club": "USA",
-          "Sex": "F",
-          "Birth date": "1996",
-          "Reserved byes": "3 4 ",
-          "Current result": "½",
-          "Results": [
-            "-;12;B;11;12;0;0",
-            "-;17;W;12;17;0;0",
-            "H;-1;-;0;-1;0;0",
-            "H;-1;-;0;-1;0;0"
-          ]
-        },
-        {
-          "Pair number": 25,
-          "Name": "Aslam, Muhammad Usama",
-          "ID": "32628337",
-          "ID2": "7806558",
-          "Exp1": "10/31/2026",
-          "Club": "PAK",
-          "State": "LA",
-          "Birth date": "1993",
-          "Current result": "1",
-          "Results": [
-            "+;13;W;12;13;0;0",
-            "+;6;B;6;6;0;0",
-            "+;4;B;3;4;0;0",
-            "+;7;W;1;12;0;0"
+            "~;12;W;12;12;0;0"
           ]
         }
       ],
