@@ -6,7 +6,7 @@
     "Tournament title": "A Lower Decatur Christmas, FIDE-rated",
     "Starting date": "12/22/2025",
     "Ending date": "12/22/2025",
-    "Trace": "3.7.6.6.7.4.6.6.6.6."
+    "Trace": "3.7.7.4.3.7.3.7.7.4."
   },
   "Sections": [
     {
@@ -16,11 +16,11 @@
       "Section time control": "g/15;d0",
       "Number of players": 24,
       "Number of teams": 0,
-      "Rounds paired": 1,
-      "Rounds played": 0,
+      "Rounds paired": 2,
+      "Rounds played": 1,
       "Rating to use": 0,
       "Engine": 1,
-      "Last unrestricted round": 0,
+      "Last unrestricted round": 1,
       "Need search options": false,
       "Final round": 4,
       "Coin toss": 1,
@@ -28,7 +28,7 @@
       "Acceleration": 0,
       "Blitz": false,
       "Got logic": true,
-      "Pair table items": 12,
+      "Pair table items": 13,
       "Team pair table items": 0,
       "Players": [
         {
@@ -46,7 +46,8 @@
           "Current result": " ",
           "Note": "Result coding is Result; Op.; Clr; Brd; Logical ops. 1 & 2; Game pnts",
           "Results": [
-            "~;13;W;1;13;0;0"
+            "+;13;W;1;13;0;0",
+            "~;9;B;1;9;0;0"
           ]
         },
         {
@@ -63,7 +64,8 @@
           "Birth date": "1984",
           "Current result": " ",
           "Results": [
-            "~;14;B;2;14;0;0"
+            "-;14;B;2;14;0;0",
+            "~;17;W;7;17;0;0"
           ]
         },
         {
@@ -80,7 +82,8 @@
           "Birth date": "1989",
           "Current result": " ",
           "Results": [
-            "~;15;W;3;15;0;0"
+            "+;15;W;3;15;0;0",
+            "~;10;B;2;10;0;0"
           ]
         },
         {
@@ -97,7 +100,8 @@
           "Birth date": "1960",
           "Current result": " ",
           "Results": [
-            "~;16;B;4;16;0;0"
+            "+;16;B;4;16;0;0",
+            "~;11;W;3;11;0;0"
           ]
         },
         {
@@ -111,7 +115,8 @@
           "Birth date": "2005",
           "Current result": " ",
           "Results": [
-            "~;17;W;5;17;0;0"
+            "+;17;W;5;17;0;0",
+            "~;19;B;4;14;0;0"
           ]
         },
         {
@@ -128,7 +133,8 @@
           "Birth date": "1972",
           "Current result": " ",
           "Results": [
-            "~;18;B;6;18;0;0"
+            "+;18;B;6;18;0;0",
+            "~;14;W;5;19;0;0"
           ]
         },
         {
@@ -145,7 +151,8 @@
           "Birth date": "1949",
           "Current result": " ",
           "Results": [
-            "~;19;W;7;19;0;0"
+            "-;19;W;7;19;0;0",
+            "~;21;B;8;20;0;0"
           ]
         },
         {
@@ -162,7 +169,8 @@
           "Birth date": "1967",
           "Current result": " ",
           "Results": [
-            "~;20;B;8;20;0;0"
+            "+;20;B;8;20;0;0",
+            "~;24;W;6;24;0;0"
           ]
         },
         {
@@ -179,7 +187,8 @@
           "Birth date": "1977",
           "Current result": " ",
           "Results": [
-            "~;21;W;9;21;0;0"
+            "+;21;W;9;21;0;0",
+            "~;1;W;1;1;0;0"
           ]
         },
         {
@@ -196,7 +205,8 @@
           "Birth date": "2007",
           "Current result": " ",
           "Results": [
-            "~;22;B;10;22;0;0"
+            "+;22;B;10;22;0;0",
+            "~;3;W;2;3;0;0"
           ]
         },
         {
@@ -213,7 +223,8 @@
           "Birth date": "1988",
           "Current result": " ",
           "Results": [
-            "~;23;W;11;23;0;0"
+            "+;23;W;11;23;0;0",
+            "~;4;B;3;4;0;0"
           ]
         },
         {
@@ -230,7 +241,8 @@
           "Birth date": "1999",
           "Current result": " ",
           "Results": [
-            "~;24;B;12;24;0;0"
+            "-;24;B;12;24;0;0",
+            "~;20;W;10;21;0;0"
           ]
         },
         {
@@ -245,9 +257,11 @@
           "Sex": "M",
           "State": "LA",
           "Birth date": "1989",
-          "Current result": " ",
+          "Reserved byes": "2 ",
+          "Current result": "½",
           "Results": [
-            "~;1;B;1;1;0;0"
+            "-;1;B;1;1;0;0",
+            "H;-1;-;0;-1;0;0"
           ]
         },
         {
@@ -264,7 +278,8 @@
           "Birth date": "1990",
           "Current result": " ",
           "Results": [
-            "~;2;W;2;2;0;0"
+            "+;2;W;2;2;0;0",
+            "~;6;B;5;5;0;0"
           ]
         },
         {
@@ -281,7 +296,8 @@
           "Birth date": "1987",
           "Current result": " ",
           "Results": [
-            "~;3;B;3;3;0;0"
+            "-;3;B;3;3;0;0",
+            "~;22;W;9;22;0;0"
           ]
         },
         {
@@ -298,7 +314,8 @@
           "Birth date": "2004",
           "Current result": " ",
           "Results": [
-            "~;4;W;4;4;0;0"
+            "-;4;W;4;4;0;0",
+            "~;23;B;11;23;0;0"
           ]
         },
         {
@@ -315,7 +332,8 @@
           "Birth date": "1960",
           "Current result": " ",
           "Results": [
-            "~;5;B;5;5;0;0"
+            "-;5;B;5;5;0;0",
+            "~;2;B;7;2;0;0"
           ]
         },
         {
@@ -323,12 +341,18 @@
           "Name": "Badawy, Baylee",
           "ID": "30168958",
           "Rating": 372,
+          "ID2": "39914534",
           "Rating2": 782,
           "Exp1": "10/31/2026",
+          "Club": "USA",
+          "Sex": "F",
           "State": "LA",
-          "Current result": " ",
+          "Birth date": "1996",
+          "Reserved byes": "2 3 4z ",
+          "Current result": "½",
           "Results": [
-            "~;6;W;6;6;0;0"
+            "-;6;W;6;6;0;0",
+            "H;-1;-;0;-1;0;0"
           ]
         },
         {
@@ -344,18 +368,21 @@
           "Birth date": "1993",
           "Current result": " ",
           "Results": [
-            "~;7;B;7;7;0;0"
+            "+;7;B;7;7;0;0",
+            "~;5;W;4;6;0;0"
           ]
         },
         {
           "Pair number": 20,
           "Name": "Le, Nam Thien",
+          "ID": "32784752",
           "Club": "USA",
           "Sex": "M",
           "Birth date": "2012",
           "Current result": " ",
           "Results": [
-            "~;8;W;8;8;0;0"
+            "-;8;W;8;8;0;0",
+            "~;12;B;10;7;0;0"
           ]
         },
         {
@@ -367,7 +394,8 @@
           "Birth date": "2013",
           "Current result": " ",
           "Results": [
-            "~;9;B;9;9;0;0"
+            "-;9;B;9;9;0;0",
+            "~;7;W;8;12;0;0"
           ]
         },
         {
@@ -379,7 +407,8 @@
           "Birth date": "1969",
           "Current result": " ",
           "Results": [
-            "~;10;W;10;10;0;0"
+            "-;10;W;10;10;0;0",
+            "~;15;B;9;15;0;0"
           ]
         },
         {
@@ -391,7 +420,8 @@
           "Birth date": "2004",
           "Current result": " ",
           "Results": [
-            "~;11;B;11;11;0;0"
+            "-;11;B;11;11;0;0",
+            "~;16;W;11;16;0;0"
           ]
         },
         {
@@ -407,7 +437,8 @@
           "Birth date": "1994",
           "Current result": " ",
           "Results": [
-            "~;12;W;12;12;0;0"
+            "+;12;W;12;12;0;0",
+            "~;8;B;6;8;0;0"
           ]
         }
       ],
