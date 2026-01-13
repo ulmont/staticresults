@@ -1,54 +1,10 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<style>
-		#controlsDiv {
-			height: 40px;
-			background-color: #222266"
-		}
-		#tName {
-			font-size: 1.5em; 
-			font-weight: bold;
-			margin: 0;
-		}
-		#tDate {
-			margin: 0;
-		}
-		table tr:nth-child(even) {
-			background-color: #00bbFF;
-		}
-		/*
-		** The drop downs are arranged as a table with no borders
-		*/
-		table.ControlOuter th,
-		table.ControlOuter td {
-			padding: 5px;
-		}
-		tbody div {
-			overflow-y: auto;
-			scrollbar-gutter: stable;
-			height: auto;
-		}
-		th.Board, td.Board {
-			width: auto;
-			padding: 3px;
-		}
-		th.Board, th.Number {
-			text-align: left;
-		}
-		td.Board {
-			text-align: right;
-		}
-		th.Score, td.Score {
-			width: auto;
-			padding: 3px;
-		}
-		th.Name, td.Name {
-			width: auto;
-			padding: 3px;
-			text-align: left;
-		}
-	</style>
+	<title>Results, Pairings, and Standings</title>
+	<link rel="stylesheet" href="styles.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip-utils/0.1.0/jszip-utils.min.js"></script>
 <script type="text/javascript">
@@ -1843,7 +1799,7 @@ function getVTableSwissSys()
 </script>
 </head>
 <body>
-	<div id="topDiv" style="height: 20%; overflow:auto">
+	<div id="topDiv">
 		<p id="tName"></p>
 		<p id="tDate"></p>
 	</div>
@@ -1851,10 +1807,10 @@ function getVTableSwissSys()
 	<div id="controlsDiv">
 	</div>
 
-	<div id="pairingsDiv" style="height: 60%; width: 100%; display:none">
+	<div id="pairingsDiv">
 	</div>
 
-	<div id="wallChartDiv" style="height: 60%; width: 100%; display:none">
+	<div id="wallChartDiv">
 	</div>
 
 	<script>
