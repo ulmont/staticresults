@@ -1,0 +1,61 @@
+#controlsDiv {
+    height: 40px;
+    background-color: #222266"
+}
+#tName {
+    font-size: 1.5em; 
+    font-weight: bold;
+    margin: 0;
+}
+#tDate {
+    margin: 0;
+}
+table tr:nth-child(even) {
+    background-color: #00bbFF;
+}
+#topDiv {
+    height: 20%;
+    overflow:auto
+}
+#pairingsDiv {
+    height: 60%; 
+    width: 100%; 
+    display:none;
+} 
+#wallChartDiv {
+    height: 60%; 
+    width: 100%; 
+    display:none;
+} 
+
+/*
+** The drop downs are arranged as a table with no borders
+*/
+table.ControlOuter th,
+table.ControlOuter td {
+    padding: 5px;
+}
+tbody div {
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+    height: auto;
+}
+th.Board, td.Board {
+    width: auto;
+    padding: 3px;
+}
+th.Board, th.Number {
+    text-align: left;
+}
+td.Board {
+    text-align: right;
+}
+th.Score, td.Score {
+    width: auto;
+    padding: 3px;
+}
+th.Name, td.Name {
+    width: auto;
+    padding: 3px;
+    text-align: left;
+}
