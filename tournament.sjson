@@ -6,7 +6,7 @@
     "Tournament title": "2026 Carnival Classic",
     "Starting date": "01/17/2026",
     "Ending date": "01/19/2026",
-    "Trace": "3.3.3.3.3.3.3.7.3.3."
+    "Trace": "3.3.3.7.7.4.3.7.7.4."
   },
   "Sections": [
     {
@@ -724,7 +724,7 @@
           "Rating2": 1538,
           "Exp1": "12/31/2026",
           "Club": "USA",
-          "Sex": "U",
+          "Sex": "M",
           "Address": "1532 Euterpe St",
           "City": "New Orleans",
           "State": "LA",
@@ -887,6 +887,7 @@
           "Phone": "(504) 717-7812",
           "Email": "reed.urcia@gmail.com",
           "Reserved byes": "4 ",
+          "Withdrew": true,
           "Current result": " ",
           "Results": [
             "-;11;W;111;11;0;0",
@@ -977,12 +978,15 @@
           "Name": "Levy, Benjamin",
           "ID": "30632703",
           "Rating": 1424,
+          "ID2": "30935482",
           "Exp1": "06/30/2026",
+          "Club": "USA",
           "Sex": "M",
           "Address": "968 Amethyst St",
           "City": "New Orleans",
           "State": "LA",
           "Zip": "70124",
+          "Birth date": "2003",
           "Phone": "(504) 913-9389",
           "Email": "bennyand27@gmail.com",
           "Current result": " ",
@@ -1051,6 +1055,7 @@
           "Rating": 1385,
           "ID2": "39991946",
           "Exp1": "12/31/2027",
+          "Club": "USA",
           "Sex": "M",
           "Address": "315 Sena Dr",
           "City": "Metairie",
@@ -1190,7 +1195,7 @@
       "Number of players": 20,
       "Number of teams": 0,
       "Rounds paired": 5,
-      "Rounds played": 4,
+      "Rounds played": 5,
       "Rating to use": 0,
       "Engine": 4,
       "Last unrestricted round": 4,
@@ -1219,14 +1224,14 @@
           "Birth date": "2014",
           "Phone": "(479) 282-4405",
           "Email": "vimala.srec@gmail.com",
-          "Current result": " ",
+          "Current result": "0",
           "Note": "Result coding is Result; Op.; Clr; Brd; Logical ops. 1 & 2; Game pnts",
           "Results": [
             "+;11;B;201;11;11;0",
             "+;10;W;201;10;10;0",
             "+;9;B;201;9;9;0",
             "+;5;W;201;5;5;0",
-            "~;6;B;201;5;6;0"
+            "-;6;B;201;5;6;0"
           ]
         },
         {
@@ -1270,13 +1275,13 @@
           "Birth date": "1976",
           "Phone": "(504) 723-5491",
           "Email": "xande1@bellsouth.net",
-          "Current result": " ",
+          "Current result": "0",
           "Results": [
             "-;13;B;203;13;13;0",
             "-;15;W;207;15;15;0",
             "+;18;B;208;18;18;0",
             "+;19;W;207;19;19;0",
-            "~;14;W;203;14;14;0"
+            "-;14;W;203;14;14;0"
           ]
         },
         {
@@ -1293,13 +1298,13 @@
           "Phone": "(504) 259-3528",
           "Email": "gillenb@icloud.com",
           "Reserved byes": "2 ",
-          "Current result": " ",
+          "Current result": "1",
           "Results": [
             "-;14;W;204;14;14;0",
             "H;-1;-;0;-1;-1;0",
             "-;7;B;207;7;7;0",
             "+;17;W;209;17;17;0",
-            "~;18;W;207;7;18;0"
+            "+;18;W;207;7;18;0"
           ]
         },
         {
@@ -1318,13 +1323,13 @@
           "Birth date": "2002",
           "Phone": "(601) 946-3660",
           "Email": "jack.noel@me.com",
-          "Current result": " ",
+          "Current result": "1",
           "Results": [
             "+;15;B;205;15;15;0",
             "+;13;W;202;13;13;0",
             "+;16;B;202;16;16;0",
             "-;1;B;201;1;1;0",
-            "~;9;W;202;1;9;0"
+            "+;9;W;202;1;9;0"
           ]
         },
         {
@@ -1340,13 +1345,13 @@
           "Zip": "39402",
           "Phone": "(901) 800-9649",
           "Email": "sleepydirty@gmail.com",
-          "Current result": " ",
+          "Current result": "1",
           "Results": [
             "-;16;W;206;16;16;0",
             "+;17;B;208;17;17;0",
             "+;12;W;203;12;12;0",
             "+;11;B;202;11;11;0",
-            "~;1;W;201;9;1;0"
+            "+;1;W;201;9;1;0"
           ]
         },
         {
@@ -1367,13 +1372,13 @@
           "Phone": "(402) 578-3970",
           "Email": "allisonhengen@gmail.com",
           "Reserved byes": "1 ",
-          "Current result": " ",
+          "Current result": "1",
           "Results": [
             "H;0;-;0;-1;-1;0",
             "-;12;B;205;12;12;0",
             "+;4;W;207;4;4;0",
             "-;14;B;205;12;14;0",
-            "~;19;W;208;4;19;0"
+            "+;19;W;208;4;19;0"
           ]
         },
         {
@@ -1414,13 +1419,13 @@
           "Zip": "39759",
           "Phone": "(228) 282-5301",
           "Email": "djb238@msstate.edu",
-          "Current result": " ",
+          "Current result": "0",
           "Results": [
             "+;20;B;209;-1;-1;0",
             "+;14;W;203;14;14;0",
             "-;1;W;201;1;1;0",
             "+;13;B;204;16;16;0",
-            "~;5;B;202;6;5;0"
+            "-;5;B;202;6;5;0"
           ]
         },
         {
@@ -1439,13 +1444,13 @@
           "Birth date": "1974",
           "Phone": "(616) 690-7000",
           "Email": "jerrylmacdonald@gmail.com",
-          "Current result": " ",
+          "Current result": "1",
           "Results": [
             "+;18;W;208;18;18;0",
             "-;1;B;201;1;1;0",
             "=;14;B;204;14;14;0",
             "=;12;W;206;14;12;0",
-            "~;16;B;204;13;13;0"
+            "+;16;B;204;13;13;0"
           ]
         },
         {
@@ -1461,13 +1466,13 @@
           "Zip": "36941",
           "Phone": "(601) 756-0357",
           "Email": "kevinharvey2008.7@gmail.com",
-          "Current result": " ",
+          "Current result": "½",
           "Results": [
             "-;1;W;201;1;1;0",
             "+;18;B;206;18;18;0",
             "+;15;W;205;15;15;0",
             "-;6;W;202;6;6;0",
-            "~;20;B;205;16;16;0"
+            "=;20;B;205;16;16;0"
           ]
         },
         {
@@ -1485,13 +1490,13 @@
           "Birth date": "1999",
           "Phone": "(225) 244-5511",
           "Email": "darrel.deville@protonmail.com",
-          "Current result": " ",
+          "Current result": "1",
           "Results": [
             "=;2;B;202;2;2;0",
             "+;7;W;205;7;7;0",
             "-;6;B;203;6;6;0",
             "=;10;B;206;7;10;0",
-            "~;13;W;206;20;20;0"
+            "+;13;W;206;20;20;0"
           ]
         },
         {
@@ -1510,13 +1515,13 @@
           "Birth date": "2009",
           "Phone": "(985) 233-9193",
           "Email": "aubreyestewart97@gmail.com",
-          "Current result": " ",
+          "Current result": "0",
           "Results": [
             "+;3;W;203;3;3;0",
             "-;5;B;202;5;5;0",
             "+;20;W;206;20;20;0",
             "-;9;W;204;8;8;0",
-            "~;12;B;206;10;10;0"
+            "-;12;B;206;10;10;0"
           ]
         },
         {
@@ -1532,13 +1537,13 @@
           "Zip": "70124",
           "Phone": "(504) 866-9622",
           "Email": "wklieder@aol.com",
-          "Current result": " ",
+          "Current result": "1",
           "Results": [
             "+;4;B;204;4;4;0",
             "-;9;B;203;9;9;0",
             "=;10;W;204;10;10;0",
             "+;7;W;205;10;7;0",
-            "~;3;B;203;3;3;0"
+            "+;3;B;203;3;3;0"
           ]
         },
         {
@@ -1577,13 +1582,13 @@
           "Zip": "71467",
           "Phone": "(318) 233-6865",
           "Email": "sebastianvielledent@gmail.com",
-          "Current result": " ",
+          "Current result": "0",
           "Results": [
             "+;6;B;206;6;6;0",
             "+;2;W;204;2;2;0",
             "-;5;W;202;5;5;0",
             "-;8;B;203;9;9;0",
-            "~;10;W;204;11;11;0"
+            "-;10;W;204;11;11;0"
           ]
         },
         {
@@ -1623,13 +1628,13 @@
           "Birth date": "2015",
           "Phone": "(225) 329-3300",
           "Email": "lpeng.lsu@gmail.com",
-          "Current result": " ",
+          "Current result": "0",
           "Results": [
             "-;10;B;208;10;10;0",
             "-;11;W;206;11;11;0",
             "-;3;W;208;3;3;0",
             "B;-1;-;0;-1;-1;0",
-            "~;4;B;207;19;4;0"
+            "-;4;B;207;19;4;0"
           ]
         },
         {
@@ -1641,13 +1646,13 @@
           "Rating2": 240,
           "Exp1": "08/31/2027",
           "State": "CA",
-          "Current result": " ",
+          "Current result": "0",
           "Results": [
             "U;0;-;0;0;0;0",
             "U;0;-;0;0;0;0",
             "+;17;W;209;17;17;0",
             "-;3;B;207;3;3;0",
-            "~;7;B;208;18;7;0"
+            "-;7;B;208;18;7;0"
           ]
         },
         {
@@ -1662,13 +1667,13 @@
           "Zip": "70130",
           "Phone": "(504) 875-0419",
           "Email": "tristanlewis57@gmail.com",
-          "Current result": " ",
+          "Current result": "½",
           "Results": [
             "-;9;W;209;-1;-1;0",
             "B;-1;-;0;-1;-1;0",
             "-;13;B;206;13;13;0",
             "X;15;*;208;15;15;0",
-            "~;11;W;205;12;12;0"
+            "=;11;W;205;12;12;0"
           ]
         }
       ],
