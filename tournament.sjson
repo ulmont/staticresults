@@ -6,7 +6,7 @@
     "Tournament title": "The Baton Rouge Dual",
     "Starting date": "02/21/2026",
     "Ending date": "02/21/2026",
-    "Trace": "3.7.3.3.3.3.3.3.3.7."
+    "Trace": "3.7.3.7.7.4.7.4.3.7."
   },
   "Sections": [
     {
@@ -16,11 +16,11 @@
       "Section time control": "g/40;d5",
       "Number of players": 48,
       "Number of teams": 0,
-      "Rounds paired": 2,
-      "Rounds played": 1,
+      "Rounds paired": 3,
+      "Rounds played": 2,
       "Rating to use": 0,
       "Engine": 1,
-      "Last unrestricted round": 1,
+      "Last unrestricted round": 2,
       "Need search options": false,
       "First board": 101,
       "Final round": 5,
@@ -50,11 +50,12 @@
           "Birth date": "1994",
           "Phone": "(504) 357-1540",
           "Email": "nickmatta13@gmail.com",
-          "Current result": "1",
+          "Current result": " ",
           "Note": "Result coding is Result; Op.; Clr; Brd; Logical ops. 1 & 2; Game pnts",
           "Results": [
             "+;25;W;101;25;0;0",
-            "+;14;B;101;14;0;0"
+            "+;14;B;101;14;0;0",
+            "~;10;W;101;9;0;0"
           ]
         },
         {
@@ -74,10 +75,11 @@
           "Birth date": "2000",
           "Phone": "(504) 952-1959",
           "Email": "dexwebster1@gmail.com",
-          "Current result": "1",
+          "Current result": " ",
           "Results": [
             "+;26;B;102;26;0;0",
-            "+;15;W;102;15;0;0"
+            "+;15;W;102;15;0;0",
+            "~;9;B;102;10;0;0"
           ]
         },
         {
@@ -99,10 +101,11 @@
           "Phone": "(225) 828-1924",
           "Email": "carlbuckobell@gmail.com",
           "Reserved byes": "3 ",
-          "Current result": " ",
+          "Current result": "½",
           "Results": [
             "+;27;W;103;27;0;0",
-            "~;16;B;103;16;0;0"
+            "+;16;B;103;16;0;0",
+            "H;-1;-;0;-1;0;0"
           ]
         },
         {
@@ -122,10 +125,11 @@
           "Birth date": "1961",
           "Phone": "(504) 415-0755",
           "Email": "pastor.renephillips@gmail.com",
-          "Current result": "0",
+          "Current result": " ",
           "Results": [
             "+;28;B;104;28;0;0",
-            "-;17;W;104;17;0;0"
+            "-;17;W;104;17;0;0",
+            "~;11;B;106;20;0;0"
           ]
         },
         {
@@ -145,10 +149,11 @@
           "Birth date": "1987",
           "Phone": "(847) 456-6357",
           "Email": "cbgirardo@gmail.com",
-          "Current result": "1",
+          "Current result": " ",
           "Results": [
             "+;29;W;105;29;0;0",
-            "+;18;B;105;18;0;0"
+            "+;18;B;105;18;0;0",
+            "~;20;W;103;11;0;0"
           ]
         },
         {
@@ -168,10 +173,11 @@
           "Birth date": "2012",
           "Phone": "(816) 820-9754",
           "Email": "anhtigone@gmail.com",
-          "Current result": "1",
+          "Current result": " ",
           "Results": [
             "+;30;B;106;30;0;0",
-            "+;19;W;106;19;0;0"
+            "+;19;W;106;19;0;0",
+            "~;13;B;104;13;0;0"
           ]
         },
         {
@@ -191,10 +197,11 @@
           "Birth date": "1960",
           "Phone": "(816) 820-9754",
           "Email": "natriley1960@gmail.com",
-          "Current result": "0",
+          "Current result": " ",
           "Results": [
             "+;31;W;107;31;0;0",
-            "-;20;B;107;20;0;0"
+            "-;20;B;107;20;0;0",
+            "~;29;W;107;29;0;0"
           ]
         },
         {
@@ -214,10 +221,11 @@
           "Birth date": "2011",
           "Phone": "(956) 479-0053",
           "Email": "jaimereyes.0703@ymail.com",
-          "Current result": "1",
+          "Current result": " ",
           "Results": [
             "+;32;B;108;32;0;0",
-            "+;21;W;108;21;0;0"
+            "+;21;W;108;21;0;0",
+            "~;17;B;105;17;0;0"
           ]
         },
         {
@@ -236,10 +244,11 @@
           "Birth date": "1979",
           "Phone": "(504) 701-3590",
           "Email": "Ahallila8@gmail.com",
-          "Current result": "1",
+          "Current result": " ",
           "Results": [
             "+;33;W;109;33;0;0",
-            "+;22;B;109;22;0;0"
+            "+;22;B;109;22;0;0",
+            "~;2;W;102;1;0;0"
           ]
         },
         {
@@ -259,10 +268,11 @@
           "Birth date": "1974",
           "Phone": "(601) 214-5192",
           "Email": "scurry_6@yahoo.com",
-          "Current result": "1",
+          "Current result": " ",
           "Results": [
             "+;34;B;110;34;0;0",
-            "+;23;W;110;23;0;0"
+            "+;23;W;110;23;0;0",
+            "~;1;B;101;2;0;0"
           ]
         },
         {
@@ -282,10 +292,11 @@
           "Birth date": "2009",
           "Phone": "(228) 324-5795",
           "Email": "davidcprllc01@gmail.com",
-          "Current result": "1",
+          "Current result": " ",
           "Results": [
             "+;35;W;111;35;0;0",
-            "+;24;B;111;24;0;0"
+            "+;24;B;111;24;0;0",
+            "~;4;W;106;5;0;0"
           ]
         },
         {
@@ -304,10 +315,11 @@
           "Birth date": "1977",
           "Phone": "(225) 266-2185",
           "Email": "maddierobison@gmail.com",
-          "Current result": "0",
+          "Current result": " ",
           "Results": [
             "=;36;B;112;36;0;0",
-            "-;13;W;113;37;0;0"
+            "-;13;W;113;37;0;0",
+            "~;25;B;118;36;0;0"
           ]
         },
         {
@@ -323,10 +335,11 @@
           "Zip": "39154",
           "Phone": "(601) 218-4427",
           "Email": "claytonthrasher2009@gmail.com",
-          "Current result": "1",
+          "Current result": " ",
           "Results": [
             "+;37;W;113;37;0;0",
-            "+;12;B;113;36;0;0"
+            "+;12;B;113;36;0;0",
+            "~;6;W;104;6;0;0"
           ]
         },
         {
@@ -346,10 +359,11 @@
           "Birth date": "1990",
           "Phone": "(504) 579-6637",
           "Email": "dplanchet9@gmail.com",
-          "Current result": "0",
+          "Current result": " ",
           "Results": [
             "+;38;B;114;38;0;0",
-            "-;1;W;101;1;0;0"
+            "-;1;W;101;1;0;0",
+            "~;30;B;108;30;0;0"
           ]
         },
         {
@@ -369,10 +383,11 @@
           "Birth date": "1989",
           "Phone": "(318) 421-4473",
           "Email": "victor_chess@hotmail.com",
-          "Current result": "0",
+          "Current result": " ",
           "Results": [
             "+;39;W;115;39;0;0",
-            "-;2;B;102;2;0;0"
+            "-;2;B;102;2;0;0",
+            "~;35;W;109;32;0;0"
           ]
         },
         {
@@ -395,7 +410,8 @@
           "Current result": " ",
           "Results": [
             "+;40;B;116;40;0;0",
-            "~;3;W;103;3;0;0"
+            "-;3;W;103;3;0;0",
+            "~;32;B;110;34;0;0"
           ]
         },
         {
@@ -415,10 +431,11 @@
           "Birth date": "2001",
           "Phone": "(865) 924-9884",
           "Email": "marcelewilder@gmail.com",
-          "Current result": "1",
+          "Current result": " ",
           "Results": [
             "X;41;-;117;41;0;0",
-            "+;4;B;104;4;0;0"
+            "+;4;B;104;4;0;0",
+            "~;8;W;105;8;0;0"
           ]
         },
         {
@@ -434,10 +451,11 @@
           "Zip": "70820",
           "Phone": "(225) 433-8578",
           "Email": "heidercheidtfernando@gmail.com",
-          "Current result": "0",
+          "Current result": " ",
           "Results": [
             "+;42;B;118;42;0;0",
-            "-;5;W;105;5;0;0"
+            "-;5;W;105;5;0;0",
+            "~;34;B;111;35;0;0"
           ]
         },
         {
@@ -453,10 +471,11 @@
           "Zip": "71635",
           "Phone": "(850) 376-8089",
           "Email": "munromanning@gmail.com",
-          "Current result": "0",
+          "Current result": " ",
           "Results": [
             "+;43;W;119;43;0;0",
-            "-;6;B;106;6;0;0"
+            "-;6;B;106;6;0;0",
+            "~;37;W;112;37;0;0"
           ]
         },
         {
@@ -472,10 +491,11 @@
           "Zip": "70737",
           "Phone": "(985) 381-0242",
           "Email": "ajallison02@gmail.com",
-          "Current result": "1",
+          "Current result": " ",
           "Results": [
             "+;44;B;120;44;0;0",
-            "+;7;W;107;7;0;0"
+            "+;7;W;107;7;0;0",
+            "~;5;B;103;4;0;0"
           ]
         },
         {
@@ -495,10 +515,11 @@
           "Birth date": "1945",
           "Phone": "(630) 650-0932",
           "Email": "jduffy0413@aol.com",
-          "Current result": "0",
+          "Current result": " ",
           "Results": [
             "+;45;W;121;45;0;0",
-            "-;8;B;108;8;0;0"
+            "-;8;B;108;8;0;0",
+            "~;39;W;113;38;0;0"
           ]
         },
         {
@@ -514,10 +535,11 @@
           "Zip": "70053",
           "Phone": "(985) 647-5050",
           "Email": "robert.newman3rd@gmail.com",
-          "Current result": "0",
+          "Current result": " ",
           "Results": [
             "+;46;B;122;46;0;0",
-            "-;9;W;109;9;0;0"
+            "-;9;W;109;9;0;0",
+            "~;38;B;114;39;0;0"
           ]
         },
         {
@@ -536,10 +558,11 @@
           "Birth date": "1972",
           "Phone": "(601) 529-2408",
           "Email": "david_mooney@bellsouth.net",
-          "Current result": "0",
+          "Current result": " ",
           "Results": [
             "+;47;W;123;47;0;0",
-            "-;10;B;110;10;0;0"
+            "-;10;B;110;10;0;0",
+            "~;48;W;115;44;0;0"
           ]
         },
         {
@@ -559,10 +582,11 @@
           "Birth date": "2014",
           "Phone": "(956) 479-0053",
           "Email": "jaimereyes.0703@ymail.com",
-          "Current result": "0",
+          "Current result": " ",
           "Results": [
             "+;48;B;124;48;0;0",
-            "-;11;W;111;11;0;0"
+            "-;11;W;111;11;0;0",
+            "~;44;B;116;46;0;0"
           ]
         },
         {
@@ -578,10 +602,11 @@
           "Zip": "70808",
           "Phone": "(225) 266-8669",
           "Email": "hjtoups@gmail.com",
-          "Current result": "0",
+          "Current result": " ",
           "Results": [
             "-;1;B;101;1;0;0",
-            "-;38;W;114;35;0;0"
+            "-;38;W;114;35;0;0",
+            "~;12;W;118;40;0;0"
           ]
         },
         {
@@ -600,10 +625,11 @@
           "Birth date": "2009",
           "Phone": "(225) 571-2366",
           "Email": "brian_d23@yahoo.com",
-          "Current result": "0",
+          "Current result": " ",
           "Results": [
             "-;2;W;102;2;0;0",
-            "-;35;B;115;38;0;0"
+            "-;35;B;115;38;0;0",
+            "~;43;W;120;42;0;0"
           ]
         },
         {
@@ -622,10 +648,11 @@
           "Birth date": "1993",
           "Phone": "(601) 260-4148",
           "Email": "burksrives@gmail.com",
-          "Current result": "1",
+          "Current result": " ",
           "Results": [
             "-;3;B;103;3;0;0",
-            "+;40;W;116;39;0;0"
+            "+;40;W;116;39;0;0",
+            "~;46;B;117;48;0;0"
           ]
         },
         {
@@ -648,7 +675,8 @@
           "Current result": "0",
           "Results": [
             "-;4;W;104;4;0;0",
-            "-;39;B;117;40;0;0"
+            "-;39;B;117;40;0;0",
+            "U;0;-;0;0;0;0"
           ]
         },
         {
@@ -667,10 +695,11 @@
           "Birth date": "2001",
           "Phone": "(601) 953-4135",
           "Email": "jack.calder@gmail.com",
-          "Current result": "1",
+          "Current result": " ",
           "Results": [
             "-;5;B;105;5;0;0",
-            "+;42;W;118;42;0;0"
+            "+;42;W;118;42;0;0",
+            "~;7;B;107;7;0;0"
           ]
         },
         {
@@ -686,10 +715,11 @@
           "Zip": "70124",
           "Phone": "(504) 913-9389",
           "Email": "bennyand27@gmail.com",
-          "Current result": "1",
+          "Current result": " ",
           "Results": [
             "-;6;W;106;6;0;0",
-            "+;43;B;119;43;0;0"
+            "+;43;B;119;43;0;0",
+            "~;14;W;108;14;0;0"
           ]
         },
         {
@@ -705,10 +735,11 @@
           "Zip": "71322",
           "Phone": "(318) 305-5390",
           "Email": "davontabutler056@gmail.com",
-          "Current result": "0",
+          "Current result": " ",
           "Results": [
             "-;7;B;107;7;0;0",
-            "-;44;W;120;44;0;0"
+            "-;44;W;120;44;0;0",
+            "~;36;B;119;43;0;0"
           ]
         },
         {
@@ -726,10 +757,11 @@
           "Birth date": "2014",
           "Phone": "(479) 282-4405",
           "Email": "vimala.srec@gmail.com",
-          "Current result": "1",
+          "Current result": " ",
           "Results": [
             "-;8;W;108;8;0;0",
-            "+;45;B;121;45;0;0"
+            "+;45;B;121;45;0;0",
+            "~;16;W;110;15;0;0"
           ]
         },
         {
@@ -748,10 +780,11 @@
           "Birth date": "2014",
           "Phone": "(504) 799-9185",
           "Email": "ndajko@tulane.edu",
-          "Current result": "0",
+          "Current result": " ",
           "Results": [
             "-;9;B;109;9;0;0",
-            "-;46;W;122;46;0;0"
+            "-;46;W;122;46;0;0",
+            "~;42;B;121;45;0;0"
           ]
         },
         {
@@ -767,10 +800,11 @@
           "Zip": "70769",
           "Phone": "(225) 363-4643",
           "Email": "looptylu@yahoo.com",
-          "Current result": "1",
+          "Current result": " ",
           "Results": [
             "-;10;W;110;10;0;0",
-            "+;47;B;123;47;0;0"
+            "+;47;B;123;47;0;0",
+            "~;18;W;111;16;0;0"
           ]
         },
         {
@@ -789,10 +823,11 @@
           "Birth date": "2011",
           "Phone": "(469) 799-2954",
           "Email": "sonithchowdaryd@gmail.com",
-          "Current result": "1",
+          "Current result": " ",
           "Results": [
             "-;11;B;111;11;0;0",
-            "+;26;W;115;25;0;0"
+            "+;26;W;115;25;0;0",
+            "~;15;B;109;18;0;0"
           ]
         },
         {
@@ -812,10 +847,11 @@
           "Birth date": "2013",
           "Phone": "(225) 202-1704",
           "Email": "Renmaoming@gmail.com",
-          "Current result": "0",
+          "Current result": " ",
           "Results": [
             "=;12;W;112;12;0;0",
-            "-;37;B;112;13;0;0"
+            "-;37;B;112;13;0;0",
+            "~;31;W;119;12;0;0"
           ]
         },
         {
@@ -831,10 +867,11 @@
           "Zip": "70605",
           "Phone": "(956) 479-0053",
           "Email": "jaimereyes.0703@ymail.com",
-          "Current result": "1",
+          "Current result": " ",
           "Results": [
             "-;13;B;113;13;0;0",
-            "+;36;W;112;12;0;0"
+            "+;36;W;112;12;0;0",
+            "~;19;B;112;19;0;0"
           ]
         },
         {
@@ -850,10 +887,11 @@
           "Zip": "70808",
           "Phone": "(315) 630-2244",
           "Email": "chapagainsandesh88@gmail.com",
-          "Current result": "1",
+          "Current result": " ",
           "Results": [
             "-;14;W;114;14;0;0",
-            "+;25;B;114;26;0;0"
+            "+;25;B;114;26;0;0",
+            "~;22;W;114;21;0;0"
           ]
         },
         {
@@ -869,10 +907,11 @@
           "Zip": "70820",
           "Phone": "(916) 502-3172",
           "Email": "carmichael.cathy@gmail.com",
-          "Current result": "1",
+          "Current result": " ",
           "Results": [
             "-;15;B;115;15;0;0",
-            "+;28;W;117;27;0;0"
+            "+;28;W;117;27;0;0",
+            "~;21;B;113;22;0;0"
           ]
         },
         {
@@ -890,10 +929,11 @@
           "Birth date": "1990",
           "Phone": "(225) 302-5180",
           "Email": "bruce.mathison@gmail.com",
-          "Current result": "0",
+          "Current result": " ",
           "Results": [
             "-;16;W;116;16;0;0",
-            "-;27;B;116;28;0;0"
+            "-;27;B;116;28;0;0",
+            "~;45;W;122;25;0;0"
           ]
         },
         {
@@ -913,6 +953,7 @@
           "Current result": "0",
           "Results": [
             "F;17;*;117;17;0;0",
+            "U;0;-;0;0;0;0",
             "U;0;-;0;0;0;0"
           ]
         },
@@ -931,10 +972,11 @@
           "Birth date": "2003",
           "Phone": "(504) 539-0124",
           "Email": "htebazile667@gmail.com",
-          "Current result": "0",
+          "Current result": " ",
           "Results": [
             "-;18;W;118;18;0;0",
-            "-;29;B;118;29;0;0"
+            "-;29;B;118;29;0;0",
+            "~;33;W;121;26;0;0"
           ]
         },
         {
@@ -950,10 +992,11 @@
           "Zip": "70809",
           "Phone": "(601) 407-4048",
           "Email": "monagreddy@gmail.com",
-          "Current result": "0",
+          "Current result": " ",
           "Results": [
             "-;19;B;119;19;0;0",
-            "-;30;W;119;30;0;0"
+            "-;30;W;119;30;0;0",
+            "~;26;B;120;31;0;0"
           ]
         },
         {
@@ -968,10 +1011,11 @@
           "Zip": "70769",
           "Phone": "(225) 363-8136",
           "Email": "tbritz88@gmail.com",
-          "Current result": "1",
+          "Current result": " ",
           "Results": [
             "-;20;W;120;20;0;0",
-            "+;31;B;120;31;0;0"
+            "+;31;B;120;31;0;0",
+            "~;24;W;116;23;0;0"
           ]
         },
         {
@@ -986,10 +1030,11 @@
           "Zip": "70737",
           "Phone": "(225) 210-4778",
           "Email": "wjfleming47@gmail.com",
-          "Current result": "0",
+          "Current result": " ",
           "Results": [
             "-;21;B;121;21;0;0",
-            "-;32;W;121;32;0;0"
+            "-;32;W;121;32;0;0",
+            "~;40;B;122;33;0;0"
           ]
         },
         {
@@ -1005,10 +1050,11 @@
           "Phone": "(318) 423-6688",
           "Email": "jkottenbrook1@gmail.com",
           "Reserved byes": "5 ",
-          "Current result": "1",
+          "Current result": " ",
           "Results": [
             "-;22;W;122;22;0;0",
-            "+;33;B;122;33;0;0"
+            "+;33;B;122;33;0;0",
+            "~;27;W;117;24;0;0"
           ]
         },
         {
@@ -1023,10 +1069,12 @@
           "Zip": "70809",
           "Phone": "(225) 778-9036",
           "Email": "ribardi.donald@yahoo.com",
-          "Current result": "0",
+          "PAB": 3,
+          "Current result": "1",
           "Results": [
             "-;23;B;123;23;0;0",
-            "-;34;W;123;34;0;0"
+            "-;34;W;123;34;0;0",
+            "B;0;-;0;-1;0;0"
           ]
         },
         {
@@ -1042,10 +1090,11 @@
           "Phone": "(225) 324-7227",
           "Email": "davidtullier11@gmail.com",
           "PAB": 2,
-          "Current result": "1",
+          "Current result": " ",
           "Results": [
             "-;24;W;124;24;0;0",
-            "B;0;-;0;-1;0;0"
+            "B;0;-;0;-1;0;0",
+            "~;23;B;115;27;0;0"
           ]
         }
       ],
