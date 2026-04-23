@@ -1020,22 +1020,30 @@ function dateParse(parts, i)
 	if (parts[i].length === 4) {
 		year = Number.parseInt(parts[i]);
 		i++;
-		if (parts[i].length == 2) {
+		if (parts[i].length <= 2) {
 			month = Number.parseInt(parts[i]);
+		} else {
+			console.log('bad month?: ' + parts[i]);
 		}
 		i++;
-		if (parts[i].length === 2) {
+		if (parts[i].length <= 2) {
 			day = Number.parseInt(parts[i]);
+		} else {
+			console.log('bad day?: ' + parts[i]);
 		}
-	} else if (parts[i].length === 2) {
+	} else if (parts[i].length <= 2) {
 		month = Number.parseInt(parts[i]);
 		i++;
-		if (parts[i].length == 2) {
+		if (parts[i].length <= 2) {
 			day = Number.parseInt(parts[i]);
+		} else {
+			console.log('bad day?: ' + parts[i]);
 		}
 		i++;
 		if (parts[i].length === 4) {
 			year = Number.parseInt(parts[i]);
+		} else {
+			console.log('bad year?: ' + parts[i]);
 		}
 	}
 	if ((year !== undefined) && (month !== undefined) && (day !== undefined)) {
