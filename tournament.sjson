@@ -1,12 +1,14 @@
 {
   "Overview": {
     "Program": "SwissSys",
-    "Version": 11.75,
-    "VersionString": "11.75",
+    "Version": 11.79,
+    "VersionString": "11.79.7",
     "Tournament title": "2026 Tulane Classic",
     "Starting date": "04/25/2026",
     "Ending date": "04/26/2026",
-    "Trace": "3.3.3.7.3.7.6.7.4.8."
+    "ChessRoster auto sync enabled": true,
+    "ChessRoster sync interval minutes": 30,
+    "Trace": "3.3.3.7.3.3.3.3.3.7."
   },
   "Sections": [
     {
@@ -16,11 +18,11 @@
       "Section time control": "g/60;i30",
       "Number of players": 53,
       "Number of teams": 0,
-      "Rounds paired": 1,
-      "Rounds played": 0,
+      "Rounds paired": 2,
+      "Rounds played": 1,
       "Rating to use": 0,
       "Engine": 1,
-      "Last unrestricted round": 0,
+      "Last unrestricted round": 1,
       "Need search options": false,
       "First board": 101,
       "Final round": 5,
@@ -29,7 +31,7 @@
       "Acceleration": 0,
       "Blitz": false,
       "Got logic": true,
-      "Pair table items": 29,
+      "Pair table items": 27,
       "Team pair table items": 0,
       "Players": [
         {
@@ -52,7 +54,8 @@
           "Current result": " ",
           "Note": "Result coding is Result; Op.; Clr; Brd; Logical ops. 1 & 2; Game pnts",
           "Results": [
-            "~;27;B;101;27;0;0"
+            "+;27;B;101;27;0;0",
+            "~;17;W;101;12;0;0"
           ]
         },
         {
@@ -74,7 +77,8 @@
           "Email": "varuzhan.akobian@slu.edu",
           "Current result": " ",
           "Results": [
-            "~;28;W;102;28;0;0"
+            "+;28;W;102;28;0;0",
+            "~;12;B;102;14;0;0"
           ]
         },
         {
@@ -96,7 +100,8 @@
           "Email": "cbgirardo@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;29;B;103;29;0;0"
+            "+;29;B;103;29;0;0",
+            "~;20;W;103;17;0;0"
           ]
         },
         {
@@ -118,7 +123,8 @@
           "Email": "boecker.maxwell@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;32;W;104;32;0;0"
+            "+;32;W;104;32;0;0",
+            "~;14;B;104;18;0;0"
           ]
         },
         {
@@ -140,7 +146,8 @@
           "Email": "anhtigone@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;33;B;105;33;0;0"
+            "+;33;B;105;33;0;0",
+            "~;22;W;105;20;0;0"
           ]
         },
         {
@@ -162,7 +169,8 @@
           "Email": "rtagord17@yahoo.com",
           "Current result": " ",
           "Results": [
-            "~;34;W;106;34;0;0"
+            "+;34;W;106;34;0;0",
+            "~;18;B;106;22;0;0"
           ]
         },
         {
@@ -184,7 +192,8 @@
           "Email": "nestor.960325@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;35;B;107;35;0;0"
+            "+;35;B;107;35;0;0",
+            "~;26;W;107;23;0;0"
           ]
         },
         {
@@ -206,7 +215,8 @@
           "Email": "mbillingschess@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;36;W;108;36;0;0"
+            "+;36;W;108;36;0;0",
+            "~;23;B;108;25;0;0"
           ]
         },
         {
@@ -226,9 +236,10 @@
           "Phone": "(504) 435-0853",
           "Email": "macmiller1984zz@gmail.com",
           "Reserved byes": "1 ",
-          "Current result": "½",
+          "Current result": " ",
           "Results": [
-            "H;-1;-;0;-1;0;0"
+            "H;-1;-;0;-1;0;0",
+            "~;40;B;111;53;0;0"
           ]
         },
         {
@@ -250,7 +261,8 @@
           "Email": "mtm0152661@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;37;B;109;37;0;0"
+            "+;37;B;109;37;0;0",
+            "~;53;W;109;26;0;0"
           ]
         },
         {
@@ -273,7 +285,8 @@
           "Reserved byes": "3 ",
           "Current result": " ",
           "Results": [
-            "~;38;W;110;38;0;0"
+            "+;38;W;110;38;0;0",
+            "~;25;B;110;40;0;0"
           ]
         },
         {
@@ -294,7 +307,8 @@
           "Email": "lizabeththrasher@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;39;B;111;39;0;0"
+            "+;39;B;111;39;0;0",
+            "~;2;W;102;1;0;0"
           ]
         },
         {
@@ -316,7 +330,8 @@
           "Email": "jehargrove@jehargrovedds.com",
           "Current result": " ",
           "Results": [
-            "~;40;W;112;40;0;0"
+            "-;40;W;112;40;0;0",
+            "~;47;W;116;47;0;0"
           ]
         },
         {
@@ -338,7 +353,8 @@
           "Email": "rtagorda317@yahoo.com",
           "Current result": " ",
           "Results": [
-            "~;41;B;113;41;0;0"
+            "+;41;B;113;41;0;0",
+            "~;4;W;104;2;0;0"
           ]
         },
         {
@@ -360,7 +376,8 @@
           "Email": "davidcprllc01@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;42;W;114;42;0;0"
+            "=;42;W;114;42;0;0",
+            "~;30;B;112;30;0;0"
           ]
         },
         {
@@ -381,7 +398,8 @@
           "Email": "usama.aslam23@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;43;B;115;43;0;0"
+            "=;43;B;115;43;0;0",
+            "~;31;W;113;31;0;0"
           ]
         },
         {
@@ -400,7 +418,8 @@
           "Email": "12beauphillips21@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;44;W;116;44;0;0"
+            "+;44;W;116;44;0;0",
+            "~;1;B;101;3;0;0"
           ]
         },
         {
@@ -422,7 +441,8 @@
           "Email": "cedwardfee@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;45;B;117;45;0;0"
+            "+;45;B;117;45;0;0",
+            "~;6;W;106;4;0;0"
           ]
         },
         {
@@ -443,9 +463,10 @@
           "Phone": "(985) 290-0559",
           "Email": "kvakovgeo@gmail.com",
           "Reserved byes": "1 4 ",
-          "Current result": "½",
+          "Current result": " ",
           "Results": [
-            "H;-1;-;0;-1;0;0"
+            "H;-1;-;0;-1;0;0",
+            "~;42;B;114;42;0;0"
           ]
         },
         {
@@ -467,7 +488,8 @@
           "Email": "ausjanusa@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;46;W;118;46;0;0"
+            "+;46;W;118;46;0;0",
+            "~;3;B;103;5;0;0"
           ]
         },
         {
@@ -489,7 +511,8 @@
           "Email": "jaceetienne1@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;47;B;119;47;0;0"
+            "=;47;B;119;47;0;0",
+            "~;43;W;115;43;0;0"
           ]
         },
         {
@@ -512,7 +535,8 @@
           "Reserved byes": "5 ",
           "Current result": " ",
           "Results": [
-            "~;48;W;120;48;0;0"
+            "+;48;W;120;48;0;0",
+            "~;5;B;105;6;0;0"
           ]
         },
         {
@@ -533,7 +557,8 @@
           "Email": "ajallison02@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;49;B;121;49;0;0"
+            "+;49;B;121;49;0;0",
+            "~;8;W;108;7;0;0"
           ]
         },
         {
@@ -553,9 +578,11 @@
           "Birth date": "1954",
           "Phone": "(594) 237-5065",
           "Email": "rtagorda317@yahoo.com",
-          "Current result": " ",
+          "Reserved byes": "2 ",
+          "Current result": "½",
           "Results": [
-            "~;50;W;122;50;0;0"
+            "+;50;W;122;50;0;0",
+            "H;-1;-;0;-1;0;0"
           ]
         },
         {
@@ -577,7 +604,8 @@
           "Email": "vegajed@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;51;B;123;51;0;0"
+            "+;51;B;123;51;0;0",
+            "~;11;W;110;8;0;0"
           ]
         },
         {
@@ -599,7 +627,8 @@
           "Email": "orenpaley@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;52;W;124;52;0;0"
+            "+;52;W;124;52;0;0",
+            "~;7;B;107;10;0;0"
           ]
         },
         {
@@ -621,7 +650,8 @@
           "Email": "knightmovesfirst@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;1;W;101;1;0;0"
+            "-;1;W;101;1;0;0",
+            "~;44;B;117;39;0;0"
           ]
         },
         {
@@ -642,7 +672,8 @@
           "Email": "looptylu@yahoo.com",
           "Current result": " ",
           "Results": [
-            "~;2;B;102;2;0;0"
+            "-;2;B;102;2;0;0",
+            "~;39;W;118;41;0;0"
           ]
         },
         {
@@ -663,7 +694,8 @@
           "Email": "steve@mmplastics.net",
           "Current result": " ",
           "Results": [
-            "~;3;W;103;3;0;0"
+            "-;3;W;103;3;0;0",
+            "~;46;B;119;44;0;0"
           ]
         },
         {
@@ -683,9 +715,10 @@
           "Phone": "(504) 913-9389",
           "Email": "benjaminlevy504@gmail.com",
           "Reserved byes": "1 ",
-          "Current result": "½",
+          "Current result": " ",
           "Results": [
-            "H;-1;-;0;-1;0;0"
+            "H;-1;-;0;-1;0;0",
+            "~;15;W;112;15;0;0"
           ]
         },
         {
@@ -703,9 +736,10 @@
           "Phone": "(650) 400-0381",
           "Email": "contractorsesource@hotmail.com",
           "Reserved byes": "1 ",
-          "Current result": "½",
+          "Current result": " ",
           "Results": [
-            "H;-1;-;0;-1;0;0"
+            "H;-1;-;0;-1;0;0",
+            "~;16;B;113;16;0;0"
           ]
         },
         {
@@ -726,7 +760,8 @@
           "Email": "albinet896@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;4;B;104;4;0;0"
+            "-;4;B;104;4;0;0",
+            "~;41;W;120;45;0;0"
           ]
         },
         {
@@ -747,7 +782,8 @@
           "Email": "jaywillsands@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;5;W;105;5;0;0"
+            "-;5;W;105;5;0;0",
+            "~;48;B;121;46;0;0"
           ]
         },
         {
@@ -768,7 +804,8 @@
           "Email": "tobias_efler@web.de",
           "Current result": " ",
           "Results": [
-            "~;6;B;106;6;0;0"
+            "-;6;B;106;6;0;0",
+            "~;45;W;122;48;0;0"
           ]
         },
         {
@@ -789,7 +826,8 @@
           "Email": "sonithchowdaryd@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;7;W;107;7;0;0"
+            "-;7;W;107;7;0;0",
+            "~;50;B;123;49;0;0"
           ]
         },
         {
@@ -811,7 +849,8 @@
           "Reserved byes": "4 ",
           "Current result": " ",
           "Results": [
-            "~;8;B;108;8;0;0"
+            "-;8;B;108;8;0;0",
+            "~;49;W;124;50;0;0"
           ]
         },
         {
@@ -832,7 +871,8 @@
           "Email": "reed.urcia@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;10;W;109;10;0;0"
+            "-;10;W;109;10;0;0",
+            "~;52;B;125;51;0;0"
           ]
         },
         {
@@ -853,7 +893,8 @@
           "Email": "kennethc37@yahoo.com",
           "Current result": " ",
           "Results": [
-            "~;11;B;110;11;0;0"
+            "-;11;B;110;11;0;0",
+            "~;51;W;126;52;0;0"
           ]
         },
         {
@@ -874,7 +915,8 @@
           "Email": "chapagainsandesh88@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;12;W;111;12;0;0"
+            "-;12;W;111;12;0;0",
+            "~;28;B;118;27;0;0"
           ]
         },
         {
@@ -893,7 +935,8 @@
           "Email": "boruto.uzamaki157@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;13;B;112;13;0;0"
+            "+;13;B;112;13;0;0",
+            "~;9;W;111;11;0;0"
           ]
         },
         {
@@ -914,7 +957,8 @@
           "Email": "xande1@bellsouth.net",
           "Current result": " ",
           "Results": [
-            "~;14;W;113;14;0;0"
+            "-;14;W;113;14;0;0",
+            "~;32;B;120;28;0;0"
           ]
         },
         {
@@ -936,7 +980,8 @@
           "Email": "ThomasA12369@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;15;B;114;15;0;0"
+            "=;15;B;114;15;0;0",
+            "~;19;W;114;19;0;0"
           ]
         },
         {
@@ -957,7 +1002,8 @@
           "Email": "vimala.srec@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;16;W;115;16;0;0"
+            "=;16;W;115;16;0;0",
+            "~;21;B;115;21;0;0"
           ]
         },
         {
@@ -978,7 +1024,8 @@
           "Email": "ninoacunanime@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;17;B;116;17;0;0"
+            "-;17;B;116;17;0;0",
+            "~;27;W;117;29;0;0"
           ]
         },
         {
@@ -999,7 +1046,8 @@
           "Email": "jdslaton@bellsouth.net",
           "Current result": " ",
           "Results": [
-            "~;18;W;117;18;0;0"
+            "-;18;W;117;18;0;0",
+            "~;34;B;122;32;0;0"
           ]
         },
         {
@@ -1020,7 +1068,8 @@
           "Email": "nathaliedajko@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;20;B;118;20;0;0"
+            "-;20;B;118;20;0;0",
+            "~;29;W;119;33;0;0"
           ]
         },
         {
@@ -1041,7 +1090,8 @@
           "Email": "jerrylmacdonald@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;21;W;119;21;0;0"
+            "=;21;W;119;21;0;0",
+            "~;13;B;116;13;0;0"
           ]
         },
         {
@@ -1062,7 +1112,8 @@
           "Email": "asquitiro@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;22;B;120;22;0;0"
+            "-;22;B;120;22;0;0",
+            "~;33;W;121;34;0;0"
           ]
         },
         {
@@ -1081,7 +1132,8 @@
           "Email": "keghbalnia@icloud.com",
           "Current result": " ",
           "Results": [
-            "~;23;W;121;23;0;0"
+            "-;23;W;121;23;0;0",
+            "~;36;B;124;35;0;0"
           ]
         },
         {
@@ -1102,7 +1154,8 @@
           "Email": "htebazile667@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;24;B;122;24;0;0"
+            "-;24;B;122;24;0;0",
+            "~;35;W;123;36;0;0"
           ]
         },
         {
@@ -1120,7 +1173,8 @@
           "Email": "delangel2607@hotmail.com",
           "Current result": " ",
           "Results": [
-            "~;25;W;123;25;0;0"
+            "-;25;W;123;25;0;0",
+            "~;38;B;126;37;0;0"
           ]
         },
         {
@@ -1138,7 +1192,8 @@
           "Email": "knguyen33@tulane.edu",
           "Current result": " ",
           "Results": [
-            "~;26;B;124;26;0;0"
+            "-;26;B;124;26;0;0",
+            "~;37;W;125;38;0;0"
           ]
         },
         {
@@ -1155,9 +1210,10 @@
           "Phone": "(504) 657-8236",
           "Email": "twrobert@my.loyno.edu",
           "PAB": 1,
-          "Current result": "1",
+          "Current result": " ",
           "Results": [
-            "B;0;-;0;-1;0;0"
+            "B;0;-;0;-1;0;0",
+            "~;10;B;109;9;0;0"
           ]
         }
       ],
@@ -1179,11 +1235,11 @@
       "Section time control": "g/60i30",
       "Number of players": 30,
       "Number of teams": 0,
-      "Rounds paired": 1,
-      "Rounds played": 0,
+      "Rounds paired": 2,
+      "Rounds played": 1,
       "Rating to use": 0,
       "Engine": 1,
-      "Last unrestricted round": 0,
+      "Last unrestricted round": 1,
       "Need search options": false,
       "First board": 201,
       "Final round": 5,
@@ -1214,7 +1270,8 @@
           "Current result": " ",
           "Note": "Result coding is Result; Op.; Clr; Brd; Logical ops. 1 & 2; Game pnts",
           "Results": [
-            "~;16;B;201;16;15;0"
+            "+;17;B;201;17;16;0",
+            "~;9;W;201;9;0;0"
           ]
         },
         {
@@ -1233,7 +1290,8 @@
           "Email": "gillenb@icloud.com",
           "Current result": " ",
           "Results": [
-            "~;17;W;202;17;16;0"
+            "+;18;W;202;18;17;0",
+            "~;10;B;202;10;0;0"
           ]
         },
         {
@@ -1252,7 +1310,8 @@
           "Email": "asquitiro@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;18;B;203;18;17;0"
+            "+;19;B;203;19;18;0",
+            "~;11;W;203;11;0;0"
           ]
         },
         {
@@ -1271,7 +1330,8 @@
           "Email": "drjkrishna@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;19;W;204;19;18;0"
+            "+;20;W;204;20;19;0",
+            "~;12;B;204;12;0;0"
           ]
         },
         {
@@ -1290,7 +1350,8 @@
           "Email": "gabrieledesantis@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;20;B;205;20;19;0"
+            "+;21;B;205;21;20;0",
+            "~;13;W;205;13;0;0"
           ]
         },
         {
@@ -1309,11 +1370,27 @@
           "Email": "jakegoldin1024@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;21;W;206;21;20;0"
+            "+;22;W;206;22;21;0",
+            "~;14;B;206;14;0;0"
           ]
         },
         {
           "Pair number": 7,
+          "Name": "Terry, Chance",
+          "ID": "30781893",
+          "Rating": 1202,
+          "Rating2": 1184,
+          "Exp1": "12/31/2025",
+          "State": "LA",
+          "PAB": 1,
+          "Current result": " ",
+          "Results": [
+            "B;0;-;0;0;0;0",
+            "~;15;W;207;15;0;0"
+          ]
+        },
+        {
+          "Pair number": 8,
           "Name": "Sledge, Wyatt C",
           "ID": "31225814",
           "Rating": 1195,
@@ -1330,11 +1407,12 @@
           "Email": "reagans@aol.com",
           "Current result": " ",
           "Results": [
-            "~;22;B;207;22;21;0"
+            "+;23;B;207;23;22;0",
+            "~;30;W;208;30;0;0"
           ]
         },
         {
-          "Pair number": 8,
+          "Pair number": 9,
           "Name": "Harvey, Kevin Brandon",
           "ID": "32397515",
           "Rating": 1177,
@@ -1349,11 +1427,12 @@
           "Email": "kevinharvey2008.7@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;23;W;208;23;22;0"
+            "+;24;W;208;24;23;0",
+            "~;1;B;201;1;0;0"
           ]
         },
         {
-          "Pair number": 9,
+          "Pair number": 10,
           "Name": "Landry, Jack",
           "ID": "17177377",
           "Rating": 1157,
@@ -1368,11 +1447,12 @@
           "Email": "courtney.landry@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;24;B;209;24;23;0"
+            "+;25;B;209;25;24;0",
+            "~;2;W;202;2;0;0"
           ]
         },
         {
-          "Pair number": 10,
+          "Pair number": 11,
           "Name": "McGlynn-Wright, Theo",
           "ID": "30664464",
           "Rating": 1142,
@@ -1389,11 +1469,12 @@
           "Email": "teddylw@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;25;W;210;25;24;0"
+            "+;26;W;210;26;25;0",
+            "~;3;B;203;3;0;0"
           ]
         },
         {
-          "Pair number": 11,
+          "Pair number": 12,
           "Name": "Samant, Ishan",
           "ID": "32093700",
           "Rating": 1121,
@@ -1408,11 +1489,12 @@
           "Email": "drbhakti19@yahoo.com",
           "Current result": " ",
           "Results": [
-            "~;26;B;211;26;25;0"
+            "+;27;B;211;27;26;0",
+            "~;4;W;204;4;0;0"
           ]
         },
         {
-          "Pair number": 12,
+          "Pair number": 13,
           "Name": "Thrasher, Lizabeth",
           "ID": "16399990",
           "Rating": 965,
@@ -1427,11 +1509,12 @@
           "Email": "lizabeththrasher@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;27;W;212;27;26;0"
+            "+;28;W;212;28;27;0",
+            "~;5;B;205;5;0;0"
           ]
         },
         {
-          "Pair number": 13,
+          "Pair number": 14,
           "Name": "Landry, Caleb J",
           "ID": "32652477",
           "Rating": 955,
@@ -1445,11 +1528,12 @@
           "Email": "Cjl337@protonmail.com",
           "Current result": " ",
           "Results": [
-            "~;28;B;213;28;27;0"
+            "X;0;*;0;0;28;0",
+            "~;6;W;206;6;0;0"
           ]
         },
         {
-          "Pair number": 14,
+          "Pair number": 15,
           "Name": "Kara, Zeynep",
           "ID": "32549905",
           "Rating": 890,
@@ -1466,11 +1550,12 @@
           "Email": "zkara@my.loyno.edu",
           "Current result": " ",
           "Results": [
-            "~;29;W;214;29;28;0"
+            "+;29;W;214;29;0;0",
+            "~;7;B;207;7;0;0"
           ]
         },
         {
-          "Pair number": 15,
+          "Pair number": 16,
           "Name": "Sloan, Astoria",
           "ID": "32390309",
           "Rating": 840,
@@ -1485,11 +1570,12 @@
           "Email": "kevin.r.sloan@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;30;B;215;30;1;0"
+            "-;30;B;215;30;1;0",
+            "~;23;W;209;23;0;0"
           ]
         },
         {
-          "Pair number": 16,
+          "Pair number": 17,
           "Name": "Peng, Otto",
           "ID": "32026409",
           "Rating": 803,
@@ -1507,11 +1593,12 @@
           "Reserved byes": "5 ",
           "Current result": " ",
           "Results": [
-            "~;1;W;201;1;2;0"
+            "-;1;W;201;1;2;0",
+            "~;24;B;210;24;0;0"
           ]
         },
         {
-          "Pair number": 17,
+          "Pair number": 18,
           "Name": "Turner, Malakai",
           "ID": "15783134",
           "Rating": 756,
@@ -1526,11 +1613,12 @@
           "Email": "malakaiturner78@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;2;B;202;2;3;0"
+            "-;2;B;202;2;3;0",
+            "~;25;W;211;25;0;0"
           ]
         },
         {
-          "Pair number": 18,
+          "Pair number": 19,
           "Name": "Howard, Tirzah Pranam",
           "ID": "14582128",
           "Rating": 687,
@@ -1545,11 +1633,12 @@
           "Email": "tp.howard47@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;3;W;203;3;4;0"
+            "-;3;W;203;3;4;0",
+            "~;26;B;212;26;0;0"
           ]
         },
         {
-          "Pair number": 19,
+          "Pair number": 20,
           "Name": "Kabachnik, Kevin",
           "ID": "17055557",
           "Rating": 686,
@@ -1564,11 +1653,12 @@
           "Email": "chesscoachrobert@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;4;B;204;4;5;0"
+            "-;4;B;204;4;5;0",
+            "~;27;W;213;27;0;0"
           ]
         },
         {
-          "Pair number": 20,
+          "Pair number": 21,
           "Name": "Mettu, Videep",
           "ID": "31671619",
           "Rating": 606,
@@ -1583,11 +1673,12 @@
           "Email": "mettuanil@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;5;W;205;5;6;0"
+            "-;5;W;205;5;6;0",
+            "~;28;B;214;28;0;0"
           ]
         },
         {
-          "Pair number": 21,
+          "Pair number": 22,
           "Name": "Sloan, Kevin R",
           "ID": "32390258",
           "Rating": 581,
@@ -1602,11 +1693,12 @@
           "Email": "kevin.r.sloan@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;6;B;206;6;7;0"
+            "-;6;B;206;6;8;0",
+            "~;29;W;215;29;0;0"
           ]
         },
         {
-          "Pair number": 22,
+          "Pair number": 23,
           "Name": "Cao, Collin",
           "ID": "32832326",
           "Rating": 567,
@@ -1621,11 +1713,12 @@
           "Email": "acao@mygrad.loyno.edu",
           "Current result": " ",
           "Results": [
-            "~;7;W;207;7;8;0"
+            "-;8;W;207;8;9;0",
+            "~;16;B;209;16;0;0"
           ]
         },
         {
-          "Pair number": 23,
+          "Pair number": 24,
           "Name": "Byrne, Patrick",
           "ID": "16238412",
           "Rating": 436,
@@ -1640,11 +1733,12 @@
           "Email": "asquitiro@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;8;B;208;8;9;0"
+            "-;9;B;208;9;10;0",
+            "~;17;W;210;17;0;0"
           ]
         },
         {
-          "Pair number": 24,
+          "Pair number": 25,
           "Name": "Harding, Cole Thomas",
           "ID": "32404859",
           "Rating": 429,
@@ -1661,11 +1755,12 @@
           "Email": "robynmharding@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;9;W;209;9;10;0"
+            "-;10;W;209;10;11;0",
+            "~;18;B;211;18;0;0"
           ]
         },
         {
-          "Pair number": 25,
+          "Pair number": 26,
           "Name": "Atkinson, Alex",
           "ID": "32635243",
           "Rating": 418,
@@ -1679,11 +1774,12 @@
           "Email": "alexggatkinson@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;10;B;210;10;11;0"
+            "-;11;B;210;11;12;0",
+            "~;19;W;212;19;0;0"
           ]
         },
         {
-          "Pair number": 26,
+          "Pair number": 27,
           "Name": "Sevastyeyev, Tymofii",
           "ID": "32546775",
           "Rating": 102,
@@ -1700,33 +1796,18 @@
           "Email": "sveta.sevastyeyeva@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;11;W;211;11;12;0"
-          ]
-        },
-        {
-          "Pair number": 27,
-          "Name": "Brooks, Isaiah",
-          "ID": "33054573",
-          "Current result": " ",
-          "Results": [
-            "~;12;B;212;12;0;0"
+            "-;12;W;211;12;13;0",
+            "~;20;B;213;20;0;0"
           ]
         },
         {
           "Pair number": 28,
-          "Name": "Emerick, Quinton Wilkins",
-          "ID": "32920226",
-          "Exp1": "03/31/2027",
-          "Sex": "M",
-          "Address": "608 Beyer Drive",
-          "City": "Bay Saint Louis",
-          "State": "MS",
-          "Zip": "39520",
-          "Phone": "(228) 254-9568",
-          "Email": "qemerick@icloud.com",
+          "Name": "Brooks, Isaiah",
+          "ID": "33054573",
           "Current result": " ",
           "Results": [
-            "~;13;W;213;13;13;0"
+            "-;13;B;212;13;0;0",
+            "~;21;W;214;21;0;0"
           ]
         },
         {
@@ -1744,7 +1825,8 @@
           "Email": "Vschiavone@tulane.edu",
           "Current result": " ",
           "Results": [
-            "~;14;B;214;14;14;0"
+            "-;15;B;214;15;15;0",
+            "~;22;B;215;22;0;0"
           ]
         },
         {
@@ -1762,7 +1844,8 @@
           "Email": "ykwu.ranger@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;15;W;215;15;-1;0"
+            "+;16;W;215;16;-1;0",
+            "~;8;B;208;8;0;0"
           ]
         }
       ],
