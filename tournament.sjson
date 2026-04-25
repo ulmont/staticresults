@@ -8,7 +8,7 @@
     "Ending date": "04/26/2026",
     "ChessRoster auto sync enabled": true,
     "ChessRoster sync interval minutes": 30,
-    "Trace": "3.3.3.7.3.3.3.3.3.7."
+    "Trace": "3.3.3.7.3.3.3.7.7.4."
   },
   "Sections": [
     {
@@ -16,13 +16,13 @@
       "Type": 0,
       "Section title": "Open",
       "Section time control": "g/60;i30",
-      "Number of players": 53,
+      "Number of players": 54,
       "Number of teams": 0,
-      "Rounds paired": 2,
-      "Rounds played": 1,
+      "Rounds paired": 3,
+      "Rounds played": 2,
       "Rating to use": 0,
       "Engine": 1,
-      "Last unrestricted round": 1,
+      "Last unrestricted round": 2,
       "Need search options": false,
       "First board": 101,
       "Final round": 5,
@@ -31,7 +31,7 @@
       "Acceleration": 0,
       "Blitz": false,
       "Got logic": true,
-      "Pair table items": 27,
+      "Pair table items": 30,
       "Team pair table items": 0,
       "Players": [
         {
@@ -54,8 +54,9 @@
           "Current result": " ",
           "Note": "Result coding is Result; Op.; Clr; Brd; Logical ops. 1 & 2; Game pnts",
           "Results": [
-            "+;27;B;101;27;0;0",
-            "~;17;W;101;12;0;0"
+            "+;28;B;101;28;0;0",
+            "+;17;W;101;12;0;0",
+            "~;8;B;101;8;0;0"
           ]
         },
         {
@@ -77,8 +78,9 @@
           "Email": "varuzhan.akobian@slu.edu",
           "Current result": " ",
           "Results": [
-            "+;28;W;102;28;0;0",
-            "~;12;B;102;14;0;0"
+            "+;29;W;102;29;0;0",
+            "=;12;B;102;14;0;0",
+            "~;16;W;105;16;0;0"
           ]
         },
         {
@@ -100,8 +102,9 @@
           "Email": "cbgirardo@gmail.com",
           "Current result": " ",
           "Results": [
-            "+;29;B;103;29;0;0",
-            "~;20;W;103;17;0;0"
+            "+;30;B;103;30;0;0",
+            "+;21;W;103;17;0;0",
+            "~;10;B;102;10;0;0"
           ]
         },
         {
@@ -123,8 +126,9 @@
           "Email": "boecker.maxwell@gmail.com",
           "Current result": " ",
           "Results": [
-            "+;32;W;104;32;0;0",
-            "~;14;B;104;18;0;0"
+            "+;33;W;104;33;0;0",
+            "-;14;B;104;18;0;0",
+            "~;35;W;108;30;0;0"
           ]
         },
         {
@@ -146,8 +150,9 @@
           "Email": "anhtigone@gmail.com",
           "Current result": " ",
           "Results": [
-            "+;33;B;105;33;0;0",
-            "~;22;W;105;20;0;0"
+            "+;34;B;105;34;0;0",
+            "+;23;W;105;21;0;0",
+            "~;14;B;103;14;0;0"
           ]
         },
         {
@@ -169,8 +174,9 @@
           "Email": "rtagord17@yahoo.com",
           "Current result": " ",
           "Results": [
-            "+;34;W;106;34;0;0",
-            "~;18;B;106;22;0;0"
+            "+;35;W;106;35;0;0",
+            "-;18;B;106;23;0;0",
+            "~;33;W;109;33;0;0"
           ]
         },
         {
@@ -192,8 +198,9 @@
           "Email": "nestor.960325@gmail.com",
           "Current result": " ",
           "Results": [
-            "+;35;B;107;35;0;0",
-            "~;26;W;107;23;0;0"
+            "+;36;B;107;36;0;0",
+            "+;27;W;107;24;0;0",
+            "~;18;B;104;18;0;0"
           ]
         },
         {
@@ -215,8 +222,9 @@
           "Email": "mbillingschess@gmail.com",
           "Current result": " ",
           "Results": [
-            "+;36;W;108;36;0;0",
-            "~;23;B;108;25;0;0"
+            "+;37;W;108;37;0;0",
+            "+;24;B;108;26;0;0",
+            "~;1;W;101;1;0;0"
           ]
         },
         {
@@ -239,7 +247,8 @@
           "Current result": " ",
           "Results": [
             "H;-1;-;0;-1;0;0",
-            "~;40;B;111;53;0;0"
+            "+;41;B;111;54;0;0",
+            "~;25;W;106;25;0;0"
           ]
         },
         {
@@ -261,8 +270,9 @@
           "Email": "mtm0152661@gmail.com",
           "Current result": " ",
           "Results": [
-            "+;37;B;109;37;0;0",
-            "~;53;W;109;26;0;0"
+            "+;38;B;109;38;0;0",
+            "X;54;-;109;27;0;0",
+            "~;3;W;102;3;0;0"
           ]
         },
         {
@@ -283,10 +293,11 @@
           "Phone": "(504) 813-4626",
           "Email": "thadeusbeavers@gmail.com",
           "Reserved byes": "3 ",
-          "Current result": " ",
+          "Current result": "½",
           "Results": [
-            "+;38;W;110;38;0;0",
-            "~;25;B;110;40;0;0"
+            "+;39;W;110;39;0;0",
+            "+;26;B;110;41;0;0",
+            "H;-1;-;0;-1;0;0"
           ]
         },
         {
@@ -307,8 +318,9 @@
           "Email": "lizabeththrasher@gmail.com",
           "Current result": " ",
           "Results": [
-            "+;39;B;111;39;0;0",
-            "~;2;W;102;1;0;0"
+            "+;40;B;111;40;0;0",
+            "=;2;W;102;1;0;0",
+            "~;31;W;107;31;0;0"
           ]
         },
         {
@@ -330,8 +342,9 @@
           "Email": "jehargrove@jehargrovedds.com",
           "Current result": " ",
           "Results": [
-            "-;40;W;112;40;0;0",
-            "~;47;W;116;47;0;0"
+            "-;41;W;112;41;0;0",
+            "+;48;W;116;48;0;0",
+            "~;30;B;110;35;0;0"
           ]
         },
         {
@@ -353,8 +366,9 @@
           "Email": "rtagorda317@yahoo.com",
           "Current result": " ",
           "Results": [
-            "+;41;B;113;41;0;0",
-            "~;4;W;104;2;0;0"
+            "+;42;B;113;42;0;0",
+            "+;4;W;104;2;0;0",
+            "~;5;W;103;5;0;0"
           ]
         },
         {
@@ -376,8 +390,9 @@
           "Email": "davidcprllc01@gmail.com",
           "Current result": " ",
           "Results": [
-            "=;42;W;114;42;0;0",
-            "~;30;B;112;30;0;0"
+            "=;43;W;114;43;0;0",
+            "-;31;B;112;31;0;0",
+            "~;40;W;119;40;0;0"
           ]
         },
         {
@@ -398,8 +413,9 @@
           "Email": "usama.aslam23@gmail.com",
           "Current result": " ",
           "Results": [
-            "=;43;B;115;43;0;0",
-            "~;31;W;113;31;0;0"
+            "=;44;B;115;44;0;0",
+            "+;32;W;113;32;0;0",
+            "~;2;B;105;2;0;0"
           ]
         },
         {
@@ -418,8 +434,9 @@
           "Email": "12beauphillips21@gmail.com",
           "Current result": " ",
           "Results": [
-            "+;44;W;116;44;0;0",
-            "~;1;B;101;3;0;0"
+            "+;45;W;116;45;0;0",
+            "-;1;B;101;3;0;0",
+            "~;39;W;111;36;0;0"
           ]
         },
         {
@@ -441,12 +458,31 @@
           "Email": "cedwardfee@gmail.com",
           "Current result": " ",
           "Results": [
-            "+;45;B;117;45;0;0",
-            "~;6;W;106;4;0;0"
+            "+;46;B;117;46;0;0",
+            "+;6;W;106;4;0;0",
+            "~;7;W;104;7;0;0"
           ]
         },
         {
           "Pair number": 19,
+          "Name": "Nellon, Shivers Rashad",
+          "ID": "30168379",
+          "Rating": 1847,
+          "ID2": "39958566",
+          "Rating2": 1756,
+          "Club": "usa",
+          "Sex": "m",
+          "Birth date": "01/01/2001",
+          "Reserved byes": "1 2 ",
+          "Current result": " ",
+          "Results": [
+            "H;0;-;0;0;0;0",
+            "H;0;-;0;0;0;0",
+            "~;36;B;118;39;0;0"
+          ]
+        },
+        {
+          "Pair number": 20,
           "Name": "Kvakovszky, George",
           "ID": "10286433",
           "Rating": 1840,
@@ -466,11 +502,12 @@
           "Current result": " ",
           "Results": [
             "H;-1;-;0;-1;0;0",
-            "~;42;B;114;42;0;0"
+            "=;43;B;114;43;0;0",
+            "~;41;W;112;41;0;0"
           ]
         },
         {
-          "Pair number": 20,
+          "Pair number": 21,
           "Name": "Janusa, Austin",
           "ID": "16531240",
           "Rating": 1834,
@@ -488,12 +525,13 @@
           "Email": "ausjanusa@gmail.com",
           "Current result": " ",
           "Results": [
-            "+;46;W;118;46;0;0",
-            "~;3;B;103;5;0;0"
+            "+;47;W;118;47;0;0",
+            "-;3;B;103;5;0;0",
+            "~;43;W;113;43;0;0"
           ]
         },
         {
-          "Pair number": 21,
+          "Pair number": 22,
           "Name": "Etienne, Jace A",
           "ID": "12546378",
           "Rating": 1705,
@@ -511,12 +549,13 @@
           "Email": "jaceetienne1@gmail.com",
           "Current result": " ",
           "Results": [
-            "=;47;B;119;47;0;0",
-            "~;43;W;115;43;0;0"
+            "=;48;B;119;48;0;0",
+            "=;44;W;115;44;0;0",
+            "~;50;B;114;44;0;0"
           ]
         },
         {
-          "Pair number": 22,
+          "Pair number": 23,
           "Name": "Dela Bajan, Vaughn Daemian",
           "ID": "31396931",
           "Rating": 1693,
@@ -535,12 +574,13 @@
           "Reserved byes": "5 ",
           "Current result": " ",
           "Results": [
-            "+;48;W;120;48;0;0",
-            "~;5;B;105;6;0;0"
+            "+;49;W;120;49;0;0",
+            "-;5;B;105;6;0;0",
+            "~;45;W;115;45;0;0"
           ]
         },
         {
-          "Pair number": 23,
+          "Pair number": 24,
           "Name": "Allison, Alexander James",
           "ID": "14703240",
           "Rating": 1667,
@@ -557,12 +597,13 @@
           "Email": "ajallison02@gmail.com",
           "Current result": " ",
           "Results": [
-            "+;49;B;121;49;0;0",
-            "~;8;W;108;7;0;0"
+            "+;50;B;121;50;0;0",
+            "-;8;W;108;7;0;0",
+            "~;44;B;116;49;0;0"
           ]
         },
         {
-          "Pair number": 24,
+          "Pair number": 25,
           "Name": "Tagorda, Ramon",
           "ID": "12840610",
           "Rating": 1658,
@@ -578,15 +619,16 @@
           "Birth date": "1954",
           "Phone": "(594) 237-5065",
           "Email": "rtagorda317@yahoo.com",
-          "Reserved byes": "2 ",
-          "Current result": "½",
+          "Reserved byes": "2 4 ",
+          "Current result": " ",
           "Results": [
-            "+;50;W;122;50;0;0",
-            "H;-1;-;0;-1;0;0"
+            "+;51;W;122;51;0;0",
+            "H;-1;-;0;-1;0;0",
+            "~;9;B;106;9;0;0"
           ]
         },
         {
-          "Pair number": 25,
+          "Pair number": 26,
           "Name": "Vega, Jorge Eduardo",
           "ID": "12493915",
           "Rating": 1646,
@@ -602,14 +644,16 @@
           "Birth date": "1973",
           "Phone": "(504) 919-2885",
           "Email": "vegajed@gmail.com",
-          "Current result": " ",
+          "Reserved byes": "3 ",
+          "Current result": "½",
           "Results": [
-            "+;51;B;123;51;0;0",
-            "~;11;W;110;8;0;0"
+            "+;52;B;123;52;0;0",
+            "-;11;W;110;8;0;0",
+            "H;-1;-;0;-1;0;0"
           ]
         },
         {
-          "Pair number": 26,
+          "Pair number": 27,
           "Name": "Paley, Oren",
           "ID": "15827994",
           "Rating": 1644,
@@ -627,12 +671,13 @@
           "Email": "orenpaley@gmail.com",
           "Current result": " ",
           "Results": [
-            "+;52;W;124;52;0;0",
-            "~;7;B;107;10;0;0"
+            "+;53;W;124;53;0;0",
+            "-;7;B;107;10;0;0",
+            "~;49;W;117;50;0;0"
           ]
         },
         {
-          "Pair number": 27,
+          "Pair number": 28,
           "Name": "Grunberg, Mark",
           "ID": "12525731",
           "Rating": 1629,
@@ -648,14 +693,16 @@
           "Birth date": "1960",
           "Phone": "(504) 330-5214",
           "Email": "knightmovesfirst@gmail.com",
-          "Current result": " ",
+          "Reserved byes": "3 ",
+          "Current result": "½",
           "Results": [
             "-;1;W;101;1;0;0",
-            "~;44;B;117;39;0;0"
+            "-;45;B;117;40;0;0",
+            "H;-1;-;0;-1;0;0"
           ]
         },
         {
-          "Pair number": 28,
+          "Pair number": 29,
           "Name": "Carmouche, Lucien E",
           "ID": "32230079",
           "Rating": 1627,
@@ -673,11 +720,12 @@
           "Current result": " ",
           "Results": [
             "-;2;B;102;2;0;0",
-            "~;39;W;118;41;0;0"
+            "=;40;W;118;42;0;0",
+            "~;48;B;120;48;0;0"
           ]
         },
         {
-          "Pair number": 29,
+          "Pair number": 30,
           "Name": "Minvielle, L Steven",
           "ID": "10379504",
           "Rating": 1617,
@@ -695,11 +743,12 @@
           "Current result": " ",
           "Results": [
             "-;3;W;103;3;0;0",
-            "~;46;B;119;44;0;0"
+            "+;47;B;119;45;0;0",
+            "~;13;W;110;4;0;0"
           ]
         },
         {
-          "Pair number": 30,
+          "Pair number": 31,
           "Name": "Levy, Benjamin",
           "ID": "15753464",
           "Rating": 1607,
@@ -718,11 +767,12 @@
           "Current result": " ",
           "Results": [
             "H;-1;-;0;-1;0;0",
-            "~;15;W;112;15;0;0"
+            "+;15;W;112;15;0;0",
+            "~;12;B;107;12;0;0"
           ]
         },
         {
-          "Pair number": 31,
+          "Pair number": 32,
           "Name": "McNamara, Donald",
           "ID": "32790049",
           "Rating": 1601,
@@ -739,11 +789,12 @@
           "Current result": " ",
           "Results": [
             "H;-1;-;0;-1;0;0",
-            "~;16;B;113;16;0;0"
+            "-;16;B;113;16;0;0",
+            "~;53;W;121;53;0;0"
           ]
         },
         {
-          "Pair number": 32,
+          "Pair number": 33,
           "Name": "Binet, George Albert",
           "ID": "12417077",
           "Rating": 1600,
@@ -761,11 +812,12 @@
           "Current result": " ",
           "Results": [
             "-;4;B;104;4;0;0",
-            "~;41;W;120;45;0;0"
+            "+;42;W;120;46;0;0",
+            "~;6;B;109;6;0;0"
           ]
         },
         {
-          "Pair number": 33,
+          "Pair number": 34,
           "Name": "Sands, Jaywill",
           "ID": "12581388",
           "Rating": 1573,
@@ -783,11 +835,12 @@
           "Current result": " ",
           "Results": [
             "-;5;W;105;5;0;0",
-            "~;48;B;121;46;0;0"
+            "-;49;B;121;47;0;0",
+            "~;47;W;122;46;0;0"
           ]
         },
         {
-          "Pair number": 34,
+          "Pair number": 35,
           "Name": "Efler, Tobias",
           "ID": "32232406",
           "Rating": 1562,
@@ -805,11 +858,12 @@
           "Current result": " ",
           "Results": [
             "-;6;B;106;6;0;0",
-            "~;45;W;122;48;0;0"
+            "+;46;W;122;49;0;0",
+            "~;4;B;108;13;0;0"
           ]
         },
         {
-          "Pair number": 35,
+          "Pair number": 36,
           "Name": "Dasari, Sonith Chowdary",
           "ID": "31865948",
           "Rating": 1525,
@@ -827,11 +881,12 @@
           "Current result": " ",
           "Results": [
             "-;7;W;107;7;0;0",
-            "~;50;B;123;49;0;0"
+            "+;51;B;123;50;0;0",
+            "~;19;W;118;17;0;0"
           ]
         },
         {
-          "Pair number": 36,
+          "Pair number": 37,
           "Name": "Huffty, Jacob L",
           "ID": "30896340",
           "Rating": 1513,
@@ -850,11 +905,12 @@
           "Current result": " ",
           "Results": [
             "-;8;B;108;8;0;0",
-            "~;49;W;124;50;0;0"
+            "-;50;W;124;51;0;0",
+            "~;46;B;123;47;0;0"
           ]
         },
         {
-          "Pair number": 37,
+          "Pair number": 38,
           "Name": "Urcia, Reed Joseph",
           "ID": "31115764",
           "Rating": 1508,
@@ -869,14 +925,16 @@
           "Birth date": "2007",
           "Phone": "(504) 717-7812",
           "Email": "reed.urcia@gmail.com",
-          "Current result": " ",
+          "Reserved byes": "3 ",
+          "Current result": "½",
           "Results": [
             "-;10;W;109;10;0;0",
-            "~;52;B;125;51;0;0"
+            "=;53;B;125;52;0;0",
+            "H;-1;-;0;-1;0;0"
           ]
         },
         {
-          "Pair number": 38,
+          "Pair number": 39,
           "Name": "Bell, Kenneth C",
           "ID": "15183280",
           "Rating": 1500,
@@ -894,11 +952,12 @@
           "Current result": " ",
           "Results": [
             "-;11;B;110;11;0;0",
-            "~;51;W;126;52;0;0"
+            "+;52;W;126;53;0;0",
+            "~;17;B;111;19;0;0"
           ]
         },
         {
-          "Pair number": 39,
+          "Pair number": 40,
           "Name": "Chapagain, Sandesh",
           "ID": "30568147",
           "Rating": 1499,
@@ -916,11 +975,12 @@
           "Current result": " ",
           "Results": [
             "-;12;W;111;12;0;0",
-            "~;28;B;118;27;0;0"
+            "=;29;B;118;28;0;0",
+            "~;15;B;119;15;0;0"
           ]
         },
         {
-          "Pair number": 40,
+          "Pair number": 41,
           "Name": "Steinbach, Leo",
           "ID": "31306243",
           "Rating": 1490,
@@ -936,11 +996,12 @@
           "Current result": " ",
           "Results": [
             "+;13;B;112;13;0;0",
-            "~;9;W;111;11;0;0"
+            "-;9;W;111;11;0;0",
+            "~;20;B;112;20;0;0"
           ]
         },
         {
-          "Pair number": 41,
+          "Pair number": 42,
           "Name": "Alexander, Bryan",
           "ID": "12550823",
           "Rating": 1464,
@@ -958,11 +1019,12 @@
           "Current result": " ",
           "Results": [
             "-;14;W;113;14;0;0",
-            "~;32;B;120;28;0;0"
+            "-;33;B;120;29;0;0",
+            "~;51;W;124;51;0;0"
           ]
         },
         {
-          "Pair number": 42,
+          "Pair number": 43,
           "Name": "Arceneaux, Thomas",
           "ID": "32046470",
           "Rating": 1449,
@@ -981,11 +1043,12 @@
           "Current result": " ",
           "Results": [
             "=;15;B;114;15;0;0",
-            "~;19;W;114;19;0;0"
+            "=;20;W;114;20;0;0",
+            "~;21;B;113;21;0;0"
           ]
         },
         {
-          "Pair number": 43,
+          "Pair number": 44,
           "Name": "Parthiban, Haricharan",
           "ID": "31905939",
           "Rating": 1440,
@@ -1003,11 +1066,12 @@
           "Current result": " ",
           "Results": [
             "=;16;W;115;16;0;0",
-            "~;21;B;115;21;0;0"
+            "=;22;B;115;22;0;0",
+            "~;24;W;116;22;0;0"
           ]
         },
         {
-          "Pair number": 44,
+          "Pair number": 45,
           "Name": "Acuna, Nino Octavio",
           "ID": "31358118",
           "Rating": 1428,
@@ -1025,11 +1089,12 @@
           "Current result": " ",
           "Results": [
             "-;17;B;116;17;0;0",
-            "~;27;W;117;29;0;0"
+            "+;28;W;117;30;0;0",
+            "~;23;B;115;23;0;0"
           ]
         },
         {
-          "Pair number": 45,
+          "Pair number": 46,
           "Name": "Slaton Jr, Hershel",
           "ID": "12049250",
           "Rating": 1428,
@@ -1047,11 +1112,12 @@
           "Current result": " ",
           "Results": [
             "-;18;W;117;18;0;0",
-            "~;34;B;122;32;0;0"
+            "-;35;B;122;33;0;0",
+            "~;37;W;123;34;0;0"
           ]
         },
         {
-          "Pair number": 46,
+          "Pair number": 47,
           "Name": "Klingler, James Elliot",
           "ID": "31221304",
           "Rating": 1291,
@@ -1068,12 +1134,13 @@
           "Email": "nathaliedajko@gmail.com",
           "Current result": " ",
           "Results": [
-            "-;20;B;118;20;0;0",
-            "~;29;W;119;33;0;0"
+            "-;21;B;118;21;0;0",
+            "-;30;W;119;34;0;0",
+            "~;34;B;122;37;0;0"
           ]
         },
         {
-          "Pair number": 47,
+          "Pair number": 48,
           "Name": "Macdonald, Gerald",
           "ID": "12939491",
           "Rating": 1233,
@@ -1090,12 +1157,13 @@
           "Email": "jerrylmacdonald@gmail.com",
           "Current result": " ",
           "Results": [
-            "=;21;W;119;21;0;0",
-            "~;13;B;116;13;0;0"
+            "=;22;W;119;22;0;0",
+            "-;13;B;116;13;0;0",
+            "~;29;W;120;29;0;0"
           ]
         },
         {
-          "Pair number": 48,
+          "Pair number": 49,
           "Name": "Josephson, Asher",
           "ID": "15561830",
           "Rating": 1156,
@@ -1112,12 +1180,13 @@
           "Email": "asquitiro@gmail.com",
           "Current result": " ",
           "Results": [
-            "-;22;B;120;22;0;0",
-            "~;33;W;121;34;0;0"
+            "-;23;B;120;23;0;0",
+            "+;34;W;121;35;0;0",
+            "~;27;B;117;24;0;0"
           ]
         },
         {
-          "Pair number": 49,
+          "Pair number": 50,
           "Name": "Eghbalnia, Kian Joseph",
           "ID": "16242748",
           "Rating": 989,
@@ -1132,12 +1201,13 @@
           "Email": "keghbalnia@icloud.com",
           "Current result": " ",
           "Results": [
-            "-;23;W;121;23;0;0",
-            "~;36;B;124;35;0;0"
+            "-;24;W;121;24;0;0",
+            "+;37;B;124;36;0;0",
+            "~;22;W;114;27;0;0"
           ]
         },
         {
-          "Pair number": 50,
+          "Pair number": 51,
           "Name": "Brooks, Sara",
           "ID": "32530917",
           "Rating": 932,
@@ -1154,12 +1224,13 @@
           "Email": "htebazile667@gmail.com",
           "Current result": " ",
           "Results": [
-            "-;24;B;122;24;0;0",
-            "~;35;W;123;36;0;0"
+            "-;25;B;122;25;0;0",
+            "-;36;W;123;37;0;0",
+            "~;42;B;124;42;0;0"
           ]
         },
         {
-          "Pair number": 51,
+          "Pair number": 52,
           "Name": "Del Angel, Fernando",
           "ID": "33102781",
           "Exp1": "04/30/2027",
@@ -1171,14 +1242,16 @@
           "Zip": "70058",
           "Phone": "(956) 624-5836",
           "Email": "delangel2607@hotmail.com",
-          "Current result": " ",
+          "PAB": 3,
+          "Current result": "1",
           "Results": [
-            "-;25;W;123;25;0;0",
-            "~;38;B;126;37;0;0"
+            "-;26;W;123;26;0;0",
+            "-;39;B;126;38;0;0",
+            "B;0;-;0;-1;0;0"
           ]
         },
         {
-          "Pair number": 52,
+          "Pair number": 53,
           "Name": "Nguyen, Khan",
           "ID": "33100226",
           "Exp1": "04/30/2027",
@@ -1192,12 +1265,13 @@
           "Email": "knguyen33@tulane.edu",
           "Current result": " ",
           "Results": [
-            "-;26;B;124;26;0;0",
-            "~;37;W;125;38;0;0"
+            "-;27;B;124;27;0;0",
+            "=;38;W;125;39;0;0",
+            "~;32;B;121;32;0;0"
           ]
         },
         {
-          "Pair number": 53,
+          "Pair number": 54,
           "Name": "Roberts, Travis",
           "ID": "33100218",
           "Exp1": "04/30/2027",
@@ -1209,11 +1283,13 @@
           "Zip": "70118",
           "Phone": "(504) 657-8236",
           "Email": "twrobert@my.loyno.edu",
+          "Reserved byes": "3z 4z 5z ",
           "PAB": 1,
-          "Current result": " ",
+          "Current result": "0",
           "Results": [
             "B;0;-;0;-1;0;0",
-            "~;10;B;109;9;0;0"
+            "F;10;*;109;9;0;0",
+            "U;-1;-;0;-1;0;0"
           ]
         }
       ],
@@ -1235,11 +1311,11 @@
       "Section time control": "g/60i30",
       "Number of players": 30,
       "Number of teams": 0,
-      "Rounds paired": 2,
-      "Rounds played": 1,
+      "Rounds paired": 3,
+      "Rounds played": 2,
       "Rating to use": 0,
       "Engine": 1,
-      "Last unrestricted round": 1,
+      "Last unrestricted round": 2,
       "Need search options": false,
       "First board": 201,
       "Final round": 5,
@@ -1271,7 +1347,8 @@
           "Note": "Result coding is Result; Op.; Clr; Brd; Logical ops. 1 & 2; Game pnts",
           "Results": [
             "+;17;B;201;17;16;0",
-            "~;9;W;201;9;0;0"
+            "-;9;W;201;9;0;0",
+            "~;16;B;206;16;0;0"
           ]
         },
         {
@@ -1291,7 +1368,8 @@
           "Current result": " ",
           "Results": [
             "+;18;W;202;18;17;0",
-            "~;10;B;202;10;0;0"
+            "+;10;B;202;10;0;0",
+            "~;12;W;201;9;0;0"
           ]
         },
         {
@@ -1311,7 +1389,8 @@
           "Current result": " ",
           "Results": [
             "+;19;B;203;19;18;0",
-            "~;11;W;203;11;0;0"
+            "+;11;W;203;11;0;0",
+            "~;9;B;202;12;0;0"
           ]
         },
         {
@@ -1331,7 +1410,8 @@
           "Current result": " ",
           "Results": [
             "+;20;W;204;20;19;0",
-            "~;12;B;204;12;0;0"
+            "-;12;B;204;12;0;0",
+            "~;18;W;207;18;0;0"
           ]
         },
         {
@@ -1351,7 +1431,8 @@
           "Current result": " ",
           "Results": [
             "+;21;B;205;21;20;0",
-            "~;13;W;205;13;0;0"
+            "-;13;W;205;13;0;0",
+            "~;20;B;208;20;0;0"
           ]
         },
         {
@@ -1371,7 +1452,8 @@
           "Current result": " ",
           "Results": [
             "+;22;W;206;22;21;0",
-            "~;14;B;206;14;0;0"
+            "=;14;B;206;14;0;0",
+            "~;7;W;204;13;0;0"
           ]
         },
         {
@@ -1382,11 +1464,11 @@
           "Rating2": 1184,
           "Exp1": "12/31/2025",
           "State": "LA",
-          "PAB": 1,
           "Current result": " ",
           "Results": [
-            "B;0;-;0;0;0;0",
-            "~;15;W;207;15;0;0"
+            "H;0;-;0;0;0;0",
+            "+;15;W;207;15;0;0",
+            "~;6;B;204;14;0;0"
           ]
         },
         {
@@ -1408,7 +1490,8 @@
           "Current result": " ",
           "Results": [
             "+;23;B;207;23;22;0",
-            "~;30;W;208;30;0;0"
+            "=;30;W;208;30;0;0",
+            "~;13;B;203;30;0;0"
           ]
         },
         {
@@ -1428,7 +1511,8 @@
           "Current result": " ",
           "Results": [
             "+;24;W;208;24;23;0",
-            "~;1;B;201;1;0;0"
+            "+;1;B;201;1;0;0",
+            "~;3;W;202;2;0;0"
           ]
         },
         {
@@ -1448,7 +1532,8 @@
           "Current result": " ",
           "Results": [
             "+;25;B;209;25;24;0",
-            "~;2;W;202;2;0;0"
+            "-;2;W;202;2;0;0",
+            "~;21;B;209;21;0;0"
           ]
         },
         {
@@ -1470,7 +1555,8 @@
           "Current result": " ",
           "Results": [
             "+;26;W;210;26;25;0",
-            "~;3;B;203;3;0;0"
+            "-;3;B;203;3;0;0",
+            "~;22;W;210;22;0;0"
           ]
         },
         {
@@ -1490,7 +1576,8 @@
           "Current result": " ",
           "Results": [
             "+;27;B;211;27;26;0",
-            "~;4;W;204;4;0;0"
+            "+;4;W;204;4;0;0",
+            "~;2;B;201;3;0;0"
           ]
         },
         {
@@ -1510,7 +1597,8 @@
           "Current result": " ",
           "Results": [
             "+;28;W;212;28;27;0",
-            "~;5;B;205;5;0;0"
+            "+;5;B;205;5;0;0",
+            "~;8;W;203;6;0;0"
           ]
         },
         {
@@ -1529,7 +1617,8 @@
           "Current result": " ",
           "Results": [
             "X;0;*;0;0;28;0",
-            "~;6;W;206;6;0;0"
+            "=;6;W;206;6;0;0",
+            "~;30;B;205;7;0;0"
           ]
         },
         {
@@ -1551,7 +1640,8 @@
           "Current result": " ",
           "Results": [
             "+;29;W;214;29;0;0",
-            "~;7;B;207;7;0;0"
+            "-;7;B;207;7;0;0",
+            "~;24;W;211;24;0;0"
           ]
         },
         {
@@ -1571,7 +1661,8 @@
           "Current result": " ",
           "Results": [
             "-;30;B;215;30;1;0",
-            "~;23;W;209;23;0;0"
+            "+;23;W;209;23;0;0",
+            "~;1;W;206;1;0;0"
           ]
         },
         {
@@ -1594,7 +1685,8 @@
           "Current result": " ",
           "Results": [
             "-;1;W;201;1;2;0",
-            "~;24;B;210;24;0;0"
+            "-;24;B;210;24;0;0",
+            "~;26;W;212;26;0;0"
           ]
         },
         {
@@ -1614,7 +1706,8 @@
           "Current result": " ",
           "Results": [
             "-;2;B;202;2;3;0",
-            "~;25;W;211;25;0;0"
+            "+;25;W;211;25;0;0",
+            "~;4;B;207;4;0;0"
           ]
         },
         {
@@ -1634,7 +1727,8 @@
           "Current result": " ",
           "Results": [
             "-;3;W;203;3;4;0",
-            "~;26;B;212;26;0;0"
+            "-;26;B;212;26;0;0",
+            "~;27;W;213;27;0;0"
           ]
         },
         {
@@ -1654,7 +1748,8 @@
           "Current result": " ",
           "Results": [
             "-;4;B;204;4;5;0",
-            "~;27;W;213;27;0;0"
+            "+;27;W;213;27;0;0",
+            "~;5;W;208;5;0;0"
           ]
         },
         {
@@ -1674,7 +1769,8 @@
           "Current result": " ",
           "Results": [
             "-;5;W;205;5;6;0",
-            "~;28;B;214;28;0;0"
+            "+;28;B;214;28;0;0",
+            "~;10;W;209;10;0;0"
           ]
         },
         {
@@ -1694,7 +1790,8 @@
           "Current result": " ",
           "Results": [
             "-;6;B;206;6;8;0",
-            "~;29;W;215;29;0;0"
+            "+;29;W;215;29;0;0",
+            "~;11;B;210;11;0;0"
           ]
         },
         {
@@ -1714,7 +1811,8 @@
           "Current result": " ",
           "Results": [
             "-;8;W;207;8;9;0",
-            "~;16;B;209;16;0;0"
+            "-;16;B;209;16;0;0",
+            "~;28;W;214;28;0;0"
           ]
         },
         {
@@ -1734,7 +1832,8 @@
           "Current result": " ",
           "Results": [
             "-;9;B;208;9;10;0",
-            "~;17;W;210;17;0;0"
+            "+;17;W;210;17;0;0",
+            "~;15;B;211;15;0;0"
           ]
         },
         {
@@ -1756,7 +1855,8 @@
           "Current result": " ",
           "Results": [
             "-;10;W;209;10;11;0",
-            "~;18;B;211;18;0;0"
+            "-;18;B;211;18;0;0",
+            "~;29;B;215;29;0;0"
           ]
         },
         {
@@ -1775,7 +1875,8 @@
           "Current result": " ",
           "Results": [
             "-;11;B;210;11;12;0",
-            "~;19;W;212;19;0;0"
+            "+;19;W;212;19;0;0",
+            "~;17;B;212;17;0;0"
           ]
         },
         {
@@ -1797,7 +1898,8 @@
           "Current result": " ",
           "Results": [
             "-;12;W;211;12;13;0",
-            "~;20;B;213;20;0;0"
+            "-;20;B;213;20;0;0",
+            "~;19;B;213;19;0;0"
           ]
         },
         {
@@ -1807,7 +1909,8 @@
           "Current result": " ",
           "Results": [
             "-;13;B;212;13;0;0",
-            "~;21;W;214;21;0;0"
+            "-;21;W;214;21;0;0",
+            "~;23;B;214;23;0;0"
           ]
         },
         {
@@ -1826,7 +1929,8 @@
           "Current result": " ",
           "Results": [
             "-;15;B;214;15;15;0",
-            "~;22;B;215;22;0;0"
+            "-;22;B;215;22;0;0",
+            "~;25;W;215;25;0;0"
           ]
         },
         {
@@ -1845,7 +1949,8 @@
           "Current result": " ",
           "Results": [
             "+;16;W;215;16;-1;0",
-            "~;8;B;208;8;0;0"
+            "=;8;B;208;8;0;0",
+            "~;14;W;205;8;0;0"
           ]
         }
       ],
