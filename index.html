@@ -930,14 +930,24 @@ function ShowPairingsSJSON(section,rp)
 		} else {
 			rightPoints = '';
 		}
+		if (leftRating !== undefined) {
+			leftRating = '(' + leftRating + ')';
+		} else {
+			leftRating = '';
+		}
+		if (rightRating !== undefined) {
+			rightRating = '(' + rightRating + ')';
+		} else {
+			rightRating = '';
+		}
 		
 		if (!duplicate) {
 			resultLine = `<tr>
 				<td class="Board">${board}</td>
 				<td class="Score">${leftResult} ${leftPoints}</td>
-				<td class="Name">${leftName} (${leftRating})</td>
+				<td class="Name">${leftName} ${leftRating}</td>
 				<td class="Score">${rightResult} ${rightPoints}</td>
-				<td class="Name">${rightName} (${rightRating})</td>
+				<td class="Name">${rightName} ${rightRating}</td>
 			</tr>`;
 			pTable = `${pTable}${resultLine}`;
 		}
