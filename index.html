@@ -797,9 +797,11 @@ function ShowPairingsPTOZ(section, rp)
 		leftPlayer  = GameLeftPlayer(game);
 		rightPlayer = GameRightPlayer(game);
 		leftName    = PlayerFormat(leftPlayer);
+		leftRating = vTable.getPlayerRating(tourney.players[leftPlayer], section);
 		leftResult  = GameLeftResult(game);
 		leftPoints = vTable.getPlayerPoints(tourney.players[leftPlayer], rp);
 		rightName   = PlayerFormat(rightPlayer);
+		rightRating = vTable.getPlayerRating(tourney.players[rightPlayer], section);
 		rightResult = GameRightResult(game);
 		rightPoints = vTable.getPlayerPoints(tourney.players[rightPlayer], rp);
 		if (leftPoints !== undefined) {
@@ -815,9 +817,9 @@ function ShowPairingsPTOZ(section, rp)
 		resultLine = `<tr>
 			<td class="Board">${board}</td>
 			<td class="Score">${leftResult} ${leftPoints}</td>
-			<td class="Name">${leftName}</td>
+			<td class="Name">${leftName} (${leftRating})</td>
 			<td class="Score">${rightResult} ${rightPoints}</td>
-			<td class="Name">${rightName}</td>
+			<td class="Name">${rightName} (${rightRating})</td>
 		</tr>`;
 		pTable += resultLine;
 	}
@@ -878,7 +880,7 @@ function ShowPairingsSJSON(section,rp)
 	gameResults.forEach(gameResult => {
 		// Result coding is Result; Op.; Clr; Brd; Logical ops. 1 & 2; Game pnts; Player"
 		let board = gameResult[3];
-		let leftResult, leftName, leftPoints, rightResult, rightName, rightPoints;
+		let leftResult, leftName, leftRating, leftPoints, rightResult, rightName, rightRating, rightPoints;
 		let duplicate = false;
 
 		if (board == 0) {
@@ -897,15 +899,19 @@ function ShowPairingsSJSON(section,rp)
 				if (gameResult[2] === 'W') {
 					leftResult = resultToScore(gameResult[0], false);
 					leftName = section.Players[gameResult[7] - 1].Name;
+					leftRating = vTable.getPlayerRating(section.Players[gameResult[7] - 1], section);
 					leftPoints = vTable.getPlayerPoints(section.Players[gameResult[7] - 1], rp);			
 					rightResult = resultToScore(gameResult[0], true);
+					rightRating = vTable.getPlayerRating(section.Players[gameResult[1] - 1], section);
 					rightName = section.Players[gameResult[1] - 1].Name;
 					rightPoints = vTable.getPlayerPoints(section.Players[gameResult[1] - 1], rp);			
 				} else {
 					rightResult = resultToScore(gameResult[0], false);
 					rightName = section.Players[gameResult[7] - 1].Name;			
 					rightPoints = vTable.getPlayerPoints(section.Players[gameResult[7] - 1], rp);			
+					rightRating = vTable.getPlayerRating(section.Players[gameResult[7] - 1], section);
 					leftResult = resultToScore(gameResult[0], true);
+					leftRating = vTable.getPlayerRating(section.Players[gameResult[1] - 1], section);
 					leftName = section.Players[gameResult[1] - 1].Name;
 					leftPoints = vTable.getPlayerPoints(section.Players[gameResult[1] - 1], rp);			
 				}
@@ -929,9 +935,9 @@ function ShowPairingsSJSON(section,rp)
 			resultLine = `<tr>
 				<td class="Board">${board}</td>
 				<td class="Score">${leftResult} ${leftPoints}</td>
-				<td class="Name">${leftName}</td>
+				<td class="Name">${leftName} (${leftRating})</td>
 				<td class="Score">${rightResult} ${rightPoints}</td>
-				<td class="Name">${rightName}</td>
+				<td class="Name">${rightName} (${rightRating})</td>
 			</tr>`;
 			pTable = `${pTable}${resultLine}`;
 		}
