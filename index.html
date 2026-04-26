@@ -814,12 +814,22 @@ function ShowPairingsPTOZ(section, rp)
 		} else {
 			rightPoints = '';
 		}
+		if (leftRating !== undefined) {
+			leftRating = '(' + leftRating + ')';
+		} else {
+			leftRating = '';
+		}
+		if (rightRating !== undefined) {
+			rightRating = '(' + rightRating + ')';
+		} else {
+			rightRating = '';
+		}
 		resultLine = `<tr>
 			<td class="Board">${board}</td>
 			<td class="Score">${leftResult} ${leftPoints}</td>
-			<td class="Name">${leftName} (${leftRating})</td>
+			<td class="Name">${leftName} ${leftRating}</td>
 			<td class="Score">${rightResult} ${rightPoints}</td>
-			<td class="Name">${rightName} (${rightRating})</td>
+			<td class="Name">${rightName} ${rightRating}</td>
 		</tr>`;
 		pTable += resultLine;
 	}
@@ -1409,6 +1419,13 @@ function getVTablePTOZ()
 		return score;		
 	}
 	vTable.getPlayerRating = function(player, section) {
+		if (player === undefined) {
+			return undefined;
+		}
+		if (player.tnmt === undefined) {
+			return undefined;
+		}
+
 		let tc = section.TC;
 		if ((tc === undefined) || (tc === "")) {
 			tc = "G/15;d0";
