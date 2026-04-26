@@ -839,7 +839,7 @@ function ShowPairingsPTOZ(section, rp)
 	pairingsDiv.style.display = 'block';
 }
 
-function ShowPairingsSJSON(section,rp)
+function ShowPairingsSJSON(section, rp)
 {
 	let gameResults = [];
 	section.Players.forEach(player => {
@@ -898,6 +898,8 @@ function ShowPairingsSJSON(section,rp)
 			board = '';
 			leftResult = resultToScore(gameResult[0], false);
 			leftName = section.Players[gameResult[7] - 1].Name;
+			leftPoints = vTable.getPlayerPoints(section.Players[gameResult[7] - 1], rp);
+			leftRating = vTable.getPlayerRating(section.Players[gameResult[7] - 1], section);
 			rightResult = '';
 			rightName = 'Bye';
 		} else {
