@@ -8,11 +8,11 @@
     "Ending date": "04/26/2026",
     "ChessRoster auto sync enabled": true,
     "ChessRoster sync interval minutes": 30,
-    "Trace": "3.7.3.7.3.7.7.4.3.7."
+    "Trace": "0.0.0.0.0.0.0.0.0.0."
   },
   "Sections": [
     {
-      "Section name": "EXTRA RATED GAMES",
+      "Section name": "Open",
       "Type": 0,
       "Section title": "Open",
       "Section time control": "g/60;i30",
@@ -2179,7 +2179,7 @@
       "Prizes": {
         "Limit awards": true,
         "Include withdrawn": true,
-        "Maximum for unrated": 5,
+        "Maximum for unrated": 100,
         "Place prizes": [
           {
             "Value": 300,
