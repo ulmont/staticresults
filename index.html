@@ -74,11 +74,15 @@ function SetupSections()
 	} else {
 		sectionBox = "Section:<select id='sectionDD' onchange='onSectionChange()'>";
 		for (let i = 0; i < sections.length; i++) {
-			//
-			//	Skip any sections which have no paired rounds
-			//
-			if (sections[i].roundsPaired == 0)
+			// Skip any sections which have no paired rounds
+			if (sections[i].roundsPaired == 0) {
 				continue;
+			}
+			// Skip any sections which don't have any players
+			const sectionPlayers = vTable.getSectionPlayers(vTable.getSectionId(sections[i]));
+			if (sectionPlayers.length === 0) {
+				continue;
+			}
 			const sectionValue = `<option value=${i}>${vTable.getSectionTitle(sections[i])}</option>`;
 			sectionBox = `${sectionBox}${sectionValue}`;
 		}
