@@ -482,8 +482,9 @@ function SetupWallChart(section, sortAlgo, playerNumAlgo, colorStringAlgo)
 	wallChartDiv.innerHTML = `${pTable}
 			</tbody>
 		</table>
-		<p>¹ Follows USCF 34.E.10 but gives (current rating + 50) for victories against an opponent 350 or more rating points below the player (including unrated players), attempts to first calculate a performance rating for an unrated opponent before calculating a player's performance, and ignores games between two unrated players.</p>
-		<p>² Follows FIDE Title Regulations 1.4.6 through 1.4.9, ignoring 1.4.6.b (relating to minimum ratings of titled players) and 1.4.6.d (relating to the minimum rating of an unrated player) as well as using USCF ratings.  Games between two unrated players are ignored and it attempts to first calculate a performance rating for an unrated opponent before calculating a player's performance.</p>`;
+		<p>¹ Follows "Approximating Formulas for the US Chess Rating System April, 2017" but assumes any existing ratings are based on 50+ games (this gets changed based on ratings anyway later), ignores the special case for high level players playing quick or blitz, assumes no player played against an opponent more than twice, and uses the 2025 bonus constant of 10.</p>
+		<p>² Follows USCF 34.E.10 but gives (current rating + 50) for victories against an opponent 350 or more rating points below the player (including unrated players), attempts to first calculate a performance rating for an unrated opponent before calculating a player's performance, and ignores games between two unrated players.</p>
+		<p>³ Follows FIDE Title Regulations 1.4.6 through 1.4.9, ignoring 1.4.6.b (relating to minimum ratings of titled players) and 1.4.6.d (relating to the minimum rating of an unrated player) as well as using USCF ratings.  Games between two unrated players are ignored and it attempts to first calculate a performance rating for an unrated opponent before calculating a player's performance.</p>`;
 	wallChartDiv.style.display = 'block';
 }
 
