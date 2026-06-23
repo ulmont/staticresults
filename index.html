@@ -416,8 +416,9 @@ function SetupWallChart(section, sortAlgo, playerNumAlgo, colorStringAlgo)
 	}
 	pTable = `${pTable}
 			<th class="Score">Total</th>
-			<th class="Score">Perf<br />(SwissSys¹)</th>
-			<th class="Score">Perf<br />(TPR²)</th>
+			<th class="Score">Est.<br />Rating¹</th>
+			<th class="Score">Perf<br />(SwissSys²)</th>
+			<th class="Score">Perf<br />(TPR³)</th>
 		</tr>
 	</thead>
 	<tbody>`;
@@ -449,6 +450,16 @@ function SetupWallChart(section, sortAlgo, playerNumAlgo, colorStringAlgo)
 		}
 		pTable = `${pTable}
 			<td class="Score">${score.toFixed(1)}</td>`;
+		let rPost = calcEstimatedRating(player, section, opponents, oppScores);
+		if (rPost !== 0) {
+			pTable = `${pTable}
+				<td class="Score">${(Math.floor(rPost)).toFixed(0)}</td>`;
+		} else {
+			pTable = `${pTable}
+				<td class="Score">N/A</td>`;
+		}
+		pTable = `${pTable}
+			<td class="Score">${score.toFixed(1)}</td>`;
 		let perf = calcPerformanceRatingSwissSys(player, section, opponents, oppScores);
 		if (perf !== 0) {
 			pTable = `${pTable}
@@ -476,7 +487,7 @@ function SetupWallChart(section, sortAlgo, playerNumAlgo, colorStringAlgo)
 	wallChartDiv.style.display = 'block';
 }
 
-function calcPerformanceRatingByPlayerSection(player, section, calcPerformanceRating) {
+function calcRatingByPlayerSection(player, section, calcRating) {
 	const sectionPlayers = vTable.getSectionPlayers(vTable.getSectionId(section));
 	let opponents = [];
 	let oppScores = [];
@@ -487,7 +498,122 @@ function calcPerformanceRatingByPlayerSection(player, section, calcPerformanceRa
 			oppScores.push(roundScore);
 		}
 	}
-	return calcPerformanceRating(player, section, opponents, oppScores);
+	return calcRating(player, section, opponents, oppScores);
+}
+
+function calcEstimatedRating(player, section, opponents, oppScores) {
+	if (opponents.length === 0) {
+		return 0; // I got nothin'
+	}
+
+	// calculate average opponent rating as well as any other "average opponent" or "per opponent" items
+	let avgOppRating = 0;
+	let gamesCompleted = 0;
+	let rating = vTable.getPlayerRating(player, section);
+	let wins = 0;
+	let losses = 0;
+	let sumWe = 0;
+	let score = 0;
+	for (const [i, oppScore] of oppScores.entries()) {
+		let oppRating = vTable.getPlayerRating(opponents[i], section);
+		let oppUnrated = (oppRating === 'Unr');
+		// if the opponent is unrated and the current player is not, it's possible we might be able to actually derive a rating for that opponent (based on their performance rating) that would allow a meaningful comparison against the current player.
+		// but if both players are unrated just ignore the game
+		if (oppUnrated) {
+			if (rating === 'Unr') {
+				// both unrated, this game is not relevant
+				continue;
+			} else {
+				// see if we can calculate something for the opponent.
+				oppRating = calcRatingByPlayerSection(opponents[i], section, calcEstimatedRating);
+				if (oppRating === 0) {
+					// nope, couldn't.
+					continue;
+				}
+			}
+		}
+		gamesCompleted = gamesCompleted + 1;
+		if (oppScore === 1.0) {
+			wins = wins + 1;
+			score = score + 1.0;
+		} else if (oppScore = 0.0) {
+			losses = losses + 1;
+			score = score + 0.0;
+		} else {
+			score = score + 0.5;
+		}
+		// The formula for the winning expectancy between a player with rating Rpre and an opponent with rating Ropp is given by We(Rpre, Ropp) = 1 / (10**(−(Rpre−Ropp)/400) + 1)
+		const ratingDiff = rating - oppRating;
+		const exp = 0 - (ratingDiff / 400);
+		const denom = Mat.pow(10, exp) + 1;
+		const wE = 1 / denom;
+		// This is computed for each opponent, and the results are totaled to produce a value of E. [E is the sum of winning expectancies]
+		sumWe = sumWe + wE;
+	}
+	if (gamesCompleted === 0) {
+		return 0; // I got nothin
+	} else {
+		avgOppRating = avgOppRating / gamesCompleted;
+	}
+
+	// EXCEPTION.  We're assuming that anybody with any rating has that rating based on 50 games.  This is of course not true but is a simplifying assumption that makes this problem tractable.
+
+	// but still, if you don't have a prior rating, we get to use the special formula
+	// If a player has a rating based on 8 or fewer games, or is unrated, then the new rating can be approximated by the old provisional rating formula, that is
+	// Rpost = NRpre + mRavg + (W − L)*400 / N + m
+	// where Rpre is the player’s pre-tournament rating, N is the number of games upon which Rpre is based, m is the number of games the player completes in the tournament, Ravg is the average of the opponents’ ratings, W is the number of wins, and L is the number of losses. If the player is unrated, set N = 0 and Rpre = 0. The final result is rounded to an integer
+	if (rating === 'Unr') {
+		// N = 0, Rpre = 0
+		const rPost = m*avgOppRating + (wins - losses)*400 / gamesCompleted;
+		return rPost;
+	} 
+	// else we're on to the standard formula.
+	// To approximate one’s rating using the standard formulas, a player needs to know (or approximate) the number of games played in tournaments, only if less than 50. Let N be the number of previous games, but set N to 50 if the number of games is 50 or more. 
+	const n = 50;
+	// Then, if the player has a pre-tournament rating less than 2355, the player computes
+	// Nr = 50/√(0.662 + 0.00000739(2569 − Rpre)²)
+	let nR = 50/Math.sqrt(0.662 + 0.00000739*(2569 - rating)*(2569 - rating));
+	// If the player’s rating is 2355 or greater, then set Nr = 50.
+	if (rating >= 2355) {
+		nR = 50;
+	}
+	// Finally, let Ne be the smaller of N and Nr. This number, the “effective” number of games upon which a rating is based, can be calculated before entering a tournament.
+	const nE = Math.min(n, nR);
+
+	// The next step in the calculation is to determine the value of K, the value that governs the magnitude of rating changes. Letting m be the number of games the players completes in the tournament, K = 800/(Ne + m).
+	let k = 800/(nE + gamesCompleted);
+	 
+	// It is worth noting that for high-rated players competing in time controls quicker than G/60 the value of K has a different formula; see the main rating system documentation for details. 
+	// EXCEPTION: we are not worrying about high-rated players competing in time controls quicker than G/60.
+	// Finally, once K has been computed, the formula for updating a player’s rating is given by Rpost = Rpre + K(S − E) + B where Rpre is the pre-tournament rating, K is the value just computed, S is the total score in the tournament (counting 1 for each win, 0.5 for each draw and 0 for each loss), E is the sum of winning expectancies (described below), and B is a possible bonus amount (described below). The final value is rounded to the nearest integer. In the actual formulas, the rating is rounded away from the pre-event rating.
+
+	// To calculate E, the winning expectancy for each opponent must be calculated and then summed. The formula for the winning expectancy between a player with rating Rpre and an opponent with rating Ropp is given by We(Rpre, Ropp) = 1 / (10**(−(Rpre−Ropp)/400) + 1)
+	// This is computed for each opponent, and the results are totaled to produce a value of E.
+	const kse = k*(score - sumWe);
+
+	// The bonus, B, is automatically 0 if the player has completed fewer than 3 games, or played more than twice against any opponent. 
+	let b;
+	if (gamesCompleted < 3) {
+		b = 0;
+	} else {
+		// EXCEPTION: we assume no player played more than twice against any opponent.
+
+		// If the player has completed 3 or more games, and no more than twice against each opponent, then a comparison is made between the value K(S − E) and T√m0, where m0 is the larger of m and 4 (in other words, 3-round events are treated as 4-round events when computing the bonus amount). As of May 1, 2017, the value of T is 14, though this is subject to change periodically. Larger values of T result in greater difficulty in earning bonus points.
+		// T is now 10 as of June 3, 2025 https://new.uschess.org/news/change-us-chess-ratings-bonus-threshold-lowered-2025 
+		// If T√m0 is larger or equal, then the bonus is 0. But if K(S − E) is larger, then the bonus is the difference B = K(S − E) − T√m0. This is the extra amount added to one’s rating for having an unusually strong result.
+		const m0 = Math.max(gamesCompleted, 4);
+		const tsqrtM0 = 10 * Math.sqrt(m0);
+		if (tsqrtM0 >= kse) {
+			b = 0;
+		} else {
+			b = kse - tsqrtM0;
+		}
+	}
+
+	// Rpost = Rpre + K(S − E) + B
+	const rPost = rating + kse + b;
+	
+	return rPost;
 }
 
 function calcPerformanceRatingSwissSys(player, section, opponents, oppScores) {
@@ -509,7 +635,11 @@ function calcPerformanceRatingSwissSys(player, section, opponents, oppScores) {
 				continue;
 			} else {
 				// see if we can calculate something for the opponent.
-				oppRating = calcPerformanceRatingByPlayerSection(opponents[i], section, calcPerformanceRatingSwissSys);
+				oppRating = calcRatingByPlayerSection(opponents[i], section, calcEstimatedRating);
+				if (oppRating === 0) {
+					// nope, couldn't.
+					continue;
+				}
 			}
 		}
 		divisor = divisor + 1;
@@ -551,7 +681,11 @@ function calcPerformanceRatingFIDE(player, section, opponents, oppScores) {
 				continue;
 			} else {
 				// see if we can calculate something for the opponent.
-				oppRating = calcPerformanceRatingByPlayerSection(opponents[i], section, calcPerformanceRatingFIDE);
+				oppRating = calcRatingByPlayerSection(opponents[i], section, calcEstimatedRating);
+				if (oppRating === 0) {
+					// nope, couldn't.
+					continue;
+				}
 			}
 		}
 		divisor = divisor + 1;
