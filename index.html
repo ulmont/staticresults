@@ -545,7 +545,7 @@ function calcEstimatedRating(player, section, opponents, oppScores) {
 		// The formula for the winning expectancy between a player with rating Rpre and an opponent with rating Ropp is given by We(Rpre, Ropp) = 1 / (10**(−(Rpre−Ropp)/400) + 1)
 		const ratingDiff = rating - oppRating;
 		const exp = 0 - (ratingDiff / 400);
-		const denom = Mat.pow(10, exp) + 1;
+		const denom = Math.pow(10, exp) + 1;
 		const wE = 1 / denom;
 		// This is computed for each opponent, and the results are totaled to produce a value of E. [E is the sum of winning expectancies]
 		sumWe = sumWe + wE;
