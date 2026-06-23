@@ -564,7 +564,7 @@ function calcEstimatedRating(player, section, opponents, oppScores) {
 	// where Rpre is the player’s pre-tournament rating, N is the number of games upon which Rpre is based, m is the number of games the player completes in the tournament, Ravg is the average of the opponents’ ratings, W is the number of wins, and L is the number of losses. If the player is unrated, set N = 0 and Rpre = 0. The final result is rounded to an integer
 	if (rating === 'Unr') {
 		// N = 0, Rpre = 0
-		const rPost = m*avgOppRating + (wins - losses)*400 / gamesCompleted;
+		const rPost = gamesCompleted*avgOppRating + (wins - losses)*400 / gamesCompleted;
 		return rPost;
 	} 
 	// else we're on to the standard formula.
