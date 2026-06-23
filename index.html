@@ -536,7 +536,7 @@ function calcEstimatedRating(player, section, opponents, oppScores) {
 		if (oppScore === 1.0) {
 			wins = wins + 1;
 			score = score + 1.0;
-		} else if (oppScore = 0.0) {
+		} else if (oppScore === 0.0) {
 			losses = losses + 1;
 			score = score + 0.0;
 		} else {
