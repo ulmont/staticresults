@@ -979,7 +979,7 @@ function ShowPairingsPTOZ(section, rp)
 	pairingsDiv.innerHTML = `${pTable}
 			</tbody>
 		</table>
-		${gamelist.length / 2} boards • Round ${rp}`;
+		${Math.floor(gamelist.length / 2)} boards • Round ${rp}`;
 	pairingsDiv.style.display = 'block';
 }
 
@@ -1115,7 +1115,7 @@ function ShowPairingsSJSON(section, rp)
 	pairingsDiv.innerHTML = `${pTable}
 			</tbody>
 		</table>
-		${gamelist.length} boards • Round ${rp}`;
+		${Math.floor(gameResults.length / 2)} boards • Round ${rp}`;
 	pairingsDiv.style.display = 'block';
 }
 
