@@ -17,14 +17,9 @@ body {
 }
  */
 
- .full-width {
-    width: 100%; 
-    height: auto;
- }
-
- .half-width {
+ .logo {
     display: block;
-    width: 50%; 
+    width: 25%; 
     margin-left: auto;
     margin-right: auto;
     height: auto;
