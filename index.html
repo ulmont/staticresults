@@ -933,10 +933,12 @@ function ShowPairingsPTOZ(section, rp)
 		console.log(gamelist[j]);
 		if (j > 0 && gamelist[j] == gamelist[j - 1])
 			continue;
-		boardsCount = boardsCount + 1;
 		boardRec    = gamelist[j];
 		game        = tourney.games[boardRec];
 		board       = GameBoardShow(game);
+		if (board !== '') {
+			boardsCount = boardsCount + 1;
+		}
 		leftPlayer  = GameLeftPlayer(game);
 		rightPlayer = GameRightPlayer(game);
 		leftName    = PlayerFormat(leftPlayer);
