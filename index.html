@@ -924,6 +924,7 @@ function ShowPairingsPTOZ(section, rp)
 			</tr>
 		</thead>
 		<tbody>`;
+	let boardsCount = 0;
 	for (let j = 0 ; j < gamelist.length ; j++) {
 		//
 		//	The above will double up on games with two players, so only show the
@@ -932,6 +933,7 @@ function ShowPairingsPTOZ(section, rp)
 		console.log(gamelist[j]);
 		if (j > 0 && gamelist[j] == gamelist[j - 1])
 			continue;
+		boardsCount = boardsCount + 1;
 		boardRec    = gamelist[j];
 		game        = tourney.games[boardRec];
 		board       = GameBoardShow(game);
@@ -979,7 +981,7 @@ function ShowPairingsPTOZ(section, rp)
 	pairingsDiv.innerHTML = `${pTable}
 			</tbody>
 		</table>
-		${Math.floor(gamelist.length / 2)} boards • Round ${rp}`;
+		${boardsCount} boards • Round ${rp}`;
 	pairingsDiv.style.display = 'block';
 }
 
@@ -1033,6 +1035,7 @@ function ShowPairingsSJSON(section, rp)
 		<tbody>`;
 
 	let doneBoards = new Set();
+	let boardsCount = 0;
 	gameResults.forEach(gameResult => {
 		// Result coding is Result; Op.; Clr; Brd; Logical ops. 1 & 2; Game pnts; Player"
 		let board = gameResult[3];
@@ -1053,6 +1056,7 @@ function ShowPairingsSJSON(section, rp)
 			duplicate = doneBoards.has(board);
 			if (!duplicate) {
 				// nope, process
+				boardsCount = boardsCount + 1;
 				doneBoards.add(board);
 				if (gameResult[2] === 'W') {
 					leftResult = resultToScore(gameResult[0], false);
@@ -1115,7 +1119,7 @@ function ShowPairingsSJSON(section, rp)
 	pairingsDiv.innerHTML = `${pTable}
 			</tbody>
 		</table>
-		${Math.floor(gameResults.length / 2)} boards • Round ${rp}`;
+		${boardsCount} boards • Round ${rp}`;
 	pairingsDiv.style.display = 'block';
 }
 
