@@ -915,10 +915,12 @@ function ShowPairingsPTOZ(section, rp)
 		<thead>
 			<tr>
 				<th class="Board">Board</th>
-				<th class="Score">Scr</th>
 				<th class="Name">White</th>
-				<th class="Score">Scr</th>
+				<th class="Rating">Rating</th>
+				<th class="Score">Score</th>
 				<th class="Name">Black</th>
+				<th class="Rating">Rating</th>
+				<th class="Score">Score</th>
 			</tr>
 		</thead>
 		<tbody>`;
@@ -954,27 +956,30 @@ function ShowPairingsPTOZ(section, rp)
 			rightPoints = '';
 		}
 		if (leftRating !== undefined) {
-			leftRating = '(' + leftRating + ')';
+			// leftRating = '(' + leftRating + ')';
 		} else {
 			leftRating = '';
 		}
 		if (rightRating !== undefined) {
-			rightRating = '(' + rightRating + ')';
+			// rightRating = '(' + rightRating + ')';
 		} else {
 			rightRating = '';
 		}
 		resultLine = `<tr>
 			<td class="Board">${board}</td>
+			<td class="Name">${leftName}</td>
+			<td class="Rating">${leftRating}</td>
 			<td class="Score">${leftResult} ${leftPoints}</td>
-			<td class="Name">${leftName} ${leftRating}</td>
+			<td class="Name">${rightName}</td>
+			<td class="Rating">${rightRating}</td>
 			<td class="Score">${rightResult} ${rightPoints}</td>
-			<td class="Name">${rightName} ${rightRating}</td>
 		</tr>`;
 		pTable += resultLine;
 	}
 	pairingsDiv.innerHTML = `${pTable}
 			</tbody>
-		</table>`;
+		</table>
+		${gamelist.length / 2} boards • Round ${rp}`;
 	pairingsDiv.style.display = 'block';
 }
 
@@ -1017,10 +1022,12 @@ function ShowPairingsSJSON(section, rp)
 		<thead>
 			<tr>
 				<th class="Board">Board</th>
-				<th class="Score">Scr</th>
 				<th class="Name">White</th>
-				<th class="Score">Scr</th>
+				<th class="Rating">Rating</th>
+				<th class="Score">Score</th>
 				<th class="Name">Black</th>
+				<th class="Rating">Rating</th>
+				<th class="Score">Score</th>
 			</tr>
 		</thead>
 		<tbody>`;
@@ -1082,12 +1089,12 @@ function ShowPairingsSJSON(section, rp)
 			rightPoints = '';
 		}
 		if (leftRating !== undefined) {
-			leftRating = '(' + leftRating + ')';
+			// leftRating = '(' + leftRating + ')';
 		} else {
 			leftRating = '';
 		}
 		if (rightRating !== undefined) {
-			rightRating = '(' + rightRating + ')';
+			// rightRating = '(' + rightRating + ')';
 		} else {
 			rightRating = '';
 		}
@@ -1095,18 +1102,20 @@ function ShowPairingsSJSON(section, rp)
 		if (!duplicate) {
 			resultLine = `<tr>
 				<td class="Board">${board}</td>
+				<td class="Name">${leftName}</td>
+				<td class="Rating">${leftRating}</td>
 				<td class="Score">${leftResult} ${leftPoints}</td>
-				<td class="Name">${leftName} ${leftRating}</td>
+				<td class="Name">${rightName}</td>
+				<td class="Rating">${rightRating}</td>
 				<td class="Score">${rightResult} ${rightPoints}</td>
-				<td class="Name">${rightName} ${rightRating}</td>
 			</tr>`;
 			pTable = `${pTable}${resultLine}`;
 		}
 	});
-
 	pairingsDiv.innerHTML = `${pTable}
 			</tbody>
-		</table>`;
+		</table>
+		${gamelist.length} boards • Round ${rp}`;
 	pairingsDiv.style.display = 'block';
 }
 
@@ -1991,6 +2000,7 @@ function getVTableSwissSys()
   gtag('config', 'G-Y7JY55KLSP');
 </script>
 <body>
+	<img src="logo.png" alt="Downriver Chess logo" />
 	<div id="topDiv">
 		<p id="tName"></p>
 		<p id="tDate"></p>

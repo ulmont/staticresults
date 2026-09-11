@@ -1,6 +1,25 @@
+@font-face {
+  font-family: 'KeplerStd';
+  src: url('Kepler Std Extended.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* Keeps text visible while loading */
+}
+
+body {
+  font-family: 'KeplerStd', sans-serif;
+}
+
+/* @import url('https://fonts.googleapis.com/css?family=Cinzel');
+
+body {
+    font-family: "Cinzel", serif;
+}
+ */
+
 #controlsDiv {
     height: 40px;
-    background-color: #222266"
+    background-color: #ffffff
 }
 #tName {
     font-size: 1.5em; 
@@ -10,8 +29,17 @@
 #tDate {
     margin: 0;
 }
+thead {
+    background-color: #e5edf2
+}
+th:first-child {
+    border-top-left-radius: 8px;
+}
+th:last-child {
+    border-top-right-radius: 8px;
+}
 table tr:nth-child(even) {
-    background-color: #00bbFF;
+    background-color: #c8e5e8;
 }
 #topDiv {
     height: 20%;
@@ -49,12 +77,19 @@ th.Board, th.Number {
 }
 td.Board {
     text-align: right;
+    font-weight: bold;
 }
 th.Score, td.Score {
     width: auto;
     padding: 3px;
+    text-align: left;
 }
 th.Name, td.Name {
+    width: auto;
+    padding: 3px;
+    text-align: left;
+}
+th.Rating, td.Rating {
     width: auto;
     padding: 3px;
     text-align: left;
