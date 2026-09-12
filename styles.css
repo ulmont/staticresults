@@ -17,13 +17,23 @@ body {
 }
  */
 
- .logo {
+.logo {
+    width: 33%; 
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
     display: block;
-    width: 25%; 
+    background-color: #325476;
+}
+
+#logoDiv {
+    background-color: #325476;
+    width: 100%;
+    margin-left: auto;
     margin-right: auto;
     height: auto;
-    margin-bottom: 30px;
- }
+    margin-bottom: 10px;
+}
 
 #controlsDiv {
     height: 40px;
