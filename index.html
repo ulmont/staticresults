@@ -1326,8 +1326,8 @@ function searchPlayers() {
 		// skip the header row
 		for (let i = 1; i < pairings.length; i++) {
 			const cells = pairings[i].cells;
-			const whiteName = pairings[1].cells[1].innerText;
-			const blackName = pairings[1].cells[4].innerText;
+			const whiteName = pairings[i].cells[1].innerText;
+			const blackName = pairings[i].cells[4].innerText;
 			if (whiteName.includes(player) || blackName.includes(player)) {
 				// found it, highlight row
 				pairings[i].style.highlight = true;
