@@ -1289,7 +1289,11 @@ function loadTournaments(ptozFile, swissSysFile)
 function searchPlayers() {
 	// figure out who we're looking for
 	const playerSearch = document.getElementById('playerSearch');
-	const player = playerSearch.value;
+	const player = playerSearch.value.trim();
+
+	if (player.length < 2) {
+		return; // don't bother looking until we get two letters in
+	}
 
 	// figure out what's displaying - it's either going to be pairings or the wall chart
 	const chartsDD = document.getElementById("chartsDD");
@@ -1317,6 +1321,26 @@ function searchPlayers() {
 
 	if (pairings) {
 		// try to find this player in the pairing list
+		const pairingsTable = document.getElementById('GLOuter');
+		const pairings = pairingsTable.rows; 
+		// skip the header row
+		for (let i = 1; i < pairings.length; i++) {
+			const cells = pairings[i].cells;
+			const whiteName = pairings[1].cells[1].innerText;
+			const blackName = pairings[1].cells[4].innerText;
+			if (whiteName.includes(player) || blackName.includes(player)) {
+				// found it, highlight row
+				pairings[i].style.highlight = true;
+				pairings[i].style.origBackground = pairings[i].style.backgroundColor;
+				pairings[i].style.backgroundColor = '#FFFF00';
+			} else {
+				// not found here, unhighlight the row if it was highlighted
+				if (pairings[i].style.highlight) {
+					pairings[i].style.highlight = false;
+					pairings[i].style.backgroundColor = pairings[i].style.origBackground;
+				}
+			}
+		}
 	} else /* wall chart */ { 
 		// try to find this player in the wall chart (including standings)
 	}
