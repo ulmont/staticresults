@@ -61,7 +61,7 @@ table tr:nth-child(even) {
     overflow:auto;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
 }
 #pairingsDiv {
     height: 60%; 
