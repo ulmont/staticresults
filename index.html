@@ -1286,6 +1286,42 @@ function loadTournaments(ptozFile, swissSysFile)
 	});
 }
 
+function searchPlayers() {
+	// figure out who we're looking for
+	const playerSearch = document.getElementById('playerSearch');
+	const player = playerSearch.value;
+
+	// figure out what's displaying - it's either going to be pairings or the wall chart
+	const chartsDD = document.getElementById("chartsDD");
+	const chartsValue = chartsDD.options[chartsDD.selectedIndex].value;
+
+	let pairings;
+	switch (chartsValue) {
+		case 'Pairings':
+			// SetupRounds(vTable.getSectionRoundsPaired(section));
+			pairings = true;
+			break;
+		case 'Wall Chart':
+			// SetupWallChart(section, sortPlayersByPairNo, vTable.getPlayerPairNo, getColorString);
+			pairings = false;
+			break;
+		case 'Standings':
+			// SetupWallChart(section, sortPlayersByScoreTiebreaks, getPlayerIndex, vTable.getResultString);
+			pairings = false;
+			break;
+		default:
+			// SetupRounds(vTable.getSectionRoundsPaired(section));
+			pairings = true;
+			break;
+	}
+
+	if (pairings) {
+		// try to find this player in the pairing list
+	} else /* wall chart */ { 
+		// try to find this player in the wall chart (including standings)
+	}
+}
+
 function getVTablePTOZ()
 {
 	let vTable = {};
@@ -2015,7 +2051,7 @@ function getVTableSwissSys()
 		</div>
 		<div class="right-item">
 			<label for="playerSearch">Search:</label>
-			<input type="text" id="playerSearch">
+			<input type="text" id="playerSearch" oninput="searchPlayers()">
 		</div>
 	</div>
 
