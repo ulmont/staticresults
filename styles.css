@@ -10,12 +10,9 @@ body {
   font-family: 'KeplerStd', sans-serif;
 }
 
-/* @import url('https://fonts.googleapis.com/css?family=Cinzel');
-
-body {
-    font-family: "Cinzel", serif;
-}
- */
+ select, select option {
+  font-family: 'KeplerStd', sans-serif; 
+ }
 
 .logo {
     width: 33%; 
@@ -61,7 +58,10 @@ table tr:nth-child(even) {
 }
 #topDiv {
     height: 20%;
-    overflow:auto
+    overflow:auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 #pairingsDiv {
     height: 60%; 
