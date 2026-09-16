@@ -1291,10 +1291,6 @@ function searchPlayers() {
 	const playerSearch = document.getElementById('playerSearch');
 	const player = playerSearch.value.trim();
 
-	if (player.length < 2) {
-		return; // don't bother looking until we get two letters in
-	}
-
 	// figure out what's displaying - it's either going to be pairings or the wall chart
 	const chartsDD = document.getElementById("chartsDD");
 	const chartsValue = chartsDD.options[chartsDD.selectedIndex].value;
@@ -1328,13 +1324,13 @@ function searchPlayers() {
 			const cells = pairings[i].cells;
 			const whiteName = pairings[i].cells[1].innerText;
 			const blackName = pairings[i].cells[4].innerText;
-			if (whiteName.includes(player) || blackName.includes(player)) {
-				// found it, highlight row
+			// found it, highlight row
+			if ((player.length >= 2) && (whiteName.includes(player) || blackName.includes(player))) {
 				pairings[i].style.highlight = true;
 				pairings[i].style.origBackground = pairings[i].style.backgroundColor;
 				pairings[i].style.backgroundColor = '#FFFF00';
 			} else {
-				// not found here, unhighlight the row if it was highlighted
+				// not found here (or too short), unhighlight the row if it was highlighted
 				if (pairings[i].style.highlight) {
 					pairings[i].style.highlight = false;
 					pairings[i].style.backgroundColor = pairings[i].style.origBackground;
