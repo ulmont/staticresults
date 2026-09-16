@@ -1326,15 +1326,10 @@ function searchPlayers() {
 			const blackName = pairings[i].cells[4].innerText;
 			// found it, highlight row
 			if ((player.length >= 2) && (whiteName.includes(player) || blackName.includes(player))) {
-				pairings[i].style.highlight = true;
-				pairings[i].style.origBackground = pairings[i].style.backgroundColor;
-				pairings[i].style.backgroundColor = '#FFFF00';
+				pairings[i].classList.add('highlighted');
 			} else {
 				// not found here (or too short), unhighlight the row if it was highlighted
-				if (pairings[i].style.highlight) {
-					pairings[i].style.highlight = false;
-					pairings[i].style.backgroundColor = pairings[i].style.origBackground;
-				}
+				pairings[i].classList.remove('highlighted');
 			}
 		}
 	} else /* wall chart */ { 
