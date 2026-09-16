@@ -11,6 +11,8 @@
 
 var tourney;
 var vTable;
+var tableOddBackground;
+var tableEvenBackground;
 function TestShow(ptozOrSJSON)
 {
 	tourney = ptozOrSJSON;
@@ -131,6 +133,16 @@ function onSectionChange()
 		default:
 			SetupRounds(vTable.getSectionRoundsPaired(section));
 			break;
+	}
+
+	if (tableEvenBackground === undefined) {
+		// grab these.
+		const pairingsTable = document.getElementById('GLOuter');
+		const pairings = pairingsTable.rows; 
+		if (pairings.length > 1) {
+			tableOddBackground = window.getComputedStyle(document.querySelectorAll('tr:nth-child(1)')[0]).backgroundColor
+			tableEvenBackground = window.getComputedStyle(document.querySelectorAll('tr:nth-child(2)')[0]).backgroundColor
+		}		
 	}
 }
 
@@ -486,6 +498,8 @@ function SetupWallChart(section, sortAlgo, playerNumAlgo, colorStringAlgo)
 		<p>¹ Follows USCF 34.E.10 but gives (current rating + 50) for victories against an opponent 350 or more rating points below the player (including unrated players), attempts to first calculate a performance rating for an unrated opponent before calculating a player's performance, and ignores games between two unrated players.</p>
 		<p>² Follows FIDE Title Regulations 1.4.6 through 1.4.9, ignoring 1.4.6.b (relating to minimum ratings of titled players) and 1.4.6.d (relating to the minimum rating of an unrated player) as well as using USCF ratings.  Games between two unrated players are ignored and it attempts to first calculate a performance rating for an unrated opponent before calculating a player's performance.</p>`;
 	wallChartDiv.style.display = 'block';
+
+	searchPlayers();
 }
 
 function calcRatingByPlayerSection(player, section, calcRating) {
@@ -728,6 +742,8 @@ function SetupRounds(sectionRounds)
 	//
 	document.getElementById("roundsDD").selectedIndex = sectionRounds - 1;
 	onRoundsChange();
+
+	searchPlayers();
 }
 
 function onRoundsChange()
@@ -915,13 +931,16 @@ function ShowPairingsPTOZ(section, rp)
 		<thead>
 			<tr>
 				<th class="Board">Board</th>
-				<th class="Score">Scr</th>
 				<th class="Name">White</th>
-				<th class="Score">Scr</th>
+				<th class="Rating">Rating</th>
+				<th class="Score">Score</th>
 				<th class="Name">Black</th>
+				<th class="Rating">Rating</th>
+				<th class="Score">Score</th>
 			</tr>
 		</thead>
 		<tbody>`;
+	let boardsCount = 0;
 	for (let j = 0 ; j < gamelist.length ; j++) {
 		//
 		//	The above will double up on games with two players, so only show the
@@ -933,6 +952,9 @@ function ShowPairingsPTOZ(section, rp)
 		boardRec    = gamelist[j];
 		game        = tourney.games[boardRec];
 		board       = GameBoardShow(game);
+		if (board !== '') {
+			boardsCount = boardsCount + 1;
+		}
 		leftPlayer  = GameLeftPlayer(game);
 		rightPlayer = GameRightPlayer(game);
 		leftName    = PlayerFormat(leftPlayer);
@@ -954,27 +976,30 @@ function ShowPairingsPTOZ(section, rp)
 			rightPoints = '';
 		}
 		if (leftRating !== undefined) {
-			leftRating = '(' + leftRating + ')';
+			// leftRating = '(' + leftRating + ')';
 		} else {
 			leftRating = '';
 		}
 		if (rightRating !== undefined) {
-			rightRating = '(' + rightRating + ')';
+			// rightRating = '(' + rightRating + ')';
 		} else {
 			rightRating = '';
 		}
 		resultLine = `<tr>
 			<td class="Board">${board}</td>
+			<td class="Name">${leftName}</td>
+			<td class="Rating">${leftRating}</td>
 			<td class="Score">${leftResult} ${leftPoints}</td>
-			<td class="Name">${leftName} ${leftRating}</td>
+			<td class="Name">${rightName}</td>
+			<td class="Rating">${rightRating}</td>
 			<td class="Score">${rightResult} ${rightPoints}</td>
-			<td class="Name">${rightName} ${rightRating}</td>
 		</tr>`;
 		pTable += resultLine;
 	}
 	pairingsDiv.innerHTML = `${pTable}
 			</tbody>
-		</table>`;
+		</table>
+		${boardsCount} boards • Round ${rp}`;
 	pairingsDiv.style.display = 'block';
 }
 
@@ -1017,15 +1042,18 @@ function ShowPairingsSJSON(section, rp)
 		<thead>
 			<tr>
 				<th class="Board">Board</th>
-				<th class="Score">Scr</th>
 				<th class="Name">White</th>
-				<th class="Score">Scr</th>
+				<th class="Rating">Rating</th>
+				<th class="Score">Score</th>
 				<th class="Name">Black</th>
+				<th class="Rating">Rating</th>
+				<th class="Score">Score</th>
 			</tr>
 		</thead>
 		<tbody>`;
 
 	let doneBoards = new Set();
+	let boardsCount = 0;
 	gameResults.forEach(gameResult => {
 		// Result coding is Result; Op.; Clr; Brd; Logical ops. 1 & 2; Game pnts; Player"
 		let board = gameResult[3];
@@ -1046,6 +1074,7 @@ function ShowPairingsSJSON(section, rp)
 			duplicate = doneBoards.has(board);
 			if (!duplicate) {
 				// nope, process
+				boardsCount = boardsCount + 1;
 				doneBoards.add(board);
 				if (gameResult[2] === 'W') {
 					leftResult = resultToScore(gameResult[0], false);
@@ -1082,12 +1111,12 @@ function ShowPairingsSJSON(section, rp)
 			rightPoints = '';
 		}
 		if (leftRating !== undefined) {
-			leftRating = '(' + leftRating + ')';
+			// leftRating = '(' + leftRating + ')';
 		} else {
 			leftRating = '';
 		}
 		if (rightRating !== undefined) {
-			rightRating = '(' + rightRating + ')';
+			// rightRating = '(' + rightRating + ')';
 		} else {
 			rightRating = '';
 		}
@@ -1095,18 +1124,20 @@ function ShowPairingsSJSON(section, rp)
 		if (!duplicate) {
 			resultLine = `<tr>
 				<td class="Board">${board}</td>
+				<td class="Name">${leftName}</td>
+				<td class="Rating">${leftRating}</td>
 				<td class="Score">${leftResult} ${leftPoints}</td>
-				<td class="Name">${leftName} ${leftRating}</td>
+				<td class="Name">${rightName}</td>
+				<td class="Rating">${rightRating}</td>
 				<td class="Score">${rightResult} ${rightPoints}</td>
-				<td class="Name">${rightName} ${rightRating}</td>
 			</tr>`;
 			pTable = `${pTable}${resultLine}`;
 		}
 	});
-
 	pairingsDiv.innerHTML = `${pTable}
 			</tbody>
-		</table>`;
+		</table>
+		${boardsCount} boards • Round ${rp}`;
 	pairingsDiv.style.display = 'block';
 }
 
@@ -1269,6 +1300,79 @@ function loadTournaments(ptozFile, swissSysFile)
 			.catch((e) => console.error(e));
 		}).catch((e) => console.error(e));
 	});
+}
+
+function searchPlayers() {
+	// figure out who we're looking for
+	const playerSearch = document.getElementById('playerSearch');
+	const player = playerSearch.value.trim().toLowerCase();
+
+	// figure out what's displaying - it's either going to be pairings or the wall chart
+	const chartsDD = document.getElementById("chartsDD");
+	const chartsValue = chartsDD.options[chartsDD.selectedIndex].value;
+
+	let pairings;
+	switch (chartsValue) {
+		case 'Pairings':
+			// SetupRounds(vTable.getSectionRoundsPaired(section));
+			pairings = true;
+			break;
+		case 'Wall Chart':
+			// SetupWallChart(section, sortPlayersByPairNo, vTable.getPlayerPairNo, getColorString);
+			pairings = false;
+			break;
+		case 'Standings':
+			// SetupWallChart(section, sortPlayersByScoreTiebreaks, getPlayerIndex, vTable.getResultString);
+			pairings = false;
+			break;
+		default:
+			// SetupRounds(vTable.getSectionRoundsPaired(section));
+			pairings = true;
+			break;
+	}
+
+	if (pairings) {
+		// try to find this player in the pairing list
+		const pairingsTable = document.querySelector('#pairingsDiv #GLOuter');
+		const pairings = pairingsTable.rows; 
+		// skip the header row
+		for (let i = 1; i < pairings.length; i++) {
+			const cells = pairings[i].cells;
+			const whiteName = pairings[i].cells[1].innerText;
+			const blackName = pairings[i].cells[4].innerText;
+			// found it, highlight row
+			if ((player.length >= 2) && (whiteName.toLowerCase().includes(player) || blackName.toLowerCase().includes(player))) {
+				pairings[i].style.backgroundColor = '#FFFF00';
+			} else {
+				// not found here (or too short), unhighlight the row if it was highlighted
+				if ((i % 2) === 0) {
+					pairings[i].style.backgroundColor = tableEvenBackground;
+				} else {
+					pairings[i].style.backgroundColor = tableOddBackground;
+				}
+			}
+		}
+	} else /* wall chart */ { 
+		// try to find this player in the wall chart (including standings)
+		const wallChartTable = document.querySelector('#wallChartDiv #GLOuter');
+		const wallChart = wallChartTable.rows; 
+		// skip the header row
+		for (let i = 1; i < wallChart.length; i++) {
+			const cells = wallChart[i].cells;
+			const name = wallChart[i].cells[1].innerText;
+			// found it, highlight row
+			if ((player.length >= 2) && name.toLowerCase().includes(player)) {
+				wallChart[i].style.backgroundColor = '#FFFF00';
+			} else {
+				// not found here (or too short), unhighlight the row if it was highlighted
+				if ((i % 2) === 0) {
+					wallChart[i].style.backgroundColor = tableEvenBackground;
+				} else {
+					wallChart[i].style.backgroundColor = tableOddBackground;
+				}
+			}
+		}
+	}
 }
 
 function getVTablePTOZ()
@@ -1991,9 +2095,17 @@ function getVTableSwissSys()
   gtag('config', 'G-Y7JY55KLSP');
 </script>
 <body>
+	<div id="logoDiv">
+	<a href="https://www.downriverchess.com/"><img class="logo" src="logo.png" alt="Downriver Chess logo" /></a>
+	</div>
 	<div id="topDiv">
-		<p id="tName"></p>
-		<p id="tDate"></p>
+		<div class="left-item">
+			<p id="tName"></p><p id="tDate"></p>
+		</div>
+		<div class="right-item">
+			<label for="playerSearch">Search:</label>
+			<input type="text" id="playerSearch" oninput="searchPlayers()">
+		</div>
 	</div>
 
 	<div id="controlsDiv">

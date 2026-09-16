@@ -1,6 +1,41 @@
+@font-face {
+  font-family: 'KeplerStd';
+  src: url('Kepler Std Extended.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* Keeps text visible while loading */
+}
+
+body {
+  font-family: 'KeplerStd', sans-serif;
+}
+
+ select, select option {
+  font-family: 'KeplerStd', sans-serif; 
+ }
+
+.logo {
+    width: 33%; 
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    background-color: #325476;
+}
+
+#logoDiv {
+    background-color: #325476;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    margin-bottom: 10px;
+}
+
 #controlsDiv {
     height: 40px;
-    background-color: #222266"
+    background-color: #ffffff;
+    margin-bottom: 10px;
 }
 #tName {
     font-size: 1.5em; 
@@ -10,12 +45,30 @@
 #tDate {
     margin: 0;
 }
+thead {
+    background-color: #e5edf2
+}
+th:first-child {
+    border-top-left-radius: 8px;
+}
+th:last-child {
+    border-top-right-radius: 8px;
+}
+.highlighted {
+    background-color: #ffff00;    
+}
 table tr:nth-child(even) {
-    background-color: #00bbFF;
+    background-color: #c8e5e8;
+}
+table tr:nth-child(odd) {
+    background-color: #ffffff;
 }
 #topDiv {
     height: 20%;
-    overflow:auto
+    overflow:auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
 }
 #pairingsDiv {
     height: 60%; 
@@ -49,12 +102,19 @@ th.Board, th.Number {
 }
 td.Board {
     text-align: right;
+    font-weight: bold;
 }
 th.Score, td.Score {
     width: auto;
     padding: 3px;
+    text-align: left;
 }
 th.Name, td.Name {
+    width: auto;
+    padding: 3px;
+    text-align: left;
+}
+th.Rating, td.Rating {
     width: auto;
     padding: 3px;
     text-align: left;
