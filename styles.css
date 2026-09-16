@@ -34,7 +34,8 @@ body {
 
 #controlsDiv {
     height: 40px;
-    background-color: #ffffff
+    background-color: #ffffff;
+    margin-bottom: 10px;
 }
 #tName {
     font-size: 1.5em; 
