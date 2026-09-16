@@ -140,8 +140,8 @@ function onSectionChange()
 		const pairingsTable = document.getElementById('GLOuter');
 		const pairings = pairingsTable.rows; 
 		if (pairings.length > 1) {
-			table.tableOddBackground = window.getComputedStyle(document.querySelectorAll('tr:nth-child(1)')[0]).backgroundColor
-			table.tableEvenBackground = window.getComputedStyle(document.querySelectorAll('tr:nth-child(2)')[0]).backgroundColor
+			tableOddBackground = window.getComputedStyle(document.querySelectorAll('tr:nth-child(1)')[0]).backgroundColor
+			tableEvenBackground = window.getComputedStyle(document.querySelectorAll('tr:nth-child(2)')[0]).backgroundColor
 		}		
 	}
 }
