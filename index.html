@@ -1301,7 +1301,7 @@ function loadTournaments(ptozFile, swissSysFile)
 function searchPlayers() {
 	// figure out who we're looking for
 	const playerSearch = document.getElementById('playerSearch');
-	const player = playerSearch.value.trim();
+	const player = playerSearch.value.trim().toLowerCase();
 
 	// figure out what's displaying - it's either going to be pairings or the wall chart
 	const chartsDD = document.getElementById("chartsDD");
@@ -1337,7 +1337,7 @@ function searchPlayers() {
 			const whiteName = pairings[i].cells[1].innerText;
 			const blackName = pairings[i].cells[4].innerText;
 			// found it, highlight row
-			if ((player.length >= 2) && (whiteName.includes(player) || blackName.includes(player))) {
+			if ((player.length >= 2) && (whiteName.toLowerCase().includes(player) || blackName.toLowerCase().includes(player))) {
 				pairings[i].style.backgroundColor = '#FFFF00';
 			} else {
 				// not found here (or too short), unhighlight the row if it was highlighted
