@@ -499,7 +499,7 @@ function SetupWallChart(section, sortAlgo, playerNumAlgo, colorStringAlgo)
 		<p>² Follows FIDE Title Regulations 1.4.6 through 1.4.9, ignoring 1.4.6.b (relating to minimum ratings of titled players) and 1.4.6.d (relating to the minimum rating of an unrated player) as well as using USCF ratings.  Games between two unrated players are ignored and it attempts to first calculate a performance rating for an unrated opponent before calculating a player's performance.</p>`;
 	wallChartDiv.style.display = 'block';
 
-	playerSearch();
+	searchPlayers();
 }
 
 function calcRatingByPlayerSection(player, section, calcRating) {
@@ -743,7 +743,7 @@ function SetupRounds(sectionRounds)
 	document.getElementById("roundsDD").selectedIndex = sectionRounds - 1;
 	onRoundsChange();
 
-	playerSearch();
+	searchPlayers();
 }
 
 function onRoundsChange()
