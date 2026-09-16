@@ -139,15 +139,10 @@ function onSectionChange()
 		// grab these.
 		const pairingsTable = document.getElementById('GLOuter');
 		const pairings = pairingsTable.rows; 
-		// skip the header row
-		if (pairings.length > 0) {
-			const computedStyle = window.getComputedStyle(pairings[0]);
-			tableOddBackground = computedStyle.backgroundColor;
-		}
 		if (pairings.length > 1) {
-			const computedStyle = window.getComputedStyle(pairings[1]);
-			tableEvenBackground = computedStyle.backgroundColor;
-		}
+			table.tableOddBackground = window.getComputedStyle(document.querySelectorAll('tr:nth-child(1)')[0]).backgroundColor
+			table.tableEvenBackground = window.getComputedStyle(document.querySelectorAll('tr:nth-child(2)')[0]).backgroundColor
+		}		
 	}
 }
 
