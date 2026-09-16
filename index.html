@@ -498,6 +498,8 @@ function SetupWallChart(section, sortAlgo, playerNumAlgo, colorStringAlgo)
 		<p>¹ Follows USCF 34.E.10 but gives (current rating + 50) for victories against an opponent 350 or more rating points below the player (including unrated players), attempts to first calculate a performance rating for an unrated opponent before calculating a player's performance, and ignores games between two unrated players.</p>
 		<p>² Follows FIDE Title Regulations 1.4.6 through 1.4.9, ignoring 1.4.6.b (relating to minimum ratings of titled players) and 1.4.6.d (relating to the minimum rating of an unrated player) as well as using USCF ratings.  Games between two unrated players are ignored and it attempts to first calculate a performance rating for an unrated opponent before calculating a player's performance.</p>`;
 	wallChartDiv.style.display = 'block';
+
+	playerSearch();
 }
 
 function calcRatingByPlayerSection(player, section, calcRating) {
@@ -740,6 +742,8 @@ function SetupRounds(sectionRounds)
 	//
 	document.getElementById("roundsDD").selectedIndex = sectionRounds - 1;
 	onRoundsChange();
+
+	playerSearch();
 }
 
 function onRoundsChange()
@@ -1329,7 +1333,7 @@ function searchPlayers() {
 
 	if (pairings) {
 		// try to find this player in the pairing list
-		const pairingsTable = document.getElementById('GLOuter');
+		const pairingsTable = document.getElementById('#wallChartDiv #GLOuter');
 		const pairings = pairingsTable.rows; 
 		// skip the header row
 		for (let i = 1; i < pairings.length; i++) {
@@ -1350,6 +1354,24 @@ function searchPlayers() {
 		}
 	} else /* wall chart */ { 
 		// try to find this player in the wall chart (including standings)
+		const wallChartTable = document.getElementById('#wallChartDiv #GLOuter');
+		const wallChart = wallChartTable.rows; 
+		// skip the header row
+		for (let i = 1; i < wallChart.length; i++) {
+			const cells = wallChart[i].cells;
+			const name = wallChart[i].cells[1].innerText;
+			// found it, highlight row
+			if ((player.length >= 2) && name.toLowerCase().includes(player)) {
+				wallChart[i].style.backgroundColor = '#FFFF00';
+			} else {
+				// not found here (or too short), unhighlight the row if it was highlighted
+				if ((i % 2) === 0) {
+					wallChart[i].style.backgroundColor = tableEvenBackground;
+				} else {
+					wallChart[i].style.backgroundColor = tableOddBackground;
+				}
+			}
+		}
 	}
 }
 
