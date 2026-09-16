@@ -11,6 +11,8 @@
 
 var tourney;
 var vTable;
+var tableOddBackground;
+var tableEvenBackground;
 function TestShow(ptozOrSJSON)
 {
 	tourney = ptozOrSJSON;
@@ -131,6 +133,21 @@ function onSectionChange()
 		default:
 			SetupRounds(vTable.getSectionRoundsPaired(section));
 			break;
+	}
+
+	if (tableEvenBackground === undefined) {
+		// grab these.
+		const pairingsTable = document.getElementById('GLOuter');
+		const pairings = pairingsTable.rows; 
+		// skip the header row
+		if (pairings.length > 0) {
+			const computedStyle = window.getComputedStyle(pairings[0]);
+			tableOddBackground = computedStyle.backgroundColor;
+		}
+		if (pairings.length > 1) {
+			const computedStyle = window.getComputedStyle(pairings[1]);
+			tableEvenBackground = computedStyle.backgroundColor;
+		}
 	}
 }
 
@@ -1326,10 +1343,14 @@ function searchPlayers() {
 			const blackName = pairings[i].cells[4].innerText;
 			// found it, highlight row
 			if ((player.length >= 2) && (whiteName.includes(player) || blackName.includes(player))) {
-				pairings[i].classList.add('highlighted');
+				pairings[i].style.backgroundColor = '#FFFF00';
 			} else {
 				// not found here (or too short), unhighlight the row if it was highlighted
-				pairings[i].classList.remove('highlighted');
+				if ((i % 2) === 0) {
+					pairings[i].style.backgroundColor = tableEvenBackground;
+				} else {
+					pairings[i].style.backgroundColor = tableOddBackground;
+				}
 			}
 		}
 	} else /* wall chart */ { 
