@@ -3,9 +3,13 @@
     "Program": "SwissSys",
     "Version": 11.79,
     "VersionString": "11.79.7",
+    "Tournament title": "2026 CHESS DAY ON DECATUR",
+    "Tournament time controls": "G/15;D0",
+    "Starting date": "10/12/2026",
+    "Ending date": "10/12/2026",
     "ChessRoster auto sync enabled": true,
     "ChessRoster sync interval minutes": 30,
-    "Trace": "3.7.3.7.3.7.3.7.7.4."
+    "Trace": "3.7.3.7.7.4.3.7.7.11."
   },
   "Sections": [
     {
@@ -13,18 +17,18 @@
       "Type": 0,
       "Number of players": 18,
       "Number of teams": 0,
-      "Rounds paired": 3,
-      "Rounds played": 2,
+      "Rounds paired": 4,
+      "Rounds played": 3,
       "Rating to use": 0,
       "Engine": 4,
-      "Last unrestricted round": 2,
+      "Last unrestricted round": 3,
       "Need search options": false,
       "Coin toss": 1,
       "Team cut": 4,
       "Acceleration": 0,
       "Blitz": false,
       "Got logic": true,
-      "Pair table items": 9,
+      "Pair table items": 10,
       "Team pair table items": 0,
       "Players": [
         {
@@ -33,15 +37,20 @@
           "ID": "32033246",
           "Rating": 2012,
           "Provisional": true,
+          "ID2": "4418093",
           "Rating2": 1952,
           "Exp1": "11/30/2026",
+          "Club": "COL",
+          "Sex": "M",
           "State": "LA",
+          "Birth date": "1997",
           "Current result": " ",
           "Note": "Result coding is Result; Op.; Clr; Brd; Logical ops. 1 & 2; Game pnts",
           "Results": [
             "+;10;W;1;10;10;0",
             "+;6;B;1;6;6;0",
-            "~;4;W;1;4;4;0"
+            "+;4;W;1;4;4;0",
+            "~;7;B;1;7;7;0"
           ]
         },
         {
@@ -59,7 +68,8 @@
           "Results": [
             "+;11;B;2;11;11;0",
             "-;7;W;2;7;7;0",
-            "~;8;W;4;12;8;0"
+            "+;8;W;4;12;8;0",
+            "~;12;B;2;12;12;0"
           ]
         },
         {
@@ -74,11 +84,13 @@
           "Sex": "M",
           "State": "LA",
           "Birth date": "1949",
-          "Current result": " ",
+          "Reserved byes": "4 ",
+          "Current result": "½",
           "Results": [
             "=;12;W;3;12;12;0",
             "+;10;B;5;12;10;0",
-            "~;7;B;2;7;7;0"
+            "-;7;B;2;7;7;0",
+            "H;-1;-;0;-1;-1;0"
           ]
         },
         {
@@ -86,14 +98,20 @@
           "Name": "Watts, Gordon R",
           "ID": "12505032",
           "Rating": 1700,
+          "ID2": "39995054",
           "Rating2": 1816,
           "Exp1": "12/31/2026",
+          "Club": "USA",
+          "Sex": "M",
           "State": "LA",
-          "Current result": " ",
+          "Birth date": "1967",
+          "Reserved byes": "4 ",
+          "Current result": "½",
           "Results": [
             "+;13;B;4;13;13;0",
             "+;9;W;3;8;8;0",
-            "~;1;B;1;1;1;0"
+            "-;1;B;1;1;1;0",
+            "H;-1;-;0;-1;-1;0"
           ]
         },
         {
@@ -112,7 +130,8 @@
           "Results": [
             "+;14;W;5;14;14;0",
             "=;8;B;4;9;9;0",
-            "~;12;W;3;8;12;0"
+            "-;12;W;3;8;12;0",
+            "~;9;B;5;17;13;0"
           ]
         },
         {
@@ -131,7 +150,8 @@
           "Results": [
             "+;15;B;6;15;15;0",
             "-;1;W;1;1;1;0",
-            "~;18;B;5;13;18;0"
+            "+;18;B;5;13;18;0",
+            "~;17;B;3;13;17;0"
           ]
         },
         {
@@ -139,14 +159,18 @@
           "Name": "Richert, Josh P",
           "ID": "12843313",
           "Rating": 1571,
+          "ID2": "39967247",
           "Rating2": 1761,
           "Exp1": "04/30/2027",
+          "Sex": "M",
           "State": "LA",
+          "Birth date": "1973",
           "Current result": " ",
           "Results": [
             "+;16;W;7;16;16;0",
             "+;2;B;2;2;2;0",
-            "~;3;W;2;3;3;0"
+            "+;3;W;2;3;3;0",
+            "~;1;W;1;1;1;0"
           ]
         },
         {
@@ -154,14 +178,18 @@
           "Name": "James, Harry H",
           "ID": "30229199",
           "Rating": 1559,
+          "ID2": "39965643",
           "Rating2": 1664,
           "Exp1": "11/30/2026",
+          "Sex": "M",
           "State": "NJ",
+          "Birth date": "2005",
           "Current result": " ",
           "Results": [
             "+;17;B;8;17;17;0",
             "=;5;W;4;4;4;0",
-            "~;2;B;4;5;2;0"
+            "-;2;B;4;5;2;0",
+            "~;13;W;4;9;9;0"
           ]
         },
         {
@@ -179,7 +207,8 @@
           "Results": [
             "+;18;W;9;18;18;0",
             "-;4;B;3;5;5;0",
-            "~;17;W;6;17;17;0"
+            "-;17;W;6;17;17;0",
+            "~;5;W;5;8;8;0"
           ]
         },
         {
@@ -187,14 +216,18 @@
           "Name": "McGlynn-Wright, Theo",
           "ID": "30664464",
           "Rating": 1451,
+          "ID2": "39971880",
           "Rating2": 1720,
           "Exp1": "08/31/2027",
+          "Sex": "M",
           "State": "LA",
+          "Birth date": "2015",
           "Current result": " ",
           "Results": [
             "-;1;B;1;1;1;0",
             "-;3;W;5;15;3;0",
-            "~;13;B;7;18;13;0"
+            "-;13;B;7;18;13;0",
+            "~;11;W;7;15;11;0"
           ]
         },
         {
@@ -202,14 +235,18 @@
           "Name": "Klingler, James Elliot",
           "ID": "31221304",
           "Rating": 1427,
+          "ID2": "39954692",
           "Rating2": 1510,
           "Exp1": "04/30/2028",
+          "Sex": "M",
           "State": "LA",
+          "Birth date": "2014",
           "Current result": " ",
           "Results": [
             "-;2;W;2;2;2;0",
             "-;12;B;6;16;12;0",
-            "~;16;W;8;15;15;0"
+            "=;16;W;8;15;15;0",
+            "~;10;B;7;16;10;0"
           ]
         },
         {
@@ -218,14 +255,18 @@
           "ID": "31379245",
           "Rating": 1413,
           "Provisional": true,
+          "ID2": "39982106",
           "Rating2": 1565,
           "Exp1": "10/31/2026",
+          "Sex": "M",
           "State": "LA",
+          "Birth date": "1999",
           "Current result": " ",
           "Results": [
             "=;3;B;3;3;3;0",
             "+;11;W;6;3;11;0",
-            "~;5;B;3;2;5;0"
+            "+;5;B;3;2;5;0",
+            "~;2;W;2;2;2;0"
           ]
         },
         {
@@ -236,12 +277,16 @@
           "Provisional": true,
           "Rating2": 1399,
           "Exp1": "04/30/2025",
+          "Sex": "M",
           "State": "LA",
+          "Birth date": "1981",
+          "Email": "KAYINLEO@YAHOO.COM",
           "Current result": " ",
           "Results": [
             "-;4;W;4;4;4;0",
             "+;16;B;7;17;16;0",
-            "~;10;W;7;6;10;0"
+            "+;10;W;7;6;10;0",
+            "~;8;B;4;6;5;0"
           ]
         },
         {
@@ -249,42 +294,55 @@
           "Name": "Scheidt, Richard",
           "ID": "15081270",
           "Rating": 424,
+          "ID2": "39964124",
           "Rating2": 1300,
           "Exp1": "02/28/2027",
+          "Sex": "M",
           "State": "LA",
+          "Birth date": "1960",
           "Current result": " ",
           "Results": [
             "-;5;B;5;5;5;0",
             "-;17;W;8;18;17;0",
-            "~;15;B;9;16;16;0"
+            "+;15;B;9;16;16;0",
+            "~;18;W;6;18;18;0"
           ]
         },
         {
           "Pair number": 15,
           "Name": "Schoen, Paul",
           "ID": "31335452",
+          "ID2": "39933768",
           "Rating2": 313,
           "Exp1": "02/28/2027",
+          "Sex": "M",
           "State": "LA",
+          "Birth date": "1993",
           "Current result": " ",
           "Results": [
             "-;6;W;6;6;6;0",
             "-;18;B;9;10;18;0",
-            "~;14;W;9;11;11;0"
+            "-;14;W;9;11;11;0",
+            "~;16;B;8;10;16;0"
           ]
         },
         {
           "Pair number": 16,
           "Name": "Castellano, German Daniel",
           "ID": "32212589",
+          "ID2": "39994996",
           "Rating2": 1681,
           "Exp1": "01/31/2027",
+          "Club": "USA",
+          "Sex": "M",
           "State": "LA",
+          "Birth date": "1994",
           "Current result": " ",
           "Results": [
             "-;7;B;7;7;7;0",
             "-;13;W;7;11;13;0",
-            "~;11;B;8;14;14;0"
+            "=;11;B;8;14;14;0",
+            "~;15;W;8;11;15;0"
           ]
         },
         {
@@ -293,12 +351,16 @@
           "ID": "30752367",
           "Rating2": 756,
           "Exp1": "10/31/2026",
+          "Club": "USA",
+          "Sex": "M",
           "State": "NY",
+          "Birth date": "10/17/71",
           "Current result": " ",
           "Results": [
             "-;8;W;8;8;8;0",
             "+;14;B;8;13;14;0",
-            "~;9;B;6;9;9;0"
+            "+;9;B;6;9;9;0",
+            "~;6;W;3;5;6;0"
           ]
         },
         {
@@ -312,7 +374,8 @@
           "Results": [
             "-;9;B;9;9;9;0",
             "+;15;W;9;14;15;0",
-            "~;6;W;5;10;6;0"
+            "-;6;W;5;10;6;0",
+            "~;14;B;6;14;14;0"
           ]
         }
       ],
