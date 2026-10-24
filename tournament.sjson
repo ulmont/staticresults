@@ -19,7 +19,7 @@
     "FIDE rbin use federation": true,
     "Load USCF NM titles": false,
     "Load USCF CM titles": false,
-    "Trace": "3.7.0.0.0.0.0.0.0.0."
+    "Trace": "3.7.7.4.3.7.7.4.3.7."
   },
   "Sections": [
     {
@@ -553,7 +553,7 @@
       "Type": 0,
       "Section title": "U1500",
       "Section time control": "g/60;i30",
-      "Number of players": 15,
+      "Number of players": 16,
       "Number of teams": 0,
       "Rounds paired": 1,
       "Rounds played": 0,
@@ -588,7 +588,7 @@
           "Current result": " ",
           "Note": "Result coding is Result; Op.; Clr; Brd; Logical ops. 1 & 2; Game pnts",
           "Results": [
-            "~;8;W;201;8;8;0"
+            "~;9;W;201;9;9;0"
           ]
         },
         {
@@ -609,7 +609,7 @@
           "Reserved byes": "5 ",
           "Current result": " ",
           "Results": [
-            "~;9;B;202;9;9;0"
+            "~;10;B;202;10;10;0"
           ]
         },
         {
@@ -628,7 +628,7 @@
           "Email": "sleepydirty@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;10;W;203;10;10;0"
+            "~;11;W;203;11;11;0"
           ]
         },
         {
@@ -649,7 +649,7 @@
           "Email": "asquitiro@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;11;B;204;11;11;0"
+            "~;12;B;204;12;12;0"
           ]
         },
         {
@@ -671,7 +671,7 @@
           "Reserved byes": "4 ",
           "Current result": " ",
           "Results": [
-            "~;12;W;205;12;12;0"
+            "~;13;W;205;13;13;0"
           ]
         },
         {
@@ -690,11 +690,27 @@
           "Email": "hobcc.community@gmail.com",
           "Current result": " ",
           "Results": [
-            "~;13;B;206;13;13;0"
+            "~;14;B;206;14;14;0"
           ]
         },
         {
           "Pair number": 7,
+          "Name": "Jamison, Alton A",
+          "ID": "30049344",
+          "Rating": 1003,
+          "Rating2": 1138,
+          "Exp1": "01/31/2027",
+          "Federation": "USA",
+          "Org1": "USCF",
+          "Org2": "USCF",
+          "State": "LA",
+          "Current result": " ",
+          "Results": [
+            "~;16;B;208;0;0;0"
+          ]
+        },
+        {
+          "Pair number": 8,
           "Name": "Reddy, Sanjay",
           "ID": "31857291",
           "Rating": 1003,
@@ -712,11 +728,11 @@
           "Reserved byes": "5 ",
           "Current result": " ",
           "Results": [
-            "~;14;W;207;14;14;0"
+            "~;15;W;207;15;15;0"
           ]
         },
         {
-          "Pair number": 8,
+          "Pair number": 9,
           "Name": "Schaffer, Alexander Michael",
           "ID": "32749456",
           "Rating": 993,
@@ -736,7 +752,7 @@
           ]
         },
         {
-          "Pair number": 9,
+          "Pair number": 10,
           "Name": "Peng, Otto",
           "ID": "32026409",
           "Rating": 836,
@@ -757,7 +773,7 @@
           ]
         },
         {
-          "Pair number": 10,
+          "Pair number": 11,
           "Name": "West, Christopher",
           "ID": "32429507",
           "Rating": 568,
@@ -776,7 +792,7 @@
           ]
         },
         {
-          "Pair number": 11,
+          "Pair number": 12,
           "Name": "Beck, Joseph Holt",
           "ID": "33233815",
           "Exp1": "08/31/2027",
@@ -794,7 +810,7 @@
           ]
         },
         {
-          "Pair number": 12,
+          "Pair number": 13,
           "Name": "Patel, Tilak Ruben",
           "ID": "33302439",
           "Exp1": "10/31/2027",
@@ -813,7 +829,7 @@
           ]
         },
         {
-          "Pair number": 13,
+          "Pair number": 14,
           "Name": "Peltier, Jacob",
           "ID": "17064200",
           "Exp1": "10/31/2027",
@@ -831,7 +847,7 @@
           ]
         },
         {
-          "Pair number": 14,
+          "Pair number": 15,
           "Name": "Smith, Joshua",
           "ID": "33245347",
           "Exp1": "09/30/2028",
@@ -844,11 +860,11 @@
           "Email": "jas426@icloud.com",
           "Current result": " ",
           "Results": [
-            "~;7;B;207;7;7;0"
+            "~;8;B;207;8;8;0"
           ]
         },
         {
-          "Pair number": 15,
+          "Pair number": 16,
           "Name": "Walker V, Howard Joseph",
           "ID": "33299635",
           "Exp1": "10/31/2027",
@@ -860,9 +876,9 @@
           "Zip": "70769",
           "Phone": "(225) 335-3034",
           "Email": "alyssawalkernurse@gmail.com",
-          "Current result": "1",
+          "Current result": " ",
           "Results": [
-            "B;-1;-;0;-1;-1;0"
+            "~;7;W;208;-1;-1;0"
           ]
         }
       ],
