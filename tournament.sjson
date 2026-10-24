@@ -19,7 +19,7 @@
     "FIDE rbin use federation": true,
     "Load USCF NM titles": false,
     "Load USCF CM titles": false,
-    "Trace": "3.7.3.7.7.4.3.7.3.3."
+    "Trace": "3.7.3.7.7.4.8.3.3.3."
   },
   "Sections": [
     {
@@ -444,11 +444,12 @@
           "Birth date": "2004",
           "Phone": "(832) 231-3529",
           "Email": "ilbarsim@gmail.com",
-          "Current result": " ",
+          "Reserved byes": "3 ",
+          "Current result": "½",
           "Results": [
             "-;6;W;106;6;6;0",
             "-;2;B;107;2;2;0",
-            "~;18;B;110;18;18;0"
+            "H;-1;-;0;-1;-1;0"
           ]
         },
         {
@@ -471,7 +472,7 @@
           "Results": [
             "-;7;B;107;7;7;0",
             "-;12;B;108;12;12;0",
-            "~;17;W;110;17;17;0"
+            "~;21;W;110;21;21;0"
           ]
         },
         {
@@ -539,11 +540,11 @@
           "Birth date": "1948",
           "Phone": "(985) 518-5393",
           "Email": "hbslaton@bellsouth.net",
-          "Current result": "1",
+          "Current result": " ",
           "Results": [
             "-;10;W;110;10;10;0",
             "-;16;B;111;16;16;0",
-            "B;-1;-;0;-1;-1;0"
+            "~;18;B;110;18;18;0"
           ]
         },
         {
