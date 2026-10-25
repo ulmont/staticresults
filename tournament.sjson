@@ -19,7 +19,7 @@
     "FIDE rbin use federation": true,
     "Load USCF NM titles": false,
     "Load USCF CM titles": false,
-    "Trace": "3.3.3.7.3.7.3.3.3.3."
+    "Trace": "7.4.3.7.3.3.3.7.3.7."
   },
   "Sections": [
     {
@@ -62,13 +62,13 @@
           "Birth date": "2011",
           "Phone": "(956) 479-0053",
           "Email": "jaimereyes.0703@ymail.com",
-          "Current result": " ",
+          "Current result": "1",
           "Note": "Result coding is Result; Op.; Clr; Brd; Logical ops. 1 & 2; Game pnts",
           "Results": [
             "+;12;W;101;12;12;0",
             "+;8;B;101;8;8;0",
             "+;6;W;101;5;5;0",
-            "~;4;B;101;3;4;0"
+            "+;4;B;101;3;4;0"
           ]
         },
         {
@@ -88,12 +88,12 @@
           "Birth date": "2012",
           "Phone": "(504) 701-9010",
           "Email": "anhtigone@gmail.com",
-          "Current result": " ",
+          "Current result": "1",
           "Results": [
             "-;13;B;102;13;13;0",
             "+;17;W;107;17;17;0",
             "+;7;B;103;7;7;0",
-            "~;11;W;103;11;11;0"
+            "+;11;W;103;11;11;0"
           ]
         },
         {
@@ -114,12 +114,12 @@
           "Phone": "(847) 456-6357",
           "Email": "cbgirardo@gmail.com",
           "Reserved byes": "3 ",
-          "Current result": " ",
+          "Current result": "1",
           "Results": [
             "+;14;W;103;14;14;0",
             "+;9;B;102;9;9;0",
             "H;-1;-;0;-1;-1;0",
-            "~;5;W;102;1;5;0"
+            "+;5;W;102;1;5;0"
           ]
         },
         {
@@ -139,12 +139,12 @@
           "Birth date": "1967",
           "Phone": "(225) 772-9550",
           "Email": "MarkLSchulingkamp@gmail.com",
-          "Current result": " ",
+          "Current result": "0",
           "Results": [
             "+;15;B;104;15;15;0",
             "+;11;W;103;10;10;0",
             "=;5;B;102;6;6;0",
-            "~;1;W;101;5;1;0"
+            "-;1;W;101;5;1;0"
           ]
         },
         {
@@ -164,12 +164,12 @@
           "Birth date": "1961",
           "Phone": "(816) 820-9754",
           "Email": "asquitiro@gmail.com",
-          "Current result": " ",
+          "Current result": "0",
           "Results": [
             "+;16;W;105;16;16;0",
             "+;10;B;104;11;11;0",
             "=;4;W;102;1;1;0",
-            "~;3;B;102;4;3;0"
+            "-;3;B;102;4;3;0"
           ]
         },
         {
@@ -189,12 +189,12 @@
           "Birth date": "1977",
           "Phone": "(443) 248-8413",
           "Email": "aaabbb66@hotmail.com",
-          "Current result": " ",
+          "Current result": "1",
           "Results": [
             "+;17;B;106;17;17;0",
             "+;13;W;105;13;13;0",
             "-;1;B;101;4;4;0",
-            "~;23;W;104;12;23;0"
+            "+;23;W;104;12;23;0"
           ]
         },
         {
@@ -213,12 +213,12 @@
           "Birth date": "2007",
           "Phone": "(504) 458-4005",
           "Email": "masonmcguire17@icloud.com",
-          "Current result": " ",
+          "Current result": "0",
           "Results": [
             "+;18;W;107;18;18;0",
             "+;23;B;106;23;23;0",
             "-;2;W;103;2;2;0",
-            "~;12;B;105;23;12;0"
+            "-;12;B;105;23;12;0"
           ]
         },
         {
@@ -238,12 +238,12 @@
           "Birth date": "2014",
           "Phone": "(956) 479-0053",
           "Email": "jaimereyes.0703@ymail.com",
-          "Current result": " ",
+          "Current result": "½",
           "Results": [
             "+;19;B;108;19;19;0",
             "-;1;W;101;1;1;0",
             "=;13;B;104;13;13;0",
-            "~;16;W;106;13;16;0"
+            "=;16;W;106;13;16;0"
           ]
         },
         {
@@ -314,12 +314,12 @@
           "Birth date": "1973",
           "Phone": "(225) 772-7664",
           "Email": "brchessmaster@gmail.com",
-          "Current result": " ",
+          "Current result": "0",
           "Results": [
             "+;22;W;111;22;22;0",
             "-;4;B;103;5;5;0",
             "+;20;W;106;20;20;0",
-            "~;2;B;103;2;2;0"
+            "-;2;B;103;2;2;0"
           ]
         },
         {
@@ -339,12 +339,12 @@
           "Birth date": "1989",
           "Phone": "(318) 421-4473",
           "Email": "victor_chess@hotmail.com",
-          "Current result": " ",
+          "Current result": "1",
           "Results": [
             "-;1;B;101;1;1;0",
             "+;18;W;108;18;18;0",
             "+;22;B;107;22;22;0",
-            "~;7;W;105;6;7;0"
+            "+;7;W;105;6;7;0"
           ]
         },
         {
@@ -413,12 +413,12 @@
           "Birth date": "2012",
           "Phone": "(504) 495-2183",
           "Email": "tenee.felix@gmail.com",
-          "Current result": " ",
+          "Current result": "1",
           "Results": [
             "-;4;W;104;4;4;0",
             "-;20;B;110;20;20;0",
             "+;19;B;109;19;19;0",
-            "~;18;W;108;18;18;0"
+            "+;18;W;108;18;18;0"
           ]
         },
         {
@@ -436,12 +436,13 @@
           "Birth date": "2010",
           "Phone": "(504) 875-7205",
           "Email": "drhrishikeshsamant@yahoo.com",
-          "Current result": " ",
+          "Withdrew": true,
+          "Current result": "½",
           "Results": [
             "-;5;B;105;5;5;0",
             "+;21;W;111;21;21;0",
             "=;9;W;105;9;9;0",
-            "~;8;B;106;9;8;0"
+            "=;8;B;106;9;8;0"
           ]
         },
         {
@@ -462,12 +463,12 @@
           "Phone": "(832) 231-3529",
           "Email": "ilbarsim@gmail.com",
           "Reserved byes": "3 ",
-          "Current result": " ",
+          "Current result": "1",
           "Results": [
             "-;6;W;106;6;6;0",
             "-;2;B;107;2;2;0",
             "H;-1;-;0;-1;-1;0",
-            "~;22;W;109;22;22;0"
+            "+;22;W;109;22;22;0"
           ]
         },
         {
@@ -486,12 +487,12 @@
           "Birth date": "1994",
           "Phone": "(985) 788-3740",
           "Email": "jpmoeller19@outlook.com",
-          "Current result": " ",
+          "Current result": "0",
           "Results": [
             "-;7;B;107;7;7;0",
             "-;12;B;108;12;12;0",
             "+;21;W;110;21;21;0",
-            "~;15;B;108;15;15;0"
+            "-;15;B;108;15;15;0"
           ]
         },
         {
@@ -586,12 +587,12 @@
           "Birth date": "2013",
           "Phone": "(713) 890-2503",
           "Email": "ps_harendra@yahoo.com",
-          "Current result": " ",
+          "Current result": "0",
           "Results": [
             "-;11;B;111;11;11;0",
             "B;-1;-;0;-1;-1;0",
             "-;12;W;107;12;12;0",
-            "~;17;B;109;17;17;0"
+            "-;17;B;109;17;17;0"
           ]
         },
         {
@@ -610,12 +611,12 @@
           "Birth date": "2013",
           "Phone": "(225) 937-0441",
           "Email": "reagans@aol.com",
-          "Current result": " ",
+          "Current result": "0",
           "Results": [
             "B;-1;-;0;-1;-1;0",
             "-;7;W;106;7;7;0",
             "+;14;B;108;14;14;0",
-            "~;6;B;104;7;6;0"
+            "-;6;B;104;7;6;0"
           ]
         }
       ],
